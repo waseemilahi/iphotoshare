@@ -7,21 +7,78 @@
 //
 
 #import "BrowseViewController.h"
+#import "XMLtoObject.h"
+#import "photo.h"
 
 #define DOCSFOLDER [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
 @implementation BrowseViewController
 
-
-
 @synthesize imageView;
 @synthesize imagePicker;
 - (void)showPicture: (id) sender{
+	// create the request
+	NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=a107e8a07a8f464250562ea2424ccf25&tags=fun&api_sig=c9cde0ff8ca668ab84f8a2908cc03f71"]
+											  cachePolicy:NSURLRequestUseProtocolCachePolicy
+										  timeoutInterval:60.0];
+	NSMutableData *receivedData;
+
+	XMLtoObject *xo;
+	NSURL *url = [NSURL URLWithString: @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d75e442b56901bf5f0db3d87f8013306&tags=statue+of+liberty&api_sig=530fe294b5b9dca2dd28de02d754743d"];
+	NSString *class = @"photo";
+	NSError **err;
+	
+	//[xo parseXMLAtURL:url toObject:class parseError:err];
+	/*
+	 NSURL *url = [NSURL URLWithString: @"http://localhost/contacts.xml"];
+	 XMLToObjectParser *myParser = [[XMLToObjectParser alloc] parseXMLAtURL:url toObject:@"Contact" parseError:nil];
+	 */
+	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:class parseError:nil];
+	if ([[parser items] count] != 0) {
+		//[[parser items] 
+		
+		//NSString* imageURL = @"http://www.google.com/intl/en_ALL/images/logo.gif";
+		NSString* imageURL = [(photo *)[[parser items] objectAtIndex:0] url];
+		//for (id item in [parser items]) {	
+		//	NSString* imageURL = [(photo *)item url];
+			NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];
+		
+			UIImage* image = [[UIImage alloc] initWithData:imageData];
+			[imageView setImage:image];
+			[imageData release];
+			[image release];
+		//}
+	}
+	
+	/*
+	// create the connection with the request
+	// and start loading the data
+	NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+	if (theConnection) {
+		// Create the NSMutableData that will hold
+		// the received data
+		// receivedData is declared as a method instance elsewhere
+		receivedData=[[NSMutableData data] retain];
+
+		NSString* mapURL = @"http://www.google.com/intl/en_ALL/images/logo.gif";
+		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:mapURL]];
+		
+		UIImage* image = [[UIImage alloc] initWithData:imageData];
+		[imageView setImage:image];
+		[imageData release];
+		[image release];
+		
+	} else {
+		// inform the user that the download could not be made
+	}
+	*/
 	
 	
+	/*
 	self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 	
 	self.imagePicker.allowsImageEditing = YES; //<label id="code.imagepicker.allowsEditing"/>
 	[self presentModalViewController:self.imagePicker animated:YES]; //<label id="code.imagepicker.present.modal"/>
+	 */
 }
 
 //START:code.PhotoViewController.didCancel
