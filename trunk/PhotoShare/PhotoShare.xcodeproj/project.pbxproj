@@ -15,6 +15,7 @@
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 		490C87420F80DDF8008EF66C /* md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 490C87410F80DDF8008EF66C /* md5.m */; };
+		490C87750F812E33008EF66C /* flickrapi.m in Sources */ = {isa = PBXBuildFile; fileRef = 490C87740F812E33008EF66C /* flickrapi.m */; };
 		498BDE610F7F5BE900A2CCBC /* XMLtoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BDE600F7F5BE900A2CCBC /* XMLtoObject.m */; };
 		49E763550F8054B4000FFD27 /* photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E763540F8054B4000FFD27 /* photo.m */; };
 		9E457C9D0F68F229004A0967 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E457C9C0F68F229004A0967 /* camera.png */; };
@@ -52,6 +53,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		490C87400F80DDE1008EF66C /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
 		490C87410F80DDF8008EF66C /* md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = md5.m; sourceTree = "<group>"; };
+		490C87730F812E1F008EF66C /* flickrapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flickrapi.h; sourceTree = "<group>"; };
+		490C87740F812E33008EF66C /* flickrapi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = flickrapi.m; sourceTree = "<group>"; };
 		498BDE5E0F7F5B8400A2CCBC /* XMLtoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLtoObject.h; sourceTree = "<group>"; };
 		498BDE600F7F5BE900A2CCBC /* XMLtoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLtoObject.m; sourceTree = "<group>"; };
 		49E763530F80549D000FFD27 /* photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photo.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				490C87730F812E1F008EF66C /* flickrapi.h */,
+				490C87740F812E33008EF66C /* flickrapi.m */,
 				498BDE5E0F7F5B8400A2CCBC /* XMLtoObject.h */,
 				498BDE600F7F5BE900A2CCBC /* XMLtoObject.m */,
 				490C87400F80DDE1008EF66C /* md5.h */,
@@ -270,6 +275,7 @@
 				498BDE610F7F5BE900A2CCBC /* XMLtoObject.m in Sources */,
 				49E763550F8054B4000FFD27 /* photo.m in Sources */,
 				490C87420F80DDF8008EF66C /* md5.m in Sources */,
+				490C87750F812E33008EF66C /* flickrapi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
