@@ -1,8 +1,41 @@
 // XMLToObject.m
 #import "XMLtoObject.h"
-#import "photo.h"
+//#import "photo.h"
 
-NSString* currentNodeName;
+
+// photo object
+
+// photo.m
+//#import "photo.h"
+@implementation photo
+
+@synthesize url;
+-(void)setPhotoUrl:(NSString *)pid farm:(NSString *)farm server:(NSString *)server secret:(NSString *)secret {
+	url = [NSMutableString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@_m.jpg", farm, server, pid, secret];
+	
+	return;
+}
+
+@end
+
+
+// frob object
+@implementation frob
+
+@synthesize value;
+-(void)setValue:(NSString *)val {
+	if(value) [value release];
+	value = [[NSString alloc] initWithString:val];
+	
+	NSLog(@"frob value set: %@", val);
+	return;
+}
+
+@end
+
+
+
+// XMLtoObject
 
 @implementation XMLtoObject
 
@@ -48,12 +81,17 @@ didStartElement:(NSString *)elementName
 		// create an instance of a class on run-time
 		item = [[NSClassFromString(className) alloc] init];
 		
-		//generate and set the item's url
-		[(photo *)item setPhotoUrl:	[attributeDict objectForKey:@"id"]
-							farm:	[attributeDict objectForKey:@"farm"]
-							server:	[attributeDict objectForKey:@"server"]
-							secret:	[attributeDict objectForKey:@"secret"]
-		 ];
+		if ([elementName isEqualToString:@"photo"]) {
+			//generate and set the item's url
+			[(photo *)item setPhotoUrl:	[attributeDict objectForKey:@"id"]
+								farm:	[attributeDict objectForKey:@"farm"]
+								server:	[attributeDict objectForKey:@"server"]
+								secret:	[attributeDict objectForKey:@"secret"]
+			 ];
+		} else if ([elementName isEqualToString: @"frob"]) {
+			//this code is moved to didEndElement, since currentNodeContent is not filled yet when didStartElement is called
+			//[(frob *)item setValue:currentNodeContent];
+		}
 	}
 	else {
 		currentNodeName = [elementName copy];
@@ -69,6 +107,11 @@ didStartElement:(NSString *)elementName
 	NSLog(@"Close tag: %@", elementName);
 	
 	if([elementName isEqualToString:className]) {
+		
+		if ([elementName isEqualToString: @"frob"]) {
+			[(frob *)item setValue:[currentNodeContent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+		}
+	
 		[items addObject:item];
 		
 		[item release];

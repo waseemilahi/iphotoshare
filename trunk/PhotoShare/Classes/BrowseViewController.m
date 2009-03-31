@@ -8,7 +8,8 @@
 
 #import "BrowseViewController.h"
 #import "XMLtoObject.h"
-#import "photo.h"
+//#import "photo.h"
+#import "flickrapi.h"
 
 #define DOCSFOLDER [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
 @implementation BrowseViewController
@@ -17,21 +18,24 @@
 @synthesize imagePicker;
 - (void)showPicture: (id) sender{
 	// create the request
+	/*
 	NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=a107e8a07a8f464250562ea2424ccf25&tags=fun&api_sig=c9cde0ff8ca668ab84f8a2908cc03f71"]
 											  cachePolicy:NSURLRequestUseProtocolCachePolicy
 										  timeoutInterval:60.0];
 	NSMutableData *receivedData;
 
 	XMLtoObject *xo;
+	*/
 	NSURL *url = [NSURL URLWithString: @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d75e442b56901bf5f0db3d87f8013306&tags=statue+of+liberty&api_sig=530fe294b5b9dca2dd28de02d754743d"];
 	NSString *class = @"photo";
-	NSError **err;
+	//NSError **err;
 	
 	//[xo parseXMLAtURL:url toObject:class parseError:err];
 	/*
 	 NSURL *url = [NSURL URLWithString: @"http://localhost/contacts.xml"];
 	 XMLToObjectParser *myParser = [[XMLToObjectParser alloc] parseXMLAtURL:url toObject:@"Contact" parseError:nil];
 	 */
+	
 	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:class parseError:nil];
 	if ([[parser items] count] != 0) {
 		//[[parser items] 
@@ -48,6 +52,22 @@
 			[image release];
 		//}
 	}
+	
+	flickrapi *flickr = [[flickrapi alloc] init];
+	[flickr addParam:@"test3" withValue:@"value1"];
+	[flickr addParam:@"test2" withValue:@"value2"];
+	[flickr addParam:@"test4" withValue:@"value3"];
+	[flickr addParam:@"aaaaa" withValue:@"value4"];
+	[flickr addParam:@"zzzzz" withValue:@"value5"];
+	
+	NSLog([flickr getParamList]);
+	NSLog([flickr getSig]);
+	
+	NSLog([flickr getFrob]);
+	NSLog([flickr getParamList]);
+	
+	
+	
 	
 	/*
 	// create the connection with the request

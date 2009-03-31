@@ -1,5 +1,7 @@
-@interface NSString (md5)
+// md5.h
 
-+ (NSString *) md5:(NSString *)str;
+@interface NSMutableString (md5)
+
++ (NSMutableString *) md5:(NSMutableString *)str;
 
 @end
