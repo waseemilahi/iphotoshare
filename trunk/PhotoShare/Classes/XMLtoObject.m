@@ -34,6 +34,72 @@
 @end
 
 
+// form object
+@implementation form
+
+@synthesize fields;
+@synthesize action;
+
+-(void)clearFields {
+	if(fields) [fields release];
+	fields = [[NSMutableDictionary alloc] init];
+	
+	NSLog(@"form fields cleared.");
+	return;
+}
+
+-(void)setFields:(NSMutableDictionary *)fs {
+	if(fields) [fields release];
+	fields = fs;
+	
+	NSLog(@"form fields set.");
+	return;
+}
+
+-(void)addField:(NSMutableString *)field withValue:(NSMutableString *)value {
+	if(!fields) fields = [[NSMutableDictionary alloc] init];
+	[fields setObject:value forKey:field];
+	NSLog(@"form field added: %@ = %@.", field, value);
+	return;
+}
+
+-(void)setAction:(NSMutableString *)act {
+	action = act;
+}
+
+-(NSString *)getURL {
+	NSMutableString *url = @"http://www.flickr.com/";
+	NSMutableString *vals = @"?";
+	
+	for (NSString* field in fields) {
+		if([vals length] > 1) [vals appendString:@"&"];
+		[vals appendString:field];
+		[vals appendString:@"="];
+		[vals appendString:[fields objectForKey:field]];
+	}
+	[url appendString:action];
+	[url appendString:vals];
+	
+	return url;
+}
+
+@end
+
+
+// token object
+@implementation token
+
+@synthesize value;
+-(void)setValue:(NSString *)val {
+	if(value) [value release];
+	value = [[NSString alloc] initWithString:val];
+	
+	NSLog(@"token value set: %@", val);
+	return;
+}
+
+@end
+
 
 // XMLtoObject
 
@@ -42,6 +108,32 @@
 - (NSArray *)items
 {
 	return items;
+}
+
+- (id)parseXMLinString:(NSString *)xml 
+		   toObject:(NSString *)aClassName 
+		 parseError:(NSError **)error
+{
+	
+	NSLog(xml);
+	
+	[items release];
+	items = [[NSMutableArray alloc] init];
+	
+	className = aClassName;
+	
+	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithBytes:(const void *)xml length:[xml length]]];
+	[parser setDelegate:self];
+	
+	[parser parse];
+	
+	if([parser parserError] && error) {
+		*error = [parser parserError];
+	}
+	
+	[parser release];
+	
+	return self;
 }
 
 - (id)parseXMLAtURL:(NSURL *)url 
@@ -91,9 +183,18 @@ didStartElement:(NSString *)elementName
 		} else if ([elementName isEqualToString: @"frob"]) {
 			//this code is moved to didEndElement, since currentNodeContent is not filled yet when didStartElement is called
 			//[(frob *)item setValue:currentNodeContent];
+		} else if ([elementName isEqualToString: @"token"]) {
+			//this code is moved to didEndElement, since currentNodeContent is not filled yet when didStartElement is called
+			//[(frob *)item setValue:currentNodeContent];
+		} else if ([elementName isEqualToString:@"form"]) {
+			//set the form action
+			[(form *)item setAction:[attributeDict objectForKey:@"action"]];
 		}
-	}
-	else {
+	} else if ([elementName isEqualToString:@"input"] && [item isKindOfClass:[form class]]) {
+		//add the form variables and their values
+		[(form *)item addField:[attributeDict objectForKey:@"name"] withValue:[attributeDict objectForKey:@"value"]];
+		
+	} else {
 		currentNodeName = [elementName copy];
 		currentNodeContent = [[NSMutableString alloc] init];
 	}
@@ -110,6 +211,8 @@ didStartElement:(NSString *)elementName
 		
 		if ([elementName isEqualToString: @"frob"]) {
 			[(frob *)item setValue:[currentNodeContent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+		} else if ([elementName isEqualToString: @"token"]) {
+			[(token *)item setValue:[currentNodeContent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
 		}
 	
 		[items addObject:item];
@@ -133,6 +236,10 @@ didStartElement:(NSString *)elementName
 foundCharacters:(NSString *)string
 {   
 	[currentNodeContent appendString:string];
+}
+
+- (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
+	NSLog([(NSError *)parseError localizedDescription]);
 }
 
 - (void)dealloc

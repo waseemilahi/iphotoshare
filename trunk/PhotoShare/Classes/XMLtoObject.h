@@ -9,6 +9,10 @@
 	NSMutableString *currentNodeContent;
 }
 - (NSArray *)items;
+- (id)parseXMLinString:(NSString *)xml 
+			  toObject:(NSString *)aClassName 
+			parseError:(NSError **)error;
+
 - (id)parseXMLAtURL:(NSURL *)url 
 		   toObject:(NSString *)aClassName 
 		 parseError:(NSError **)error;
@@ -25,6 +29,7 @@
 
 @end
 
+
 //frob object
 @interface frob : NSObject {
 	NSString *value;
@@ -35,3 +40,36 @@
 -(void)setValue:(NSString *)val;
 
 @end
+
+
+//form object (for stealth login)
+@interface form : NSObject {
+	NSMutableDictionary *fields;
+	NSMutableString *action;
+}
+
+@property (nonatomic, retain) NSMutableDictionary *fields;
+@property (nonatomic, retain) NSMutableString *action;
+
+-(void)clearFields;
+-(void)setFields:(NSMutableDictionary *)fs;
+-(void)addField:(NSMutableString *)field withValue:(NSMutableString *)value;
+
+-(void)setAction:(NSMutableString *)action;
+
+-(NSString *)getURL;
+
+@end
+
+
+//token object
+@interface token : NSObject {
+	NSString *value;
+}
+
+@property (nonatomic, retain) NSString *value;
+
+-(void)setValue:(NSString *)val;
+
+@end
+
