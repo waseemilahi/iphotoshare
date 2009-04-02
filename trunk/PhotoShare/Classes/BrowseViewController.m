@@ -26,7 +26,7 @@
 
 	XMLtoObject *xo;
 	*/
-	NSURL *url = [NSURL URLWithString: @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d75e442b56901bf5f0db3d87f8013306&tags=statue+of+liberty&api_sig=530fe294b5b9dca2dd28de02d754743d"];
+	NSURL *url = [NSURL URLWithString: @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=58f1ca1516e35837c26bad2af015ba47&lat=40.7&lon=-74&api_sig=08ef7d06192941dd91b6e4e858b15762"];
 	NSString *class = @"photo";
 	//NSError **err;
 	
@@ -54,6 +54,7 @@
 	}
 	
 	flickrapi *flickr = [[flickrapi alloc] init];
+	
 	[flickr addParam:@"test3" withValue:@"value1"];
 	[flickr addParam:@"test2" withValue:@"value2"];
 	[flickr addParam:@"test4" withValue:@"value3"];
@@ -66,7 +67,16 @@
 	NSLog([flickr getFrob]);
 	NSLog([flickr getParamList]);
 	
+	NSLog([flickr getLoginURL]);
+	NSLog([flickr getParamList]);
 	
+	
+	NSLog([flickr doLogin]);
+	
+	/*
+	NSLog([flickr getToken]);
+	NSLog([flickr getParamList]);
+	*/
 	
 	
 	/*
