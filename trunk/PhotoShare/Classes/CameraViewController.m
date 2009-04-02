@@ -57,13 +57,18 @@
 	//imageView.image = image; //<label id="code.imagepicker.setimage"/>
 	//[self dismissModalViewControllerAnimated:YES]; //<label id="code.imagepicker.dismiss"/>
 	//[picker release];
-	int i=0;
-	NSString *uniquePath = [DOCSFOLDER stringByAppendingPathComponent:@"selectedImage.png"];
 	
-	while([[NSFileManager defaultManager] fileExistsAtPath:uniquePath])
-		uniquePath = [NSString stringWithFormat:@"%@/%@-%d.%@",DOCSFOLDER,@"selectedImage", ++i,@"png"];
-	[UIImagePNGRepresentation(image) writeToFile : uniquePath atomically:YES];
+	
+	//int i=0;
+	//NSString *uniquePath = [DOCSFOLDER stringByAppendingPathComponent:@"selectedImage.png"];
+	
+	//while([[NSFileManager defaultManager] fileExistsAtPath:uniquePath])
+	//	uniquePath = [NSString stringWithFormat:@"%@/%@-%d.%@",DOCSFOLDER,@"selectedImage", ++i,@"png"];
+//	[UIImagePNGRepresentation(image) writeToFile : uniquePath atomically:YES];
 	//[UIImagePNGRepresentation(image) writeToFile: uniquePath atomically:YES];
+	
+	
+	UIImageWriteToSavedPhotosAlbum(image, self,nil, nil );
 	
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 	
