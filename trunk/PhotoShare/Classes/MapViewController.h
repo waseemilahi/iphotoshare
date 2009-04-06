@@ -23,8 +23,10 @@ IBOutlet UILabel *mapLabel;
 	MapView* mapView;
 	BOOL isLocating;
 BOOL wasFound;
+	int count;
 }
 - (IBAction) showMap: (id) sender;
 - (IBAction) locate: (id) sender;
+- (IBAction) backToLocate:(id)sender;
 
 @end

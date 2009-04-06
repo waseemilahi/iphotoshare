@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @implementation MapViewController
@@ -26,9 +27,32 @@
     return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)backToLocate:(id)sender
+{
+	if(count >0)
+	{
+		//code goes here.
+		CATransition *myTransition = [ CATransition animation];
+		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+		myTransition.type = kCATransitionPush;
+		myTransition.subtype = kCATransitionFromLeft;
+		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
+		//[tabBarController.view addSubview: [tabBarController.viewControllers objectAtIndex:4]];
+		//[tabBarController.view removeFromSuperview ];
+		
+		[[self.view.subviews lastObject] removeFromSuperview];
+		
+		count--;
+	}	
+	
+}
+
+
 - (void)showMap: (id) sender{
-	mapView = [[[MapView alloc] initWithFrame:
-					 [[UIScreen mainScreen] applicationFrame]] autorelease];
+	count++;
+	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 45,self.view.bounds.size.width ,375)];
+//					 [[UIScreen mainScreen] applicationFrame]] autorelease];
 	//[self.tabBarController.selectedViewController.view release];
 	[self.view addSubview:mapView];
 	

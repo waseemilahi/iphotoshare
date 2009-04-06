@@ -20,8 +20,37 @@
 
 - (IBAction)Register:(id)sender
 {
+	[username resignFirstResponder];
+	[password resignFirstResponder];
+	
+	count++;
+	
+	CATransition *myTransition = [ CATransition animation];
+	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+	myTransition.type = kCATransitionPush;
+	myTransition.subtype = kCATransitionFromLeft;
+	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
+	
 	NSURL *url = [ [ NSURL alloc ] initWithString: @"http:flickr.com" ];
-	[ [ UIApplication sharedApplication ] openURL: url];
+	
+	webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 45,self.view.bounds.size.width ,375)];
+	
+	webview.delegate = self;
+	webview.scalesPageToFit = YES;
+	
+	[webview loadRequest: [NSURLRequest requestWithURL:url]];
+	
+	tmpview = [[UIView alloc] init];
+	tmpview = self.view;
+	
+	[self.view addSubview:webview];
+	
+	
+	
+	
+	
+	//[ [ UIApplication sharedApplication ] openURL: url];
 	
 }
 
