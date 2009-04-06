@@ -32,6 +32,7 @@
 		// bring up image grabber
 - (void)takePicture: (id) sender{
 			
+	
 		if([UIImagePickerController isSourceTypeAvailable:
 			UIImagePickerControllerSourceTypeCamera]) { //<label id="code.imagepicker.sourceType"/>
 			self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -40,7 +41,8 @@
 			UIImagePickerControllerSourceTypePhotoLibrary;
 		}
 		self.imagePicker.allowsImageEditing = YES; //<label id="code.imagepicker.allowsEditing"/>
-		[self presentModalViewController:self.imagePicker animated:YES]; //<label id="code.imagepicker.present.modal"/>
+		
+	[self presentModalViewController:self.imagePicker animated:YES]; //<label id="code.imagepicker.present.modal"/>
 //	}
 }
 
@@ -83,6 +85,8 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	
+	
  if([UIImagePickerController isSourceTypeAvailable:
  UIImagePickerControllerSourceTypeCamera]) { //<label id="code.imagepicker.sourceType"/>
  self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -91,8 +95,9 @@
  UIImagePickerControllerSourceTypePhotoLibrary;
  }
  self.imagePicker.allowsImageEditing = YES; //<label id="code.imagepicker.allowsEditing"/>
+	
  [self presentModalViewController:self.imagePicker animated:YES];
- 
+
 }
 /*
 - (void) imagePickerController:(UIImagePickerController *)picker

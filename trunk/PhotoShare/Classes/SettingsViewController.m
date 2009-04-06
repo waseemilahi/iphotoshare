@@ -28,7 +28,7 @@
 	CATransition *myTransition = [ CATransition animation];
 	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
 	myTransition.type = kCATransitionPush;
-	myTransition.subtype = kCATransitionFromLeft;
+	myTransition.subtype = kCATransitionFromRight;
 	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
 	
@@ -88,6 +88,14 @@
 
 	count++;
 	
+	CATransition *myTransition = [ CATransition animation];
+	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+	myTransition.type = kCATransitionPush;
+	myTransition.subtype = kCATransitionFromRight;
+	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
+	
+	
 		flickrapi *flickr = [[flickrapi alloc] init];
 		
 		[flickr addParam:@"test3" withValue:@"value1"];
@@ -105,7 +113,7 @@
 		NSLog([flickr getLoginURL]);
 		NSLog([flickr getParamList]);
 	
-	
+		
 		webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
 		webview.delegate = self;
