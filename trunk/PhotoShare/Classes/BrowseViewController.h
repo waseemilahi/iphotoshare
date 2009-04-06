@@ -7,19 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "flickrapi.h"
 
-
-@interface BrowseViewController : UIViewController <UIImagePickerControllerDelegate>{
+@interface BrowseViewController : UIViewController <UIImagePickerControllerDelegate> {
 	
 	IBOutlet UIImageView *imageView;
 	IBOutlet UILabel *pictureLabel;
 	IBOutlet UIImagePickerController *imagePicker;
 	
-
+	//temporary, for testing:
+	//IBOutlet UIWebView *webView;
+	
+	IBOutlet flickrapi *flickr;
 }
 
 @property (nonatomic, retain) UIImagePickerController *imagePicker;
 @property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, retain) flickrapi *flickr;
+
+//for testing:
+//@property (nonatomic, retain) UIWebView *webView;	
 
 - (IBAction) showPicture: (id) sender;
 

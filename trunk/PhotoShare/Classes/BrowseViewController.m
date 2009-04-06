@@ -16,6 +16,11 @@
 
 @synthesize imageView;
 @synthesize imagePicker;
+@synthesize flickr;
+
+//for testing:
+//@synthesize webView;
+
 - (void)showPicture: (id) sender{
 	// create the request
 	/*
@@ -26,58 +31,41 @@
 
 	XMLtoObject *xo;
 	*/
-	NSURL *url = [NSURL URLWithString: @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=58f1ca1516e35837c26bad2af015ba47&lat=40.7&lon=-74&api_sig=08ef7d06192941dd91b6e4e858b15762"];
+	
+	flickrapi *
+	FLICKR = [[flickrapi alloc] init];
+	
+	NSArray *photos = [FLICKR getPhotos];
+	/*
+	/*
+	NSURL *url = [NSURL URLWithString: @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f46e7a1681dd43b589b442ada0bd5163&lat=40.7&lon=-74&api_sig=2b6b7498d315496df10afea749ab39a8"];
 	NSString *class = @"photo";
+	
 	//NSError **err;
 	
 	//[xo parseXMLAtURL:url toObject:class parseError:err];
-	/*
-	 NSURL *url = [NSURL URLWithString: @"http://localhost/contacts.xml"];
-	 XMLToObjectParser *myParser = [[XMLToObjectParser alloc] parseXMLAtURL:url toObject:@"Contact" parseError:nil];
-	 */
 	
-	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:class parseError:nil];
-	if ([[parser items] count] != 0) {
-		//[[parser items] 
-		
-		//NSString* imageURL = @"http://www.google.com/intl/en_ALL/images/logo.gif";
-		NSString* imageURL = [(photo *)[[parser items] objectAtIndex:0] url];
-		//for (id item in [parser items]) {	
-		//	NSString* imageURL = [(photo *)item url];
-			NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];
-		
-			UIImage* image = [[UIImage alloc] initWithData:imageData];
-			[imageView setImage:image];
-			[imageData release];
-			[image release];
-		//}
-	}
-	/*
-	flickrapi *flickr = [[flickrapi alloc] init];
+	// NSURL *url = [NSURL URLWithString: @"http://localhost/contacts.xml"];
+	// XMLToObjectParser *myParser = [[XMLToObjectParser alloc] parseXMLAtURL:url toObject:@"Contact" parseError:nil];
+	 
 	
-	[flickr addParam:@"test3" withValue:@"value1"];
-	[flickr addParam:@"test2" withValue:@"value2"];
-	[flickr addParam:@"test4" withValue:@"value3"];
-	[flickr addParam:@"aaaaa" withValue:@"value4"];
-	[flickr addParam:@"zzzzz" withValue:@"value5"];
-	
-	NSLog([flickr getParamList]);
-	NSLog([flickr getSig]);
-	
-	NSLog([flickr getFrob]);
-	NSLog([flickr getParamList]);
-	
-	NSLog([flickr getLoginURL]);
-	NSLog([flickr getParamList]);
-	
-	
-	NSLog([flickr doLogin]);
-	
-	
-	NSLog([flickr getToken]);
-	NSLog([flickr getParamList]);
+	//XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:class parseError:nil];
 	*/
+
+	if ([photos count] != 0) {
+		NSString* imageURL = [(photo *)[photos objectAtIndex:0] url];
+		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];
 	
+		UIImage* image = [[UIImage alloc] initWithData:imageData];
+		[imageView setImage:image];
+		[imageData release];
+		[image release];
+	}
+	
+	NSString *USERNAME = @"";
+	NSString *PASSWORD = @"";
+	
+	NSLog([FLICKR loginAs:USERNAME withPassword:PASSWORD]);
 	
 	/*
 	// create the connection with the request
@@ -174,14 +162,17 @@
     // Release anything that's not essential, such as cached data
 }
 
-
 - (void)dealloc {
 	
 	self.imageView = nil;
 	self.imagePicker = nil;
+
+	//self.webView = nil;
+
 	[pictureLabel release];
 	[imageView release];
 	[imagePicker release];
+
     [super dealloc];
 }
 
