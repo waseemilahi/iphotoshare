@@ -283,6 +283,37 @@
 			9E2816680F89B41600F06AD4 /* PBXTextBookmark */ = 9E2816680F89B41600F06AD4 /* PBXTextBookmark */;
 			9E2816690F89B41600F06AD4 /* PBXTextBookmark */ = 9E2816690F89B41600F06AD4 /* PBXTextBookmark */;
 			9E28166A0F89B41600F06AD4 /* PBXTextBookmark */ = 9E28166A0F89B41600F06AD4 /* PBXTextBookmark */;
+			9E2816750F89B98900F06AD4 /* PBXTextBookmark */ = 9E2816750F89B98900F06AD4 /* PBXTextBookmark */;
+			9E2816760F89B98900F06AD4 /* PBXTextBookmark */ = 9E2816760F89B98900F06AD4 /* PBXTextBookmark */;
+			9E2816770F89B98900F06AD4 /* PBXTextBookmark */ = 9E2816770F89B98900F06AD4 /* PBXTextBookmark */;
+			9E28167A0F89B9B200F06AD4 /* PBXTextBookmark */ = 9E28167A0F89B9B200F06AD4 /* PBXTextBookmark */;
+			9E28167C0F89BA0C00F06AD4 /* PBXTextBookmark */ = 9E28167C0F89BA0C00F06AD4 /* PBXTextBookmark */;
+			9E28167E0F89BA3F00F06AD4 /* PBXTextBookmark */ = 9E28167E0F89BA3F00F06AD4 /* PBXTextBookmark */;
+			9E2816800F89BA5D00F06AD4 /* PBXTextBookmark */ = 9E2816800F89BA5D00F06AD4 /* PBXTextBookmark */;
+			9E2816820F89BA8500F06AD4 /* PBXTextBookmark */ = 9E2816820F89BA8500F06AD4 /* PBXTextBookmark */;
+			9E2816850F89BAE500F06AD4 /* PBXTextBookmark */ = 9E2816850F89BAE500F06AD4 /* PBXTextBookmark */;
+			9E2816860F89BAE500F06AD4 /* PBXTextBookmark */ = 9E2816860F89BAE500F06AD4 /* PBXTextBookmark */;
+			9E2816870F89BAE500F06AD4 /* PBXTextBookmark */ = 9E2816870F89BAE500F06AD4 /* PBXTextBookmark */;
+			9E2816880F89BAE500F06AD4 /* PBXTextBookmark */ = 9E2816880F89BAE500F06AD4 /* PBXTextBookmark */;
+			9E2816890F89BAE500F06AD4 /* PBXTextBookmark */ = 9E2816890F89BAE500F06AD4 /* PBXTextBookmark */;
+			9E28168A0F89BAE500F06AD4 /* PBXTextBookmark */ = 9E28168A0F89BAE500F06AD4 /* PBXTextBookmark */;
+			9E28168C0F89BB1A00F06AD4 /* PBXTextBookmark */ = 9E28168C0F89BB1A00F06AD4 /* PBXTextBookmark */;
+			9E28168D0F89BB1A00F06AD4 /* PBXTextBookmark */ = 9E28168D0F89BB1A00F06AD4 /* PBXTextBookmark */;
+			9E28168E0F89BB1A00F06AD4 /* PBXTextBookmark */ = 9E28168E0F89BB1A00F06AD4 /* PBXTextBookmark */;
+			9E2816900F89BB4B00F06AD4 /* PBXTextBookmark */ = 9E2816900F89BB4B00F06AD4 /* PBXTextBookmark */;
+			9E2816920F89BB6200F06AD4 /* PBXTextBookmark */ = 9E2816920F89BB6200F06AD4 /* PBXTextBookmark */;
+			9E2816950F89BBA500F06AD4 /* PBXTextBookmark */ = 9E2816950F89BBA500F06AD4 /* PBXTextBookmark */;
+			9E2816990F89BC8500F06AD4 /* PBXTextBookmark */ = 9E2816990F89BC8500F06AD4 /* PBXTextBookmark */;
+			9E28169B0F89BCCB00F06AD4 /* PBXTextBookmark */ = 9E28169B0F89BCCB00F06AD4 /* PBXTextBookmark */;
+			9E28169C0F89BCCB00F06AD4 /* PBXTextBookmark */ = 9E28169C0F89BCCB00F06AD4 /* PBXTextBookmark */;
+			9E28169D0F89BCCB00F06AD4 /* PBXTextBookmark */ = 9E28169D0F89BCCB00F06AD4 /* PBXTextBookmark */;
+			9E28169E0F89BCCB00F06AD4 /* PBXTextBookmark */ = 9E28169E0F89BCCB00F06AD4 /* PBXTextBookmark */;
+			9E2816A00F89BCD300F06AD4 /* PBXTextBookmark */ = 9E2816A00F89BCD300F06AD4 /* PBXTextBookmark */;
+			9E2816A10F89BCD300F06AD4 /* PBXTextBookmark */ = 9E2816A10F89BCD300F06AD4 /* PBXTextBookmark */;
+			9E2816A20F89BCD300F06AD4 /* PBXTextBookmark */ = 9E2816A20F89BCD300F06AD4 /* PBXTextBookmark */;
+			9E2816A40F89BD1500F06AD4 /* PBXTextBookmark */ = 9E2816A40F89BD1500F06AD4 /* PBXTextBookmark */;
+			9E2816A50F89BD1500F06AD4 /* PBXTextBookmark */ = 9E2816A50F89BD1500F06AD4 /* PBXTextBookmark */;
+			9E2816A60F89BD1500F06AD4 /* PBXTextBookmark */ = 9E2816A60F89BD1500F06AD4 /* PBXTextBookmark */;
 			9E457CB30F68F3A9004A0967 = 9E457CB30F68F3A9004A0967 /* PBXBookmark */;
 			9E457CB40F68F3A9004A0967 = 9E457CB40F68F3A9004A0967 /* PBXBookmark */;
 			9E457CB50F68F3A9004A0967 = 9E457CB50F68F3A9004A0967 /* PBXBookmark */;
@@ -416,7 +447,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {798, 2338}}";
 			sepNavSelRange = "{2045, 0}";
-			sepNavVisRange = "{1246, 960}";
+			sepNavVisRange = "{1246, 1016}";
 			sepNavWindowFrame = "{{64, 0}, {1094, 878}}";
 		};
 	};
@@ -466,8 +497,8 @@
 		isa = PBXTextBookmark;
 		comments = "error: request for member 'vew' in something not a structure or union";
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
-		rLen = 1;
-		rLoc = 39;
+		rLen = 0;
+		rLoc = 44;
 		rType = 1;
 	};
 	9E2815DA0F89B27600F06AD4 /* PBXTextBookmark */ = {
@@ -475,7 +506,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 40";
 		rLen = 1;
-		rLoc = 1106;
+		rLoc = 1175;
 		rType = 0;
 		vrLen = 481;
 		vrLoc = 1055;
@@ -635,7 +666,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 34";
 		rLen = 0;
-		rLoc = 771;
+		rLoc = 749;
 		rType = 0;
 		vrLen = 859;
 		vrLoc = 47;
@@ -645,7 +676,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 76";
 		rLen = 0;
-		rLoc = 1739;
+		rLoc = 1818;
 		rType = 0;
 		vrLen = 948;
 		vrLoc = 1244;
@@ -695,7 +726,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 44";
 		rLen = 0;
-		rLoc = 2208;
+		rLoc = 2287;
 		rType = 0;
 		vrLen = 720;
 		vrLoc = 151;
@@ -765,7 +796,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 24";
 		rLen = 0;
-		rLoc = 781;
+		rLoc = 749;
 		rType = 0;
 		vrLen = 488;
 		vrLoc = 0;
@@ -775,7 +806,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 94";
 		rLen = 0;
-		rLoc = 3685;
+		rLoc = 3764;
 		rType = 0;
 		vrLen = 859;
 		vrLoc = 1570;
@@ -785,7 +816,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 22";
 		rLen = 0;
-		rLoc = 613;
+		rLoc = 626;
 		rType = 0;
 		vrLen = 519;
 		vrLoc = 0;
@@ -795,7 +826,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 27";
 		rLen = 0;
-		rLoc = 518;
+		rLoc = 498;
 		rType = 0;
 		vrLen = 761;
 		vrLoc = 191;
@@ -855,7 +886,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 26";
 		rLen = 0;
-		rLoc = 667;
+		rLoc = 680;
 		rType = 0;
 		vrLen = 557;
 		vrLoc = 0;
@@ -875,7 +906,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 30";
 		rLen = 0;
-		rLoc = 535;
+		rLoc = 515;
 		rType = 0;
 		vrLen = 823;
 		vrLoc = 230;
@@ -905,7 +936,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 30";
 		rLen = 0;
-		rLoc = 535;
+		rLoc = 515;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 0;
@@ -935,7 +966,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 30";
 		rLen = 0;
-		rLoc = 535;
+		rLoc = 515;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 0;
@@ -985,7 +1016,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 37";
 		rLen = 0;
-		rLoc = 804;
+		rLoc = 801;
 		rType = 0;
 		vrLen = 936;
 		vrLoc = 221;
@@ -995,7 +1026,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 22";
 		rLen = 0;
-		rLoc = 613;
+		rLoc = 626;
 		rType = 0;
 		vrLen = 531;
 		vrLoc = 0;
@@ -1005,7 +1036,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 25";
 		rLen = 0;
-		rLoc = 518;
+		rLoc = 498;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 221;
@@ -1035,7 +1066,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 150";
 		rLen = 0;
-		rLoc = 2095;
+		rLoc = 2174;
 		rType = 0;
 		vrLen = 953;
 		vrLoc = 4287;
@@ -1055,7 +1086,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 33";
 		rLen = 0;
-		rLoc = 906;
+		rLoc = 874;
 		rType = 0;
 		vrLen = 694;
 		vrLoc = 0;
@@ -1075,7 +1106,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 20";
 		rLen = 0;
-		rLoc = 575;
+		rLoc = 588;
 		rType = 0;
 		vrLen = 766;
 		vrLoc = 0;
@@ -1095,7 +1126,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 25";
 		rLen = 0;
-		rLoc = 613;
+		rLoc = 626;
 		rType = 0;
 		vrLen = 801;
 		vrLoc = 0;
@@ -1105,7 +1136,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 55";
 		rLen = 48;
-		rLoc = 1244;
+		rLoc = 1323;
 		rType = 0;
 		vrLen = 964;
 		vrLoc = 1034;
@@ -1135,7 +1166,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 55";
 		rLen = 48;
-		rLoc = 1244;
+		rLoc = 1323;
 		rType = 0;
 		vrLen = 1198;
 		vrLoc = 672;
@@ -1175,7 +1206,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 73";
 		rLen = 0;
-		rLoc = 1739;
+		rLoc = 1818;
 		rType = 0;
 		vrLen = 946;
 		vrLoc = 1205;
@@ -1275,7 +1306,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 32";
 		rLen = 48;
-		rLoc = 687;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 787;
 		vrLoc = 0;
@@ -1305,7 +1336,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 45";
 		rLen = 0;
-		rLoc = 1241;
+		rLoc = 1320;
 		rType = 0;
 		vrLen = 1320;
 		vrLoc = 534;
@@ -1335,7 +1366,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 32";
 		rLen = 48;
-		rLoc = 687;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 0;
@@ -1345,7 +1376,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 72";
 		rLen = 0;
-		rLoc = 1903;
+		rLoc = 1982;
 		rType = 0;
 		vrLen = 893;
 		vrLoc = 1151;
@@ -1365,7 +1396,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 72";
 		rLen = 0;
-		rLoc = 1997;
+		rLoc = 2076;
 		rType = 0;
 		vrLen = 818;
 		vrLoc = 1361;
@@ -1485,7 +1516,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 32";
 		rLen = 48;
-		rLoc = 687;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 787;
 		vrLoc = 0;
@@ -1495,7 +1526,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 72";
 		rLen = 0;
-		rLoc = 1976;
+		rLoc = 2055;
 		rType = 0;
 		vrLen = 905;
 		vrLoc = 1411;
@@ -1515,7 +1546,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 72";
 		rLen = 0;
-		rLoc = 1977;
+		rLoc = 2056;
 		rType = 0;
 		vrLen = 674;
 		vrLoc = 1411;
@@ -1535,7 +1566,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 72";
 		rLen = 0;
-		rLoc = 1999;
+		rLoc = 2078;
 		rType = 0;
 		vrLen = 691;
 		vrLoc = 1411;
@@ -1555,7 +1586,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 72";
 		rLen = 0;
-		rLoc = 1999;
+		rLoc = 2078;
 		rType = 0;
 		vrLen = 794;
 		vrLoc = 1411;
@@ -1585,7 +1616,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 32";
 		rLen = 48;
-		rLoc = 687;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 797;
 		vrLoc = 50;
@@ -1595,7 +1626,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 39";
 		rLen = 0;
-		rLoc = 1107;
+		rLoc = 1176;
 		rType = 0;
 		vrLen = 784;
 		vrLoc = 492;
@@ -1625,7 +1656,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 39";
 		rLen = 0;
-		rLoc = 1107;
+		rLoc = 1176;
 		rType = 0;
 		vrLen = 901;
 		vrLoc = 1223;
@@ -1695,7 +1726,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 39";
 		rLen = 0;
-		rLoc = 1107;
+		rLoc = 1176;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 1223;
@@ -1735,7 +1766,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 39";
 		rLen = 0;
-		rLoc = 1107;
+		rLoc = 1176;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 1223;
@@ -1755,7 +1786,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 39";
 		rLen = 0;
-		rLoc = 1107;
+		rLoc = 1176;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 1223;
@@ -1775,7 +1806,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 60";
 		rLen = 0;
-		rLoc = 1333;
+		rLoc = 1412;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 1223;
@@ -1785,7 +1816,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 32";
 		rLen = 48;
-		rLoc = 687;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 800;
 		vrLoc = 47;
@@ -1795,7 +1826,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 60";
 		rLen = 0;
-		rLoc = 1333;
+		rLoc = 1412;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 1223;
@@ -1805,7 +1836,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 32";
 		rLen = 48;
-		rLoc = 687;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 800;
 		vrLoc = 47;
@@ -1815,7 +1846,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 60";
 		rLen = 0;
-		rLoc = 1342;
+		rLoc = 1421;
 		rType = 0;
 		vrLen = 815;
 		vrLoc = 1223;
@@ -1825,7 +1856,7 @@
 		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
 		name = "SettingsViewController.h: 34";
 		rLen = 0;
-		rLoc = 771;
+		rLoc = 749;
 		rType = 0;
 		vrLen = 859;
 		vrLoc = 47;
@@ -1835,7 +1866,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 76";
 		rLen = 0;
-		rLoc = 1739;
+		rLoc = 1818;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 1241;
@@ -1855,7 +1886,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 76";
 		rLen = 0;
-		rLoc = 1739;
+		rLoc = 1818;
 		rType = 0;
 		vrLen = 948;
 		vrLoc = 1244;
@@ -1869,6 +1900,314 @@
 		rType = 0;
 		vrLen = 960;
 		vrLoc = 1246;
+	};
+	9E2816750F89B98900F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 490C87740F812E33008EF66C /* flickrapi.m */;
+		name = "flickrapi.m: 66";
+		rLen = 0;
+		rLoc = 2045;
+		rType = 0;
+		vrLen = 1016;
+		vrLoc = 1246;
+	};
+	9E2816760F89B98900F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 490C87740F812E33008EF66C /* flickrapi.m */;
+		name = "flickrapi.m: 66";
+		rLen = 0;
+		rLoc = 2045;
+		rType = 0;
+		vrLen = 1016;
+		vrLoc = 1246;
+	};
+	9E2816770F89B98900F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 40";
+		rLen = 0;
+		rLoc = 1175;
+		rType = 0;
+		vrLen = 864;
+		vrLoc = 553;
+	};
+	9E28167A0F89B9B200F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 40";
+		rLen = 0;
+		rLoc = 1175;
+		rType = 0;
+		vrLen = 846;
+		vrLoc = 553;
+	};
+	9E28167C0F89BA0C00F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 40";
+		rLen = 0;
+		rLoc = 1175;
+		rType = 0;
+		vrLen = 878;
+		vrLoc = 553;
+	};
+	9E28167E0F89BA3F00F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 41";
+		rLen = 0;
+		rLoc = 1175;
+		rType = 0;
+		vrLen = 864;
+		vrLoc = 553;
+	};
+	9E2816800F89BA5D00F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 40";
+		rLen = 0;
+		rLoc = 1104;
+		rType = 0;
+		vrLen = 866;
+		vrLoc = 553;
+	};
+	9E2816820F89BA8500F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 41";
+		rLen = 0;
+		rLoc = 1175;
+		rType = 0;
+		vrLen = 856;
+		vrLoc = 553;
+	};
+	9E2816850F89BAE500F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 17";
+		rLen = 0;
+		rLoc = 285;
+		rType = 0;
+		vrLen = 760;
+		vrLoc = 0;
+	};
+	9E2816860F89BAE500F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 19";
+		rLen = 0;
+		rLoc = 463;
+		rType = 0;
+		vrLen = 818;
+		vrLoc = 47;
+	};
+	9E2816870F89BAE500F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 17";
+		rLen = 0;
+		rLoc = 285;
+		rType = 0;
+		vrLen = 760;
+		vrLoc = 0;
+	};
+	9E2816880F89BAE500F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 19";
+		rLen = 0;
+		rLoc = 463;
+		rType = 0;
+		vrLen = 818;
+		vrLoc = 47;
+	};
+	9E2816890F89BAE500F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 17";
+		rLen = 0;
+		rLoc = 285;
+		rType = 0;
+		vrLen = 760;
+		vrLoc = 0;
+	};
+	9E28168A0F89BAE500F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 19";
+		rLen = 0;
+		rLoc = 463;
+		rType = 0;
+		vrLen = 813;
+		vrLoc = 47;
+	};
+	9E28168C0F89BB1A00F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 19";
+		rLen = 0;
+		rLoc = 463;
+		rType = 0;
+		vrLen = 813;
+		vrLoc = 47;
+	};
+	9E28168D0F89BB1A00F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 19";
+		rLen = 0;
+		rLoc = 463;
+		rType = 0;
+		vrLen = 813;
+		vrLoc = 47;
+	};
+	9E28168E0F89BB1A00F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 41";
+		rLen = 0;
+		rLoc = 1175;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 493;
+	};
+	9E2816900F89BB4B00F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 40";
+		rLen = 0;
+		rLoc = 1104;
+		rType = 0;
+		vrLen = 791;
+		vrLoc = 493;
+	};
+	9E2816920F89BB6200F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 40";
+		rLen = 0;
+		rLoc = 1104;
+		rType = 0;
+		vrLen = 767;
+		vrLoc = 493;
+	};
+	9E2816950F89BBA500F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 40";
+		rLen = 0;
+		rLoc = 1136;
+		rType = 0;
+		vrLen = 753;
+		vrLoc = 493;
+	};
+	9E2816990F89BC8500F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 40";
+		rLen = 0;
+		rLoc = 1106;
+		rType = 0;
+		vrLen = 732;
+		vrLoc = 493;
+	};
+	9E28169B0F89BCCB00F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 43";
+		rLen = 0;
+		rLoc = 1176;
+		rType = 0;
+		vrLen = 500;
+		vrLoc = 1035;
+	};
+	9E28169C0F89BCCB00F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: syntax error before '=' token";
+		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
+		rLen = 1;
+		rLoc = 18;
+		rType = 1;
+	};
+	9E28169D0F89BCCB00F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 43";
+		rLen = 0;
+		rLoc = 1176;
+		rType = 0;
+		vrLen = 500;
+		vrLoc = 1035;
+	};
+	9E28169E0F89BCCB00F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 19";
+		rLen = 13;
+		rLoc = 441;
+		rType = 0;
+		vrLen = 655;
+		vrLoc = 47;
+	};
+	9E2816A00F89BCD300F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 40";
+		rLen = 0;
+		rLoc = 1106;
+		rType = 0;
+		vrLen = 944;
+		vrLoc = 0;
+	};
+	9E2816A10F89BCD300F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 40";
+		rLen = 0;
+		rLoc = 1106;
+		rType = 0;
+		vrLen = 944;
+		vrLoc = 0;
+	};
+	9E2816A20F89BCD300F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 19";
+		rLen = 0;
+		rLoc = 452;
+		rType = 0;
+		vrLen = 748;
+		vrLoc = 3;
+	};
+	9E2816A40F89BD1500F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 19";
+		rLen = 0;
+		rLoc = 452;
+		rType = 0;
+		vrLen = 747;
+		vrLoc = 3;
+	};
+	9E2816A50F89BD1500F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */;
+		name = "SettingsViewController.h: 19";
+		rLen = 0;
+		rLoc = 452;
+		rType = 0;
+		vrLen = 747;
+		vrLoc = 3;
+	};
+	9E2816A60F89BD1500F06AD4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 45";
+		rLen = 0;
+		rLoc = 1175;
+		rType = 0;
+		vrLen = 853;
+		vrLoc = 367;
 	};
 	9E457CB30F68F3A9004A0967 /* PBXBookmark */ = {
 		isa = PBXBookmark;
@@ -2142,17 +2481,17 @@
 	};
 	9E7B9A720F64BFBB0025D849 /* SettingsViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {780, 560}}";
-			sepNavSelRange = "{771, 0}";
-			sepNavVisRange = "{47, 859}";
+			sepNavIntBoundsRect = "{{0, 0}, {780, 574}}";
+			sepNavSelRange = "{452, 0}";
+			sepNavVisRange = "{3, 747}";
 			sepNavWindowFrame = "{{411, 0}, {1094, 878}}";
 		};
 	};
 	9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {933, 2072}}";
-			sepNavSelRange = "{1107, 0}";
-			sepNavVisRange = "{1055, 493}";
+			sepNavIntBoundsRect = "{{0, 0}, {733, 2254}}";
+			sepNavSelRange = "{1175, 0}";
+			sepNavVisRange = "{367, 853}";
 			sepNavWindowFrame = "{{338, 0}, {1094, 878}}";
 		};
 	};
@@ -2338,7 +2677,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 34";
 		rLen = 0;
-		rLoc = 2208;
+		rLoc = 2287;
 		rType = 0;
 		vrLen = 1067;
 		vrLoc = 151;
@@ -2522,7 +2861,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 34";
 		rLen = 0;
-		rLoc = 2208;
+		rLoc = 2287;
 		rType = 0;
 		vrLen = 1067;
 		vrLoc = 151;

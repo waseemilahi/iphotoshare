@@ -14,7 +14,7 @@
 @implementation SettingsViewController
 
 @synthesize webview;
-@synthesize tmpview;
+
 @synthesize imageView;
 @synthesize imagePicker;
 
@@ -27,6 +27,8 @@
 
 - (IBAction)AgainSignIn:(id)sender
 {
+	if(count >0)
+	{
 	//code goes here.
 	CATransition *myTransition = [ CATransition animation];
 	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
@@ -37,7 +39,10 @@
 	//[tabBarController.view addSubview: [tabBarController.viewControllers objectAtIndex:4]];
 	//[tabBarController.view removeFromSuperview ];
 	
-	
+	[[self.view.subviews lastObject] removeFromSuperview];
+		
+		count--;
+	}	
 	
 }
 
@@ -54,6 +59,7 @@
 	//code goes here.	
 	
 
+	count++;
 	
 		flickrapi *flickr = [[flickrapi alloc] init];
 		
