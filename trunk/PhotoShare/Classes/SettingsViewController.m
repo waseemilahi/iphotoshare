@@ -7,9 +7,15 @@
 //
 
 #import "SettingsViewController.h"
+#import <QuartzCore/QuartzCore.h>
+
 
 
 @implementation SettingsViewController
+
+@synthesize webview;
+@synthesize imageView;
+@synthesize imagePicker;
 
 - (IBAction)Register:(id)sender
 {
@@ -18,11 +24,57 @@
 	
 }
 
+- (IBAction)AgainSignIn:(id)sender
+{
+	//code goes here.
+	CATransition *myTransition = [ CATransition animation];
+	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+	myTransition.type = kCATransitionPush;
+	myTransition.subtype = kCATransitionFromLeft;
+	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ; 
+	//[tabBarController.view addSubview: [tabBarController.viewControllers objectAtIndex:4]];
+	//[tabBarController.view removeFromSuperview ];
+	
+	
+}
 - (IBAction)signIn:(id)sender
 {
 	[username resignFirstResponder];
 	[password resignFirstResponder];
 	//code goes here.	
+	
+
+	
+		flickrapi *flickr = [[flickrapi alloc] init];
+		
+		[flickr addParam:@"test3" withValue:@"value1"];
+		[flickr addParam:@"test2" withValue:@"value2"];
+		[flickr addParam:@"test4" withValue:@"value3"];
+		[flickr addParam:@"aaaaa" withValue:@"value4"];
+		[flickr addParam:@"zzzzz" withValue:@"value5"];
+		
+		NSLog([flickr getParamList]);
+		NSLog([flickr getSig]);
+		
+		NSLog([flickr getFrob]);
+		NSLog([flickr getParamList]);
+		
+		NSLog([flickr getLoginURL]);
+		NSLog([flickr getParamList]);
+		
+		
+		
+	
+		webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 45,self.view.bounds.size.width ,375)];
+	
+		webview.delegate = self;
+		webview.scalesPageToFit = YES;
+	
+		[webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:[flickr getLoginURL]]]];
+	
+	
+		[self.view addSubview:webview];
 	
 }
 
@@ -78,6 +130,7 @@
     [super dealloc];
 	[username release];
 	[password release];
+	[webview release];
 }
 
 

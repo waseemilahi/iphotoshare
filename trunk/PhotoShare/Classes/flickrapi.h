@@ -4,20 +4,23 @@
 #define APIKEY @"7aa8298476e07cb421f8cc396e655978"
 #define SECRET @"8db5a9f831e6a766"
 
-@interface flickrapi : NSObject {
+@interface flickrapi : NSObject <UIWebViewDelegate> {
 	NSMutableString *FROB;
 	NSMutableString *TOKEN;
 	NSMutableDictionary *params;
+	UIWebView *webview;
 }
 
 @property (nonatomic, retain) NSMutableString *FROB;
 @property (nonatomic, retain) NSMutableString *TOKEN;
+@property (nonatomic,retain) UIWebView *webview;
 
 -(void)addParam:(NSMutableString *)key withValue:(NSMutableString *)value;
 -(void)clearParams;
 
 -(NSMutableString *)getFrob;
 -(NSMutableString *)getLoginURL;
+
 -(NSMutableString *)doLogin;
 -(NSMutableString *)getToken;
 

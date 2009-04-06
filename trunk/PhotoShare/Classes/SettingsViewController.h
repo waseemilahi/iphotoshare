@@ -7,16 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XMLtoObject.h"
+#import "flickrapi.h"
 
 
-@interface SettingsViewController : UIViewController <UITextFieldDelegate>{
+@interface SettingsViewController : UIViewController <UIImagePickerControllerDelegate, UITextFieldDelegate , UIWebViewDelegate>{
 
 	IBOutlet UITextField *username;
 	IBOutlet UITextField *password;
+	UIWebView *webview;
+	
+	IBOutlet UIImageView *imageView;
+	IBOutlet UILabel *pictureLabel;
+	IBOutlet UIImagePickerController *imagePicker;
+	
 }
 
 - (IBAction) signIn:(id)sender;
 
 - (IBAction) Register:(id)sender;
+
+- (IBAction) AgainSignIn:(id)sender;
+
+@property (nonatomic,retain) UIWebView *webview;
+
+@property (nonatomic, retain) UIImagePickerController *imagePicker;
+@property (nonatomic, retain) UIImageView *imageView;
 
 @end

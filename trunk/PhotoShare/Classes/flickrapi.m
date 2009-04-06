@@ -6,6 +6,7 @@
 
 @synthesize FROB;
 @synthesize TOKEN;
+@synthesize webview;
 
 -(void)addParam: (NSMutableString *)key withValue:(NSMutableString *)value {
 	if (!params) params = [[NSMutableDictionary alloc] init];
@@ -58,7 +59,7 @@
 	return [NSString stringWithFormat:@"http://www.flickr.com/services/auth/%@", [self getParamList]];
 }
 
--(NSMutableString *)doLogin {
+-( NSMutableString *)doLogin {
 	////[self getFrob];
 	NSURL *url = [NSURL URLWithString: [self getLoginURL]];
 	
