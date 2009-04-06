@@ -51,7 +51,7 @@
 
 - (void)showMap: (id) sender{
 	count++;
-	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 45,self.view.bounds.size.width ,375)];
+	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 //					 [[UIScreen mainScreen] applicationFrame]] autorelease];
 	//[self.tabBarController.selectedViewController.view release];
 	[self.view addSubview:mapView];

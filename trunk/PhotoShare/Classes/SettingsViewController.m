@@ -34,7 +34,7 @@
 	
 	NSURL *url = [ [ NSURL alloc ] initWithString: @"http:flickr.com" ];
 	
-	webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 45,self.view.bounds.size.width ,375)];
+	webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
 	webview.delegate = self;
 	webview.scalesPageToFit = YES;
@@ -108,7 +108,7 @@
 		NSLog([flickr getParamList]);
 	
 	
-		webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 45,self.view.bounds.size.width ,375)];
+		webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
 		webview.delegate = self;
 		webview.scalesPageToFit = YES;
