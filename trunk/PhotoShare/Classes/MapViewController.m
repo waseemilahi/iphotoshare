@@ -43,6 +43,10 @@
 		
 		[[self.view.subviews lastObject] removeFromSuperview];
 		
+		[self setTitle:@"Map"];
+		
+		[locmanager startUpdatingLocation];
+		
 		count--;
 	}	
 	
@@ -52,6 +56,7 @@
 - (void)showMap: (id) sender{
 	count++;
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
+	[self setTitle:@"Map"];
 //					 [[UIScreen mainScreen] applicationFrame]] autorelease];
 	//[self.tabBarController.selectedViewController.view release];
 	[self.view addSubview:mapView];
@@ -87,7 +92,7 @@
 	[inputFormatter setDateFormat:@"HH:mm:ss.SSSS"]; 
 	NSDate *currentdate = [NSDate date];//[(CLLocation *)[locations lastObject] timestamp]; 
 	lastupdate.text = [inputFormatter stringFromDate:currentdate];
-
+	
 	
 }
 
@@ -157,7 +162,13 @@
 - (void)dealloc {
 	[locmanager release];
 	[mapView release];
-    [super dealloc];
+	[locations release];
+	[longitude release];
+	[latitude release];
+	[lastupdate release];
+	[locLabel release];
+	[mapLabel release];
+	[super dealloc];
 }
 
 

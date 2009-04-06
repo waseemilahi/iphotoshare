@@ -147,6 +147,8 @@ imagePickerController.delegate = self;
 - (void)dealloc {
     self.imageView = nil;
 	self.imagePicker = nil;
+	[imagePicker release];
+	[imageView release];
 	[super dealloc];
 }
 

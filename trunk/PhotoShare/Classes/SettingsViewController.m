@@ -32,7 +32,7 @@
 	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
 	
-	NSURL *url = [ [ NSURL alloc ] initWithString: @"http:flickr.com" ];
+	NSURL *url = [ [ NSURL alloc ] initWithString: @"http://m.flickr.com" ];
 	
 	webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
@@ -41,8 +41,6 @@
 	
 	[webview loadRequest: [NSURLRequest requestWithURL:url]];
 	
-	tmpview = [[UIView alloc] init];
-	tmpview = self.view;
 	
 	[self.view addSubview:webview];
 	
@@ -115,8 +113,6 @@
 	
 		[webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:[flickr getLoginURL]]]];
 	
-	tmpview = [[UIView alloc] init];
-	tmpview = self.view;
 	
 		[self.view addSubview:webview];
 	
@@ -127,12 +123,13 @@
 	return YES;
 }
 
-
+/*
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+ */
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -171,10 +168,14 @@
 
 
 - (void)dealloc {
-    [super dealloc];
-	[username release];
+   	[username release];
 	[password release];
 	[webview release];
+	
+	[pictureLabel release];
+	[imagePicker release];
+	[imageView release];
+	[super dealloc];
 }
 
 

@@ -17,8 +17,7 @@
 	IBOutlet UITextField *password;
 	UIWebView *webview;
 	int count ;
-	UIView *tmpview;
-	
+		
 	IBOutlet UIImageView *imageView;
 	IBOutlet UILabel *pictureLabel;
 	IBOutlet UIImagePickerController *imagePicker;

@@ -179,6 +179,9 @@
 	
 	self.imageView = nil;
 	self.imagePicker = nil;
+	[pictureLabel release];
+	[imageView release];
+	[imagePicker release];
     [super dealloc];
 }
 

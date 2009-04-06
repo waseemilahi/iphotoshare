@@ -6,7 +6,7 @@
 
 @synthesize FROB;
 @synthesize TOKEN;
-@synthesize webview;
+
 
 -(void)addParam: (NSMutableString *)key withValue:(NSMutableString *)value {
 	if (!params) params = [[NSMutableDictionary alloc] init];

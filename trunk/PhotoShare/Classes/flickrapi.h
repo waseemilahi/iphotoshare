@@ -8,12 +8,12 @@
 	NSMutableString *FROB;
 	NSMutableString *TOKEN;
 	NSMutableDictionary *params;
-	UIWebView *webview;
+	
 }
 
 @property (nonatomic, retain) NSMutableString *FROB;
 @property (nonatomic, retain) NSMutableString *TOKEN;
-@property (nonatomic,retain) UIWebView *webview;
+
 
 -(void)addParam:(NSMutableString *)key withValue:(NSMutableString *)value;
 -(void)clearParams;
