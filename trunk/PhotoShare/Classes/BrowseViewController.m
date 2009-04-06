@@ -32,10 +32,10 @@
 	XMLtoObject *xo;
 	*/
 	
-	flickrapi *
-	FLICKR = [[flickrapi alloc] init];
+	//flickrapi *
+	flickr = [[flickrapi alloc] init];
 	
-	NSArray *photos = [FLICKR getPhotos];
+	NSArray *photos = [flickr getPhotos];
 	/*
 	/*
 	NSURL *url = [NSURL URLWithString: @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f46e7a1681dd43b589b442ada0bd5163&lat=40.7&lon=-74&api_sig=2b6b7498d315496df10afea749ab39a8"];
@@ -65,7 +65,7 @@
 	NSString *USERNAME = @"";
 	NSString *PASSWORD = @"";
 	
-	NSLog([FLICKR loginAs:USERNAME withPassword:PASSWORD]);
+	NSLog([flickr loginAs:USERNAME withPassword:PASSWORD]);
 	
 	/*
 	// create the connection with the request
@@ -97,6 +97,7 @@
 	self.imagePicker.allowsImageEditing = YES; //<label id="code.imagepicker.allowsEditing"/>
 	[self presentModalViewController:self.imagePicker animated:YES]; //<label id="code.imagepicker.present.modal"/>
 	 */
+	//[FLICKR retain];
 }
 
 //START:code.PhotoViewController.didCancel
