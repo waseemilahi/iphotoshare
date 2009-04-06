@@ -52,7 +52,7 @@
 			[image release];
 		//}
 	}
-	
+	/*
 	flickrapi *flickr = [[flickrapi alloc] init];
 	
 	[flickr addParam:@"test3" withValue:@"value1"];
@@ -73,7 +73,7 @@
 	
 	NSLog([flickr doLogin]);
 	
-	/*
+	
 	NSLog([flickr getToken]);
 	NSLog([flickr getParamList]);
 	*/

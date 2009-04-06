@@ -14,6 +14,7 @@
 @implementation SettingsViewController
 
 @synthesize webview;
+@synthesize tmpview;
 @synthesize imageView;
 @synthesize imagePicker;
 
@@ -37,7 +38,15 @@
 	//[tabBarController.view removeFromSuperview ];
 	
 	
+	
 }
+
+
+
+
+
+
+
 - (IBAction)signIn:(id)sender
 {
 	[username resignFirstResponder];
@@ -62,9 +71,7 @@
 		
 		NSLog([flickr getLoginURL]);
 		NSLog([flickr getParamList]);
-		
-		
-		
+	
 	
 		webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 45,self.view.bounds.size.width ,375)];
 	
@@ -73,6 +80,8 @@
 	
 		[webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:[flickr getLoginURL]]]];
 	
+	tmpview = [[UIView alloc] init];
+	tmpview = self.view;
 	
 		[self.view addSubview:webview];
 	

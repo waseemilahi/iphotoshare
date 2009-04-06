@@ -68,7 +68,7 @@
 	
 	NSString *xml = [NSString stringWithContentsOfURL:url];
 	
-	NSRange r = [xml rangeOfString:@"<form "];
+	NSRange r = [xml rangeOfString:@"<form> "];
 	xml = [xml substringFromIndex:(NSUInteger)r.location];
 	
 	r = [xml rangeOfString:@"</form>"];

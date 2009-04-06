@@ -16,6 +16,7 @@
 	IBOutlet UITextField *username;
 	IBOutlet UITextField *password;
 	UIWebView *webview;
+	UIView *tmpview;
 	
 	IBOutlet UIImageView *imageView;
 	IBOutlet UILabel *pictureLabel;
@@ -30,6 +31,7 @@
 - (IBAction) AgainSignIn:(id)sender;
 
 @property (nonatomic,retain) UIWebView *webview;
+@property (nonatomic,retain) UIView *tmpview;
 
 @property (nonatomic, retain) UIImagePickerController *imagePicker;
 @property (nonatomic, retain) UIImageView *imageView;
