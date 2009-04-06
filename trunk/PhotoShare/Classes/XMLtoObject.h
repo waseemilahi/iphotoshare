@@ -46,10 +46,12 @@
 @interface form : NSObject {
 	NSMutableDictionary *fields;
 	NSMutableString *action;
+	NSMutableString *parameterlist;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *fields;
 @property (nonatomic, retain) NSMutableString *action;
+@property (nonatomic, retain) NSMutableString *parameterlist;
 
 -(void)clearFields;
 -(void)setFields:(NSMutableDictionary *)fs;

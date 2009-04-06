@@ -39,6 +39,7 @@
 
 @synthesize fields;
 @synthesize action;
+@synthesize parameterlist;
 
 -(void)clearFields {
 	if(fields) [fields release];
@@ -68,17 +69,21 @@
 }
 
 -(NSString *)getURL {
-	NSMutableString *url = @"http://www.flickr.com/";
-	NSMutableString *vals = @"?";
+	NSMutableString *url = [NSMutableString stringWithString:@""];
+	if (parameterlist) [parameterlist release];
+	
+	parameterlist = [NSMutableString stringWithString:@""];
 	
 	for (NSString* field in fields) {
-		if([vals length] > 1) [vals appendString:@"&"];
-		[vals appendString:field];
-		[vals appendString:@"="];
-		[vals appendString:[fields objectForKey:field]];
+		if([parameterlist length] > 0) [parameterlist appendString:@"&"];
+		[parameterlist appendString:field];
+		[parameterlist appendString:@"="];
+		[parameterlist appendString:[fields objectForKey:field]];
 	}
 	[url appendString:action];
-	[url appendString:vals];
+	[url appendString:parameterlist];
+	
+	NSLog(@"url = %@", url);
 	
 	return url;
 }
@@ -114,15 +119,16 @@
 		   toObject:(NSString *)aClassName 
 		 parseError:(NSError **)error
 {
-	
-	NSLog(xml);
+	//NSLog(@"xml string:");
+	//NSLog(xml);
 	
 	[items release];
 	items = [[NSMutableArray alloc] init];
 	
 	className = aClassName;
 	
-	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:[NSData dataWithBytes:(const void *)xml length:[xml length]]];
+	NSData *data = [xml dataUsingEncoding: NSASCIIStringEncoding];
+	NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
 	[parser setDelegate:self];
 	
 	[parser parse];
@@ -205,7 +211,7 @@ didStartElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI
  qualifiedName:(NSString *)qName
 {
-	NSLog(@"Close tag: %@", elementName);
+	NSLog(@"Closing tag: %@", elementName);
 	
 	if([elementName isEqualToString:className]) {
 		
@@ -222,7 +228,9 @@ didStartElement:(NSString *)elementName
 	}
 	else if([elementName isEqualToString:currentNodeName]) {
 		// use key-value coding       
-		[item setValue:currentNodeContent forKey:elementName];
+		//NSLog(@"currentNodeContent: %@", currentNodeContent);
+		NSLog(@"elementName: %@", elementName);
+		//[item setValue:currentNodeContent forKey:elementName];
 		
 		[currentNodeContent release];
 		currentNodeContent = nil;
@@ -230,6 +238,7 @@ didStartElement:(NSString *)elementName
 		[currentNodeName release];
 		currentNodeName = nil;
 	}
+	NSLog(@"Closed tag.");
 }
 
 - (void)parser:(NSXMLParser *)parser
