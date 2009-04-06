@@ -40,6 +40,7 @@
 		NSLog(@"/frob");
 	}
 	
+	[[self FROB] retain];
 	return FROB;
 }
 
@@ -223,7 +224,7 @@
 		NSLog(TOKEN);
 		NSLog(@"/token");
 	}
-	
+	[TOKEN retain];
 	return TOKEN;
 }
 
@@ -288,9 +289,25 @@
 
 
 -(NSArray *)getPhotos {
+	//[self loginAs: @"mkb2014@ymail.com"																								withPassword:@"iivvii"];
+	NSString *F = [self FROB];
+	NSString *T = [self TOKEN];
 	
+	NSLog(@"%@ %@", F, T);
 	
-	NSURL *url = [NSURL URLWithString: @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f46e7a1681dd43b589b442ada0bd5163&lat=40.7&lon=-74&api_sig=2b6b7498d315496df10afea749ab39a8"];
+	[self clearParams];
+	[self addParam:@"method" withValue:@"flickr.photos.search"];
+	[self addParam:@"lat" withValue:@"40.7"];
+	[self addParam:@"lon" withValue:@"-74"];
+	[self addParam:@"api_key" withValue:APIKEY];
+	
+	NSString *sig = [self getSig];
+	
+	[self addParam:@"api_sig" withValue:[NSString stringWithString:sig]];
+	
+	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.flickr.com/services/rest/%@",
+				  [self getParamList]]];
+				  //method=flickr.photos.search&api_key=7aa8298476e07cb421f8cc396e655978&lat=40.7&lon=-74"];
 	
 	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:@"photo" parseError:nil];
 	
