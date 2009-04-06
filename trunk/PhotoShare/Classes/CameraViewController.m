@@ -80,27 +80,21 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+ if([UIImagePickerController isSourceTypeAvailable:
+ UIImagePickerControllerSourceTypeCamera]) { //<label id="code.imagepicker.sourceType"/>
+ self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+ } else {
+ self.imagePicker.sourceType =
+ UIImagePickerControllerSourceTypePhotoLibrary;
+ }
+ self.imagePicker.allowsImageEditing = YES; //<label id="code.imagepicker.allowsEditing"/>
+ [self presentModalViewController:self.imagePicker animated:YES];
  
- // Set up the image picker controller and add it to the view
- imagePickerController = [[UIImagePickerController alloc] init];
-imagePickerController.delegate = self;
-	imagePickerController.sourceType = 
- UIImagePickerControllerSourceTypeCamera;
- [self.view addSubview:imagePickerController.view];
- 
- // Set up the image view and add it to the view but make it hidden
- imageView = [[UIImageView alloc] initWithFrame:[self.view bounds]];
-	
-	
-
- [self.view addSubview:imageView];
- 
-    [super viewDidLoad];
 }
-
+/*
 - (void) imagePickerController:(UIImagePickerController *)picker
 		 didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {

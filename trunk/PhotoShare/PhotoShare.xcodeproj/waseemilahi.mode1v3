@@ -228,8 +228,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -312,12 +310,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>HomeViewController.m</string>
+								<string>CameraViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>HomeViewController.m</string>
+										<string>CameraViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E2817600F89CBCD00F06AD4</string>
+										<string>9E2817720F89CDFB00F06AD4</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -354,7 +354,6 @@
 											<string>9EFE33D00F6A60B30006C877</string>
 											<string>9ECB913E0F6ABA700074FF77</string>
 											<string>9ECB947D0F6AEE5E0074FF77</string>
-											<string>9E8C718E0F8510E400EFB8CC</string>
 											<string>9E8C71950F8510E400EFB8CC</string>
 											<string>9E2815EA0F89B41600F06AD4</string>
 											<string>9E28172B0F89CB1200F06AD4</string>
@@ -368,15 +367,16 @@
 											<string>9E2817330F89CB1200F06AD4</string>
 											<string>9E2817340F89CB1200F06AD4</string>
 											<string>9E2817350F89CB1200F06AD4</string>
-											<string>9E28174A0F89CBCD00F06AD4</string>
 											<string>9E28174B0F89CBCD00F06AD4</string>
 											<string>9E28174C0F89CBCD00F06AD4</string>
 											<string>9E28174D0F89CBCD00F06AD4</string>
-											<string>9E28174E0F89CBCD00F06AD4</string>
 											<string>9E28174F0F89CBCD00F06AD4</string>
 											<string>9E2817500F89CBCD00F06AD4</string>
 											<string>9E2817510F89CBCD00F06AD4</string>
-											<string>9E2815E40F89B41600F06AD4</string>
+											<string>9E2817660F89CD7E00F06AD4</string>
+											<string>9E2817670F89CD7E00F06AD4</string>
+											<string>9E2817680F89CD7E00F06AD4</string>
+											<string>9E2817690F89CD7E00F06AD4</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -612,6 +612,10 @@
 											<string>9E28175D0F89CBCD00F06AD4</string>
 											<string>9E28175E0F89CBCD00F06AD4</string>
 											<string>9E28175F0F89CBCD00F06AD4</string>
+											<string>9E28176A0F89CD7E00F06AD4</string>
+											<string>9E28176B0F89CD7E00F06AD4</string>
+											<string>9E28176C0F89CD7E00F06AD4</string>
+											<string>9E28176D0F89CD7E00F06AD4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -807,7 +811,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>9E2817610F89CBCD00F06AD4</string>
 		<string>9E28166B0F89B41600F06AD4</string>
 		<string>9E28166C0F89B41600F06AD4</string>
 		<string>1C78EAAD065D492600B07095</string>
