@@ -10,13 +10,15 @@
 #import "flickrapi.h"
 
 
-@interface SettingsViewController : UIViewController <UIImagePickerControllerDelegate, UITextFieldDelegate , UIWebViewDelegate, FlickrLoginDelegate>{
+@interface SettingsViewController : UIViewController <UIImagePickerControllerDelegate, UITextFieldDelegate , UIWebViewDelegate, FlickrLoginDelegate >{
 
 	IBOutlet UITextField *username;
 	IBOutlet UITextField *password;
 	UIWebView *webview;
 	int count ;
-		
+	
+	IBOutlet UIViewController *signoutview;
+	
 	IBOutlet UIImageView *imageView;
 	IBOutlet UILabel *pictureLabel;
 	IBOutlet UIImagePickerController *imagePicker;
@@ -26,6 +28,8 @@
 
 - (IBAction) signIn:(id)sender;
 
+- (IBAction) signOut:(id)sender;
+
 - (IBAction) Register:(id)sender;
 
 - (IBAction) AgainSignIn:(id)sender;
@@ -33,6 +37,7 @@
 - (void) didLogin:(BOOL)success;
 
 @property (nonatomic,retain) UIWebView *webview;
+@property (nonatomic,retain) UIViewController *signoutview;
 
 
 @property (nonatomic, retain) UIImagePickerController *imagePicker;

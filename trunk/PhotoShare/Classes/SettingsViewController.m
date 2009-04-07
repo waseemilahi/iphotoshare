@@ -14,7 +14,7 @@
 @implementation SettingsViewController
 
 @synthesize webview;
-
+@synthesize signoutview;
 @synthesize imageView;
 @synthesize imagePicker;
 
@@ -59,6 +59,10 @@
 	if(count >0)
 	{
 	//code goes here.
+		
+		username.text = @"Username";
+		password.text = @"Password";
+		
 	CATransition *myTransition = [ CATransition animation];
 	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
 	myTransition.type = kCATransitionPush;
@@ -75,10 +79,27 @@
 	
 }
 
+- (IBAction)signOut:(id)sender
+{
+/*
+	username.text = @"Username";
+	password.text = @"Password";
 
-
-
-
+	CATransition *myTransition = [ CATransition animation];
+	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+	myTransition.type = kCATransitionPush;
+	myTransition.subtype = kCATransitionFromLeft;
+	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ; 
+	//[tabBarController.view addSubview: [tabBarController.viewControllers objectAtIndex:4]];
+	//[tabBarController.view removeFromSuperview ];
+	
+	[[self.view.subviews lastObject] release];// removeFromSuperview];
+	
+	count = 0;
+ */
+	
+}
 
 
 - (IBAction)signIn:(id)sender
@@ -89,14 +110,14 @@
 	
 
 	count++;
-	
+/*	
 	CATransition *myTransition = [ CATransition animation];
 	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
 	myTransition.type = kCATransitionPush;
 	myTransition.subtype = kCATransitionFromRight;
 	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
-	
+*/	
 	flickr.loginDelegate = self;
 	[flickr loginAs:username.text withPassword:password.text];
 /*
@@ -117,7 +138,7 @@
 		NSLog([flickr getLoginURL]);
 		NSLog([flickr getParamList]);
 	
-		*/
+		
 		webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
 		webview.delegate = self;
@@ -127,7 +148,7 @@
 	
 	
 		[self.view addSubview:webview];
-
+*/
 }
 
 
@@ -135,6 +156,22 @@
 	if (success) {
 		//login succeeded
 		NSLog(@"login succeeded!");
+		
+		count++;
+		
+		CATransition *myTransition = [ CATransition animation];
+		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+		myTransition.type = kCATransitionPush;
+		myTransition.subtype = kCATransitionFromRight;
+		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
+		
+		signoutview = [[UIViewController alloc] initWithNibName:@"SignOut" bundle:nil]; //initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];//initWithRootViewController:self.tabBarController.selectedViewController];
+		
+		//signoutview.opaque = YES;
+		
+		if(signoutview != nil)[self.view addSubview:signoutview.view];
+		
 	} else {
 		//login failed
 		
