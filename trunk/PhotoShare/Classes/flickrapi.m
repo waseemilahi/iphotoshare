@@ -295,7 +295,6 @@
 
 
 -(NSArray *)getPhotos {
-	//[self loginAs: @"mkb2014@ymail.com"																								withPassword:@"iivvii"];
 	NSString *F = [self FROB];
 	NSString *T = [self TOKEN];
 	
