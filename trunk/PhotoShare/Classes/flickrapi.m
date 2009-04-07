@@ -9,6 +9,8 @@
 @synthesize FROB;
 @synthesize TOKEN;
 
+@synthesize loginDelegate;
+
 -(void)addParam: (NSMutableString *)key withValue:(NSMutableString *)value {
 	if (!params) params = [[NSMutableDictionary alloc] init];
 	[params setObject:(NSMutableString *)value forKey:(NSMutableString *)key];
@@ -40,7 +42,7 @@
 		NSLog(@"/frob");
 	}
 	
-	[[self FROB] retain];
+	[FROB retain];
 	return FROB;
 }
 
@@ -64,6 +66,7 @@
 	
 	return [NSString stringWithFormat:@"http://www.flickr.com/services/auth/%@", [self getParamList]];
 }
+
 
 -(NSMutableString *)loginAs:(NSString *)USERNAME withPassword:(NSString *)PASSWORD {
 	
@@ -279,13 +282,16 @@
 		//do nothing
 	} else if ([url isEqualToString:@"http://www.flickr.com/services/auth/"]) {
 		NSLog(@"token: %@", [self getToken:FROB]);
+		if (loginDelegate != NULL) [loginDelegate didLogin:YES];
+		
 	} else if ([[url substringToIndex:(NSUInteger)36] isEqualToString:@"http://www.flickr.com/services/auth/"]) {
 		NSLog(@"submit: %@", [webView stringByEvaluatingJavaScriptFromString:@"document.forms[1].submit();"]);
+	} else if (NO) {
+		if (loginDelegate != NULL) [loginDelegate didLogin:NO];
 	}
 	
 	NSLog(@"finished loading");
 }
-
 
 
 -(NSArray *)getPhotos {

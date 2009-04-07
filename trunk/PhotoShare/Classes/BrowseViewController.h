@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "flickrapi.h"
+#import "PhotoShareAppDelegate.h"
 
 @interface BrowseViewController : UIViewController <UIImagePickerControllerDelegate> {
 	
@@ -18,7 +19,7 @@
 	//temporary, for testing:
 	//IBOutlet UIWebView *webView;
 	
-	IBOutlet flickrapi *flickr;
+	flickrapi *flickr;
 }
 
 @property (nonatomic, retain) UIImagePickerController *imagePicker;

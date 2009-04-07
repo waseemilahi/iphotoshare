@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XMLtoObject.h"
 #import "flickrapi.h"
 
 
-@interface SettingsViewController : UIViewController <UIImagePickerControllerDelegate, UITextFieldDelegate , UIWebViewDelegate>{
+@interface SettingsViewController : UIViewController <UIImagePickerControllerDelegate, UITextFieldDelegate , UIWebViewDelegate, FlickrLoginDelegate>{
 
 	IBOutlet UITextField *username;
 	IBOutlet UITextField *password;
@@ -22,6 +21,7 @@
 	IBOutlet UILabel *pictureLabel;
 	IBOutlet UIImagePickerController *imagePicker;
 	
+	flickrapi *flickr;
 }
 
 - (IBAction) signIn:(id)sender;
@@ -30,10 +30,14 @@
 
 - (IBAction) AgainSignIn:(id)sender;
 
+- (void) didLogin:(BOOL)success;
+
 @property (nonatomic,retain) UIWebView *webview;
 
 
 @property (nonatomic, retain) UIImagePickerController *imagePicker;
 @property (nonatomic, retain) UIImageView *imageView;
+
+@property (nonatomic, retain) flickrapi *flickr;
 
 @end

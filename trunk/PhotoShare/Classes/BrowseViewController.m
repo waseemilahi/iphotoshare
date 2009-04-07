@@ -7,8 +7,7 @@
 //
 
 #import "BrowseViewController.h"
-#import "XMLtoObject.h"
-//#import "photo.h"
+//#import "XMLtoObject.h"
 #import "flickrapi.h"
 
 #define DOCSFOLDER [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
@@ -33,7 +32,7 @@
 	*/
 	
 	//flickrapi *
-	flickr = [[flickrapi alloc] init];
+	if (flickr == nil) flickr = [[flickrapi alloc] init];
 	
 	NSArray *photos = [flickr getPhotos];
 	/*
@@ -62,8 +61,7 @@
 		[image release];
 	}
 	
-	NSString *USERNAME = @"";
-	NSString *PASSWORD = @"";
+	NSString *USERNAME = @"mkb2014@ymail.com";																		NSString *PASSWORD = @"iivvii";
 	
 	NSLog([flickr loginAs:USERNAME withPassword:PASSWORD]);
 	
@@ -142,13 +140,12 @@
 }
 
 */
-/*
+
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	
+	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.

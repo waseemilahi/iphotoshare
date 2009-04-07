@@ -8,7 +8,7 @@
 
 #import "SettingsViewController.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "PhotoShareAppDelegate.h"
 
 
 @implementation SettingsViewController
@@ -17,6 +17,8 @@
 
 @synthesize imageView;
 @synthesize imagePicker;
+
+@synthesize flickr;
 
 - (IBAction)Register:(id)sender
 {
@@ -95,8 +97,10 @@
 	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
 	
-	
-		flickrapi *flickr = [[flickrapi alloc] init];
+	flickr.loginDelegate = self;
+	[flickr loginAs:username.text withPassword:password.text];
+/*
+ flickrapi *flickr = [[flickrapi alloc] init];
 		
 		[flickr addParam:@"test3" withValue:@"value1"];
 		[flickr addParam:@"test2" withValue:@"value2"];
@@ -113,7 +117,7 @@
 		NSLog([flickr getLoginURL]);
 		NSLog([flickr getParamList]);
 	
-		
+		*/
 		webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
 		webview.delegate = self;
@@ -123,7 +127,19 @@
 	
 	
 		[self.view addSubview:webview];
-	
+
+}
+
+
+- (void) didLogin:(BOOL)success {
+	if (success) {
+		//login succeeded
+		NSLog(@"login succeeded!");
+	} else {
+		//login failed
+		
+		NSLog(@"login failed!");
+	}
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -154,12 +170,14 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
+//    [super viewDidLoad];
+	
+	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 }
-*/
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.

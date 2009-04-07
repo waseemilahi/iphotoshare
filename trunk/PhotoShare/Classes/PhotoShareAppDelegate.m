@@ -15,13 +15,15 @@
 @synthesize window;
 @synthesize tabBarController;
 
-
+@synthesize flickr;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
     // Add the tab bar controller's current view as a subview of the window
     [window addSubview:tabBarController.view];
+	
+	flickr = [[flickrapi alloc] init];
 }
 - (IBAction)homeSignIn:(id)sender
 {
