@@ -275,7 +275,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>29</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -329,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9EE440AD0F8B0A3E00BB510E</string>
+										<string>9EE440FD0F8B159200BB510E</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -365,7 +365,6 @@
 											<string>9E2817310F89CB1200F06AD4</string>
 											<string>9E2817320F89CB1200F06AD4</string>
 											<string>9E2817330F89CB1200F06AD4</string>
-											<string>9E2817350F89CB1200F06AD4</string>
 											<string>9E28174D0F89CBCD00F06AD4</string>
 											<string>9E28174F0F89CBCD00F06AD4</string>
 											<string>9E2817500F89CBCD00F06AD4</string>
@@ -375,9 +374,10 @@
 											<string>9EAAFAB70F8A50E300BA6111</string>
 											<string>9EAAFAB80F8A50E300BA6111</string>
 											<string>9EAAFAD20F8A529400BA6111</string>
-											<string>9EE43FEE0F8AD44000BB510E</string>
-											<string>9EE440960F8B085600BB510E</string>
-											<string>9EE440970F8B085600BB510E</string>
+											<string>9EE440E50F8B147400BB510E</string>
+											<string>9EE440F60F8B159200BB510E</string>
+											<string>9EE440F70F8B159200BB510E</string>
+											<string>9EE440F80F8B159200BB510E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -434,6 +434,26 @@
 											<string>9EE440590F8B00C600BB510E</string>
 											<string>9EE440920F8B079F00BB510E</string>
 											<string>9EE440980F8B085600BB510E</string>
+											<string>9EE440C70F8B0F7A00BB510E</string>
+											<string>9EE440C80F8B0F7A00BB510E</string>
+											<string>9EE440C90F8B0F7A00BB510E</string>
+											<string>9EE440CA0F8B0F7A00BB510E</string>
+											<string>9EE440CB0F8B0F7A00BB510E</string>
+											<string>9EE440CC0F8B0F7A00BB510E</string>
+											<string>9EE440CD0F8B0F7A00BB510E</string>
+											<string>9EE440CE0F8B0F7A00BB510E</string>
+											<string>9EE440CF0F8B0F7A00BB510E</string>
+											<string>9EE440DA0F8B0F9600BB510E</string>
+											<string>9EE440E90F8B147400BB510E</string>
+											<string>9EE440EA0F8B147400BB510E</string>
+											<string>9EE440EB0F8B147400BB510E</string>
+											<string>9EE440EC0F8B147400BB510E</string>
+											<string>9EE440ED0F8B147400BB510E</string>
+											<string>9EE440EE0F8B147400BB510E</string>
+											<string>9EE440F90F8B159200BB510E</string>
+											<string>9EE440FA0F8B159200BB510E</string>
+											<string>9EE440FB0F8B159200BB510E</string>
+											<string>9EE440FC0F8B159200BB510E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -606,7 +626,7 @@
 	<key>PerspectivesBarVisible</key>
 	<false/>
 	<key>PinnedNavigatorIdentifier</key>
-	<string>9EE4408F0F8B078C00BB510E</string>
+	<string>9EE440C10F8B0F4900BB510E</string>
 	<key>ShelfIsVisible</key>
 	<false/>
 	<key>SourceDescription</key>

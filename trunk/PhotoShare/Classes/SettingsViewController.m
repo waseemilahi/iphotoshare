@@ -20,6 +20,8 @@
 
 @synthesize flickr;
 
+
+
 - (IBAction)Register:(id)sender
 {
 	[username resignFirstResponder];
@@ -53,32 +55,7 @@
 	//[ [ UIApplication sharedApplication ] openURL: url];
 	
 }
-
-- (IBAction)AgainSignIn:(id)sender
-{
-	if(count >0)
-	{
-	//code goes here.
 		
-		username.text = @"Username";
-		password.text = @"Password";
-		
-	CATransition *myTransition = [ CATransition animation];
-	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
-	myTransition.type = kCATransitionPush;
-	myTransition.subtype = kCATransitionFromLeft;
-	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
-	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ; 
-	//[tabBarController.view addSubview: [tabBarController.viewControllers objectAtIndex:4]];
-	//[tabBarController.view removeFromSuperview ];
-	
-	[[self.view.subviews lastObject] removeFromSuperview];
-		
-		count--;
-	}	
-	
-}
-
 - (IBAction)signOut:(id)sender
 {
 /*
@@ -182,6 +159,29 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[textField resignFirstResponder];
 	return YES;
+}
+
+- (IBAction)AgainSignIn:(id)sender
+{
+	if(count >0)
+	{
+		//code goes here.
+		
+		
+		CATransition *myTransition = [ CATransition animation];
+		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+		myTransition.type = kCATransitionPush;
+		myTransition.subtype = kCATransitionFromLeft;
+		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ; 
+		//[tabBarController.view addSubview: [tabBarController.viewControllers objectAtIndex:4]];
+		//[tabBarController.view removeFromSuperview ];
+		
+		[[self.view.subviews lastObject] removeFromSuperview];
+		
+		count--;
+	}	
+	
 }
 
 /*
