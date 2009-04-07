@@ -134,7 +134,7 @@
 		//login succeeded
 		NSLog(@"login succeeded!");
 		
-		count++;
+		
 		
 		CATransition *myTransition = [ CATransition animation];
 		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
@@ -147,7 +147,7 @@
 		
 		//signoutview.opaque = YES;
 		
-		if(signoutview != nil)[self.view addSubview:signoutview.view];
+		if(signoutview != nil){[self.view addSubview:signoutview.view];count++;}
 		
 	} else {
 		//login failed
@@ -158,6 +158,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[textField resignFirstResponder];
+	
 	return YES;
 }
 

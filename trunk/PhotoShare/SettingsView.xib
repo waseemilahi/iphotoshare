@@ -82,7 +82,7 @@
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">1.700000e+01</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
-							<int key="IBUIReturnKeyType">9</int>
+							<int key="IBUIReturnKeyType">7</int>
 							<bool key="IBUISecureTextEntry">YES</bool>
 						</object>
 						<object class="NSCustomResource" key="IBUIBackground" id="947342909">
@@ -407,9 +407,11 @@
 							<string>AgainSignIn:</string>
 							<string>Register:</string>
 							<string>signIn:</string>
+							<string>signOut:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
