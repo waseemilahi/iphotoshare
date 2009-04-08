@@ -96,32 +96,17 @@
 	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
 */	
 	flickr.loginDelegate = self;
-	[flickr loginAs:username.text withPassword:password.text];
-/*
- flickrapi *flickr = [[flickrapi alloc] init];
-		
-		[flickr addParam:@"test3" withValue:@"value1"];
-		[flickr addParam:@"test2" withValue:@"value2"];
-		[flickr addParam:@"test4" withValue:@"value3"];
-		[flickr addParam:@"aaaaa" withValue:@"value4"];
-		[flickr addParam:@"zzzzz" withValue:@"value5"];
-		
-		NSLog([flickr getParamList]);
-		NSLog([flickr getSig]);
-		
-		NSLog([flickr getFrob]);
-		NSLog([flickr getParamList]);
-		
-		NSLog([flickr getLoginURL]);
-		NSLog([flickr getParamList]);
+	NSLog(@"logout: %d", [flickr logout]);
 	
+
+	[flickr loginAs:username.text withPassword:password.text];
 		
 		webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
 		webview.delegate = self;
 		webview.scalesPageToFit = YES;
 	
-		[webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:[flickr getLoginURL]]]];
+	//	[webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:[flickr getLoginURL]]]];
 	
 	
 		[self.view addSubview:webview];
