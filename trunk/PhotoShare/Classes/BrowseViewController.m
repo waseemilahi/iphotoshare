@@ -6,6 +6,7 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+
 #import "BrowseViewController.h"
 //#import "XMLtoObject.h"
 #import "flickrapi.h"
@@ -16,9 +17,74 @@
 @synthesize imageView;
 @synthesize imagePicker;
 @synthesize flickr;
+@synthesize photos;
 
-//for testing:
-//@synthesize webView;
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	NSLog(@"touching...");
+	UITouch *touch = [[touches allObjects] objectAtIndex:0];
+	startPoint = [touch locationInView:[touch view]];
+	startTime = [touch timestamp];
+	
+	NSLog(@"(%f, %f)@%f", startPoint.x, startPoint.y, startTime);
+}
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+	NSLog(@"...touched");
+	
+	UITouch *touch = [[touches allObjects] objectAtIndex:0];
+	CGPoint point = [touch locationInView:[touch view]];
+	NSLog(@"(%f, %f)@%f-(%f, %f)@%f", startPoint.x, startPoint.y, startTime, point.x, point.y, [touch timestamp]);
+	
+	CGFloat dTime = [touch timestamp] - startTime;
+	CGFloat dX = point.x - startPoint.x;
+	CGFloat dY = point.y - startPoint.y;
+	
+	if (dTime < 0.5) {
+		NSLog(@"Quick swipe:");
+		if (dY < 15 && dY > -15) {
+			if (dX > 25) {
+				NSLog(@"to the right");
+				
+				if (p + 1 < [photos count]) p++;
+				[self loadPhoto:p];
+			} else if (dX < -25) {
+				
+				NSLog(@"to the left");
+				
+				if (p > 0) p--;
+				[self loadPhoto:p];
+			}
+		} else if (dX < 15 && dX > -15)  {
+			if (dY > 25) {
+				NSLog(@"downward");
+				
+			} else if (dY < -25) {
+				
+				NSLog(@"upward");
+			}
+		}
+	} else {
+		NSLog(@"Normal drag:");
+		
+		
+	}
+}
+
+- (void)loadPhoto:(NSUInteger)index {
+	NSLog(@"loadPhoto:%d of %d", index + 1, [photos count]);
+	if (index >= 0 && index < [photos count]) {
+		photo* ph = (photo *)[photos objectAtIndex:index];
+		NSLog(@"photo");
+		NSLog(@"-url: %@", [ph url]);
+		NSString* imageURL = [ph url];
+		
+		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];
+		
+		UIImage* image = [[UIImage alloc] initWithData:imageData];
+		[imageView setImage:image];
+		[imageData release];
+		[image release];
+	}
+}
 
 - (void)showPicture: (id) sender{
 	// create the request
@@ -32,9 +98,14 @@
 	*/
 	
 	//flickrapi *
-	if (flickr == nil) flickr = [[flickrapi alloc] init];
+//	if (flickr == nil) flickr = [[flickrapi alloc] init];
+	[photos release];
 	
-	NSArray *photos = [flickr getPhotos];
+	photos = [NSArray arrayWithArray:[flickr getPhotos]];
+	p = 0;
+	
+	[self loadPhoto:p];
+	[photos retain];
 	/*
 	/*
 	NSURL *url = [NSURL URLWithString: @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f46e7a1681dd43b589b442ada0bd5163&lat=40.7&lon=-74&api_sig=2b6b7498d315496df10afea749ab39a8"];
@@ -51,20 +122,8 @@
 	//XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:class parseError:nil];
 	*/
 
-	if ([photos count] != 0) {
-		NSString* imageURL = [(photo *)[photos objectAtIndex:0] url];
-		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];
 	
-		UIImage* image = [[UIImage alloc] initWithData:imageData];
-		[imageView setImage:image];
-		[imageData release];
-		[image release];
-	}
-	
-	NSString *USERNAME = @"mkb2014@ymail.com";																		NSString *PASSWORD = @"iivvii";
-	
-	NSLog([flickr loginAs:USERNAME withPassword:PASSWORD]);
-	
+		
 	/*
 	// create the connection with the request
 	// and start loading the data
@@ -95,7 +154,6 @@
 	self.imagePicker.allowsImageEditing = YES; //<label id="code.imagepicker.allowsEditing"/>
 	[self presentModalViewController:self.imagePicker animated:YES]; //<label id="code.imagepicker.present.modal"/>
 	 */
-	//[FLICKR retain];
 }
 
 //START:code.PhotoViewController.didCancel
@@ -145,6 +203,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
+	imageView.multipleTouchEnabled = YES;
 }
 
 /*

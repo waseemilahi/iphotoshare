@@ -32,9 +32,11 @@
 -(NSMutableString *)getFrob;
 -(NSMutableString *)getLoginURL;
 
+-(BOOL)logout;
 -(NSMutableString *)loginAs:(NSString *)USERNAME withPassword:(NSString *)PASSWORD;
 
--(NSMutableString *)getToken:(NSMutableString *)F;
+-(NSMutableString *)getToken;
+-(BOOL)checkToken;
 
 -(NSMutableString *)getParamList;
 -(NSMutableString *)getSig;

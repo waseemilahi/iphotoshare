@@ -13,7 +13,7 @@
 
 -(void)addParam: (NSMutableString *)key withValue:(NSMutableString *)value {
 	if (!params) params = [[NSMutableDictionary alloc] init];
-	[params setObject:(NSMutableString *)value forKey:(NSMutableString *)key];
+	if (value) [params setObject:(NSMutableString *)value forKey:(NSMutableString *)key];
 }
 
 -(void)clearParams {
@@ -62,11 +62,19 @@
 	
 	[self addParam:(NSMutableString *)@"api_sig" withValue:(NSMutableString *)sig];
 	
-	NSLog([NSString stringWithFormat:@"http://www.flickr.com/services/auth/%@", [self getParamList]]);
+	NSLog([NSString stringWithFormat:@"login url = http://www.flickr.com/services/auth/%@", [self getParamList]]);
 	
 	return [NSString stringWithFormat:@"http://www.flickr.com/services/auth/%@", [self getParamList]];
 }
 
+
+-(BOOL)logout {
+	
+	FROB = nil;
+	TOKEN = nil;
+	NSLog([NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://login.yahoo.com/config/login?logout=1"]]);
+	return ([NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://login.yahoo.com/config/login?logout=1"]] != NULL);
+}
 
 -(NSMutableString *)loginAs:(NSString *)USERNAME withPassword:(NSString *)PASSWORD {
 	
@@ -199,18 +207,16 @@
 }
 
 
--(NSMutableString *)getToken:(NSMutableString *)F {
+-(NSMutableString *)getToken {
 	////[self getFrob];
 	//[self getLoginURL];
 	
-	//NSLog(@"token from frob: %@", F);
-	NSString *f = [NSString stringWithString:(NSString *)F];
+	
 	[self clearParams];
 	
 	[self addParam:(NSMutableString *)@"method" withValue:(NSMutableString *)@"flickr.auth.getToken"];
 	[self addParam:(NSMutableString *)@"api_key" withValue:(NSMutableString *)APIKEY];
-	[self addParam:(NSMutableString *)@"frob" withValue:(NSMutableString *)f];
-	//NSLog(@"frob: %@", [params objectForKey:@"frob"]);
+	[self addParam:(NSMutableString *)@"frob" withValue:(NSMutableString *)[self FROB]];
 	
 	NSMutableString *sig = [self getSig];
 	
@@ -231,6 +237,30 @@
 	return TOKEN;
 }
 
+
+-(BOOL)checkToken {
+	[self clearParams];
+	
+	[self addParam:(NSMutableString *)@"method" withValue:(NSMutableString *)@"flickr.auth.checkToken"];
+	[self addParam:(NSMutableString *)@"api_key" withValue:(NSMutableString *)APIKEY];
+	[self addParam:(NSMutableString *)@"auth_token" withValue:(NSMutableString *)TOKEN];
+	
+	NSMutableString *sig = [self getSig];
+	[self addParam:(NSMutableString *)@"api_sig" withValue:(NSMutableString *)sig];
+	
+	NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://api.flickr.com/services/rest/%@", [self getParamList]]];
+	NSLog(@"check token url: %@", [url absoluteURL]);
+	
+	//NSLog(@"%@", [NSString stringWithContentsOfURL:url]);
+	
+	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:@"token" parseError:nil];
+	if ([[parser items] count] != 0) {
+		
+		return ([TOKEN isEqualToString:[(token *)[[parser items] objectAtIndex:0] value]]);
+	}
+	
+	return NO;
+}
 
 -(NSMutableString *)getParamList {
 	NSMutableString *list;
@@ -278,12 +308,25 @@
 	//r.location = 0;
 	//r.length = 36;
 	NSLog(@"loaded: %@", url);
-	if ([url length] < 36) {
-		//do nothing
+	
+	if ([url isEqualToString:@"http://www.flickr.com/"]) {
+		NSLog(@"bad internet connection?");
+	
+		if (loginDelegate != NULL) [loginDelegate didLogin:NO];
+	
+	} else if ([url isEqualToString:@"https://login.yahoo.com/config/login?"]) {
+		NSLog(@"bad username/password?");
+		
+		if (loginDelegate != NULL) [loginDelegate didLogin:NO];
+		
+		
 	} else if ([url isEqualToString:@"http://www.flickr.com/services/auth/"]) {
-		NSLog(@"token: %@", [self getToken:FROB]);
+		NSLog(@"token: %@", [self getToken]);
 		if (loginDelegate != NULL) [loginDelegate didLogin:YES];
 		
+		NSLog(@"%d", [self checkToken]);
+	} else if ([url length] < 36) {
+		//do nothing
 	} else if ([[url substringToIndex:(NSUInteger)36] isEqualToString:@"http://www.flickr.com/services/auth/"]) {
 		NSLog(@"submit: %@", [webView stringByEvaluatingJavaScriptFromString:@"document.forms[1].submit();"]);
 	} else if (NO) {
@@ -294,17 +337,13 @@
 }
 
 
--(NSArray *)getPhotos {
-	NSString *F = [self FROB];
-	NSString *T = [self TOKEN];
-	
-	NSLog(@"%@ %@", F, T);
-	
+-(NSArray *)getPhotos {	
 	[self clearParams];
 	[self addParam:@"method" withValue:@"flickr.photos.search"];
+	[self addParam:@"api_key" withValue:APIKEY];
 	[self addParam:@"lat" withValue:@"40.7"];
 	[self addParam:@"lon" withValue:@"-74"];
-	[self addParam:@"api_key" withValue:APIKEY];
+//	[self addParam:@"extras" withValue:@"date_taken, date_upload, original_format"];
 	
 	NSString *sig = [self getSig];
 	
