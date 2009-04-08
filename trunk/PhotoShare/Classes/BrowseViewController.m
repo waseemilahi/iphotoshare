@@ -204,6 +204,7 @@
 - (void)viewDidLoad {
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 	imageView.multipleTouchEnabled = YES;
+	[self showPicture:nil];
 }
 
 /*
