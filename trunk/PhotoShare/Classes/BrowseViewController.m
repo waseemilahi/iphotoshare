@@ -74,8 +74,8 @@
 	if (index >= 0 && index < [photos count]) {
 		photo* ph = (photo *)[photos objectAtIndex:index];
 		NSLog(@"photo");
-		NSLog(@"-url: %@", [ph url]);
-		NSString* imageURL = [ph url];
+		NSLog(@"-url: %@", [ph getPhotoUrl:4]);
+		NSString* imageURL = [ph getPhotoUrl:4];
 		
 		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];
 		

@@ -343,7 +343,7 @@
 	[self addParam:@"api_key" withValue:APIKEY];
 	[self addParam:@"lat" withValue:@"40.7"];
 	[self addParam:@"lon" withValue:@"-74"];
-//	[self addParam:@"extras" withValue:@"date_taken, date_upload, original_format"];
+	[self addParam:@"extras" withValue:@"date_taken,date_upload,original_format,original_secret"];
 	
 	NSString *sig = [self getSig];
 	
@@ -352,7 +352,7 @@
 	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.flickr.com/services/rest/%@",
 				  [self getParamList]]];
 				  //method=flickr.photos.search&api_key=7aa8298476e07cb421f8cc396e655978&lat=40.7&lon=-74"];
-	
+	NSLog(@"xml: %@", [NSString stringWithContentsOfURL:url]);
 	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:@"photo" parseError:nil];
 	
 	return [parser items];

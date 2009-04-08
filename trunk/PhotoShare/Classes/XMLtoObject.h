@@ -20,12 +20,16 @@
 
 //photo object
 @interface photo : NSObject {
-	NSString *url;
+	//	NSString *url;
+	NSDictionary *keys;
+	
 }
 
-@property (nonatomic, retain) NSString *url;
+@property (nonatomic, retain) NSDictionary *keys;
 
--(void)setPhotoUrl:(NSString *)pid farm:(NSString *)farm server:(NSString *)server secret:(NSString *)secret;
+//-(void)setPhotoUrl:(NSString *)pid farm:(NSString *)farm server:(NSString *)server secret:(NSString *)secret;
+-(NSString *)getPhotoUrl:(NSUInteger)size;
+-(void)setKeys:(NSDictionary *)k;
 
 @end
 

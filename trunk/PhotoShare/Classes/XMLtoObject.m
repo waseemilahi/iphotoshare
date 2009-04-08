@@ -9,11 +9,29 @@
 //#import "photo.h"
 @implementation photo
 
-@synthesize url;
--(void)setPhotoUrl:(NSString *)pid farm:(NSString *)farm server:(NSString *)server secret:(NSString *)secret {
+@synthesize keys;
+//@synthesize url;
+//-(void)setPhotoUrl:(NSString *)pid farm:(NSString *)farm server:(NSString *)server secret:(NSString *)secret {
+-(NSString *)getPhotoUrl:(NSUInteger)size {
+	
+	NSLog(@"key count: %d", [keys count]);
+	return [NSMutableString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@.jpg",
+			[keys objectForKey:@"farm"],
+			[keys objectForKey:@"server"],
+			[keys objectForKey:@"id"],
+			[keys objectForKey:@"secret"]
+			];
+	/*
 	url = [NSMutableString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@.jpg", farm, server, pid, secret];
 	[url retain];
 	return;
+	 */
+}
+
+-(void)setKeys:(NSDictionary *)k {
+	[keys release];
+	keys = [NSDictionary dictionaryWithDictionary:k];
+	[keys retain];
 }
 
 @end
@@ -181,11 +199,18 @@ didStartElement:(NSString *)elementName
 		
 		if ([elementName isEqualToString:@"photo"]) {
 			//generate and set the item's url
+			[[(photo *)item keys] release];
+			[(photo *)item setKeys:[NSDictionary dictionaryWithDictionary:attributeDict]];
+			[[(photo *)item keys] retain];
+			
+			NSLog(@"key count = %d", [attributeDict count]);
+			/*
 			[(photo *)item setPhotoUrl:	[attributeDict objectForKey:@"id"]
 								farm:	[attributeDict objectForKey:@"farm"]
 								server:	[attributeDict objectForKey:@"server"]
 								secret:	[attributeDict objectForKey:@"secret"]
 			 ];
+			 */
 		} else if ([elementName isEqualToString: @"frob"]) {
 			//this code is moved to didEndElement, since currentNodeContent is not filled yet when didStartElement is called
 			//[(frob *)item setValue:currentNodeContent];
