@@ -101,7 +101,7 @@
 
 	[flickr loginAs:username.text withPassword:password.text];
 		
-		webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
+	/*	webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
 		webview.delegate = self;
 		webview.scalesPageToFit = YES;
@@ -110,7 +110,7 @@
 	
 	
 		[self.view addSubview:webview];
-
+	 */
 }
 
 
