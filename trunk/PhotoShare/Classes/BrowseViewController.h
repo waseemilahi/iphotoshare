@@ -28,6 +28,7 @@
 
 @property (nonatomic, retain) UIImagePickerController *imagePicker;
 @property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, retain) UILabel *pictureLabel;
 @property (nonatomic, retain) flickrapi *flickr;
 @property (nonatomic, retain) NSArray *photos;
 //@property (nonatomic, retain) CGPoint startPoint;

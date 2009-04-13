@@ -16,6 +16,7 @@
 
 @synthesize imageView;
 @synthesize imagePicker;
+@synthesize pictureLabel;
 @synthesize flickr;
 @synthesize photos;
 
@@ -38,9 +39,9 @@
 	CGFloat dX = point.x - startPoint.x;
 	CGFloat dY = point.y - startPoint.y;
 	
-	if (dTime < 0.5) {
+	if (dTime < 1) {
 		NSLog(@"Quick swipe:");
-		if (dY < 15 && dY > -15) {
+		if (dY < 50 && dY > -50) {
 			if (dX > 25) {
 				NSLog(@"to the right");
 				
@@ -53,7 +54,7 @@
 				if (p > 0) p--;
 				[self loadPhoto:p];
 			}
-		} else if (dX < 15 && dX > -15)  {
+		} else if (dX < 50 && dX > -50)  {
 			if (dY > 25) {
 				NSLog(@"downward");
 				
@@ -71,6 +72,7 @@
 
 - (void)loadPhoto:(NSUInteger)index {
 	NSLog(@"loadPhoto:%d of %d", index + 1, [photos count]);
+	[pictureLabel setText:[NSString stringWithFormat:@"%d of %d", index + 1, [photos count]]];
 	if (index >= 0 && index < [photos count]) {
 		photo* ph = (photo *)[photos objectAtIndex:index];
 		NSLog(@"photo");
