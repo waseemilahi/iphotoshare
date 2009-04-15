@@ -115,6 +115,19 @@
 	 */
 }
 
+
+- (void)signkeyin
+{
+	
+	[password resignFirstResponder];
+		flickr.loginDelegate = self;
+	NSLog(@"logout: %d", [flickr logout]);
+	
+	
+	[flickr loginAs:username.text withPassword:password.text];
+}
+
+
 - (void) didLoginFail:(BOOL)fail{
 	
 	if(fail){
@@ -151,7 +164,8 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[textField resignFirstResponder];
-	
+	if(textField == password)[self signkeyin];
+		
 	return YES;
 }
 
@@ -213,14 +227,6 @@
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 }
 
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
