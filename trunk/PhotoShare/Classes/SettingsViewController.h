@@ -17,10 +17,16 @@
 	UIWebView *webview;
 	int count ;
 	
-	IBOutlet UIView *signoutview;
+	NSMutableString *TOKEN;
 	
+	
+	IBOutlet UIView *signoutview;
+	IBOutlet UIView *invalidupview;
+	IBOutlet UIView *badnetworkview;
+	IBOutlet UIActivityIndicatorView *indicatorview;
 	IBOutlet UIImageView *imageView;
-	IBOutlet UILabel *pictureLabel;
+	IBOutlet UILabel *fullnameLabel;
+	IBOutlet UILabel *screennameLabel;
 	IBOutlet UIImagePickerController *imagePicker;
 	
 	flickrapi *flickr;
@@ -34,12 +40,17 @@
 
 - (IBAction) AgainSignIn:(id)sender;
 
-- (void) didLoginFail:(BOOL)fail;
+- (IBAction)InvalidsignIn:(id)sender;
 
+- (IBAction)BNetworksignIn:(id)sender;
+
+- (void) didLoginFail:(NSString *)fail;
+@property (nonatomic, retain) NSMutableString *TOKEN;
 @property (nonatomic,retain) UIWebView *webview;
 @property (nonatomic,retain) UIView *signoutview;
-
-
+@property (nonatomic,retain) UIView *invalidupview;
+@property (nonatomic,retain) UIView *badnetworkview;
+@property (nonatomic,retain) UIActivityIndicatorView *indicatorview;
 @property (nonatomic, retain) UIImagePickerController *imagePicker;
 @property (nonatomic, retain) UIImageView *imageView;
 

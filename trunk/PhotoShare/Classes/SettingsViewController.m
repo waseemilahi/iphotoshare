@@ -15,11 +15,13 @@
 
 @synthesize webview;
 @synthesize signoutview;
+@synthesize invalidupview;
+@synthesize badnetworkview;
 @synthesize imageView;
 @synthesize imagePicker;
-
+@synthesize indicatorview;
 @synthesize flickr;
-
+@synthesize TOKEN;
 
 
 - (IBAction)Register:(id)sender
@@ -73,6 +75,7 @@
 	
 	[[self.view.subviews lastObject] removeFromSuperview];
 	
+	
 	count--;;
  
 	
@@ -109,10 +112,57 @@
 		webview.scalesPageToFit = YES;
 	
 	//	[webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:[flickr getLoginURL]]]];
+	*/
+	
+		[self.view addSubview:indicatorview];
+	 
+}
+
+- (IBAction)BNetworksignIn:(id)sender
+{
+	username.text = @"Username";
+	password.text = @"Password";
+	
+	CATransition *myTransition = [ CATransition animation];
+	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+	myTransition.type = kCATransitionPush;
+	myTransition.subtype = kCATransitionFromLeft;
+	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ; 
+	//[tabBarController.view addSubview: [tabBarController.viewControllers objectAtIndex:4]];
+	//[tabBarController.view removeFromSuperview ];
+	
+	[[self.view.subviews lastObject] removeFromSuperview];
+	[[self.view.subviews lastObject] removeFromSuperview];
+	
+	count--;;
 	
 	
-		[self.view addSubview:webview];
-	 */
+	[flickr logout];
+}
+
+- (IBAction)InvalidsignIn:(id)sender
+{
+	username.text = @"Username";
+	password.text = @"Password";
+	
+	CATransition *myTransition = [ CATransition animation];
+	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+	myTransition.type = kCATransitionPush;
+	myTransition.subtype = kCATransitionFromLeft;
+	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ; 
+	//[tabBarController.view addSubview: [tabBarController.viewControllers objectAtIndex:4]];
+	//[tabBarController.view removeFromSuperview ];
+	
+	[[self.view.subviews lastObject] removeFromSuperview];
+	[[self.view.subviews lastObject] removeFromSuperview];
+	
+	count--;;
+	
+	
+	[flickr logout];
+	
 }
 
 
@@ -125,12 +175,13 @@
 	
 	
 	[flickr loginAs:username.text withPassword:password.text];
+	[self.view addSubview:indicatorview];
 }
 
 
-- (void) didLoginFail:(BOOL)fail{
+- (void) didLoginFail:(NSString *)fail{
 	
-	if(fail){
+	if([fail isEqualToString:@"bad username/password"]){
 	[username resignFirstResponder];
 	[password resignFirstResponder];
 	username.text = @"Username";
@@ -143,21 +194,54 @@
 		 CATransition *myTransition = [ CATransition animation];
 		 myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
 		 myTransition.type = kCATransitionPush;
-		 myTransition.subtype = kCATransitionFromLeft;
+		 myTransition.subtype = kCATransitionFromRight;
 		 [ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 		 self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
 		 
 		 [flickr logout];
+		//[[self.view.subviews lastObject] removeFromSuperview];
+		if(invalidupview != nil){[self.view addSubview:invalidupview];count++;}
+		
+		
 	}
-	else{ 
+	else if([fail isEqualToString:@"bad internet connection"]){
+		[username resignFirstResponder];
+		[password resignFirstResponder];
+		username.text = @"Username";
+		password.text = @"Password";
+		
+		//login failed
+		
+		NSLog(@"login failed!");
+		
+		CATransition *myTransition = [ CATransition animation];
+		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+		myTransition.type = kCATransitionPush;
+		myTransition.subtype = kCATransitionFromLeft;
+		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
+		
+		[flickr logout];
+		//[[self.view.subviews lastObject] removeFromSuperview];
+		if(badnetworkview != nil){[self.view addSubview:badnetworkview];count++;}
+		
+		
+	}
+	else if([fail isEqualToString:@"http://www.flickr.com/services/auth/"]){ 
+		if(username.text == @"Username" || password.text == @"Password")
+			[self didLoginFail:@"bad username/password"];
+		else{
 		CATransition *myTransition = [ CATransition animation];
 		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
 		myTransition.type = kCATransitionPush;
 		myTransition.subtype = kCATransitionFromRight;
 		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
-
+			[[self.view.subviews lastObject] removeFromSuperview];
 		if(signoutview != nil){[self.view addSubview:signoutview];count++;}
+			
+				
+		}
 	}
 	
 }
@@ -239,7 +323,8 @@
 	[password release];
 	[webview release];
 	
-	[pictureLabel release];
+	[screennameLabel release];
+	[fullnameLabel release];
 	[imagePicker release];
 	[imageView release];
 	[super dealloc];

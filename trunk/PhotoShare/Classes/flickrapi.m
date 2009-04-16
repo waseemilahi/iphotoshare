@@ -310,18 +310,18 @@
 	NSLog(@"loaded: %@", url);
 	if ([url isEqualToString:@"http://www.flickr.com/services/auth/"]) {
 		NSLog(@"token: %@", [self getToken]);
-		if (loginDelegate != NULL) [loginDelegate didLoginFail:NO];
+		if (loginDelegate != NULL) [loginDelegate didLoginFail:@"http://www.flickr.com/services/auth/"];
 		
 		NSLog(@"%d", [self checkToken]);
 	} else if ([url isEqualToString:@"http://www.flickr.com/"]) {
 		NSLog(@"bad internet connection?");
 	
-		if (loginDelegate != NULL) [loginDelegate didLoginFail:YES];
+		if (loginDelegate != NULL) [loginDelegate didLoginFail:@"bad internet connection"];
 	
 	} else if ([url isEqualToString:@"https://login.yahoo.com/config/login?"]) {
 		NSLog(@"bad username/password?");
 		
-		if (loginDelegate != NULL) [loginDelegate didLoginFail:YES];
+		if (loginDelegate != NULL) [loginDelegate didLoginFail:@"bad username/password"];
 		
 		
 	} else if ([url length] < 36) {
@@ -329,7 +329,7 @@
 	} else if ([[url substringToIndex:(NSUInteger)36] isEqualToString:@"http://www.flickr.com/services/auth/"]) {
 		NSLog(@"submit: %@", [webView stringByEvaluatingJavaScriptFromString:@"document.forms[1].submit();"]);
 	} else if (NO) {
-		if (loginDelegate != NULL) [loginDelegate didLoginFail:YES];
+		if (loginDelegate != NULL) [loginDelegate didLoginFail:@"Unknown Error"];
 	}
 	
 	NSLog(@"finished loading");

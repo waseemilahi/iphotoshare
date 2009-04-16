@@ -9,7 +9,7 @@
 //extern flickrapi *FLICKR;
 @protocol FlickrLoginDelegate <NSObject>
 
-- (void)didLoginFail:(BOOL)fail;
+- (void)didLoginFail:(NSString *)fail;
 
 
 @end
