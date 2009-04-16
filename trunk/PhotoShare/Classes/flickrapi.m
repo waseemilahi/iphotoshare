@@ -9,6 +9,7 @@
 @synthesize FROB;
 @synthesize TOKEN;
 
+
 @synthesize loginDelegate;
 
 -(void)addParam: (NSMutableString *)key withValue:(NSMutableString *)value {
@@ -72,6 +73,7 @@
 	
 	FROB = nil;
 	TOKEN = nil;
+	
 	NSLog([NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://login.yahoo.com/config/login?logout=1"]]);
 	return ([NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://login.yahoo.com/config/login?logout=1"]] != NULL);
 }

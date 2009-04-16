@@ -19,11 +19,13 @@
 	NSMutableString *TOKEN;
 	NSMutableDictionary *params;
 	
+	
 	id<FlickrLoginDelegate> loginDelegate;
 }
 
 @property (nonatomic, retain) NSMutableString *FROB;
 @property (nonatomic, retain) NSMutableString *TOKEN;
+
 
 @property (assign) id<FlickrLoginDelegate> loginDelegate; 
 
