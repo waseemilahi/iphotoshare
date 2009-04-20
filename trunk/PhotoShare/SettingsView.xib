@@ -8,11 +8,11 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="55"/>
-			<integer value="1"/>
 			<integer value="75"/>
+			<integer value="55"/>
+			<integer value="68"/>
 			<integer value="64"/>
-			<integer value="69"/>
+			<integer value="41"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -179,8 +179,8 @@
 							<object class="IBUINavigationItem" id="85446798">
 								<reference key="IBUINavigationBar" ref="909799014"/>
 								<string key="IBUITitle">Account</string>
-								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="717716384">
-									<string key="IBUITitle">Main Screen</string>
+								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="717716384">
+									<string key="IBUITitle">Account</string>
 									<int key="IBUIStyle">1</int>
 								</object>
 							</object>
@@ -346,12 +346,12 @@
 					<object class="IBUILabel" id="951301198">
 						<reference key="NSNextResponder" ref="1068480785"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{47, 104}, {222, 60}}</string>
+						<string key="NSFrame">{{6, 96}, {345, 68}}</string>
 						<reference key="NSSuperview" ref="1068480785"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="IBUIText"> Invalid Username/Password</string>
+						<string key="IBUIText"> Invalid Username/Password! Try Again.</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -364,18 +364,19 @@
 					<object class="IBUIButton" id="936520411">
 						<reference key="NSNextResponder" ref="1068480785"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{79, 184}, {157, 34}}</string>
+						<string key="NSFrame">{{79, 183}, {157, 35}}</string>
 						<reference key="NSSuperview" ref="1068480785"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+						<bool key="IBUIHighlighted">YES</bool>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="654742282"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUIHighlightedTitle">Try Again</string>
-						<string key="IBUIDisabledTitle">Try Again</string>
-						<string key="IBUISelectedTitle">Try Again</string>
-						<string key="IBUINormalTitle">Try Again</string>
+						<string key="IBUIHighlightedTitle">Go Back</string>
+						<string key="IBUIDisabledTitle">Go Back</string>
+						<string key="IBUISelectedTitle">Go Back</string>
+						<string key="IBUINormalTitle">Go Back</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="574328694">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -876,7 +877,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{289, 204}, {320, 480}}</string>
+					<string>{{384, 128}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

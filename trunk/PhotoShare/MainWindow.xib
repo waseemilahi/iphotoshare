@@ -8,7 +8,8 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="144"/>
+			<integer value="2"/>
+			<integer value="119"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -33,10 +34,11 @@
 			</object>
 			<object class="IBUICustomObject" id="664661524"/>
 			<object class="IBUIWindow" id="380026005">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">1316</int>
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{320, 480}</string>
+				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor" id="1026935768">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -73,7 +75,7 @@
 											<int key="IBUIStyle">1</int>
 										</object>
 										<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="112588375">
-											<string key="IBUITitle">Main Screen</string>
+											<string key="IBUITitle">Home Screen</string>
 											<int key="IBUIStyle">1</int>
 										</object>
 									</object>
@@ -150,12 +152,30 @@
 								<reference key="IBUISelectedImage" ref="91264064"/>
 								<reference key="IBUINormalImage" ref="91264064"/>
 							</object>
+							<object class="IBUILabel" id="943010637">
+								<reference key="NSNextResponder" ref="434903890"/>
+								<int key="NSvFlags">292</int>
+								<string key="NSFrame">{{20, 69}, {280, 65}}</string>
+								<reference key="NSSuperview" ref="434903890"/>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="IBUIText">PhotoShare</string>
+								<object class="NSColor" key="IBUITextColor">
+									<int key="NSColorSpace">2</int>
+									<bytes key="NSRGB">MC4wMjc0NTA5ODIgMC42MDc4NDMxNiAxAA</bytes>
+								</object>
+								<nil key="IBUIHighlightedColor"/>
+								<int key="IBUIBaselineAdjustment">1</int>
+								<float key="IBUIMinimumFontSize">1.000000e+01</float>
+								<int key="IBUITextAlignment">1</int>
+							</object>
 						</object>
 						<string key="NSFrameSize">{320, 411}</string>
 						<reference key="NSSuperview"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">2</int>
-							<bytes key="NSRGB">MC4wMTk2MDc4NDQgMCAwLjE3MjU0OTAyAA</bytes>
+							<bytes key="NSRGB">MC4wMzkyMTU2ODggMCAwLjE4ODIzNTMxAA</bytes>
 						</object>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 					</object>
@@ -429,6 +449,7 @@
 							<reference ref="993645398"/>
 							<reference ref="121303345"/>
 							<reference ref="346452608"/>
+							<reference ref="943010637"/>
 						</object>
 						<reference key="parent" ref="1024858337"/>
 					</object>
@@ -471,6 +492,11 @@
 						<reference key="object" ref="112588375"/>
 						<reference key="parent" ref="991091235"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">158</int>
+						<reference key="object" ref="943010637"/>
+						<reference key="parent" ref="434903890"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -501,6 +527,7 @@
 					<string>144.IBPluginDependency</string>
 					<string>146.IBPluginDependency</string>
 					<string>155.IBPluginDependency</string>
+					<string>158.IBPluginDependency</string>
 					<string>2.IBAttributePlaceholdersKey</string>
 					<string>2.IBEditorWindowLastContentRect</string>
 					<string>2.IBPluginDependency</string>
@@ -527,6 +554,7 @@
 					<string>CameraViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>SettingsViewController</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -568,7 +596,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">157</int>
+			<int key="maxID">158</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -604,8 +632,17 @@
 					<string key="className">CameraViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">takePicture:</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSMutableArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>takePicture:</string>
+							<string>viewPictures:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -721,6 +758,8 @@
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>AgainSignIn:</string>
+							<string>BNetworksignIn:</string>
+							<string>InvalidsignIn:</string>
 							<string>Register:</string>
 							<string>signIn:</string>
 							<string>signOut:</string>
@@ -731,23 +770,33 @@
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
+							<string>id</string>
+							<string>id</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSMutableArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>badnetworkview</string>
+							<string>fullnameLabel</string>
 							<string>imagePicker</string>
 							<string>imageView</string>
+							<string>indicatorview</string>
+							<string>invalidupview</string>
 							<string>password</string>
-							<string>pictureLabel</string>
+							<string>screennameLabel</string>
 							<string>signoutview</string>
 							<string>username</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIView</string>
+							<string>UILabel</string>
 							<string>UIImagePickerController</string>
 							<string>UIImageView</string>
+							<string>UIActivityIndicatorView</string>
+							<string>UIView</string>
 							<string>UITextField</string>
 							<string>UILabel</string>
 							<string>UIView</string>

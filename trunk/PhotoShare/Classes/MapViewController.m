@@ -115,18 +115,10 @@
 */
 
 -(void)locate: (id) sender{
-	if(isLocating){
-		
-		[locmanager stopUpdatingLocation];
-		
-		[self setTitle:@"Locating Stopped"];
-		
-	}else{
+	
 		wasFound = NO;
 		[locmanager startUpdatingLocation];
-	[self setTitle:@"Locating Started"];
-	}
-	isLocating = !isLocating;
+	
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -141,6 +133,12 @@
 	isLocating = YES;
 //	locmanager.locations = [NSMutableArray arrayWithCapacity:32];
 	locations = [NSMutableArray arrayWithCapacity:32];
+	
+	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
+	[self setTitle:@"Map"];
+	//					 [[UIScreen mainScreen] applicationFrame]] autorelease];
+	//[self.tabBarController.selectedViewController.view release];
+	[self.view addSubview:mapView];
 	
 }
 

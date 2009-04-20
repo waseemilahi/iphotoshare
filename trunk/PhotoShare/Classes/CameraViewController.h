@@ -21,5 +21,6 @@
 @property (nonatomic, retain) UIImageView *imageView;
 
 - (IBAction) takePicture: (id) sender;
+- (IBAction) viewPictures: (id) sender;
 
 @end

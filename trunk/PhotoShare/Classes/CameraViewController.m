@@ -30,6 +30,16 @@
 //- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 //	if([[touches anyObject] tapCount] >=1) {
 		// bring up image grabber
+-(void)viewPictures: (id) sender{
+	
+		self.imagePicker.sourceType =
+		UIImagePickerControllerSourceTypePhotoLibrary;
+	
+	self.imagePicker.allowsImageEditing = YES; //<label id="code.imagepicker.allowsEditing"/>
+	
+	[self presentModalViewController:self.imagePicker animated:YES]; 
+}
+
 - (void)takePicture: (id) sender{
 			
 	
@@ -80,7 +90,7 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
 }
-*/
+
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -98,7 +108,7 @@
 	
  [self presentModalViewController:self.imagePicker animated:YES];
 
-}
+}*/
 /*
 - (void) imagePickerController:(UIImagePickerController *)picker
 		 didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
