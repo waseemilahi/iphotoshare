@@ -197,53 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>9E8A8F060FA0C66600C186C0</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>MapViewController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>9E8A8F0C0FA0C6B000C186C0</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>MapViewController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>9E8A8F510FA0C8EF00C186C0</string>
-						<key>history</key>
-						<array>
-							<string>9E8A8F2B0FA0C7D600C186C0</string>
-							<string>9E8A8F260FA0C7C400C186C0</string>
-						</array>
-						<key>prevStack</key>
-						<array>
-							<string>9E8A8F2C0FA0C7D600C186C0</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1041, 747}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>87 64 1041 788 0 0 1600 878 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -347,7 +301,7 @@
 							<real>237</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>59 67 1002 806 0 0 1600 878 </string>
+						<string>166 53 1002 806 0 0 1600 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -375,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E8A8F500FA0C8EF00C186C0</string>
+										<string>9E8A8F770FA0CA7A00C186C0</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -417,7 +371,6 @@
 											<string>9E88F90E0F9C155B0017AC21</string>
 											<string>9E7D49970F9E75BF00EB6452</string>
 											<string>9E7D4C010F9EB4C500EB6452</string>
-											<string>9E7D4C200F9EB58200EB6452</string>
 											<string>9E7D4C210F9EB58200EB6452</string>
 											<string>9E7D4C920F9EBB1900EB6452</string>
 											<string>9E7D4C940F9EBB1900EB6452</string>
@@ -426,12 +379,13 @@
 											<string>9E7D4C970F9EBB1900EB6452</string>
 											<string>9E8A8E8F0FA0B8CE00C186C0</string>
 											<string>9E8A8E900FA0B8CE00C186C0</string>
-											<string>9E8A8E910FA0B8CE00C186C0</string>
 											<string>9E8A8E920FA0B8CE00C186C0</string>
 											<string>9E8A8E930FA0B8CE00C186C0</string>
 											<string>9E8A8E940FA0B8CE00C186C0</string>
 											<string>9E8A8F280FA0C7D600C186C0</string>
-											<string>9E8A8F080FA0C6B000C186C0</string>
+											<string>9E8A8F580FA0C97B00C186C0</string>
+											<string>9E8A8F6E0FA0CA0900C186C0</string>
+											<string>9E8A8F570FA0C97B00C186C0</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -497,6 +451,9 @@
 											<string>9E8A8EA00FA0B8CE00C186C0</string>
 											<string>9E8A8F0A0FA0C6B000C186C0</string>
 											<string>9E8A8F290FA0C7D600C186C0</string>
+											<string>9E8A8F590FA0C97B00C186C0</string>
+											<string>9E8A8F5A0FA0C97B00C186C0</string>
+											<string>9E8A8F6F0FA0CA0900C186C0</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -510,7 +467,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {743, 526}}</string>
 								<key>RubberWindowFrame</key>
-								<string>59 67 1002 806 0 0 1600 878 </string>
+								<string>166 53 1002 806 0 0 1600 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -530,7 +487,7 @@
 								<key>Frame</key>
 								<string>{{0, 531}, {743, 234}}</string>
 								<key>RubberWindowFrame</key>
-								<string>59 67 1002 806 0 0 1600 878 </string>
+								<string>166 53 1002 806 0 0 1600 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -669,7 +626,7 @@
 	<key>PerspectivesBarVisible</key>
 	<false/>
 	<key>PinnedNavigatorIdentifier</key>
-	<string>9E8A8F060FA0C66600C186C0</string>
+	<string>9E8A8F6C0FA0C9F000C186C0</string>
 	<key>ShelfIsVisible</key>
 	<false/>
 	<key>SourceDescription</key>
@@ -698,10 +655,9 @@
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9E7B9AB80F64C97B0025D849</string>
 		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
-		<string>9E8A8F060FA0C66600C186C0</string>
 	</array>
 	<key>WindowString</key>
-	<string>59 67 1002 806 0 0 1600 878 </string>
+	<string>166 53 1002 806 0 0 1600 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
