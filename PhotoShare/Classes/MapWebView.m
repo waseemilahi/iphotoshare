@@ -31,7 +31,7 @@
 
 #import "MapWebView.h"
 
-#define DEFAULT_ZOOM_LEVEL	17
+#define DEFAULT_ZOOM_LEVEL	15
 
 @interface MapWebView (Private)
 - (void) loadMap;
@@ -223,8 +223,8 @@
     int height = (int) self.frame.size.height;
 	
 	NSString *path = [[[NSBundle mainBundle] pathForResource:@"GoogleMapAPI" ofType:@"html"] 
-					  stringByAppendingFormat:@"?width=%d&height=%d&latitude=40.8&longitude=-74.0&zoom=%d",
-					  width, height, DEFAULT_ZOOM_LEVEL-5];
+					  stringByAppendingFormat:@"?width=%d&height=%d&latitude=40.77&longitude=-73.9880&zoom=%d",
+					  width, height, DEFAULT_ZOOM_LEVEL ];
 	
 	// Although the docs say that host can be nil, it can't. Opened radar:6234824
 	NSURL *url = [[[NSURL alloc] initWithScheme:NSURLFileScheme host:@"localhost" path:path] autorelease];	
