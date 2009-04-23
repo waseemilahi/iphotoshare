@@ -41,6 +41,7 @@
 
 //-- Public Methods ------------------------------------------------------------
 @synthesize mDelegate;
+
 //------------------------------------------------------------------------------
 - (void) didMoveToSuperview {
     // this hook method is used to initialize the view; we don't want 
@@ -220,17 +221,15 @@
 - (void) loadMap {
     int width = (int) self.frame.size.width;
     int height = (int) self.frame.size.height;
-    
-    NSString *urlStr = 
-        [NSString stringWithFormat:
-         @"http://www.wenear.com/iphone-test?width=%d&height=%d&zoom=%d", 
-         width, height, DEFAULT_ZOOM_LEVEL];
-    
-    // asynchronous
-    //[self loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
 	
-	// synchronous
-	[self syncLoadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]]];
+	NSString *path = [[[NSBundle mainBundle] pathForResource:@"GoogleMapAPI" ofType:@"html"] 
+					  stringByAppendingFormat:@"?width=%d&height=%d&latitude=40.8&longitude=-74.0&zoom=%d",
+					  width, height, DEFAULT_ZOOM_LEVEL-5];
+	
+	// Although the docs say that host can be nil, it can't. Opened radar:6234824
+	NSURL *url = [[[NSURL alloc] initWithScheme:NSURLFileScheme host:@"localhost" path:path] autorelease];	
+	NSURLRequest *request = [NSURLRequest requestWithURL:url];
+	[self loadRequest:request];
 }
 //------------------------------------------------------------------------------
 @end
