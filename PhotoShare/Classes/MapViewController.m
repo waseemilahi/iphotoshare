@@ -121,9 +121,9 @@ static int number = 0;
 		[locmanager startUpdatingLocation];
 	
 }
--(MapMarker *) getMarker {
+-(MapMarker *) getMarker {//add lat and lng as parameters
 	MapMarker *marker;
-	GLatLng center = [mapView.map getCenterLatLng];
+	GLatLng center = GLatLngMake(40.77,-73.988);//[mapView.map getCenterLatLng];
 	
 	switch (number) {
 		case 0:

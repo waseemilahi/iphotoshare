@@ -66,7 +66,7 @@ typedef struct {
 #define G_MARS_INFRARED_MAP     @"G_MARS_INFRARED_MAP"
 #define G_SKY_VISIBLE_MAP       @"G_SKY_VISIBLE_MAP"
 
-@protocol MapWebViewDelegate
+@protocol MapWebViewDelegate 
 - (void) mapZoomUpdatedTo:(int)zoomLevel;
 - (void) mapCenterUpdatedToLatLng:(GLatLng)latlng;
 - (void) mapCenterUpdatedToPixel:(GPoint)pixel;

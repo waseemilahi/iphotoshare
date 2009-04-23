@@ -43,6 +43,7 @@
 		9E7D4C810F9EBAF200EB6452 /* Callback.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D4C7D0F9EBAF200EB6452 /* Callback.m */; };
 		9E7D4C820F9EBAF200EB6452 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D4C7E0F9EBAF200EB6452 /* MapView.m */; };
 		9E88F9630F9C1E8E0017AC21 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E88F9620F9C1E8E0017AC21 /* Default.png */; };
+		9E8A8F040FA0C63800C186C0 /* GoogleMapAPI.html in Resources */ = {isa = PBXBuildFile; fileRef = 9E8A8F030FA0C63800C186C0 /* GoogleMapAPI.html */; };
 		9ECB92720F6ABF620074FF77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ECB92710F6ABF620074FF77 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		9E7D4C7E0F9EBAF200EB6452 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 		9E7D4C7F0F9EBAF200EB6452 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
 		9E88F9620F9C1E8E0017AC21 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9E8A8F030FA0C63800C186C0 /* GoogleMapAPI.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = GoogleMapAPI.html; sourceTree = "<group>"; };
 		9ECB92710F6ABF620074FF77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -204,6 +206,7 @@
 				9E7B9A7F0F64C03A0025D849 /* MapView.xib */,
 				9E7B9A810F64C0460025D849 /* CameraView.xib */,
 				9E7B9A830F64C0570025D849 /* SettingsView.xib */,
+				9E8A8F030FA0C63800C186C0 /* GoogleMapAPI.html */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				9E7D4C720F9EBA9A00EB6452 /* yellow.png in Resources */,
 				9E7D4C740F9EBAA100EB6452 /* green.png in Resources */,
 				9E7D4C760F9EBAA800EB6452 /* blue.png in Resources */,
+				9E8A8F040FA0C63800C186C0 /* GoogleMapAPI.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
