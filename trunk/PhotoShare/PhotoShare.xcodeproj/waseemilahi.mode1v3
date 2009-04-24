@@ -204,7 +204,7 @@
 				<key>PBXProjectModuleGUID</key>
 				<string>9E8851840FA12EF7007A7E2A</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>MapViewController.m</string>
+				<string>MapViewController.h</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
@@ -212,11 +212,11 @@
 						<key>PBXProjectModuleGUID</key>
 						<string>9E88518C0FA12F77007A7E2A</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>MapViewController.m</string>
+						<string>MapViewController.h</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E8852180FA13E09007A7E2A</string>
+						<string>9E8852260FA13F85007A7E2A</string>
 						<key>history</key>
 						<array>
 							<string>9E8851A90FA130EC007A7E2A</string>
@@ -224,9 +224,9 @@
 							<string>9E8851EE0FA1371A007A7E2A</string>
 							<string>9E8851FA0FA1382F007A7E2A</string>
 							<string>9E8852100FA13E08007A7E2A</string>
-							<string>9E8852110FA13E08007A7E2A</string>
 							<string>9E8852120FA13E08007A7E2A</string>
-							<string>9E8852130FA13E08007A7E2A</string>
+							<string>9E8852240FA13F85007A7E2A</string>
+							<string>9E8852110FA13E08007A7E2A</string>
 						</array>
 						<key>prevStack</key>
 						<array>
@@ -257,6 +257,7 @@
 							<string>9E8852150FA13E09007A7E2A</string>
 							<string>9E8852160FA13E09007A7E2A</string>
 							<string>9E8852170FA13E09007A7E2A</string>
+							<string>9E8852250FA13F85007A7E2A</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -355,12 +356,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>1</integer>
+									<integer>33</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 43}, {237, 747}}</string>
+							<string>{{0, 550}, {237, 747}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -407,7 +408,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E88520F0FA13E08007A7E2A</string>
+										<string>9E8852230FA13F85007A7E2A</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -735,8 +736,8 @@
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9E7B9AB80F64C97B0025D849</string>
-		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
 		<string>9E8851840FA12EF7007A7E2A</string>
+		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>161 64 1002 806 0 0 1600 878 </string>
