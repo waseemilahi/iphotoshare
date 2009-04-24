@@ -13,6 +13,9 @@ static int number = 0;
 
 @implementation MapViewController
 
+@synthesize flickr;
+@synthesize locmanager;
+
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -54,15 +57,6 @@ static int number = 0;
 }
 
 
-- (void)showMap: (id) sender{
-	count++;
-	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
-	[self setTitle:@"Map"];
-//					 [[UIScreen mainScreen] applicationFrame]] autorelease];
-	//[self.tabBarController.selectedViewController.view release];
-	[self.view addSubview:mapView];
-	
-}
 
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -115,31 +109,25 @@ static int number = 0;
 
 */
 
--(void)locate: (id) sender{
-	
-		wasFound = NO;
-		[locmanager startUpdatingLocation];
-	
-}
--(MapMarker *) getMarker {//add lat and lng as parameters
+-(MapMarker *) getMarker:(double)latitudes lng:(double)longitudes {//add lat and lng as parameters
 	MapMarker *marker;
-	GLatLng center = GLatLngMake(40.77,-73.988);//[mapView.map getCenterLatLng];
+	
 	
 	switch (number) {
 		case 0:
-			marker = [MapMarker defaultRedMarkerWithLat:center.lat Lng:center.lng];
+			marker = [MapMarker defaultBlueMarkerWithLat:latitudes Lng:longitudes];
 			marker.data = @"red";
 			break;
 		case 1:
-			marker = [MapMarker defaultGreenMarkerWithLat:center.lat Lng:center.lng];
+			marker = [MapMarker defaultGreenMarkerWithLat:latitudes Lng:longitudes];
 			marker.data = @"green";
 			break;
 		case 2:
-			marker = [MapMarker defaultBlueMarkerWithLat:center.lat Lng:center.lng];
+			marker = [MapMarker defaultRedMarkerWithLat:latitudes Lng:longitudes];
 			marker.data = @"blue";
 			break;
 		case 3:
-			marker = [MapMarker defaultYellowMarkerWithLat:center.lat Lng:center.lng];
+			marker = [MapMarker defaultYellowMarkerWithLat:latitudes Lng:longitudes];
 			marker.data = @"yellow";
 			break;
 		default:
@@ -163,15 +151,6 @@ static int number = 0;
 }
 
 
--(void) addDraggableMarker {
-	MapMarker *marker = [self getMarker];
-	marker.draggable = YES;
-	marker.delegate = self;
-	[mapView addMarker:marker];
-	[marker show];
-}
-
-
 -(void) clickedMarker:(MapMarker *) marker {
 	NSString *message = [NSString stringWithFormat:@"[Lat: %lf, Lng: %lf] clicked",
 						 marker.lat, marker.lng];
@@ -180,8 +159,8 @@ static int number = 0;
 
 
 -(void) addUnDraggableMarker {
-	MapMarker *marker = [self getMarker];
-	marker.draggable = NO;
+	MapMarker *marker = [self getMarker:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ];
+	marker.draggable = YES;
 	marker.delegate = self;
 	[mapView addMarker:marker];
 	[marker show];
@@ -191,20 +170,12 @@ static int number = 0;
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	
+	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 	
-	locmanager = [[CLLocationManager alloc] init ];
-	[locmanager setDistanceFilter:1.0f];
-	[locmanager setDelegate:self];
-	[locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
-	[locmanager startUpdatingLocation];
-	isLocating = YES;
-//	locmanager.locations = [NSMutableArray arrayWithCapacity:32];
-	locations = [NSMutableArray arrayWithCapacity:32];
-	
+	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
+		
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
-	[self setTitle:@"Map"];
-	//					 [[UIScreen mainScreen] applicationFrame]] autorelease];
-	//[self.tabBarController.selectedViewController.view release];
+	
 	[self.view addSubview:mapView];
 	
 	messagesView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 375+20,self.view.bounds.size.width  , 20)];
@@ -214,17 +185,48 @@ static int number = 0;
 	messagesView.adjustsFontSizeToFitWidth = YES;
 	[self.view addSubview:messagesView];
 	
+	MapMarker *marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
+	marker.data = @"blue";
+	marker.draggable = NO;
+	marker.delegate = self;
+	[mapView addMarker:marker];
+	[marker show];
+	
 	UIButton *setCenterButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[setCenterButton setTitle:@"undraggable marker" forState:UIControlStateNormal];
+	[setCenterButton setTitle:@"draggable marker" forState:UIControlStateNormal];
 	[setCenterButton addTarget:self action:@selector(addUnDraggableMarker) forControlEvents:UIControlEventTouchUpInside];
 	setCenterButton.frame = CGRectMake(0, 360, 150, 30);
 	[self.view addSubview:setCenterButton];
+		
+}
+- (void)showMap: (id) sender{
+	count++;
 	
-	UIButton *addMarkerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[addMarkerButton setTitle:@"draggable marker" forState:UIControlStateNormal];
-	[addMarkerButton addTarget:self action:@selector(addDraggableMarker) forControlEvents:UIControlEventTouchUpInside];
-	addMarkerButton.frame = CGRectMake(170, 360, 150, 30);
-	[self.view addSubview:addMarkerButton];	
+	if(mapView)[mapView release];
+	
+	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
+	
+	[self.view addSubview:mapView];
+	
+	messagesView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 375+20,self.view.bounds.size.width  , 20)];
+	messagesView.backgroundColor = [UIColor blackColor];
+	messagesView.textColor = [UIColor whiteColor];
+	messagesView.font = [UIFont systemFontOfSize:13];
+	messagesView.adjustsFontSizeToFitWidth = YES;
+	[self.view addSubview:messagesView];
+	
+	MapMarker *marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
+	marker.data = @"blue";
+	marker.draggable = NO;
+	marker.delegate = self;
+	[mapView addMarker:marker];
+	[marker show];
+	
+	UIButton *setCenterButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[setCenterButton setTitle:@"draggable marker" forState:UIControlStateNormal];
+	[setCenterButton addTarget:self action:@selector(addUnDraggableMarker) forControlEvents:UIControlEventTouchUpInside];
+	setCenterButton.frame = CGRectMake(0, 360, 150, 30);
+	[self.view addSubview:setCenterButton];
 	
 }
 

@@ -10,6 +10,7 @@
 #import "MapView.h"
 #import <CoreLocation/CoreLocation.h>
 #import <CoreLocation/CLLocationManagerDelegate.h>
+#import "PhotoShareAppDelegate.h"
 
 
 @interface MapViewController : UIViewController <CLLocationManagerDelegate>{
@@ -18,16 +19,20 @@ IBOutlet UILabel *mapLabel;
 	IBOutlet UITextField *longitude;
 	IBOutlet UITextField *latitude;
 	IBOutlet UITextField *lastupdate;
-	CLLocationManager *locmanager;
+	 flickrapi *flickr;
 	NSMutableArray *locations;
 	MapView* mapView;
 	BOOL isLocating;
 	UILabel *messagesView;
+	CLLocationManager *locmanager;
 BOOL wasFound;
 	int count;
 }
+
+@property (nonatomic, retain) CLLocationManager *locmanager;
+@property (nonatomic, retain) flickrapi *flickr;
 - (IBAction) showMap: (id) sender;
-- (IBAction) locate: (id) sender;
+
 - (IBAction) backToLocate:(id)sender;
 
 @end

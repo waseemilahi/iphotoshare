@@ -16,6 +16,7 @@
 @synthesize tabBarController;
 @synthesize webview;
 @synthesize flickr;
+@synthesize locmanager;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
@@ -24,6 +25,12 @@
     [window addSubview:tabBarController.view];
 	count = 0;
 	flickr = [[flickrapi alloc] init];
+	self.locmanager = [[CLLocationManager alloc] init ];
+	[self.locmanager setDistanceFilter:1.0f];
+	[self.locmanager setDelegate:self];
+	[self.locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
+	[self.locmanager startUpdatingLocation];
+		
 }
 
 

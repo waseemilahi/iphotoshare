@@ -24,8 +24,8 @@
 	NSHTTPCookieStorage *cookies;
 	NSArray *cookie;
 	NSHTTPURLResponse *response;
-	CLLocationManager *locmanager;
-	NSMutableArray *locations;
+
+	
 	int count ;
 		BOOL isLocating;
 	
@@ -37,13 +37,12 @@
 @property (nonatomic, retain) NSHTTPCookieStorage *cookies;
 @property (nonatomic, retain) NSArray *cookie;
 @property (nonatomic, retain) NSHTTPURLResponse *response;
-@property (nonatomic, retain) CLLocationManager *locmanager;
+
 
 @property (assign) id<FlickrLoginDelegate> loginDelegate; 
 
 -(void)addParam:(NSMutableString *)key withValue:(NSMutableString *)value;
 -(void)clearParams;
--(void)setLocationManager;
 
 -(NSMutableString *)getFrob;
 -(NSMutableString *)getLoginURL;
@@ -58,7 +57,7 @@
 -(NSMutableString *)getSig;
 
 
--(NSArray *)getPhotos;
+-(NSArray *)getPhotos:(double)latitude lng:(double)longitude;
 
 -(void)webViewDidStartLoad:(UIWebView *)webView;
 -(void)webViewDidFinishLoad:(UIWebView *)webView;

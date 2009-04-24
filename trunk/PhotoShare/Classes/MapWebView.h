@@ -30,6 +30,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "PhotoShareAppDelegate.h"
 
 typedef struct {
     double minLat;
@@ -73,10 +74,12 @@ typedef struct {
 @end
 
 @interface MapWebView : UIWebView {
+	CLLocationManager *locmanager;
 @private
     id <MapWebViewDelegate> mDelegate;
 }
 @property (retain, getter = delegate) id <MapWebViewDelegate> mDelegate;
+@property (nonatomic, retain) CLLocationManager *locmanager;
 
 - (void)      didMoveToSuperview;
 - (NSString*) evalJS:(NSString*)script;

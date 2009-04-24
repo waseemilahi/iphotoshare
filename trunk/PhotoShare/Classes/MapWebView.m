@@ -41,6 +41,7 @@
 
 //-- Public Methods ------------------------------------------------------------
 @synthesize mDelegate;
+@synthesize locmanager;
 
 //------------------------------------------------------------------------------
 - (void) didMoveToSuperview {
@@ -219,12 +220,14 @@
 }
 
 - (void) loadMap {
+	
+	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
     int width = (int) self.frame.size.width;
     int height = (int) self.frame.size.height;
 	
 	NSString *path = [[[NSBundle mainBundle] pathForResource:@"GoogleMapAPI" ofType:@"html"] 
-					  stringByAppendingFormat:@"?width=%d&height=%d&latitude=40.77&longitude=-73.9880&zoom=%d",
-					  width, height, DEFAULT_ZOOM_LEVEL ];
+					  stringByAppendingFormat:@"?width=%d&height=%d&latitude=%f&longitude=%f&zoom=%d",
+					  width, height,locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude, DEFAULT_ZOOM_LEVEL ];
 	
 	// Although the docs say that host can be nil, it can't. Opened radar:6234824
 	NSURL *url = [[[NSURL alloc] initWithScheme:NSURLFileScheme host:@"localhost" path:path] autorelease];	

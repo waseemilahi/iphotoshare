@@ -10,7 +10,7 @@
 @synthesize TOKEN;
 @synthesize cookies;
 @synthesize cookie;
-@synthesize locmanager;
+
 @synthesize response;
 
 
@@ -366,31 +366,16 @@
 	NSLog(@"finished loading");
 }
 
--(void)setLocationManager{
+-(NSArray *)getPhotos:(double)latitude lng:(double)longitude {	
 	
-	self.locmanager = [[CLLocationManager alloc] init ];
-	[self.locmanager setDistanceFilter:1.0f];
-	[self.locmanager setDelegate:self];
-	[self.locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
-	[self.locmanager startUpdatingLocation];
-	isLocating = YES;
-	count = 0;
-	locations = [NSMutableArray arrayWithCapacity:32];
-	
-}
-
-
--(NSArray *)getPhotos {	
-	
-	if(count == 0)
+//	if(count == 0)
 	{
 	
-	NSLog(@"%f",(double)self.locmanager.location.coordinate.latitude);
 	[self clearParams];
 	[self addParam:@"method" withValue:@"flickr.photos.search"];
 	[self addParam:@"api_key" withValue:APIKEY];
-	[self addParam:@"lat" withValue:@"40.7"];
-	[self addParam:@"lon" withValue:@"-74"];
+	[self addParam:@"lat" withValue:[NSString stringWithFormat:@"%f",latitude]];//     @"40.7"];
+	[self addParam:@"lon" withValue:[NSString stringWithFormat:@"%f",longitude]];//    @"-74"];
 	[self addParam:@"extras" withValue:@"date_taken,date_upload,original_format,original_secret"];
 	
 	NSString *sig = [self getSig];
@@ -405,28 +390,7 @@
 		count++;
 	return [parser items];
 	}
-	else
-	{
-		NSLog(@"%f",(double)self.locmanager.location.coordinate.latitude);
-		[self clearParams];
-		[self addParam:@"method" withValue:@"flickr.photos.search"];
-		[self addParam:@"api_key" withValue:APIKEY];
-		[self addParam:@"lat" withValue:[NSString stringWithFormat:@"%.1f",(0.1 * ceil((self.locmanager.location.coordinate.latitude) * 10.0)) ]];//@"40.7"];
-		[self addParam:@"lon" withValue:[NSString stringWithFormat:@"%.0f",floor(self.locmanager.location.coordinate.longitude) ]];//@"-74"];
-		[self addParam:@"extras" withValue:@"date_taken,date_upload,original_format,original_secret"];
-		
-		NSString *sig = [self getSig];
-		
-		[self addParam:@"api_sig" withValue:[NSString stringWithString:sig]];
-		
-		NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.flickr.com/services/rest/%@",
-										   [self getParamList]]];
-		//method=flickr.photos.search&api_key=7aa8298476e07cb421f8cc396e655978&lat=40.7&lon=-74"];
-		NSLog(@"xml: %@", [NSString stringWithContentsOfURL:url]);
-		XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:@"photo" parseError:nil];
-		count++;
-		return [parser items];
-	}
+	
 }
 
 @end
