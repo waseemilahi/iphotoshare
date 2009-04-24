@@ -56,7 +56,6 @@
 -(NSMutableString *)getParamList;
 -(NSMutableString *)getSig;
 
-
 -(NSArray *)getPhotos:(double)latitude lng:(double)longitude;
 
 -(void)webViewDidStartLoad:(UIWebView *)webView;
