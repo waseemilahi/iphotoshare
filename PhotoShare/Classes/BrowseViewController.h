@@ -10,12 +10,13 @@
 #import "flickrapi.h"
 #import "PhotoShareAppDelegate.h"
 
-@interface BrowseViewController : UIViewController <UIImagePickerControllerDelegate> {
+@interface BrowseViewController : UIViewController <UIImagePickerControllerDelegate, CLLocationManagerDelegate> {
 	
 	IBOutlet UIImageView *imageView;
 	IBOutlet UILabel *pictureLabel;
 	IBOutlet UIImagePickerController *imagePicker;
     IBOutlet UIBarButtonItem *update;
+	CLLocationManager *locmanager;
 	
 	//temporary, for testing:
 	//IBOutlet UIWebView *webView;
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) UILabel *pictureLabel;
 @property (nonatomic, retain) flickrapi *flickr;
 @property (nonatomic, retain) NSArray *photos;
+@property (nonatomic, retain) CLLocationManager *locmanager;
 //@property (nonatomic, retain) CGPoint startPoint;
 //@property (nonatomic, retain) NSTimeInterval startTime;
 

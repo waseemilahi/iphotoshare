@@ -18,6 +18,7 @@
 @synthesize imagePicker;
 @synthesize pictureLabel;
 @synthesize flickr;
+@synthesize locmanager;
 @synthesize photos;
 @synthesize update;
 
@@ -108,8 +109,10 @@
 	//flickrapi *
 //	if (flickr == nil) flickr = [[flickrapi alloc] init];
 	[photos release];
+	
+	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
 		
-	photos = [NSArray arrayWithArray:[flickr getPhotos]];
+	photos = [NSArray arrayWithArray:[flickr getPhotos:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ]];
 	p = 0;
 	
 	[self loadPhoto:p];
@@ -211,9 +214,11 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
-	[flickr setLocationManager];
-	
+	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
+		
 	imageView.multipleTouchEnabled = YES;
+	
+	
 	
 	[self showPicture:update];
 	
