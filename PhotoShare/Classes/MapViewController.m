@@ -24,81 +24,13 @@ static int number = 0;
     }
     return self;
 }
-*/
+
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)backToLocate:(id)sender
-{
-	if(count >0)
-	{
-		//code goes here.
-		CATransition *myTransition = [ CATransition animation];
-		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
-		myTransition.type = kCATransitionPush;
-		myTransition.subtype = kCATransitionFromLeft;
-		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
-		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
-		//[tabBarController.view addSubview: [tabBarController.viewControllers objectAtIndex:4]];
-		//[tabBarController.view removeFromSuperview ];
-		
-		[[self.view.subviews lastObject] removeFromSuperview];
-		
-		[self setTitle:@"Map"];
-		
-		[locmanager startUpdatingLocation];
-		
-		count--;
-	}	
-	
-}
-
-
-
-
-- (void)locationManager:(CLLocationManager *)manager
-	didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
-	if(newLocation.horizontalAccuracy > 0.0f && 
-	   newLocation.horizontalAccuracy < 5.0f) { 
-		if(locations.count > 3) { 
-			[locmanager stopUpdatingLocation]; 
-			[locmanager performSelector:@selector(startUpdatingLocation) 
-							 withObject:nil 
-							 afterDelay:10.0f]; 
-		} 
-		[locations addObject:newLocation]; 
-	
-		
-		
-			}
-	
-	latitude.text = [NSString stringWithFormat:@"%3.5f",
-					 newLocation.coordinate.latitude];
-	
-	longitude.text = [NSString stringWithFormat:@"%3.5f",
-					 newLocation.coordinate.longitude];
-	[lastupdate resignFirstResponder];
-	[longitude resignFirstResponder];
-	[latitude resignFirstResponder];
-	NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init] ; 
-	[inputFormatter setDateFormat:@"HH:mm:ss.SSSS"]; 
-	NSDate *currentdate = [NSDate date];//[(CLLocation *)[locations lastObject] timestamp]; 
-	lastupdate.text = [inputFormatter stringFromDate:currentdate];
-	
-	
-}
-
-
-
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-	[locations removeAllObjects];
-	[locmanager stopUpdatingLocation];
-	isLocating = NO;
-}
 
 /*
 

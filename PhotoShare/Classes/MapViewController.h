@@ -33,6 +33,4 @@ BOOL wasFound;
 @property (nonatomic, retain) flickrapi *flickr;
 - (IBAction) showMap: (id) sender;
 
-- (IBAction) backToLocate:(id)sender;
-
 @end
