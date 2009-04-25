@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "flickrapi.h"
+#import "PhotoShareAppDelegate.h"
 
 @interface CameraViewController : UIViewController <UIImagePickerControllerDelegate>{
 	
@@ -15,10 +16,14 @@
 	IBOutlet UIImageView *imageView;
 	IBOutlet UILabel *pictureLabel;
 	IBOutlet UIImagePickerController *imagePicker;
+	
+	flickrapi *flickr;
 }
 
 @property (nonatomic, retain) UIImagePickerController *imagePicker;
 @property (nonatomic, retain) UIImageView *imageView;
+
+@property (nonatomic, retain) flickrapi *flickr;
 
 - (IBAction) takePicture: (id) sender;
 - (IBAction) viewPictures: (id) sender;
