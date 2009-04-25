@@ -16,6 +16,7 @@
 	IBOutlet UILabel *pictureLabel;
 	IBOutlet UIImagePickerController *imagePicker;
     IBOutlet UIBarButtonItem *update;
+	int count;
 	CLLocationManager *locmanager;
 	
 	//temporary, for testing:

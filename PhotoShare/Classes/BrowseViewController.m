@@ -8,6 +8,7 @@
 
 
 #import "BrowseViewController.h"
+#import <QuartzCore/QuartzCore.h>
 //#import "XMLtoObject.h"
 
 
@@ -47,14 +48,30 @@
 			if (dX > 25) {
 				NSLog(@"to the right");
 				
-				if (p + 1 < [photos count]) p++;
+				if (p + 1 < [photos count]){ p++;
+				CATransition *myTransition = [ CATransition animation];
+				myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+				myTransition.type = kCATransitionPush;
+				myTransition.subtype = kCATransitionFromLeft;
+				[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+				self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1] ; 
+				}
 				[self loadPhoto:p];
 			} else if (dX < -25) {
 				
 				NSLog(@"to the left");
 				
-				if (p > 0) p--;
+				if (p > 0){ p--;
+				
+				CATransition *myTransition = [ CATransition animation];
+				myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+				myTransition.type = kCATransitionPush;
+				myTransition.subtype = kCATransitionFromRight;
+				[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+				self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1] ; 
+				}
 				[self loadPhoto:p];
+				
 			}
 		} else if (dX < 50 && dX > -50)  {
 			if (dY > 25) {
@@ -121,6 +138,14 @@
 	photos = [NSArray arrayWithArray:[flickr getPhotos:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ]];
 	p = 0;
 	
+	if(count == 1){
+	CATransition *myTransition = [ CATransition animation];
+	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+	myTransition.type = kCATransitionPush;
+	myTransition.subtype = kCATransitionFromLeft;
+	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1] ; 
+	}
 	[self loadPhoto:p];
 	[photos retain];
 	
@@ -226,11 +251,11 @@
 		
 	imageView.multipleTouchEnabled = YES;
 	
-	
+	count = 0;
 	
 	[self showPicture:update];
 	
-	
+	count = 1;
 	
 }
 
