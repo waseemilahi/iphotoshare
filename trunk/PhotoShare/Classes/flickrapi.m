@@ -420,8 +420,8 @@
 	[self addParam:@"api_key" withValue:APIKEY];
 	[self addParam:@"photo_id" withValue:[NSString stringWithFormat:@"%@", pid]];
 	
-//	NSString *sig = [self getSig];
-//	[self addParam:@"api_sig" withValue:[NSString stringWithString:sig]];
+	//	NSString *sig = [self getSig];
+	//	[self addParam:@"api_sig" withValue:[NSString stringWithString:sig]];
 	
 	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.flickr.com/services/rest/%@",
 									   [self getParamList]]];
@@ -434,6 +434,32 @@
 	else
 		return nil;
 }
+
+
+-(BOOL)setLocationOfPhoto:(NSString *)pid withLat:(NSInteger)lat andLon:(NSInteger)lon {
+	NSLog(@"set location for pid: %@ to (%d, %d)", pid, lat, lon);
+	
+	[self clearParams];
+	[self addParam:@"method" withValue:@"flickr.photos.geo.setLocation"];
+	[self addParam:@"api_key" withValue:APIKEY];
+	[self addParam:@"auth_token" withValue:TOKEN];
+	
+	[self addParam:@"photo_id" withValue:[NSString stringWithFormat:@"%@", pid]];
+	[self addParam:@"lat" withValue:[NSString stringWithFormat:@"%d", lat]];
+	[self addParam:@"lon" withValue:[NSString stringWithFormat:@"%d", lon]];
+	
+	NSString *sig = [self getSig];
+	[self addParam:@"api_sig" withValue:[NSString stringWithString:sig]];
+	
+	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.flickr.com/services/rest/%@",
+									   [self getParamList]]];
+	
+	NSString *xml = [NSString stringWithContentsOfURL:url];
+	NSLog(@"xml: %@", xml);
+	
+	return YES;
+}
+
 
 -(void)uploadPhoto:(UIImage *)image withLat:(double)lat andLon:(double)lon {
 	[self clearParams];
@@ -473,12 +499,21 @@
 	[req setValue:[NSString stringWithFormat:@"%d", [data length]] forHTTPHeaderField:@"Content-Length"];
 	
 	NSLog(@"sending...");	
-	NSData *rd = [NSURLConnection sendSynchronousRequest:(NSURLRequest *)req returningResponse:nil error:nil];
+	NSData *xml = [NSURLConnection sendSynchronousRequest:(NSURLRequest *)req returningResponse:nil error:nil];
 	NSLog(@"sent");
 	
-	NSLog([[NSString alloc] initWithData:rd encoding:NSASCIIStringEncoding]);
+	NSString *str = [[NSString alloc] initWithData:xml encoding:NSUTF8StringEncoding];
 	
-	NSLog(@"%d", [[[NSString alloc] initWithData:UIImagePNGRepresentation(image) encoding:NSASCIIStringEncoding] length]);
+	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLinString:str toObject:@"photoid" parseError:nil];	
+	if ([[parser items] count] != 0) {
+		photoid *pid = (photoid *)[[parser items] objectAtIndex:0];
+		NSLog(@"photoid: %@", [pid value]);
+			  
+		NSInteger lat = 40.7;
+		NSInteger lon = -74;
+		
+		[self setLocationOfPhoto:[pid value] withLat:lat andLon:lon];
+	}
 }
 
 @end
