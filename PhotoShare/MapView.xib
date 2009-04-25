@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="32"/>
+			<integer value="1"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -41,6 +41,10 @@
 						<int key="NSvFlags">290</int>
 						<string key="NSFrameSize">{320, 44}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MAA</bytes>
+						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<int key="IBUIBarStyle">1</int>
@@ -49,7 +53,7 @@
 							<object class="IBUINavigationItem" id="164531341">
 								<reference key="IBUINavigationBar" ref="968885815"/>
 								<string key="IBUITitle">Map</string>
-								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="390333379">
+								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="34178896">
 									<string key="IBUITitle">Back To Map</string>
 									<int key="IBUIStyle">1</int>
 								</object>
@@ -60,11 +64,15 @@
 							</object>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="940869362">
+					<object class="IBUIImageView" id="143933314">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{-2, 44}, {323, 367}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">2</int>
+							<bytes key="NSRGB">MC45NzI1NDkwOCAwLjk2MDc4NDM4IDEAA</bytes>
+						</object>
 						<int key="IBUIContentMode">1</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 					</object>
@@ -240,14 +248,14 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">imageView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="940869362"/>
+						<reference key="destination" ref="143933314"/>
 					</object>
 					<int key="connectionID">33</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">goBack:</string>
-						<reference key="source" ref="390333379"/>
+						<reference key="source" ref="34178896"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">37</int>
@@ -276,7 +284,7 @@
 							<reference ref="511251336"/>
 							<reference ref="463075027"/>
 							<reference ref="128074242"/>
-							<reference ref="940869362"/>
+							<reference ref="143933314"/>
 						</object>
 						<reference key="parent" ref="360949347"/>
 					</object>
@@ -336,7 +344,7 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="472341096"/>
-							<reference ref="390333379"/>
+							<reference ref="34178896"/>
 						</object>
 						<reference key="parent" ref="968885815"/>
 					</object>
@@ -347,12 +355,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">36</int>
-						<reference key="object" ref="390333379"/>
+						<reference key="object" ref="34178896"/>
 						<reference key="parent" ref="164531341"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">32</int>
-						<reference key="object" ref="940869362"/>
+						<reference key="object" ref="143933314"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
@@ -382,7 +390,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>MapViewController</string>
 					<string>UIResponder</string>
-					<string>{{528, 271}, {320, 480}}</string>
+					<string>{{505, 223}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

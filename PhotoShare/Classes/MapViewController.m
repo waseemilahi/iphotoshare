@@ -169,6 +169,8 @@ static int number = 0;
 	
 	photo* ph;
 	
+	MapMarker *marker;
+	
 	
 	for(i = 0; i < [photos count]; i++)
 	{
@@ -176,8 +178,8 @@ static int number = 0;
 		
 		/** get location information for the photo and store it in the photo object **/
 		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
-						
-		MapMarker *marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] ];
+		
+		marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] ];
 		marker.data = @"red";
 		marker.draggable = NO;
 		marker.delegate = self;
@@ -185,27 +187,31 @@ static int number = 0;
 		[marker show];
 		
 	}
-		
-
+	
+	
 	[photos retain];
 	
-	MapMarker *marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
+	marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
 	marker.data = @"blue";
 	marker.draggable = NO;
 	marker.delegate = self;
 	[mapView addMarker:marker];
 	[marker show];
 	
-	image_count = 0;
 	
+	image_count = 0;	
 	
 }
 - (IBAction)showMap: (id) sender{
 	
+	if(image_count > 0)[[self.view.subviews lastObject] removeFromSuperview];
 	
-	if(mapView)[mapView release];
+	if(mapView){
+		[mapView clearMarkers];
+		[mapView release];
+	}
 	
-	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 53,self.view.bounds.size.width ,375)];
+	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
 	[self.view addSubview:mapView];
 	

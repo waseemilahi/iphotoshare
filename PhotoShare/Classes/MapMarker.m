@@ -204,7 +204,7 @@
 
 
 -(void) show {
-	if (mapView)
+	
 		[mapView showMarker:self];
 }
 
