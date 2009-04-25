@@ -10,13 +10,13 @@
 #import "flickrapi.h"
 #import "PhotoShareAppDelegate.h"
 
-@interface CameraViewController : UIViewController <UIImagePickerControllerDelegate>{
+@interface CameraViewController : UIViewController <UIImagePickerControllerDelegate, CLLocationManagerDelegate>{
 	
 	
 	IBOutlet UIImageView *imageView;
 	IBOutlet UILabel *pictureLabel;
 	IBOutlet UIImagePickerController *imagePicker;
-	
+	CLLocationManager *locmanager;
 	flickrapi *flickr;
 }
 
@@ -24,6 +24,7 @@
 @property (nonatomic, retain) UIImageView *imageView;
 
 @property (nonatomic, retain) flickrapi *flickr;
+@property (nonatomic, retain) CLLocationManager *locmanager;
 
 - (IBAction) takePicture: (id) sender;
 - (IBAction) viewPictures: (id) sender;

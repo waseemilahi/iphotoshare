@@ -15,6 +15,7 @@
 @synthesize imageView;
 @synthesize imagePicker;
 @synthesize flickr;
+@synthesize locmanager;
 
 #define DOCSFOLDER [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
 
@@ -82,12 +83,8 @@
 //	[UIImagePNGRepresentation(image) writeToFile : uniquePath atomically:YES];
 	//[UIImagePNGRepresentation(image) writeToFile: uniquePath atomically:YES];
 	
-	
-	//should get from GPS...
-	double lat = 40.7;
-	double lon = -74.0;
-	
-	[flickr uploadPhoto:image withLat:lat andLon:lon];
+		
+	[flickr uploadPhoto:image withLat:locmanager.location.coordinate.latitude andLon:locmanager.location.coordinate.longitude];
 	
 	UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
 	
@@ -105,6 +102,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
+	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
 		
 	/*
  if([UIImagePickerController isSourceTypeAvailable:
