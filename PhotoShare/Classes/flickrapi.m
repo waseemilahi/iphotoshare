@@ -389,6 +389,9 @@
 		[self clearParams];
 		[self addParam:@"method" withValue:@"flickr.photos.search"];
 		[self addParam:@"api_key" withValue:APIKEY];
+		[self addParam:@"min_upload_date" withValue:@"1237093201"];
+		[self addParam:@"radius" withValue:@"1"];
+		[self addParam:@"radius_units" withValue:@"mi"];
 		[self addParam:@"lat" withValue:[NSString stringWithFormat:@"%f",latitude]];//     @"40.7"];
 		[self addParam:@"lon" withValue:[NSString stringWithFormat:@"%f",longitude]];//    @"-74"];
 		[self addParam:@"extras" withValue:@"date_taken,date_upload,original_format,original_secret"];
@@ -432,7 +435,7 @@
 		return nil;
 }
 
--(void)uploadPhoto:(UIImage *)image withLat:(int)lat andLon:(int)lon {
+-(void)uploadPhoto:(UIImage *)image withLat:(double)lat andLon:(double)lon {
 	[self clearParams];
 //	[self addParam:@"method" withValue:@"flickr.photos.search"];
 	[self addParam:@"api_key" withValue:APIKEY];
