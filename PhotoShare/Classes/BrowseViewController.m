@@ -89,6 +89,18 @@
 	}
 }
 
+-(IBAction)saveImage:(id)sender{
+	
+	UIImageWriteToSavedPhotosAlbum(imageView.image, self, nil, nil);
+	
+	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo Saved" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	
+	[myAlertView show];
+	[myAlertView release];
+	
+}
+
+
 - (void)loadPhoto:(NSUInteger)index {
 	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
 	NSLog(@"loadPhoto:%d of %d", index + 1, [photos count]);

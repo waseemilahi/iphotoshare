@@ -43,6 +43,7 @@
 //@property (nonatomic, retain) UIWebView *webView;	
 
 - (IBAction) showPicture: (id) sender;
+- (IBAction) saveImage: (id)sender;
 - (void) loadPhoto:(NSUInteger)index;
 
 @end

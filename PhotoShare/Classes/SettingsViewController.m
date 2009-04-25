@@ -190,17 +190,25 @@
 		//login failed
 		
 			NSLog(@"login failed!");
-		 
+		
+		
+		UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Bad Username/Password" delegate:self cancelButtonTitle:@"Try Again" otherButtonTitles:nil];
+		
+		[myAlertView show];
+		[myAlertView release];
+		
+	/*	 
 		 CATransition *myTransition = [ CATransition animation];
 		 myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
 		 myTransition.type = kCATransitionPush;
 		 myTransition.subtype = kCATransitionFromRight;
 		 [ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 		 self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
-		 
+	*/	 
 		 [flickr logout];
+		[[self.view.subviews lastObject] removeFromSuperview];
 		//[[self.view.subviews lastObject] removeFromSuperview];
-		if(invalidupview != nil){[self.view addSubview:invalidupview];count++;}
+		//if(invalidupview != nil){[self.view addSubview:invalidupview];count++;}
 		
 		
 	}
@@ -214,16 +222,22 @@
 		
 		NSLog(@"login failed!");
 		
+		UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Bad Internet Connection" delegate:self cancelButtonTitle:@"Try Again" otherButtonTitles:nil];
+		
+		[myAlertView show];
+		[myAlertView release];
+	/*	
 		CATransition *myTransition = [ CATransition animation];
 		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
 		myTransition.type = kCATransitionPush;
 		myTransition.subtype = kCATransitionFromLeft;
 		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
-		
+		*/
 		[flickr logout];
+		[[self.view.subviews lastObject] removeFromSuperview];
 		//[[self.view.subviews lastObject] removeFromSuperview];
-		if(badnetworkview != nil){[self.view addSubview:badnetworkview];count++;}
+	//	if(badnetworkview != nil){[self.view addSubview:badnetworkview];count++;}
 		
 		
 	}
