@@ -47,7 +47,7 @@
 - (void)takePicture: (id) sender{
 			
 	
-		if(NO && [UIImagePickerController isSourceTypeAvailable:
+		if([UIImagePickerController isSourceTypeAvailable:
 			UIImagePickerControllerSourceTypeCamera]) { //<label id="code.imagepicker.sourceType"/>
 			self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
 		} else {

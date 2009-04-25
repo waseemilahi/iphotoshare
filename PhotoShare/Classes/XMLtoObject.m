@@ -2,6 +2,23 @@
 #import "XMLtoObject.h"
 //#import "photo.h"
 
+
+//photoid object
+@implementation photoid : NSObject 
+
+@synthesize value;
+
+-(void)setValue:(NSString *)val {
+	if(value) [value release];
+	value = [[NSString alloc] initWithString:val];
+	
+	NSLog(@"photoid value set: %@", val);
+	return;
+}
+
+@end
+
+
 //location object
 @implementation location
 
@@ -293,7 +310,9 @@ didStartElement:(NSString *)elementName
 	
 	if([elementName isEqualToString:className]) {
 		
-		if ([elementName isEqualToString: @"frob"]) {
+		if ([elementName isEqualToString: @"photoid"]) {
+			[(photoid *)item setValue:[currentNodeContent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+		} else if ([elementName isEqualToString: @"frob"]) {
 			[(frob *)item setValue:[currentNodeContent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
 		} else if ([elementName isEqualToString: @"token"]) {
 			[(token *)item setValue:[currentNodeContent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];

@@ -18,6 +18,19 @@
 		 parseError:(NSError **)error;
 @end
 
+
+//photoid object
+@interface photoid : NSObject {
+	NSString *value;
+}
+
+@property (nonatomic, retain) NSString *value;
+
+-(void)setValue:(NSString *)val;
+
+@end
+
+
 //location object
 @interface location : NSObject {
 	NSDictionary *keys;
