@@ -83,7 +83,7 @@
 //	[UIImagePNGRepresentation(image) writeToFile : uniquePath atomically:YES];
 	//[UIImagePNGRepresentation(image) writeToFile: uniquePath atomically:YES];
 	
-		
+	[image retain];
 	[flickr uploadPhoto:image withLat:locmanager.location.coordinate.latitude andLon:locmanager.location.coordinate.longitude];
 	
 	UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
