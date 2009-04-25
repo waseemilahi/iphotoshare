@@ -88,7 +88,7 @@ static int number = 0;
 -(void) clickedMarker:(MapMarker *) marker {
 	NSString *message = [NSString stringWithFormat:@"[Lat: %lf, Lng: %lf] clicked",
 						 marker.lat, marker.lng];
-	messagesView.text = message;
+	
 	photo* ph = (photo *)[photos objectAtIndex:0];
 	
 	/** get location information for the photo and store it in the photo object **/
@@ -139,20 +139,44 @@ static int number = 0;
 	
 	[self.view addSubview:mapView];
 			
-	MapMarker *marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
-	marker.data = @"blue";
-	marker.draggable = NO;
-	marker.delegate = self;
-	[mapView addMarker:marker];
-	[marker show];
+	
 	
 	[photos release];
 	
 	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
 	
 	photos = [NSArray arrayWithArray:[flickr getPhotos:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ]];
+	
+	int i;
+	
+	photo* ph;
+	
+	
+	for(i = 0; i < [photos count]; i++)
+	{
+		ph = (photo *)[photos objectAtIndex:i];
+		
+		/** get location information for the photo and store it in the photo object **/
+		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
+						
+		MapMarker *marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] ];
+		marker.data = @"red";
+		marker.draggable = NO;
+		marker.delegate = self;
+		[mapView addMarker:marker];
+		[marker show];
+		
+	}
+		
 
 	[photos retain];
+	
+	MapMarker *marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
+	marker.data = @"blue";
+	marker.draggable = NO;
+	marker.delegate = self;
+	[mapView addMarker:marker];
+	[marker show];
 	
 	image_count = 0;
 	
@@ -163,11 +187,42 @@ static int number = 0;
 	
 	if(mapView)[mapView release];
 	
-	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
+	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 53,self.view.bounds.size.width ,375)];
 	
 	[self.view addSubview:mapView];
 	
 	
+	
+		
+	[photos release];
+	
+	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
+	
+	photos = [NSArray arrayWithArray:[flickr getPhotos:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ]];
+	
+	int i;
+	
+	photo* ph;
+	
+		
+	for(i = 0; i < [photos count]; i++)
+	{
+		ph = (photo *)[photos objectAtIndex:i];
+		
+		/** get location information for the photo and store it in the photo object **/
+		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
+		
+		MapMarker *marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] ];
+		marker.data = @"red";
+		marker.draggable = NO;
+		marker.delegate = self;
+		[mapView addMarker:marker];
+		[marker show];
+		
+	}
+	
+	
+	[photos retain];
 	
 	MapMarker *marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
 	marker.data = @"blue";
@@ -176,18 +231,8 @@ static int number = 0;
 	[mapView addMarker:marker];
 	[marker show];
 	
-	[photos release];
 	
-	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
-	
-	photos = [NSArray arrayWithArray:[flickr getPhotos:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ]];
-	
-		
-	
-	
-	[photos retain];
-	
-	
+	image_count = 0;
 	
 	
 	
