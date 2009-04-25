@@ -9,7 +9,6 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="32"/>
-			<integer value="36"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -50,7 +49,7 @@
 							<object class="IBUINavigationItem" id="164531341">
 								<reference key="IBUINavigationBar" ref="968885815"/>
 								<string key="IBUITitle">Map</string>
-								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="1013218692">
+								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="390333379">
 									<string key="IBUITitle">Back To Map</string>
 									<int key="IBUIStyle">1</int>
 								</object>
@@ -60,6 +59,14 @@
 								</object>
 							</object>
 						</object>
+					</object>
+					<object class="IBUIImageView" id="940869362">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{-2, 44}, {323, 367}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<int key="IBUIContentMode">1</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
 					</object>
 					<object class="IBUILabel" id="917701676">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -185,16 +192,6 @@
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
 			</object>
-			<object class="IBUIImageView" id="853108804">
-				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">301</int>
-				<string key="NSFrameSize">{323, 480}</string>
-				<reference key="NSSuperview"/>
-				<bool key="IBUIOpaque">NO</bool>
-				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-				<int key="IBUIContentMode">2</int>
-				<bool key="IBUIUserInteractionEnabled">NO</bool>
-			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
@@ -243,14 +240,14 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">imageView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="853108804"/>
+						<reference key="destination" ref="940869362"/>
 					</object>
 					<int key="connectionID">33</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">goBack:</string>
-						<reference key="source" ref="1013218692"/>
+						<reference key="source" ref="390333379"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">37</int>
@@ -277,8 +274,9 @@
 							<reference ref="112490190"/>
 							<reference ref="773729917"/>
 							<reference ref="511251336"/>
-							<reference ref="128074242"/>
 							<reference ref="463075027"/>
+							<reference ref="128074242"/>
+							<reference ref="940869362"/>
 						</object>
 						<reference key="parent" ref="360949347"/>
 					</object>
@@ -338,7 +336,7 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="472341096"/>
-							<reference ref="1013218692"/>
+							<reference ref="390333379"/>
 						</object>
 						<reference key="parent" ref="968885815"/>
 					</object>
@@ -348,14 +346,14 @@
 						<reference key="parent" ref="164531341"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">32</int>
-						<reference key="object" ref="853108804"/>
-						<reference key="parent" ref="360949347"/>
+						<int key="objectID">36</int>
+						<reference key="object" ref="390333379"/>
+						<reference key="parent" ref="164531341"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">36</int>
-						<reference key="object" ref="1013218692"/>
-						<reference key="parent" ref="164531341"/>
+						<int key="objectID">32</int>
+						<reference key="object" ref="940869362"/>
+						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
 			</object>
