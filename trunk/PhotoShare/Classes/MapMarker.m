@@ -48,6 +48,7 @@
 @synthesize mapView;
 @synthesize draggable;
 @synthesize delegate;
+@synthesize markerImage;
 
 -(void) setFrame:(CGRect) frame {
 	if (self.imageView) {
@@ -84,8 +85,15 @@
 	return [[MapMarker alloc] initWithImage:[UIImage imageNamed:@"green.png"] Lat:latitude Lng:longitude Anchor:CGPointMake(16.0, 32.0)];	
 }
 
-+(id) defaultRedMarkerWithLat:(double) latitude Lng:(double) longitude {
-	return [[MapMarker alloc] initWithImage:[UIImage imageNamed:@"red.png"] Lat:latitude Lng:longitude Anchor:CGPointMake(16.0, 32.0)];
++(id) defaultRedMarkerWithLat:(double) latitude Lng:(double) longitude  my_image:(UIImage *)myImage{
+	MapMarker * tmp_marker =  [[MapMarker alloc] initWithImage:[UIImage imageNamed:@"red.png"] Lat:latitude Lng:longitude Anchor:CGPointMake(16.0, 32.0)];
+
+	tmp_marker.markerImage = myImage;
+	
+	[tmp_marker retain];
+	
+	return tmp_marker;
+
 }
 
 +(id) defaultYellowMarkerWithLat:(double) latitude Lng:(double) longitude {

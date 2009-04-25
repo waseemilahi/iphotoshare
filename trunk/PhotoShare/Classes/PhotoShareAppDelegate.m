@@ -26,11 +26,33 @@
 	count = 0;
 	flickr = [[flickrapi alloc] init];
 	self.locmanager = [[CLLocationManager alloc] init ];
-	[self.locmanager setDistanceFilter:1.0f];
+	//[self.locmanager setDistanceFilter:1.0f];
 	[self.locmanager setDelegate:self];
 	[self.locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
 	[self.locmanager startUpdatingLocation];
 		
+}
+
+// Called when the location is updated
+- (void)locationManager:(CLLocationManager *)manager
+	didUpdateToLocation:(CLLocation *)newLocation
+		   fromLocation:(CLLocation *)oldLocation
+{
+	
+	CLLocation * currentLocation = locmanager.location;
+	
+	NSDate* newLocationeventDate = newLocation.timestamp;
+	NSTimeInterval howRecentNewLocation = [newLocationeventDate timeIntervalSinceNow];
+	
+	// Needed to filter cached and too old locations
+	if ((!currentLocation || currentLocation.horizontalAccuracy > newLocation.horizontalAccuracy) &&
+		(howRecentNewLocation < -0.0 && howRecentNewLocation > -10.0)) {
+		if (currentLocation)
+			[currentLocation release];
+		
+		currentLocation = [newLocation retain];
+	}
+	
 }
 
 

@@ -40,6 +40,7 @@
 
 @interface MapMarker : UIView {
 	UIImageView *imageView;
+	UIImage *markerImage;
 	double lat;
 	double lng;
 	int x;
@@ -54,6 +55,7 @@
 }
 
 @property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, retain) UIImage *markerImage;
 @property double lat;
 @property double lng;
 @property int x;
@@ -68,7 +70,7 @@
 
 +(id) defaultGreenMarkerWithLat:(double) latitude Lng:(double) longitude;
 
-+(id) defaultRedMarkerWithLat:(double) latitude Lng:(double) longitude;
++(id) defaultRedMarkerWithLat:(double) latitude Lng:(double) longitude my_image:(UIImage *)myImage;
 
 +(id) defaultYellowMarkerWithLat:(double) latitude Lng:(double) longitude;
 
