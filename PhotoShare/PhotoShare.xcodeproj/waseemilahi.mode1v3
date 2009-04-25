@@ -204,7 +204,7 @@
 				<key>PBXProjectModuleGUID</key>
 				<string>9E1BDF8A0FA2D071001F067C</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>MapWebView.m</string>
+				<string>MapViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
@@ -212,17 +212,19 @@
 						<key>PBXProjectModuleGUID</key>
 						<string>9E1BDFA40FA2D3A7001F067C</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>MapWebView.m</string>
+						<string>MapViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E1BDFD00FA2D5C9001F067C</string>
+						<string>9E1BE0310FA2DEAF001F067C</string>
 						<key>history</key>
 						<array>
-							<string>9E1BDFA50FA2D3A7001F067C</string>
 							<string>9E1BDFA70FA2D3A7001F067C</string>
-							<string>9E1BDFCE0FA2D5C9001F067C</string>
-							<string>9E1BDFC60FA2D581001F067C</string>
+							<string>9E1BDFD70FA2D67E001F067C</string>
+							<string>9E1BDFF90FA2D8E4001F067C</string>
+							<string>9E1BE01B0FA2DBA5001F067C</string>
+							<string>9E1BE0240FA2DDA9001F067C</string>
+							<string>9E1BE0300FA2DEAF001F067C</string>
 						</array>
 						<key>prevStack</key>
 						<array>
@@ -235,6 +237,14 @@
 							<string>9E1BDFC80FA2D581001F067C</string>
 							<string>9E1BDFC90FA2D581001F067C</string>
 							<string>9E1BDFCF0FA2D5C9001F067C</string>
+							<string>9E1BDFDA0FA2D67E001F067C</string>
+							<string>9E1BDFDB0FA2D67E001F067C</string>
+							<string>9E1BDFDC0FA2D67E001F067C</string>
+							<string>9E1BDFFB0FA2D8E4001F067C</string>
+							<string>9E1BDFFC0FA2D8E4001F067C</string>
+							<string>9E1BE01C0FA2DBA5001F067C</string>
+							<string>9E1BE0260FA2DDA9001F067C</string>
+							<string>9E1BE0270FA2DDA9001F067C</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -250,7 +260,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>333 52 1094 822 0 0 1600 878 </string>
+				<string>201 30 1094 822 0 0 1600 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -373,7 +383,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MapWebView.m</string>
+								<string>XMLtoObject.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -381,11 +391,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MapWebView.m</string>
+										<string>XMLtoObject.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E1BDFCD0FA2D5C9001F067C</string>
+										<string>9E1BE02F0FA2DEAF001F067C</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -416,7 +426,6 @@
 											<string>9EAAFAB70F8A50E300BA6111</string>
 											<string>9E88410A0F902E4200B8F19C</string>
 											<string>9E9774F60F96F646000FB694</string>
-											<string>9E97752D0F96F861000FB694</string>
 											<string>9E9775940F970042000FB694</string>
 											<string>9E88F8FC0F9C13620017AC21</string>
 											<string>9E88F90E0F9C155B0017AC21</string>
@@ -424,7 +433,6 @@
 											<string>9E7D4C940F9EBB1900EB6452</string>
 											<string>9E7D4C950F9EBB1900EB6452</string>
 											<string>9E7D4C960F9EBB1900EB6452</string>
-											<string>9E7D4C970F9EBB1900EB6452</string>
 											<string>9E8A8E8F0FA0B8CE00C186C0</string>
 											<string>9E8A8E920FA0B8CE00C186C0</string>
 											<string>9E8A8E930FA0B8CE00C186C0</string>
@@ -437,11 +445,13 @@
 											<string>9E88526E0FA14C32007A7E2A</string>
 											<string>9E88526F0FA14C32007A7E2A</string>
 											<string>9E1BDF980FA2D3A7001F067C</string>
-											<string>9E1BDF990FA2D3A7001F067C</string>
 											<string>9E1BDF9A0FA2D3A7001F067C</string>
 											<string>9E1BDF9C0FA2D3A7001F067C</string>
 											<string>9E1BDFC30FA2D581001F067C</string>
-											<string>9E1BDFBA0FA2D4C9001F067C</string>
+											<string>9E1BDFF60FA2D8E4001F067C</string>
+											<string>9E1BE0170FA2DBA5001F067C</string>
+											<string>9E1BE0210FA2DDA9001F067C</string>
+											<string>9E97752D0F96F861000FB694</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -507,6 +517,9 @@
 											<string>9E1BDFA20FA2D3A7001F067C</string>
 											<string>9E1BDFBB0FA2D4C9001F067C</string>
 											<string>9E1BDFC40FA2D581001F067C</string>
+											<string>9E1BDFF70FA2D8E4001F067C</string>
+											<string>9E1BE0190FA2DBA5001F067C</string>
+											<string>9E1BE0220FA2DDA9001F067C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

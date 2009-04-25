@@ -94,6 +94,7 @@
 		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];
 		
 		UIImage* image = [[UIImage alloc] initWithData:imageData];
+		//imageView.frame = CGRectMake(0.0, 43.0,self.view.bounds.size.width ,375);
 		[imageView setImage:image];
 		[imageData release];
 		[image release];

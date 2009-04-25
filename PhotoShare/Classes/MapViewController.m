@@ -86,28 +86,46 @@ static int number = 0;
 
 
 -(void) clickedMarker:(MapMarker *) marker {
-	NSString *message = [NSString stringWithFormat:@"[Lat: %lf, Lng: %lf] clicked",
-						 marker.lat, marker.lng];
 	
-	photo* ph = (photo *)[photos objectAtIndex:0];
 	
-	/** get location information for the photo and store it in the photo object **/
-	[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
+	int i;
 	
-	NSLog(@"photo");
-	NSLog(@"-url: %@", [ph getPhotoUrl:4]);
-	NSString* imageURL = [ph getPhotoUrl:4];
+	photo* ph;
 	
-	NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];
 	
-	UIImage* image = [[UIImage alloc] initWithData:imageData];
-	imageView.frame = CGRectMake(0.0, 43.0,self.view.bounds.size.width ,375);
-	[imageView setImage:image];
-	[self.view addSubview:imageView];
-	[imageData release];
-	[image release];
+	for(i = 0; i < [photos count]; i++)
+	{
+		ph = (photo *)[photos objectAtIndex:i];
+		
+		/** get location information for the photo and store it in the photo object **/
+		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
 	
-	image_count++;
+	
+	
+		if(([[ph getLatitude] doubleValue] == marker.lat) && ([[ph getLongitude] doubleValue] == marker.lng))	
+		{				
+			NSString* imageURL = [ph getPhotoUrl:4];
+		
+			NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];	
+
+			UIImage* image = [[UIImage alloc] initWithData:imageData];
+		
+			//imageView.frame = CGRectMake(0.0, 43.0,self.view.bounds.size.width ,375);
+		
+			[imageView setImage:image];
+		
+			[self.view addSubview:imageView];
+		
+			[imageData release];
+		
+			[image release];	
+		
+			image_count++;
+			
+			break;
+	
+		}
+	}
 	
 }
 
