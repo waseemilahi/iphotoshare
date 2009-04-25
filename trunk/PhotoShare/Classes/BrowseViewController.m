@@ -9,7 +9,7 @@
 
 #import "BrowseViewController.h"
 //#import "XMLtoObject.h"
-#import "flickrapi.h"
+
 
 #define DOCSFOLDER [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
 @implementation BrowseViewController
@@ -73,6 +73,7 @@
 }
 
 - (void)loadPhoto:(NSUInteger)index {
+	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
 	NSLog(@"loadPhoto:%d of %d", index + 1, [photos count]);
 	if ([photos count] > 0) {
 		[pictureLabel setText:[NSString stringWithFormat:@"%d of %d", index + 1, [photos count]]];
