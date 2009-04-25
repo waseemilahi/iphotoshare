@@ -12,7 +12,6 @@
 #import <CoreLocation/CLLocationManagerDelegate.h>
 #import "PhotoShareAppDelegate.h"
 
-
 @interface MapViewController : UIViewController <CLLocationManagerDelegate>{
 IBOutlet UILabel *mapLabel;
 	IBOutlet UILabel *locLabel;
@@ -27,10 +26,14 @@ IBOutlet UILabel *mapLabel;
 	CLLocationManager *locmanager;
 BOOL wasFound;
 	int count;
+	NSArray *photos;
+	IBOutlet UIImageView *imageView;
 }
+@property (nonatomic, retain) NSArray *photos;
 
 @property (nonatomic, retain) CLLocationManager *locmanager;
 @property (nonatomic, retain) flickrapi *flickr;
+@property (nonatomic, retain) UIImageView *imageView;
 - (IBAction) showMap: (id) sender;
 
 @end

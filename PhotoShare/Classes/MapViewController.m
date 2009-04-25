@@ -14,7 +14,9 @@ static int number = 0;
 @implementation MapViewController
 
 @synthesize flickr;
+@synthesize photos;
 @synthesize locmanager;
+@synthesize imageView;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -87,6 +89,23 @@ static int number = 0;
 	NSString *message = [NSString stringWithFormat:@"[Lat: %lf, Lng: %lf] clicked",
 						 marker.lat, marker.lng];
 	messagesView.text = message;
+	photo* ph = (photo *)[photos objectAtIndex:0];
+	
+	/** get location information for the photo and store it in the photo object **/
+	[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
+	
+	NSLog(@"photo");
+	NSLog(@"-url: %@", [ph getPhotoUrl:4]);
+	NSString* imageURL = [ph getPhotoUrl:4];
+	
+	NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];
+	
+	UIImage* image = [[UIImage alloc] initWithData:imageData];
+	[imageView setImage:image];
+	[self.view addSubview:imageView];
+	[imageData release];
+	[image release];
+	
 }
 
 
@@ -124,12 +143,22 @@ static int number = 0;
 	[mapView addMarker:marker];
 	[marker show];
 	
+	[photos release];
+	
+	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
+	
+	photos = [NSArray arrayWithArray:[flickr getPhotos:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ]];
+
+	[photos retain];
+	
 	UIButton *setCenterButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[setCenterButton setTitle:@"draggable marker" forState:UIControlStateNormal];
 	[setCenterButton addTarget:self action:@selector(addUnDraggableMarker) forControlEvents:UIControlEventTouchUpInside];
 	setCenterButton.frame = CGRectMake(0, 360, 150, 30);
 	[self.view addSubview:setCenterButton];
 		
+	
+	
 }
 - (void)showMap: (id) sender{
 	count++;
@@ -153,6 +182,19 @@ static int number = 0;
 	marker.delegate = self;
 	[mapView addMarker:marker];
 	[marker show];
+	
+	[photos release];
+	
+	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
+	
+	photos = [NSArray arrayWithArray:[flickr getPhotos:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ]];
+	
+		
+	
+	
+	[photos retain];
+	
+	
 	
 	UIButton *setCenterButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[setCenterButton setTitle:@"draggable marker" forState:UIControlStateNormal];

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "flickrapi.h"
+
 #import "PhotoShareAppDelegate.h"
 
 @interface BrowseViewController : UIViewController <UIImagePickerControllerDelegate, CLLocationManagerDelegate> {
