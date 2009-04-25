@@ -438,6 +438,7 @@
 -(void)uploadPhoto:(UIImage *)image withLat:(double)lat andLon:(double)lon {
 	[self clearParams];
 	[self addParam:@"api_key" withValue:APIKEY];
+	[self addParam:@"auth_token" withValue:TOKEN];
 	
 	NSString *sig = [self getSig];
 	
@@ -460,35 +461,24 @@
 	
 	[data appendData:UIImagePNGRepresentation(image)];
 	
-	[data appendData:[[NSString stringWithFormat:@"-----------------------------%@--\r\n", @"8f999edae883c6039b244c0d341f45f8"] dataUsingEncoding: NSASCIIStringEncoding]];
+	[data appendData:[[NSString stringWithFormat:@"\r\n-----------------------------%@--\r\n", @"8f999edae883c6039b244c0d341f45f8"] dataUsingEncoding: NSASCIIStringEncoding]];
 
 	
-	NSLog(@"data: %d", [data length]);
-	//NSLog([[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding]);
+	NSLog(@"%d", [[[NSString alloc] initWithData:UIImagePNGRepresentation(image) encoding:NSASCIIStringEncoding] length]);
 	
 	NSMutableURLRequest *req = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.flickr.com/services/upload/"]];
 	[req setHTTPMethod:@"POST"];
 	[req setHTTPBody:data];
 	[req setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", @"---------------------------8f999edae883c6039b244c0d341f45f8"] forHTTPHeaderField:@"Content-Type"];
-	[req setValue:[NSString stringWithFormat:@"%d", [post length]] forHTTPHeaderField:@"Content-Length"];
+	[req setValue:[NSString stringWithFormat:@"%d", [data length]] forHTTPHeaderField:@"Content-Length"];
 	
-	//		[post addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-	//		[post addValue:[NSString stringWithFormat:@"%d", [[FORM parameterlist] length]] forHTTPHeaderField:@"Content-Length"];
-	
-//	NSURLResponse **resp;
-//	NSError **err;
-	
-	NSLog(@"sending...");
-	
-	//NSURLConnection *conn = [NSURLConnection alloc];  //initWithRequest:(NSURLRequest *)post delegate:self];
-	//req = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.google.com"]];
+	NSLog(@"sending...");	
 	NSData *rd = [NSURLConnection sendSynchronousRequest:(NSURLRequest *)req returningResponse:nil error:nil];
 	NSLog(@"sent");
 	
-	NSLog([[NSString alloc] initWithData:rd encoding:NSASCIIStringEncoding]);	
+	NSLog([[NSString alloc] initWithData:rd encoding:NSASCIIStringEncoding]);
 	
-	//http://api.flickr.com/services/upload/
-	
+	NSLog(@"%d", [[[NSString alloc] initWithData:UIImagePNGRepresentation(image) encoding:NSASCIIStringEncoding] length]);
 }
 
 @end
