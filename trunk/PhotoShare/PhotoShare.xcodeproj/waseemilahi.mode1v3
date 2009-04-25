@@ -204,7 +204,7 @@
 				<key>PBXProjectModuleGUID</key>
 				<string>9E7A43BE0FA3A32D0065D39B</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>MapViewController.m</string>
+				<string>PhotoShareAppDelegate.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
@@ -212,16 +212,17 @@
 						<key>PBXProjectModuleGUID</key>
 						<string>9E7A43C30FA3A3E40065D39B</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>MapViewController.m</string>
+						<string>PhotoShareAppDelegate.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E7A43DA0FA3A5100065D39B</string>
+						<string>9E7A441F0FA3A8FB0065D39B</string>
 						<key>history</key>
 						<array>
 							<string>9E7A43CF0FA3A4D50065D39B</string>
 							<string>9E7A43D00FA3A4D50065D39B</string>
-							<string>9E7A43D10FA3A4D50065D39B</string>
+							<string>9E7A44150FA3A7820065D39B</string>
+							<string>9E7A440D0FA3A6FD0065D39B</string>
 						</array>
 						<key>prevStack</key>
 						<array>
@@ -229,6 +230,7 @@
 							<string>9E7A43D30FA3A4D50065D39B</string>
 							<string>9E7A43D40FA3A4D50065D39B</string>
 							<string>9E7A43D50FA3A4D50065D39B</string>
+							<string>9E7A44160FA3A7820065D39B</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -327,12 +329,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>33</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 226}, {237, 745}}</string>
+							<string>{{0, 0}, {237, 745}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -367,7 +369,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MapViewController.m</string>
+								<string>PhotoShareAppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -375,11 +377,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MapViewController.m</string>
+										<string>PhotoShareAppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E7A43D90FA3A5100065D39B</string>
+										<string>9E7A441E0FA3A8FB0065D39B</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -427,7 +429,6 @@
 											<string>9E1BE0210FA2DDA9001F067C</string>
 											<string>9E1BE04B0FA2E56A001F067C</string>
 											<string>9E1BE0A00FA2EBDD001F067C</string>
-											<string>9E7A42550FA37A2B0065D39B</string>
 											<string>9E7A42D20FA38F0D0065D39B</string>
 											<string>9E7A42D40FA38F0D0065D39B</string>
 											<string>9E7A431E0FA391FF0065D39B</string>
@@ -436,7 +437,8 @@
 											<string>9E7A43970FA39E0C0065D39B</string>
 											<string>9E7A43C00FA3A3E40065D39B</string>
 											<string>9E7A43CA0FA3A4D50065D39B</string>
-											<string>9E7A43CB0FA3A4D50065D39B</string>
+											<string>9E7A44120FA3A7820065D39B</string>
+											<string>9E7A42550FA37A2B0065D39B</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -525,6 +527,7 @@
 											<string>9E7A43C10FA3A3E40065D39B</string>
 											<string>9E7A43CC0FA3A4D50065D39B</string>
 											<string>9E7A43CD0FA3A4D50065D39B</string>
+											<string>9E7A44130FA3A7820065D39B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -722,11 +725,11 @@
 	<array>
 		<string>9E7A42300FA377880065D39B</string>
 		<string>9E7A42310FA377880065D39B</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
+		<string>9E7B9AB80F64C97B0025D849</string>
 		<string>9E7A43BE0FA3A32D0065D39B</string>
 		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
-		<string>9E7B9AB80F64C97B0025D849</string>
 	</array>
 	<key>WindowString</key>
 	<string>72 62 1131 804 0 0 1600 878 </string>
@@ -745,14 +748,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MapViewController.h</string>
+								<string>flickrapi.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -769,6 +770,8 @@
 							<string>438pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -819,7 +822,7 @@
 			<key>WindowToolGUID</key>
 			<string>9E7B9AB80F64C97B0025D849</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -1108,7 +1111,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
