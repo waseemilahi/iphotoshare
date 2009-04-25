@@ -31,7 +31,7 @@
 
 #import "MapWebView.h"
 
-#define DEFAULT_ZOOM_LEVEL	15
+#define DEFAULT_ZOOM_LEVEL	17
 
 @interface MapWebView (Private)
 - (void) loadMap;
