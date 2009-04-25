@@ -10,9 +10,9 @@
 	};
 	1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1035, 2072}}";
-			sepNavSelRange = "{868, 0}";
-			sepNavVisRange = "{331, 1617}";
+			sepNavIntBoundsRect = "{{0, 0}, {1035, 1750}}";
+			sepNavSelRange = "{866, 0}";
+			sepNavVisRange = "{331, 1621}";
 			sepNavWindowFrame = "{{293, 0}, {1094, 878}}";
 		};
 	};
@@ -478,6 +478,8 @@
 			9E7A441D0FA3A8E10065D39B /* PBXTextBookmark */ = 9E7A441D0FA3A8E10065D39B /* PBXTextBookmark */;
 			9E7A441E0FA3A8FB0065D39B /* PBXTextBookmark */ = 9E7A441E0FA3A8FB0065D39B /* PBXTextBookmark */;
 			9E7A441F0FA3A8FB0065D39B /* PBXTextBookmark */ = 9E7A441F0FA3A8FB0065D39B /* PBXTextBookmark */;
+			9E7A44260FA3AA2F0065D39B /* PBXTextBookmark */ = 9E7A44260FA3AA2F0065D39B /* PBXTextBookmark */;
+			9E7A44270FA3AA2F0065D39B /* PBXTextBookmark */ = 9E7A44270FA3AA2F0065D39B /* PBXTextBookmark */;
 			9E7B43B10F69561800BDB8FF = 9E7B43B10F69561800BDB8FF /* PBXTextBookmark */;
 			9E7B43B20F69561800BDB8FF = 9E7B43B20F69561800BDB8FF /* PBXTextBookmark */;
 			9E7B43E10F6958CD00BDB8FF = 9E7B43E10F6958CD00BDB8FF /* PBXTextBookmark */;
@@ -1115,7 +1117,7 @@
 		ignoreCount = 0;
 		lineNumber = 75;
 		location = PhotoShare;
-		modificationTime = 262383540.070532;
+		modificationTime = 262384062.907543;
 		state = 2;
 	};
 	9E7A42100FA377880065D39B /* PBXTextBookmark */ = {
@@ -1142,8 +1144,8 @@
 		isa = PBXTextBookmark;
 		comments = "error: 'currentLocation' undeclared (first use in this function)";
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
-		rLen = 1;
-		rLoc = 47;
+		rLen = 0;
+		rLoc = 34;
 		rType = 1;
 	};
 	9E7A42130FA377880065D39B /* PBXTextBookmark */ = {
@@ -1171,7 +1173,7 @@
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
 		name = "PhotoShareAppDelegate.m: 42";
 		rLen = 0;
-		rLoc = 1108;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 676;
@@ -1201,7 +1203,7 @@
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
 		name = "PhotoShareAppDelegate.m: 54";
 		rLen = 0;
-		rLoc = 1573;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 1503;
 		vrLoc = 221;
@@ -1301,7 +1303,7 @@
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
 		name = "PhotoShareAppDelegate.m: 54";
 		rLen = 0;
-		rLoc = 1573;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 1503;
 		vrLoc = 221;
@@ -1341,7 +1343,7 @@
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
 		name = "PhotoShareAppDelegate.m: 42";
 		rLen = 0;
-		rLoc = 1108;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 676;
@@ -1361,7 +1363,7 @@
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
 		name = "PhotoShareAppDelegate.m: 42";
 		rLen = 0;
-		rLoc = 1108;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 976;
 		vrLoc = 676;
@@ -3610,8 +3612,8 @@
 		isa = PBXTextBookmark;
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
 		name = "PhotoShareAppDelegate.m: 48";
-		rLen = 98;
-		rLoc = 1302;
+		rLen = 0;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 901;
 		vrLoc = 351;
@@ -3658,8 +3660,8 @@
 		isa = PBXTextBookmark;
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
 		name = "PhotoShareAppDelegate.m: 48";
-		rLen = 98;
-		rLoc = 1302;
+		rLen = 0;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 901;
 		vrLoc = 351;
@@ -3783,7 +3785,7 @@
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
 		name = "PhotoShareAppDelegate.m: 42";
 		rLen = 0;
-		rLoc = 1108;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 977;
 		vrLoc = 676;
@@ -3823,7 +3825,7 @@
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
 		name = "PhotoShareAppDelegate.m: 42";
 		rLen = 0;
-		rLoc = 1108;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 958;
 		vrLoc = 676;
@@ -3833,7 +3835,7 @@
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
 		name = "PhotoShareAppDelegate.m: 35";
 		rLen = 0;
-		rLoc = 868;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 1617;
 		vrLoc = 331;
@@ -3853,7 +3855,7 @@
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
 		name = "PhotoShareAppDelegate.m: 42";
 		rLen = 0;
-		rLoc = 1108;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 958;
 		vrLoc = 676;
@@ -3863,9 +3865,29 @@
 		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
 		name = "PhotoShareAppDelegate.m: 35";
 		rLen = 0;
-		rLoc = 868;
+		rLoc = 866;
 		rType = 0;
 		vrLen = 1617;
+		vrLoc = 331;
+	};
+	9E7A44260FA3AA2F0065D39B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
+		name = "PhotoShareAppDelegate.m: 35";
+		rLen = 0;
+		rLoc = 866;
+		rType = 0;
+		vrLen = 977;
+		vrLoc = 676;
+	};
+	9E7A44270FA3AA2F0065D39B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* PhotoShareAppDelegate.m */;
+		name = "PhotoShareAppDelegate.m: 35";
+		rLen = 0;
+		rLoc = 866;
+		rType = 0;
+		vrLen = 1621;
 		vrLoc = 331;
 	};
 	9E7B43B10F69561800BDB8FF /* PBXTextBookmark */ = {
