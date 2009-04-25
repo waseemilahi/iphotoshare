@@ -18,9 +18,10 @@ IBOutlet UILabel *mapLabel;
 	IBOutlet UITextField *longitude;
 	IBOutlet UITextField *latitude;
 	IBOutlet UITextField *lastupdate;
+	IBOutlet UIButton *save;
 	 flickrapi *flickr;
 	NSMutableArray *locations;
-	IBOutlet MapView* mapView;
+	MapView* mapView;
 	BOOL isLocating;
 	UILabel *messagesView;
 	CLLocationManager *locmanager;
@@ -36,6 +37,7 @@ BOOL wasFound;
 @property (nonatomic, retain) flickrapi *flickr;
 @property (nonatomic, retain) UIImageView *imageView;
 - (IBAction) showMap: (id) sender;
+- (IBAction) saveImage: (id)sender;
 -(IBAction)goBack:(id)sender;
 
 @end
