@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "MapView.h"
-#import <CoreLocation/CoreLocation.h>
-#import <CoreLocation/CLLocationManagerDelegate.h>
 #import "PhotoShareAppDelegate.h"
 
 @interface MapViewController : UIViewController <CLLocationManagerDelegate>{
