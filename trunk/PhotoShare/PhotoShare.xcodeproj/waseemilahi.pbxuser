@@ -461,7 +461,7 @@
 		fRef = 9E7B9A780F64BFFA0025D849 /* BrowseViewController.h */;
 		name = "BrowseViewController.h: 18";
 		rLen = 0;
-		rLoc = 478;
+		rLoc = 490;
 		rType = 0;
 		vrLen = 908;
 		vrLoc = 0;
@@ -541,7 +541,7 @@
 		fRef = 9E7B9A780F64BFFA0025D849 /* BrowseViewController.h */;
 		name = "BrowseViewController.h: 18";
 		rLen = 0;
-		rLoc = 478;
+		rLoc = 490;
 		rType = 0;
 		vrLen = 908;
 		vrLoc = 0;
@@ -639,7 +639,7 @@
 		fRef = 9E7B9A780F64BFFA0025D849 /* BrowseViewController.h */;
 		name = "BrowseViewController.h: 18";
 		rLen = 0;
-		rLoc = 478;
+		rLoc = 490;
 		rType = 0;
 		vrLen = 908;
 		vrLoc = 0;
@@ -669,7 +669,7 @@
 		fRef = 9E7B9A780F64BFFA0025D849 /* BrowseViewController.h */;
 		name = "BrowseViewController.h: 18";
 		rLen = 0;
-		rLoc = 478;
+		rLoc = 490;
 		rType = 0;
 		vrLen = 908;
 		vrLoc = 0;
@@ -905,7 +905,7 @@
 		ignoreCount = 0;
 		lineNumber = 75;
 		location = PhotoShare;
-		modificationTime = 262373783.067966;
+		modificationTime = 262373940.323959;
 		state = 1;
 	};
 	9E7A42100FA377880065D39B /* PBXTextBookmark */ = {
@@ -1011,7 +1011,7 @@
 		fRef = 9E7B9A780F64BFFA0025D849 /* BrowseViewController.h */;
 		name = "BrowseViewController.h: 18";
 		rLen = 0;
-		rLoc = 478;
+		rLoc = 490;
 		rType = 0;
 		vrLen = 1328;
 		vrLoc = 0;
@@ -1111,7 +1111,7 @@
 		fRef = 9E7B9A780F64BFFA0025D849 /* BrowseViewController.h */;
 		name = "BrowseViewController.h: 18";
 		rLen = 0;
-		rLoc = 478;
+		rLoc = 490;
 		rType = 0;
 		vrLen = 1328;
 		vrLoc = 0;
@@ -1746,26 +1746,26 @@
 	};
 	9E7B9A760F64BFEB0025D849 /* MapViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1035, 4270}}";
-			sepNavSelRange = "{6275, 0}";
-			sepNavVisRange = "{5147, 1294}";
+			sepNavIntBoundsRect = "{{0, 0}, {1035, 4298}}";
+			sepNavSelRange = "{2956, 393}";
+			sepNavVisRange = "{2855, 1276}";
 			sepNavWindowFrame = "{{333, -4}, {1094, 878}}";
 		};
 	};
 	9E7B9A780F64BFFA0025D849 /* BrowseViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1035, 727}}";
-			sepNavSelRange = "{478, 0}";
-			sepNavVisRange = "{0, 1328}";
+			sepNavSelRange = "{490, 0}";
+			sepNavVisRange = "{0, 1340}";
 			sepNavWindowFrame = "{{64, 0}, {1094, 878}}";
 		};
 	};
 	9E7B9A790F64BFFA0025D849 /* BrowseViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{2846, 384}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 8035}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1254, 3430}}";
-			sepNavSelRange = "{6771, 94}";
-			sepNavVisRange = "{4657, 1903}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{2846, 384}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 8465}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1254, 3846}}";
+			sepNavSelRange = "{3606, 0}";
+			sepNavVisRange = "{45, 1487}";
 			sepNavWindowFrame = "{{333, -4}, {1094, 878}}";
 		};
 	};
@@ -1818,9 +1818,9 @@
 	};
 	9E7D4C7C0F9EBAF200EB6452 /* MapMarker.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1035, 1232}}";
-			sepNavSelRange = "{2541, 0}";
-			sepNavVisRange = "{1200, 1606}";
+			sepNavIntBoundsRect = "{{0, 0}, {811, 1246}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{1632, 810}";
 			sepNavWindowFrame = "{{64, 29}, {1041, 844}}";
 		};
 	};
@@ -2590,7 +2590,7 @@
 		fRef = 9E7B9A780F64BFFA0025D849 /* BrowseViewController.h */;
 		name = "BrowseViewController.h: 19";
 		rLen = 0;
-		rLoc = 623;
+		rLoc = 635;
 		rType = 0;
 		vrLen = 364;
 		vrLoc = 0;
