@@ -105,12 +105,9 @@
 	
 	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
 		
-	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
 	
-			
-	
-	
+	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);	
 	[photos release];
 		
 	photos = [NSArray arrayWithArray:[flickr getPhotos:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ]];
@@ -121,6 +118,7 @@
 	
 	MapMarker *marker;
 	
+	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
 	for(i = 0; i < [photos count]; i++)
 	{
@@ -170,13 +168,7 @@
 		[mapView release];
 	}
 	
-	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
-	
-	
-	
-	
-	
-		
+			
 	[photos release];
 	
 	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
@@ -188,6 +180,9 @@
 	photo* ph;
 	
 	MapMarker *marker;
+	
+	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
+
 		
 	for(i = 0; i < [photos count]; i++)
 	{

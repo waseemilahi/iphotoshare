@@ -204,7 +204,7 @@
 				<key>PBXProjectModuleGUID</key>
 				<string>9E7A43BE0FA3A32D0065D39B</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>PhotoShareAppDelegate.m</string>
+				<string>MapViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
@@ -212,17 +212,19 @@
 						<key>PBXProjectModuleGUID</key>
 						<string>9E7A43C30FA3A3E40065D39B</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>PhotoShareAppDelegate.m</string>
+						<string>MapViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E7A44270FA3AA2F0065D39B</string>
+						<string>9E7A445D0FA3AECC0065D39B</string>
 						<key>history</key>
 						<array>
-							<string>9E7A43CF0FA3A4D50065D39B</string>
-							<string>9E7A43D00FA3A4D50065D39B</string>
-							<string>9E7A44150FA3A7820065D39B</string>
-							<string>9E7A440D0FA3A6FD0065D39B</string>
+							<string>9E7A442F0FA3ACA00065D39B</string>
+							<string>9E7A44300FA3ACA00065D39B</string>
+							<string>9E7A444D0FA3AE0D0065D39B</string>
+							<string>9E7A444E0FA3AE0D0065D39B</string>
+							<string>9E7A444F0FA3AE0D0065D39B</string>
+							<string>9E7A44500FA3AE0D0065D39B</string>
 						</array>
 						<key>prevStack</key>
 						<array>
@@ -231,6 +233,16 @@
 							<string>9E7A43D40FA3A4D50065D39B</string>
 							<string>9E7A43D50FA3A4D50065D39B</string>
 							<string>9E7A44160FA3A7820065D39B</string>
+							<string>9E7A44310FA3ACA00065D39B</string>
+							<string>9E7A44320FA3ACA00065D39B</string>
+							<string>9E7A44410FA3AD8F0065D39B</string>
+							<string>9E7A44420FA3AD8F0065D39B</string>
+							<string>9E7A44510FA3AE0D0065D39B</string>
+							<string>9E7A44520FA3AE0D0065D39B</string>
+							<string>9E7A44530FA3AE0D0065D39B</string>
+							<string>9E7A44540FA3AE0D0065D39B</string>
+							<string>9E7A44550FA3AE0D0065D39B</string>
+							<string>9E7A44560FA3AE0D0065D39B</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -280,6 +292,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -362,14 +376,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PhotoShareAppDelegate.m</string>
+								<string>BrowseViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -377,11 +389,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PhotoShareAppDelegate.m</string>
+										<string>BrowseViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E7A44260FA3AA2F0065D39B</string>
+										<string>9E7A445C0FA3AECC0065D39B</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -436,9 +448,9 @@
 											<string>9E7A43700FA39A020065D39B</string>
 											<string>9E7A43970FA39E0C0065D39B</string>
 											<string>9E7A43C00FA3A3E40065D39B</string>
+											<string>9E7A442C0FA3ACA00065D39B</string>
+											<string>9E7A443C0FA3AD8F0065D39B</string>
 											<string>9E7A43CA0FA3A4D50065D39B</string>
-											<string>9E7A44120FA3A7820065D39B</string>
-											<string>9E7A42550FA37A2B0065D39B</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -528,6 +540,8 @@
 											<string>9E7A43CC0FA3A4D50065D39B</string>
 											<string>9E7A43CD0FA3A4D50065D39B</string>
 											<string>9E7A44130FA3A7820065D39B</string>
+											<string>9E7A442D0FA3ACA00065D39B</string>
+											<string>9E7A443D0FA3AD8F0065D39B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -727,8 +741,8 @@
 		<string>9E7A42310FA377880065D39B</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9E7B9AB80F64C97B0025D849</string>
-		<string>9E7A43BE0FA3A32D0065D39B</string>
 		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
+		<string>9E7A43BE0FA3A32D0065D39B</string>
 		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
