@@ -84,8 +84,8 @@
 	
 	
 	//should get from GPS...
-	int lat = 40.7;
-	int lon = -74;
+	double lat = 40.7;
+	double lon = -74.0;
 	
 	[flickr uploadPhoto:image withLat:lat andLon:lon];
 	
