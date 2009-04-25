@@ -101,11 +101,21 @@ static int number = 0;
 	NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];
 	
 	UIImage* image = [[UIImage alloc] initWithData:imageData];
+	imageView.frame = CGRectMake(0.0, 43.0,self.view.bounds.size.width ,375);
 	[imageView setImage:image];
 	[self.view addSubview:imageView];
 	[imageData release];
 	[image release];
 	
+	image_count++;
+	
+}
+
+-(IBAction)goBack:(id)sender{
+	if(image_count > 0){
+		image_count--;
+		[[self.view.subviews lastObject] removeFromSuperview];
+	}
 }
 
 
@@ -128,14 +138,7 @@ static int number = 0;
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
 	[self.view addSubview:mapView];
-	
-	messagesView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 375+20,self.view.bounds.size.width  , 20)];
-	messagesView.backgroundColor = [UIColor blackColor];
-	messagesView.textColor = [UIColor whiteColor];
-	messagesView.font = [UIFont systemFontOfSize:13];
-	messagesView.adjustsFontSizeToFitWidth = YES;
-	[self.view addSubview:messagesView];
-	
+			
 	MapMarker *marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
 	marker.data = @"blue";
 	marker.draggable = NO;
@@ -151,17 +154,12 @@ static int number = 0;
 
 	[photos retain];
 	
-	UIButton *setCenterButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[setCenterButton setTitle:@"draggable marker" forState:UIControlStateNormal];
-	[setCenterButton addTarget:self action:@selector(addUnDraggableMarker) forControlEvents:UIControlEventTouchUpInside];
-	setCenterButton.frame = CGRectMake(0, 360, 150, 30);
-	[self.view addSubview:setCenterButton];
-		
+	image_count = 0;
 	
 	
 }
-- (void)showMap: (id) sender{
-	count++;
+- (IBAction)showMap: (id) sender{
+	
 	
 	if(mapView)[mapView release];
 	
@@ -169,12 +167,7 @@ static int number = 0;
 	
 	[self.view addSubview:mapView];
 	
-	messagesView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 375+20,self.view.bounds.size.width  , 20)];
-	messagesView.backgroundColor = [UIColor blackColor];
-	messagesView.textColor = [UIColor whiteColor];
-	messagesView.font = [UIFont systemFontOfSize:13];
-	messagesView.adjustsFontSizeToFitWidth = YES;
-	[self.view addSubview:messagesView];
+	
 	
 	MapMarker *marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
 	marker.data = @"blue";
@@ -196,11 +189,7 @@ static int number = 0;
 	
 	
 	
-	UIButton *setCenterButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[setCenterButton setTitle:@"draggable marker" forState:UIControlStateNormal];
-	[setCenterButton addTarget:self action:@selector(addUnDraggableMarker) forControlEvents:UIControlEventTouchUpInside];
-	setCenterButton.frame = CGRectMake(0, 360, 150, 30);
-	[self.view addSubview:setCenterButton];
+	
 	
 }
 

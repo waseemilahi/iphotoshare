@@ -26,6 +26,7 @@ IBOutlet UILabel *mapLabel;
 	CLLocationManager *locmanager;
 BOOL wasFound;
 	int count;
+	int image_count;
 	NSArray *photos;
 	IBOutlet UIImageView *imageView;
 }
@@ -35,5 +36,6 @@ BOOL wasFound;
 @property (nonatomic, retain) flickrapi *flickr;
 @property (nonatomic, retain) UIImageView *imageView;
 - (IBAction) showMap: (id) sender;
+-(IBAction)goBack:(id)sender;
 
 @end
