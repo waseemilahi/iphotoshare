@@ -26,13 +26,13 @@
 	count = 0;
 	flickr = [[flickrapi alloc] init];
 	self.locmanager = [[CLLocationManager alloc] init ];
-	//[self.locmanager setDistanceFilter:1.0f];
+	[self.locmanager setDistanceFilter:1.0f];
 	[self.locmanager setDelegate:self];
 	[self.locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
 	[self.locmanager startUpdatingLocation];
 		
 }
-
+/*
 // Called when the location is updated
 - (void)locationManager:(CLLocationManager *)manager
 	didUpdateToLocation:(CLLocation *)newLocation
@@ -53,7 +53,7 @@
 		currentLocation = [newLocation retain];
 	}
 	
-}
+}*/
 
 
 - (IBAction)homeAgainSignIn:(id)sender
