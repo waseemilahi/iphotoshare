@@ -9,7 +9,7 @@
 #import "MapViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-static int number = 0;
+
 
 @implementation MapViewController
 
@@ -43,51 +43,28 @@ static int number = 0;
 
 */
 
--(MapMarker *) getMarker:(double)latitudes lng:(double)longitudes {//add lat and lng as parameters
-	MapMarker *marker;
-	
-	
-	switch (number) {
-		case 0:
-			marker = [MapMarker defaultBlueMarkerWithLat:latitudes Lng:longitudes];
-			marker.data = @"red";
-			break;
-		case 1:
-			marker = [MapMarker defaultGreenMarkerWithLat:latitudes Lng:longitudes];
-			marker.data = @"green";
-			break;
-		case 2:
-			marker = [MapMarker defaultRedMarkerWithLat:latitudes Lng:longitudes];
-			marker.data = @"blue";
-			break;
-		case 3:
-			marker = [MapMarker defaultYellowMarkerWithLat:latitudes Lng:longitudes];
-			marker.data = @"yellow";
-			break;
-		default:
-			break;
-	}
-	
-	if (++number > 3)
-		number = 0;
-	
-	return marker;
-}
 
--(void) draggedMarker:(MapMarker *) marker {
-	messagesView.text = @"dragging...";
-}
-
--(void) releasedMarker:(MapMarker *) marker {
-	NSString *message = [NSString stringWithFormat:@"[Lat: %lf, Lng: %lf]",
-						 marker.lat, marker.lng];
-	messagesView.text = message;
-}
 
 
 -(void) clickedMarker:(MapMarker *) marker {
 	
 	
+	
+	CATransition *myTransition = [ CATransition animation];
+	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+	myTransition.type = kCATransitionPush;
+	myTransition.subtype = kCATransitionFromRight;
+	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
+	
+	
+	[imageView setImage:marker.markerImage];
+	
+	[self.view addSubview:imageView];
+	
+	image_count++;
+	
+	/*
 	int i;
 	
 	photo* ph;
@@ -97,7 +74,7 @@ static int number = 0;
 	{
 		ph = (photo *)[photos objectAtIndex:i];
 		
-		/** get location information for the photo and store it in the photo object **/
+		// get location information for the photo and store it in the photo object
 		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
 	
 	
@@ -112,6 +89,13 @@ static int number = 0;
 		
 			//imageView.frame = CGRectMake(0.0, 43.0,self.view.bounds.size.width ,375);
 		
+			CATransition *myTransition = [ CATransition animation];
+			myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+			myTransition.type = kCATransitionPush;
+			myTransition.subtype = kCATransitionFromRight;
+			[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+			self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
+			
 			[imageView setImage:image];
 		
 			[self.view addSubview:imageView];
@@ -125,25 +109,26 @@ static int number = 0;
 			break;
 	
 		}
-	}
+	}*/
 	
 }
 
 -(IBAction)goBack:(id)sender{
 	if(image_count > 0){
 		image_count--;
+		CATransition *myTransition = [ CATransition animation];
+		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+		myTransition.type = kCATransitionPush;
+		myTransition.subtype = kCATransitionFromLeft;
+		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
+		
 		[[self.view.subviews lastObject] removeFromSuperview];
 	}
 }
 
 
--(void) addUnDraggableMarker {
-	MapMarker *marker = [self getMarker:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ];
-	marker.draggable = YES;
-	marker.delegate = self;
-	[mapView addMarker:marker];
-	[marker show];
-}
+
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -155,14 +140,12 @@ static int number = 0;
 		
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
-	[self.view addSubview:mapView];
+	
 			
 	
 	
 	[photos release];
-	
-	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
-	
+		
 	photos = [NSArray arrayWithArray:[flickr getPhotos:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ]];
 	
 	int i;
@@ -176,15 +159,22 @@ static int number = 0;
 	{
 		ph = (photo *)[photos objectAtIndex:i];
 		
-		/** get location information for the photo and store it in the photo object **/
+		
 		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
 		
-		marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] ];
+		NSString* imageURL = [ph getPhotoUrl:4];
+		
+		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];	
+		
+		UIImage* image1 = [[UIImage alloc] initWithData:imageData];
+		
+		marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] my_image:image1 ];
 		marker.data = @"red";
 		marker.draggable = NO;
 		marker.delegate = self;
 		[mapView addMarker:marker];
 		[marker show];
+		
 		
 	}
 	
@@ -194,12 +184,14 @@ static int number = 0;
 	marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
 	marker.data = @"blue";
 	marker.draggable = NO;
-	marker.delegate = self;
+	//marker.delegate = mapView;
 	[mapView addMarker:marker];
 	[marker show];
 	
 	
 	image_count = 0;	
+	
+	[self.view addSubview:mapView];
 	
 }
 - (IBAction)showMap: (id) sender{
@@ -213,7 +205,7 @@ static int number = 0;
 	
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
-	[self.view addSubview:mapView];
+	
 	
 	
 	
@@ -228,35 +220,55 @@ static int number = 0;
 	
 	photo* ph;
 	
+	MapMarker *marker;
 		
 	for(i = 0; i < [photos count]; i++)
 	{
 		ph = (photo *)[photos objectAtIndex:i];
 		
-		/** get location information for the photo and store it in the photo object **/
+		
 		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
 		
-		MapMarker *marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] ];
+		
+		NSString* imageURL = [ph getPhotoUrl:4];
+		
+		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];	
+		
+		UIImage* image1 = [[UIImage alloc] initWithData:imageData];
+		
+		marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] my_image:image1 ];
 		marker.data = @"red";
 		marker.draggable = NO;
 		marker.delegate = self;
 		[mapView addMarker:marker];
 		[marker show];
 		
+		
+		
 	}
 	
 	
 	[photos retain];
 	
-	MapMarker *marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
+	marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
 	marker.data = @"blue";
 	marker.draggable = NO;
-	marker.delegate = self;
+	//marker.delegate = self;
 	[mapView addMarker:marker];
 	[marker show];
 	
+ 
 	
 	image_count = 0;
+	
+	CATransition *myTransition = [ CATransition animation];
+	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+	myTransition.type = kCATransitionPush;
+	myTransition.subtype = kCATransitionFromLeft;
+	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
+	
+	[self.view addSubview:mapView];
 	
 	
 	

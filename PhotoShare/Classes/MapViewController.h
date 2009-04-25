@@ -20,7 +20,7 @@ IBOutlet UILabel *mapLabel;
 	IBOutlet UITextField *lastupdate;
 	 flickrapi *flickr;
 	NSMutableArray *locations;
-	MapView* mapView;
+	IBOutlet MapView* mapView;
 	BOOL isLocating;
 	UILabel *messagesView;
 	CLLocationManager *locmanager;
