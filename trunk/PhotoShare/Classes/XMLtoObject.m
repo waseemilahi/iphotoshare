@@ -2,17 +2,46 @@
 #import "XMLtoObject.h"
 //#import "photo.h"
 
+//location object
+@implementation location
+
+@synthesize keys;
+
+-(NSString *)getLatitude {
+	if ([keys objectForKey:@"latitude"]) {
+		return [keys objectForKey:@"latitude"];
+	} else {
+		return nil;
+	}
+}
+
+-(NSString *)getLongitude {	
+	if ([keys objectForKey:@"longitude"]) {
+		return [keys objectForKey:@"longitude"];
+	} else {
+		return nil;
+	}
+}
+-(NSString *)getAccuracy {
+	if ([keys objectForKey:@"accuracy"]) {
+		return [keys objectForKey:@"accuracy"];
+	} else {
+		return nil;
+	}
+}
+
+@end
 
 // photo object
-
-// photo.m
-//#import "photo.h"
 @implementation photo
 
 @synthesize keys;
+@synthesize loc;
+
 //@synthesize url;
 //-(void)setPhotoUrl:(NSString *)pid farm:(NSString *)farm server:(NSString *)server secret:(NSString *)secret {
 -(NSString *)getPhotoUrl:(NSUInteger)size {
+	NSLog(@"lat, lon: %@, %@", [self getLatitude], [self getLongitude]);
 	
 	NSLog(@"key count: %d", [keys count]);
 	return [NSMutableString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@.jpg",
@@ -28,10 +57,27 @@
 	 */
 }
 
+-(NSString *)getLatitude {
+	return [loc getLatitude];
+}
+-(NSString *)getLongitude {
+	return [loc getLongitude];
+}
+
+-(NSString *)getAccuracy {
+	return [loc getAccuracy];
+}
+
 -(void)setKeys:(NSDictionary *)k {
 	[keys release];
 	keys = [NSDictionary dictionaryWithDictionary:k];
 	[keys retain];
+}
+
+-(void)setLoc:(location *)l {
+	[loc release];
+	loc = l;
+	[loc retain];
 }
 
 @end
@@ -205,12 +251,19 @@ didStartElement:(NSString *)elementName
 			
 			NSLog(@"key count = %d", [attributeDict count]);
 			/*
-			[(photo *)item setPhotoUrl:	[attributeDict objectForKey:@"id"]
-								farm:	[attributeDict objectForKey:@"farm"]
-								server:	[attributeDict objectForKey:@"server"]
-								secret:	[attributeDict objectForKey:@"secret"]
+			 [(photo *)item setPhotoUrl:	[attributeDict objectForKey:@"id"]
+			 farm:	[attributeDict objectForKey:@"farm"]
+			 server:	[attributeDict objectForKey:@"server"]
+			 secret:	[attributeDict objectForKey:@"secret"]
 			 ];
 			 */
+		} else if ([elementName isEqualToString:@"location"]) {
+			//retrieve location info
+			[[(location *)item keys] release];
+			[(location *)item setKeys:[NSDictionary dictionaryWithDictionary:attributeDict]];
+			[[(location *)item keys] retain];
+			
+			NSLog(@"key count = %d", [attributeDict count]);
 		} else if ([elementName isEqualToString: @"frob"]) {
 			//this code is moved to didEndElement, since currentNodeContent is not filled yet when didStartElement is called
 			//[(frob *)item setValue:currentNodeContent];

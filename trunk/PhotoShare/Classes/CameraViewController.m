@@ -7,11 +7,14 @@
 //
 
 #import "CameraViewController.h"
+#import "flickrapi.h"
+
 
 @implementation CameraViewController
 
 @synthesize imageView;
 @synthesize imagePicker;
+@synthesize flickr;
 
 #define DOCSFOLDER [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
 
@@ -43,7 +46,7 @@
 - (void)takePicture: (id) sender{
 			
 	
-		if([UIImagePickerController isSourceTypeAvailable:
+		if(NO && [UIImagePickerController isSourceTypeAvailable:
 			UIImagePickerControllerSourceTypeCamera]) { //<label id="code.imagepicker.sourceType"/>
 			self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
 		} else {
@@ -80,11 +83,17 @@
 	//[UIImagePNGRepresentation(image) writeToFile: uniquePath atomically:YES];
 	
 	
-	UIImageWriteToSavedPhotosAlbum(image, self,nil, nil );
+	//should get from GPS...
+	int lat = 40.7;
+	int lon = -74;
+	
+	[flickr uploadPhoto:image withLat:lat andLon:lon];
+	
+	UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
 	
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 	
-	}
+}
 //END:code.PhotoViewController.didFinish
 /*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
@@ -92,11 +101,12 @@
 }
 
 
-
+*/
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	
-	
+	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
+		
+	/*
  if([UIImagePickerController isSourceTypeAvailable:
  UIImagePickerControllerSourceTypeCamera]) { //<label id="code.imagepicker.sourceType"/>
  self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -107,8 +117,8 @@
  self.imagePicker.allowsImageEditing = YES; //<label id="code.imagepicker.allowsEditing"/>
 	
  [self presentModalViewController:self.imagePicker animated:YES];
-
-}*/
+*/
+}
 /*
 - (void) imagePickerController:(UIImagePickerController *)picker
 		 didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo

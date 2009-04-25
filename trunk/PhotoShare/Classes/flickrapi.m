@@ -327,6 +327,21 @@
 	return list;
 }
 
+-(NSMutableString *)getPost {
+	NSMutableString *list;
+	list = [[NSMutableString alloc] init];
+	
+	for(NSString *key in [params allKeys]) {
+		[list appendString:@"-----------------------------8f999edae883c6039b244c0d341f45f8\r\n"];
+		[list appendFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key];
+		[list appendFormat:@"%@\r\n", (NSString *)[params objectForKey:(NSString *)key]];
+	}
+	
+	NSLog(list);
+	
+	return list;
+}
+
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
 	
@@ -371,25 +386,107 @@
 //	if(count == 0)
 	{
 	
+		[self clearParams];
+		[self addParam:@"method" withValue:@"flickr.photos.search"];
+		[self addParam:@"api_key" withValue:APIKEY];
+		[self addParam:@"lat" withValue:[NSString stringWithFormat:@"%f",latitude]];//     @"40.7"];
+		[self addParam:@"lon" withValue:[NSString stringWithFormat:@"%f",longitude]];//    @"-74"];
+		[self addParam:@"extras" withValue:@"date_taken,date_upload,original_format,original_secret"];
+		
+		NSString *sig = [self getSig];
+		
+		[self addParam:@"api_sig" withValue:[NSString stringWithString:sig]];
+		
+		NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.flickr.com/services/rest/%@",
+					  [self getParamList]]];
+		
+		NSLog(@"xml: %@", [NSString stringWithContentsOfURL:url]);
+		XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:@"photo" parseError:nil];
+		count++;
+		
+		return [parser items];
+	}
+	
+}
+
+
+-(location *)getLocation:(NSString *)pid {
+	NSLog(@"get location for pid: %@", pid);
 	[self clearParams];
-	[self addParam:@"method" withValue:@"flickr.photos.search"];
+	[self addParam:@"method" withValue:@"flickr.photos.geo.getLocation"];
 	[self addParam:@"api_key" withValue:APIKEY];
-	[self addParam:@"lat" withValue:[NSString stringWithFormat:@"%f",latitude]];//     @"40.7"];
-	[self addParam:@"lon" withValue:[NSString stringWithFormat:@"%f",longitude]];//    @"-74"];
-	[self addParam:@"extras" withValue:@"date_taken,date_upload,original_format,original_secret"];
+	[self addParam:@"photo_id" withValue:[NSString stringWithFormat:@"%@", pid]];
+	
+//	NSString *sig = [self getSig];
+//	[self addParam:@"api_sig" withValue:[NSString stringWithString:sig]];
+	
+	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.flickr.com/services/rest/%@",
+									   [self getParamList]]];
+	
+	NSLog(@"xml: %@", [NSString stringWithContentsOfURL:url]);
+	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:@"location" parseError:nil];
+	
+	if ([[parser items] count] > 0)
+		return [[parser items] objectAtIndex:0];
+	else
+		return nil;
+}
+
+-(void)uploadPhoto:(UIImage *)image withLat:(int)lat andLon:(int)lon {
+	[self clearParams];
+//	[self addParam:@"method" withValue:@"flickr.photos.search"];
+	[self addParam:@"api_key" withValue:APIKEY];
+//	[self addParam:@"lat" withValue:[NSString stringWithFormat:@"%f",latitude]];//     @"40.7"];
+//	[self addParam:@"lon" withValue:[NSString stringWithFormat:@"%f",longitude]];//    @"-74"];
+//	[self addParam:@"extras" withValue:@"date_taken,date_upload,original_format,original_secret"];
 	
 	NSString *sig = [self getSig];
 	
 	[self addParam:@"api_sig" withValue:[NSString stringWithString:sig]];
 	
-	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.flickr.com/services/rest/%@",
-				  [self getParamList]]];
-				  //method=flickr.photos.search&api_key=7aa8298476e07cb421f8cc396e655978&lat=40.7&lon=-74"];
-	NSLog(@"xml: %@", [NSString stringWithContentsOfURL:url]);
-	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:@"photo" parseError:nil];
-		count++;
-	return [parser items];
-	}
+	NSMutableString *post = [self getPost];
+	[post appendString:@"-----------------------------8f999edae883c6039b244c0d341f45f8\r\n"];
+	[post appendFormat:@"Content-Disposition: form-data; name=\"photo\"; filename=\"upload.png\"\r\n"];
+	[post appendString:@"Content-Type: image/png\r\n\r\n"];
+	
+	NSLog(@"post:");
+	NSLog(post);
+	
+	NSMutableData *data = [[NSMutableData alloc] init];
+	[data appendData:[post dataUsingEncoding:NSUTF8StringEncoding]];
+	
+//	NSLog(@"%@", [image 
+	
+	[data appendData:UIImagePNGRepresentation(image)];
+	
+	[data appendData:[[NSString stringWithFormat:@"-----------------------------%@--\r\n", @"8f999edae883c6039b244c0d341f45f8"] dataUsingEncoding: NSASCIIStringEncoding]];
+
+	
+	NSLog(@"data:");
+	NSLog([[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding]);
+	
+	NSMutableDictionary *fields = [[NSMutableDictionary alloc] init];
+	[fields setObject:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", @"-----------------------------8f999edae883c6039b244c0d341f45f8"] forKey:@"Content-Type"];
+	[fields setObject:[NSString stringWithFormat:@"%d", [data length]] forKey:@"Content-Length"];
+	
+	NSMutableURLRequest *req = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.flickr.com/services/upload/"]];
+	[req setHTTPMethod:@"POST"];
+	[req setHTTPBody:data];
+	
+	[req setAllHTTPHeaderFields:fields];
+	//		[post addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+	//		[post addValue:[NSString stringWithFormat:@"%d", [[FORM parameterlist] length]] forHTTPHeaderField:@"Content-Length"];
+	
+	NSURLResponse **resp;
+	NSError **err;
+	
+	NSLog(@"sending...");
+	
+	//NSURLConnection *conn = [NSURLConnection alloc];  //initWithRequest:(NSURLRequest *)post delegate:self];
+	 NSData *rd = [NSURLConnection sendSynchronousRequest:(NSURLRequest *)req returningResponse:resp error:err];
+	//NSLog([[NSString alloc] initWithData:rd encoding:NSASCIIStringEncoding]);	
+	
+	//http://api.flickr.com/services/upload/
 	
 }
 

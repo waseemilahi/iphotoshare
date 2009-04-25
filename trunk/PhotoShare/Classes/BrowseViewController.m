@@ -82,6 +82,10 @@
 	}
 	if (index >= 0 && index < [photos count]) {
 		photo* ph = (photo *)[photos objectAtIndex:index];
+		
+		/** get location information for the photo and store it in the photo object **/
+		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
+		
 		NSLog(@"photo");
 		NSLog(@"-url: %@", [ph getPhotoUrl:4]);
 		NSString* imageURL = [ph getPhotoUrl:4];
@@ -117,6 +121,8 @@
 	
 	[self loadPhoto:p];
 	[photos retain];
+	
+//	[flickr uploadPhoto:nil	withLat:0 andLon:0];
 	/*
 	/*
 	NSURL *url = [NSURL URLWithString: @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f46e7a1681dd43b589b442ada0bd5163&lat=40.7&lon=-74&api_sig=2b6b7498d315496df10afea749ab39a8"];
