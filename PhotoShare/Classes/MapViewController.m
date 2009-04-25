@@ -47,69 +47,35 @@
 
 
 -(void) clickedMarker:(MapMarker *) marker {
-	
-	
-	
+		
 	CATransition *myTransition = [ CATransition animation];
 	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
 	myTransition.type = kCATransitionPush;
 	myTransition.subtype = kCATransitionFromRight;
 	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
-	
-	
+		
 	[imageView setImage:marker.markerImage];
 	
 	[self.view addSubview:imageView];
 	
-	image_count++;
-	
-	/*
-	int i;
-	
-	photo* ph;
 	
 	
-	for(i = 0; i < [photos count]; i++)
-	{
-		ph = (photo *)[photos objectAtIndex:i];
+	[self.view addSubview:save];
 		
-		// get location information for the photo and store it in the photo object
-		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
-	
-	
-	
-		if(([[ph getLatitude] doubleValue] == marker.lat) && ([[ph getLongitude] doubleValue] == marker.lng))	
-		{				
-			NSString* imageURL = [ph getPhotoUrl:4];
-		
-			NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];	
 
-			UIImage* image = [[UIImage alloc] initWithData:imageData];
-		
-			//imageView.frame = CGRectMake(0.0, 43.0,self.view.bounds.size.width ,375);
-		
-			CATransition *myTransition = [ CATransition animation];
-			myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
-			myTransition.type = kCATransitionPush;
-			myTransition.subtype = kCATransitionFromRight;
-			[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
-			self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
-			
-			[imageView setImage:image];
-		
-			[self.view addSubview:imageView];
-		
-			[imageData release];
-		
-			[image release];	
-		
-			image_count++;
-			
-			break;
+	image_count++;	
 	
-		}
-	}*/
+}
+
+-(IBAction)saveImage:(id)sender{
+	
+	UIImageWriteToSavedPhotosAlbum(imageView.image, self, nil, nil);
+	
+	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo Saved" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	
+	[myAlertView show];
+	[myAlertView release];
 	
 }
 
@@ -123,6 +89,7 @@
 		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
 		
+		[[self.view.subviews lastObject] removeFromSuperview];
 		[[self.view.subviews lastObject] removeFromSuperview];
 	}
 }
