@@ -18,6 +18,7 @@
 	int count;
 	flickrapi *flickr;	
 	CLLocationManager *locmanager;
+	int tab_loc_count ;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
