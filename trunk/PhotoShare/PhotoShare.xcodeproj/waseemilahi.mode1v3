@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E7B00F60FA50BAF00C338C9</string>
+						<string>9E7B01040FA50DB800C338C9</string>
 						<key>history</key>
 						<array>
 							<string>9E7B00F20FA50BAF00C338C9</string>
@@ -376,7 +376,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E7B00F00FA50BAF00C338C9</string>
+										<string>9E7B01030FA50DB800C338C9</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -687,10 +687,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>9E7B01050FA50DB800C338C9</string>
+		<string>9E7B01060FA50DB800C338C9</string>
+		<string>9E7B01070FA50DB800C338C9</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9E7B9AB80F64C97B0025D849</string>
 		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>9E7B00EC0FA50AE400C338C9</string>
 	</array>
 	<key>WindowString</key>
@@ -1024,6 +1027,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1069,7 +1074,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
