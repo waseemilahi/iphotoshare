@@ -257,6 +257,28 @@
 
 */
 
+-(void)showP{
+	[photos release];
+	
+	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
+	
+	photos = [NSArray arrayWithArray:[flickr getPhotos:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ]];
+	p = 0;
+	
+	
+		CATransition *myTransition = [ CATransition animation];
+		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+		myTransition.type = kCATransitionPush;
+		myTransition.subtype = kCATransitionFromLeft;
+		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1] ; 
+		
+
+	count = 1;
+	[self loadPhoto:p];
+	
+	[photos retain];
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -267,10 +289,13 @@
 	
 	count = 0;
 	
-	[self showPicture:update];
+	[pictureLabel setText:@"Searching For Photos."];
 	
-	count = 1;
+	[self performSelector:@selector(showP) withObject:nil afterDelay:3];
 	
+	
+	//[self showPicture:update];
+		
 }
 
 /*
