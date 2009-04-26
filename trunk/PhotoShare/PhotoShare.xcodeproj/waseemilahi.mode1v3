@@ -202,29 +202,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>9E7B07F40FA4DE9D005C2299</string>
+				<string>9E7B080D0FA4E38D005C2299</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>CameraViewController.m</string>
+				<string>BrowseViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>9E7B07F90FA4DEF2005C2299</string>
+						<string>9E7B08260FA4E6AD005C2299</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>CameraViewController.m</string>
+						<string>BrowseViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E7B08050FA4DF7E005C2299</string>
+						<string>9E7B082C0FA4E6ED005C2299</string>
 						<key>history</key>
 						<array>
-							<string>9E7B07FA0FA4DEF2005C2299</string>
-							<string>9E7B07F50FA4DEB0005C2299</string>
-						</array>
-						<key>prevStack</key>
-						<array>
-							<string>9E7B07FB0FA4DEF2005C2299</string>
+							<string>9E7B080C0FA4E38D005C2299</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -240,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>141 34 1094 822 0 0 1600 878 </string>
+				<string>333 52 1094 822 0 0 1600 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -363,7 +358,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PhotoShareAppDelegate.h</string>
+								<string>BrowseViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -371,11 +366,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PhotoShareAppDelegate.h</string>
+										<string>BrowseViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E7B08040FA4DF7E005C2299</string>
+										<string>9E7B082B0FA4E6ED005C2299</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -421,7 +416,6 @@
 											<string>9E7A43700FA39A020065D39B</string>
 											<string>9E7A43C00FA3A3E40065D39B</string>
 											<string>9E7A44760FA3C5070065D39B</string>
-											<string>9EC9CFEE0FA3DDAF00CE6A2D</string>
 											<string>9EC9CFF10FA3DDAF00CE6A2D</string>
 											<string>9E129D440FA40C320055D304</string>
 											<string>9E7B07310FA4CBDA005C2299</string>
@@ -432,7 +426,8 @@
 											<string>9E7B078A0FA4D461005C2299</string>
 											<string>9E7B078B0FA4D461005C2299</string>
 											<string>9E7B078C0FA4D461005C2299</string>
-											<string>9E7B07820FA4D42F005C2299</string>
+											<string>9E7B08230FA4E6AD005C2299</string>
+											<string>9EC9CFEE0FA3DDAF00CE6A2D</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -500,6 +495,7 @@
 											<string>9E7B07900FA4D461005C2299</string>
 											<string>9E7B07910FA4D461005C2299</string>
 											<string>9E7B07920FA4D461005C2299</string>
+											<string>9E7B08240FA4E6AD005C2299</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -672,7 +668,7 @@
 	<key>PerspectivesBarVisible</key>
 	<false/>
 	<key>PinnedNavigatorIdentifier</key>
-	<string>9E7B07F40FA4DE9D005C2299</string>
+	<string>9E7B080D0FA4E38D005C2299</string>
 	<key>ShelfIsVisible</key>
 	<false/>
 	<key>SourceDescription</key>
@@ -701,7 +697,7 @@
 		<string>9E7B9AB80F64C97B0025D849</string>
 		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>9E7B07F40FA4DE9D005C2299</string>
+		<string>9E7B080D0FA4E38D005C2299</string>
 	</array>
 	<key>WindowString</key>
 	<string>280 -7 1131 804 0 0 1600 878 </string>
