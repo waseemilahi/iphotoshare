@@ -21,6 +21,8 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
+	[tabBarController setDelegate:self ];
+	
     // Add the tab bar controller's current view as a subview of the window
     [window addSubview:tabBarController.view];
 	count = 0;
@@ -30,8 +32,24 @@
 	[self.locmanager setDelegate:self];
 	[self.locmanager setDesiredAccuracy:kCLLocationAccuracyBest];
 	[self.locmanager startUpdatingLocation];
-		
+	
+	tab_loc_count = 0;
+			
 }
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+	
+	if((self.tabBarController.selectedViewController == [self.tabBarController.viewControllers objectAtIndex:0]) && tab_loc_count == 0)
+	{
+		tab_loc_count++;
+		UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"PhotoShare Will Use Your Current Location To Download/Upload Pictures" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
+		[myAlertView show];
+		[myAlertView release];
+	}
+}
+	
+	
 
 - (IBAction)homeAgainSignIn:(id)sender
 {

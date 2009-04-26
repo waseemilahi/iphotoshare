@@ -55,6 +55,22 @@
 	
 	NSString *formattedDateString = [dateFormatter stringFromDate:todaysDate];
 	
+	myTextField = [[UITextField alloc] init];
+	myTextField.text = [NSString stringWithFormat:@"PShare: %@", formattedDateString ];
+	UIAlertView *myAlert = [[UIAlertView alloc] initWithTitle:@"Photo's Upload Name" message:@"Enter The Name You Want To Give To Your Photo" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+	[myAlert addTextFieldWithValue:nil label:myTextField.text];
+	[[myAlert textField] setTextAlignment:UITextAlignmentCenter];
+
+	[[myAlert textField] becomeFirstResponder];
+	
+	
+	[myAlert show];
+	[myAlert release];
+	myAlert = nil;
+	
+	
+	/*
+	
 	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo's Upload Name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 	myTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 38.0, 260.0, 28.0)];
 	[myTextField setBackgroundColor:[UIColor whiteColor]];
@@ -64,7 +80,7 @@
 	CGAffineTransform myTransform = CGAffineTransformMakeTranslation(0.0, 130.0);
 	[myAlertView setTransform:myTransform];
 	[myAlertView show];
-	
+	*/
 }
 
 - (void)takePicture: (id) sender{
@@ -93,7 +109,7 @@
 	
 	NSString *formattedDateString = [dateFormatter stringFromDate:todaysDate];
 	
-	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo's Upload Name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
+/*	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo's Upload Name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
 	myTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 38.0, 260.0, 28.0)];
 	[myTextField setBackgroundColor:[UIColor whiteColor]];
 	myTextField.clearsOnBeginEditing = YES;
@@ -102,8 +118,28 @@
 	CGAffineTransform myTransform = CGAffineTransformMakeTranslation(0.0, 130.0);
 	[myAlertView setTransform:myTransform];
 	[myAlertView show];
+	*/
 	
+	myTextField = [[UITextField alloc] init];
+	myTextField.text = [NSString stringWithFormat:@"PShare: %@", formattedDateString ];
+	UIAlertView *myAlert = [[UIAlertView alloc] initWithTitle:@"Photo's Upload Name" message:@"Enter The Name You Want To Give To Your Photo" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+	[myAlert addTextFieldWithValue:nil label:myTextField.text];
+	[[myAlert textField] setTextAlignment:UITextAlignmentCenter];
+	
+	[[myAlert textField] becomeFirstResponder];
+	
+	
+	[myAlert show];
+	[myAlert release];
+	myAlert = nil;	
 //	}
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+	
+	if([[[alertView textField] text] isEqualToString:@""]){}
+	   else myTextField.text = [[alertView textField] text];
+	
 }
 
 //START:code.PhotoViewController.didCancel
