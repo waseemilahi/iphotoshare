@@ -382,6 +382,10 @@
 			9E7B08950FA4F07A005C2299 /* PBXTextBookmark */ = 9E7B08950FA4F07A005C2299 /* PBXTextBookmark */;
 			9E7B08970FA4F0D2005C2299 /* PBXTextBookmark */ = 9E7B08970FA4F0D2005C2299 /* PBXTextBookmark */;
 			9E7B08980FA4F0D2005C2299 /* PBXTextBookmark */ = 9E7B08980FA4F0D2005C2299 /* PBXTextBookmark */;
+			9E7B089A0FA4F174005C2299 /* PBXTextBookmark */ = 9E7B089A0FA4F174005C2299 /* PBXTextBookmark */;
+			9E7B089B0FA4F174005C2299 /* PBXTextBookmark */ = 9E7B089B0FA4F174005C2299 /* PBXTextBookmark */;
+			9E7B089D0FA4F1D5005C2299 /* PBXTextBookmark */ = 9E7B089D0FA4F1D5005C2299 /* PBXTextBookmark */;
+			9E7B089E0FA4F1D5005C2299 /* PBXTextBookmark */ = 9E7B089E0FA4F1D5005C2299 /* PBXTextBookmark */;
 			9E7B43B10F69561800BDB8FF = 9E7B43B10F69561800BDB8FF /* PBXTextBookmark */;
 			9E7B43B20F69561800BDB8FF = 9E7B43B20F69561800BDB8FF /* PBXTextBookmark */;
 			9E7B43E10F6958CD00BDB8FF = 9E7B43E10F6958CD00BDB8FF /* PBXTextBookmark */;
@@ -1051,7 +1055,7 @@
 		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
 		name = "MapViewController.m: 188";
 		rLen = 0;
-		rLoc = 5690;
+		rLoc = 5805;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 4319;
@@ -1121,7 +1125,7 @@
 		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
 		name = "MapViewController.m: 188";
 		rLen = 0;
-		rLoc = 5690;
+		rLoc = 5805;
 		rType = 0;
 		vrLen = 1150;
 		vrLoc = 3944;
@@ -1151,7 +1155,7 @@
 		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
 		name = "MapViewController.m: 188";
 		rLen = 0;
-		rLoc = 5690;
+		rLoc = 5805;
 		rType = 0;
 		vrLen = 1256;
 		vrLoc = 4319;
@@ -2485,7 +2489,7 @@
 		comments = "warning: property 'indicatorview' requires method '-indicatorview' to be defined - use @synthesize, @dynamic or provide a method implementation";
 		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
 		rLen = 1;
-		rLoc = 291;
+		rLoc = 294;
 		rType = 1;
 	};
 	9E7B085F0FA4E947005C2299 /* PBXTextBookmark */ = {
@@ -2503,7 +2507,7 @@
 		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
 		name = "MapViewController.m: 280";
 		rLen = 5;
-		rLoc = 7824;
+		rLoc = 7939;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 6533;
@@ -2697,7 +2701,7 @@
 		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
 		name = "MapViewController.m: 255";
 		rLen = 0;
-		rLoc = 7087;
+		rLoc = 7202;
 		rType = 0;
 		vrLen = 1382;
 		vrLoc = 5626;
@@ -2737,7 +2741,7 @@
 		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
 		name = "MapViewController.m: 247";
 		rLen = 0;
-		rLoc = 6629;
+		rLoc = 6744;
 		rType = 0;
 		vrLen = 1419;
 		vrLoc = 5703;
@@ -2757,7 +2761,7 @@
 		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
 		name = "MapViewController.m: 192";
 		rLen = 0;
-		rLoc = 5256;
+		rLoc = 5371;
 		rType = 0;
 		vrLen = 1354;
 		vrLoc = 4939;
@@ -2817,10 +2821,50 @@
 		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
 		name = "MapViewController.m: 194";
 		rLen = 0;
-		rLoc = 5256;
+		rLoc = 5371;
 		rType = 0;
 		vrLen = 1505;
 		vrLoc = 4167;
+	};
+	9E7B089A0FA4F174005C2299 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
+		name = "MapViewController.m: 115";
+		rLen = 0;
+		rLoc = 3083;
+		rType = 0;
+		vrLen = 916;
+		vrLoc = 1567;
+	};
+	9E7B089B0FA4F174005C2299 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
+		name = "MapViewController.m: 191";
+		rLen = 0;
+		rLoc = 5301;
+		rType = 0;
+		vrLen = 1527;
+		vrLoc = 4494;
+	};
+	9E7B089D0FA4F1D5005C2299 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
+		name = "MapViewController.m: 115";
+		rLen = 0;
+		rLoc = 3083;
+		rType = 0;
+		vrLen = 916;
+		vrLoc = 1567;
+	};
+	9E7B089E0FA4F1D5005C2299 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
+		name = "MapViewController.m: 188";
+		rLen = 0;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 1426;
+		vrLoc = 5783;
 	};
 	9E7B43B10F69561800BDB8FF /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2984,9 +3028,9 @@
 	};
 	9E7B9A760F64BFEB0025D849 /* MapViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1035, 4102}}";
-			sepNavSelRange = "{5256, 0}";
-			sepNavVisRange = "{4167, 1505}";
+			sepNavIntBoundsRect = "{{0, 0}, {1035, 4144}}";
+			sepNavSelRange = "{5188, 0}";
+			sepNavVisRange = "{5783, 1426}";
 			sepNavWindowFrame = "{{280, 0}, {1094, 878}}";
 		};
 	};
