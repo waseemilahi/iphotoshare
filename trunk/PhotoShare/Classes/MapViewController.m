@@ -17,6 +17,7 @@
 @synthesize photos;
 @synthesize locmanager;
 @synthesize imageView;
+@synthesize indicatorview;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -104,12 +105,19 @@
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 	
 	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
+	
+	[self.view addSubview:indicatorview];
 		
+	[self performSelector:@selector(showM) withObject:nil afterDelay:3];
 	
 	
+	
+}
+	 
+-(void)showM{
 	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);	
 	[photos release];
-		
+	
 	photos = [NSArray arrayWithArray:[flickr getPhotos:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ]];
 	
 	int i;
@@ -156,10 +164,20 @@
 	[mapView showMarkers];
 	
 	image_count = 0;	
+	[[self.view.subviews lastObject] removeFromSuperview];
+	CATransition *myTransition = [ CATransition animation];
+	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+	myTransition.type = kCATransitionPush;
+	myTransition.subtype = kCATransitionFromRight;
+	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
 	
 	[self.view addSubview:mapView];
-	
 }
+
+	 
+	 
+	 
 - (IBAction)showMap: (id) sender{
 	
 	if(image_count > 0)[[self.view.subviews lastObject] removeFromSuperview];

@@ -17,6 +17,7 @@ IBOutlet UILabel *mapLabel;
 	IBOutlet UITextField *latitude;
 	IBOutlet UITextField *lastupdate;
 	IBOutlet UIButton *save;
+	IBOutlet UIActivityIndicatorView *indicatorview;
 	 flickrapi *flickr;
 	NSMutableArray *locations;
 	IBOutlet MapView* mapView;
@@ -30,7 +31,7 @@ BOOL wasFound;
 	IBOutlet UIImageView *imageView;
 }
 @property (nonatomic, retain) NSArray *photos;
-
+@property (nonatomic,retain) UIActivityIndicatorView *indicatorview;
 @property (nonatomic, retain) CLLocationManager *locmanager;
 @property (nonatomic, retain) flickrapi *flickr;
 @property (nonatomic, retain) UIImageView *imageView;
