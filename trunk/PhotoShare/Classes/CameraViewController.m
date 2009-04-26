@@ -69,7 +69,7 @@
 		
 	[self presentModalViewController:self.imagePicker animated:YES]; //<label id="code.imagepicker.present.modal"/>
 	
-	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo's Upload Name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo's Upload Name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
 	myTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 38.0, 260.0, 28.0)];
 	[myTextField setBackgroundColor:[UIColor whiteColor]];
 	myTextField.clearsOnBeginEditing = YES;
@@ -106,10 +106,19 @@
 	//[UIImagePNGRepresentation(image) writeToFile: uniquePath atomically:YES];
 	
 	[image retain];
-	[flickr uploadPhoto:image withLat:locmanager.location.coordinate.latitude andLon:locmanager.location.coordinate.longitude withName:myTextField.text];
-	
-	UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
-	
+	if([flickr uploadPhoto:image withLat:locmanager.location.coordinate.latitude andLon:locmanager.location.coordinate.longitude withName:myTextField.text])
+	{
+		UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Upload Successfull" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK"];		
+		[myAlertView show];
+		[myAlertView release];
+		
+	}
+	else 
+	{
+		UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Upload Failed" message:@"Try Again" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK"];		
+		[myAlertView show];
+		[myAlertView release];
+	}
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 	
 }

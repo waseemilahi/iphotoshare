@@ -461,7 +461,7 @@
 }
 
 
--(BOOL)uploadPhoto:(UIImage *)image withLat:(NSInteger)lat andLon:(NSInteger)lon withName:(NSString *)imageName{
+-(BOOL)uploadPhoto:(UIImage *)image withLat:(double)lat andLon:(double)lon withName:(NSString *)imageName{
 	[self clearParams];
 	[self addParam:@"api_key" withValue:APIKEY];
 	[self addParam:@"auth_token" withValue:TOKEN];
