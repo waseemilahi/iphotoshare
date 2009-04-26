@@ -18,7 +18,7 @@
 	int count ;
 	
 	NSMutableString *TOKEN;
-	
+	int signin_count;
 	
 	IBOutlet UIView *signoutview;
 	IBOutlet UIView *invalidupview;

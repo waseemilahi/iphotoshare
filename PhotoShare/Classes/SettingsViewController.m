@@ -90,7 +90,7 @@
 	[password resignFirstResponder];
 	//code goes here.	
 	
-
+    signin_count++;
 	
 /*	
 	CATransition *myTransition = [ CATransition animation];
@@ -206,10 +206,10 @@
 		 self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
 	*/	 
 		 [flickr logout];
-		[[self.view.subviews lastObject] removeFromSuperview];
+		if(signin_count == 1)[[self.view.subviews lastObject] removeFromSuperview];
 		//[[self.view.subviews lastObject] removeFromSuperview];
 		//if(invalidupview != nil){[self.view addSubview:invalidupview];count++;}
-		
+		signin_count--;
 		
 	}
 	else if([fail isEqualToString:@"bad internet connection"]){
@@ -235,9 +235,10 @@
 		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
 		*/
 		[flickr logout];
-		[[self.view.subviews lastObject] removeFromSuperview];
+		if(signin_count == 1)[[self.view.subviews lastObject] removeFromSuperview];
 		//[[self.view.subviews lastObject] removeFromSuperview];
-	//	if(badnetworkview != nil){[self.view addSubview:badnetworkview];count++;}
+		//if(invalidupview != nil){[self.view addSubview:invalidupview];count++;}
+		signin_count--;
 		
 		
 	}
@@ -325,6 +326,7 @@
 //    [super viewDidLoad];
 	
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
+	signin_count = 0;
 }
 
 
