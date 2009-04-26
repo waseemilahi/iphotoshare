@@ -107,6 +107,7 @@
 	if ([photos count] > 0) {
 		[pictureLabel setText:[NSString stringWithFormat:@"%d of %d", index + 1, [photos count]]];
 	} else {
+		[imageView setImage:nil];
 		[pictureLabel setText:@"No photos found."];
 		
 	}
@@ -157,6 +158,7 @@
 	myTransition.subtype = kCATransitionFromLeft;
 	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1] ; 
+		
 	}
 	[self loadPhoto:p];
 	[photos retain];

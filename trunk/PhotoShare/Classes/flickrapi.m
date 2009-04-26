@@ -461,7 +461,7 @@
 }
 
 
--(void)uploadPhoto:(UIImage *)image withLat:(double)lat andLon:(double)lon {
+-(void)uploadPhoto:(UIImage *)image withLat:(double)lat andLon:(double)lon withName:(NSString *)imageName{
 	[self clearParams];
 	[self addParam:@"api_key" withValue:APIKEY];
 	[self addParam:@"auth_token" withValue:TOKEN];
@@ -472,7 +472,7 @@
 	
 	NSMutableString *post = [self getPost];
 	[post appendString:@"-----------------------------8f999edae883c6039b244c0d341f45f8\r\n"];
-	[post appendFormat:@"Content-Disposition: form-data; name=\"photo\"; filename=\"upload.png\"\r\n"];
+	[post appendFormat:@"Content-Disposition: form-data; name=\"photo\"; filename=\"%@.png\"\r\n",imageName];
 	[post appendString:@"Content-Type: image/png\r\n\r\n"];
 	
 	NSLog(@"post:");
