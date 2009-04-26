@@ -25,7 +25,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 9E7B9A630F64BF780025D849 /* PhotoShare */;
-		activeSDKPreference = iphonesimulator2.2.1;
+		activeSDKPreference = iphoneos2.2.1;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PhotoShare */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PhotoShare */,
@@ -1512,7 +1512,7 @@
 		ignoreCount = 0;
 		lineNumber = 375;
 		location = PhotoShare;
-		modificationTime = 262409536.897565;
+		modificationTime = 262410805.971748;
 		state = 2;
 	};
 	9E129D5E0FA40D920055D304 /* PBXTextBookmark */ = {
@@ -2806,7 +2806,7 @@
 		ignoreCount = 0;
 		lineNumber = 75;
 		location = PhotoShare;
-		modificationTime = 262409494.74935;
+		modificationTime = 262410805.971388;
 		state = 2;
 	};
 	9E7A431F0FA391FF0065D39B /* PBXTextBookmark */ = {
@@ -2871,7 +2871,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 41;
-		modificationTime = 262409494.749376;
+		modificationTime = 262410805.971717;
 		state = 2;
 	};
 	9E7A44A70FA3CCED0065D39B /* PBXTextBookmark */ = {
