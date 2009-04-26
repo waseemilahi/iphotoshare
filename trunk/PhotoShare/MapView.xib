@@ -203,33 +203,6 @@
 						<int key="IBUIContentMode">1</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 					</object>
-					<object class="IBUINavigationBar" id="968885815">
-						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">290</int>
-						<string key="NSFrameSize">{320, 44}</string>
-						<reference key="NSSuperview" ref="191373211"/>
-						<object class="NSColor" key="IBUIBackgroundColor">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MAA</bytes>
-						</object>
-						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
-						<int key="IBUIBarStyle">1</int>
-						<object class="NSArray" key="IBUIItems">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUINavigationItem" id="164531341">
-								<reference key="IBUINavigationBar" ref="968885815"/>
-								<string key="IBUITitle">Map</string>
-								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="34178896">
-									<string key="IBUITitle">Show Map</string>
-									<int key="IBUIStyle">1</int>
-								</object>
-								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="472341096">
-									<string key="IBUITitle">Update Map</string>
-									<int key="IBUIStyle">1</int>
-								</object>
-							</object>
-						</object>
-					</object>
 				</object>
 				<string key="NSFrameSize">{320, 411}</string>
 				<reference key="NSSuperview"/>
@@ -241,7 +214,33 @@
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
 			</object>
-			<object class="IBUIActivityIndicatorView" id="1069683062">
+			<object class="IBUINavigationBar" id="968885815">
+				<nil key="NSNextResponder"/>
+				<int key="NSvFlags">290</int>
+				<string key="NSFrameSize">{320, 44}</string>
+				<object class="NSColor" key="IBUIBackgroundColor">
+					<int key="NSColorSpace">3</int>
+					<bytes key="NSWhite">MAA</bytes>
+				</object>
+				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+				<int key="IBUIBarStyle">1</int>
+				<object class="NSArray" key="IBUIItems">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<object class="IBUINavigationItem" id="164531341">
+						<reference key="IBUINavigationBar" ref="968885815"/>
+						<string key="IBUITitle">Map</string>
+						<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="34178896">
+							<string key="IBUITitle">Show Map</string>
+							<int key="IBUIStyle">1</int>
+						</object>
+						<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="472341096">
+							<string key="IBUITitle">Update Map</string>
+							<int key="IBUIStyle">1</int>
+						</object>
+					</object>
+				</object>
+			</object>
+			<object class="IBUIActivityIndicatorView" id="52295581">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">301</int>
 				<string key="NSFrameSize">{320, 479}</string>
@@ -343,9 +342,17 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">indicatorview</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="1069683062"/>
+						<reference key="destination" ref="52295581"/>
 					</object>
 					<int key="connectionID">55</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">mapBar</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="968885815"/>
+					</object>
+					<int key="connectionID">56</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -371,7 +378,6 @@
 							<reference ref="128074242"/>
 							<reference ref="917701676"/>
 							<reference ref="155983880"/>
-							<reference ref="968885815"/>
 							<reference ref="31701272"/>
 							<reference ref="143933314"/>
 						</object>
@@ -429,28 +435,33 @@
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
+						<int key="objectID">50</int>
+						<reference key="object" ref="31701272"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">54</int>
+						<reference key="object" ref="52295581"/>
+						<reference key="parent" ref="360949347"/>
+					</object>
+					<object class="IBObjectRecord">
 						<int key="objectID">5</int>
 						<reference key="object" ref="968885815"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="164531341"/>
 						</object>
-						<reference key="parent" ref="191373211"/>
+						<reference key="parent" ref="360949347"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">25</int>
 						<reference key="object" ref="164531341"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="472341096"/>
 							<reference ref="34178896"/>
+							<reference ref="472341096"/>
 						</object>
 						<reference key="parent" ref="968885815"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">27</int>
-						<reference key="object" ref="472341096"/>
-						<reference key="parent" ref="164531341"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">36</int>
@@ -458,14 +469,9 @@
 						<reference key="parent" ref="164531341"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">50</int>
-						<reference key="object" ref="31701272"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">54</int>
-						<reference key="object" ref="1069683062"/>
-						<reference key="parent" ref="360949347"/>
+						<int key="objectID">27</int>
+						<reference key="object" ref="472341096"/>
+						<reference key="parent" ref="164531341"/>
 					</object>
 				</object>
 			</object>
@@ -544,7 +550,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">55</int>
+			<int key="maxID">56</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -589,6 +595,7 @@
 							<string>latitude</string>
 							<string>locLabel</string>
 							<string>longitude</string>
+							<string>mapBar</string>
 							<string>mapLabel</string>
 							<string>mapView</string>
 							<string>save</string>
@@ -601,6 +608,7 @@
 							<string>UITextField</string>
 							<string>UILabel</string>
 							<string>UITextField</string>
+							<string>UINavigationBar</string>
 							<string>UILabel</string>
 							<string>MapView</string>
 							<string>UIButton</string>
