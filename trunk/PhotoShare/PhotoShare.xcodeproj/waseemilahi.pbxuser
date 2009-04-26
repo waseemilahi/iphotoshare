@@ -25,7 +25,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 9E7B9A630F64BF780025D849 /* PhotoShare */;
-		activeSDKPreference = iphoneos2.2.1;
+		activeSDKPreference = iphonesimulator2.2.1;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PhotoShare */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PhotoShare */,
@@ -267,6 +267,8 @@
 			9E129D7C0FA40F390055D304 /* PBXTextBookmark */ = 9E129D7C0FA40F390055D304 /* PBXTextBookmark */;
 			9E129D7D0FA40F390055D304 /* PBXTextBookmark */ = 9E129D7D0FA40F390055D304 /* PBXTextBookmark */;
 			9E129D7E0FA40F390055D304 /* PBXTextBookmark */ = 9E129D7E0FA40F390055D304 /* PBXTextBookmark */;
+			9E129D820FA4131F0055D304 /* PBXTextBookmark */ = 9E129D820FA4131F0055D304 /* PBXTextBookmark */;
+			9E129D830FA4131F0055D304 /* PBXTextBookmark */ = 9E129D830FA4131F0055D304 /* PBXTextBookmark */;
 			9E1BDFF60FA2D8E4001F067C = 9E1BDFF60FA2D8E4001F067C /* PBXTextBookmark */;
 			9E1BE0210FA2DDA9001F067C = 9E1BE0210FA2DDA9001F067C /* PBXBookmark */;
 			9E1BE04B0FA2E56A001F067C = 9E1BE04B0FA2E56A001F067C /* PBXTextBookmark */;
@@ -1744,6 +1746,26 @@
 		vrLoc = 152;
 	};
 	9E129D7E0FA40F390055D304 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 256";
+		rLen = 0;
+		rLoc = 8027;
+		rType = 0;
+		vrLen = 1969;
+		vrLoc = 6149;
+	};
+	9E129D820FA4131F0055D304 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 246";
+		rLen = 0;
+		rLoc = 7493;
+		rType = 0;
+		vrLen = 1408;
+		vrLoc = 6850;
+	};
+	9E129D830FA4131F0055D304 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 256";
