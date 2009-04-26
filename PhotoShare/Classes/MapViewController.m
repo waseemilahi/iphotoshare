@@ -185,6 +185,9 @@
 - (IBAction)showMap: (id) sender{
 	
 	if(image_count > 0)[[self.view.subviews lastObject] removeFromSuperview];
+		
+	[[self.view.subviews lastObject] removeFromSuperview];
+	[[self.view.subviews lastObject] removeFromSuperview];
 	
 	if(mapView){
 		[mapView clearMarkers];
