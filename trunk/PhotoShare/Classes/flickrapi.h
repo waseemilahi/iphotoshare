@@ -23,7 +23,7 @@
 	NSMutableDictionary *params;
 	NSHTTPCookieStorage *cookies;
 	NSArray *cookie;
-	NSHTTPURLResponse *response;
+	
 	
 	
 	
@@ -37,7 +37,7 @@
 @property (nonatomic, retain) NSMutableString *TOKEN;
 @property (nonatomic, retain) NSHTTPCookieStorage *cookies;
 @property (nonatomic, retain) NSArray *cookie;
-@property (nonatomic, retain) NSHTTPURLResponse *response;
+
 
 
 @property (assign) id<FlickrLoginDelegate> loginDelegate; 
