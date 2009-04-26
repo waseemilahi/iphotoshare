@@ -204,7 +204,7 @@
 				<key>PBXProjectModuleGUID</key>
 				<string>9E3668A50FA3EA5C0072928A</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>flickrapi.m</string>
+				<string>flickrapi.h</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
@@ -212,19 +212,23 @@
 						<key>PBXProjectModuleGUID</key>
 						<string>9E3668AB0FA3EA730072928A</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>flickrapi.m</string>
+						<string>flickrapi.h</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E3668B20FA3EB280072928A</string>
+						<string>9E3668DA0FA3ED910072928A</string>
 						<key>history</key>
 						<array>
+							<string>9E3668D60FA3ED910072928A</string>
+							<string>9E3668D70FA3ED910072928A</string>
 							<string>9E3668B00FA3EB280072928A</string>
-							<string>9E3668AD0FA3EB160072928A</string>
 						</array>
 						<key>prevStack</key>
 						<array>
 							<string>9E3668B10FA3EB280072928A</string>
+							<string>9E3668C50FA3EC2B0072928A</string>
+							<string>9E3668D80FA3ED910072928A</string>
+							<string>9E3668D90FA3ED910072928A</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -323,6 +327,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>9</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -363,7 +368,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>flickrapi.h</string>
+								<string>CameraViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -371,11 +376,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>flickrapi.h</string>
+										<string>CameraViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E3668AF0FA3EB280072928A</string>
+										<string>9E3668D50FA3ED910072928A</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -430,9 +435,9 @@
 											<string>9E7A44E10FA3D27B0065D39B</string>
 											<string>9EC9CFEE0FA3DDAF00CE6A2D</string>
 											<string>9EC9CFF10FA3DDAF00CE6A2D</string>
-											<string>9E36689A0FA3EA470072928A</string>
 											<string>9E3668A60FA3EA730072928A</string>
-											<string>9E3668490FA3E3210072928A</string>
+											<string>9E3668C10FA3EC2B0072928A</string>
+											<string>9E3668BE0FA3EC1E0072928A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -492,6 +497,7 @@
 											<string>9E8A8F290FA0C7D600C186C0</string>
 											<string>9E1BE08D0FA2E98D001F067C</string>
 											<string>9E3668A70FA3EA730072928A</string>
+											<string>9E3668C20FA3EC2B0072928A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -687,9 +693,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>9E3668DB0FA3ED910072928A</string>
+		<string>9E3668DC0FA3ED910072928A</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9E7B9AB80F64C97B0025D849</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
 		<string>9E3668A50FA3EA5C0072928A</string>
 	</array>
@@ -710,12 +718,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>CameraViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -1024,6 +1034,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1069,7 +1081,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
