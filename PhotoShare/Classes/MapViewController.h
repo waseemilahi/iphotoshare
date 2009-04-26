@@ -19,7 +19,7 @@ IBOutlet UILabel *mapLabel;
 	IBOutlet UIButton *save;
 	 flickrapi *flickr;
 	NSMutableArray *locations;
-	MapView* mapView;
+	IBOutlet MapView* mapView;
 	BOOL isLocating;
 	UILabel *messagesView;
 	CLLocationManager *locmanager;

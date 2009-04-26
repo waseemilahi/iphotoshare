@@ -16,6 +16,7 @@
 	IBOutlet UIImageView *imageView;
 	IBOutlet UILabel *pictureLabel;
 	IBOutlet UIImagePickerController *imagePicker;
+	UITextField *myTextField;
 	CLLocationManager *locmanager;
 	flickrapi *flickr;
 }

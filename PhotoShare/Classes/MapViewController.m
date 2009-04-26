@@ -138,7 +138,7 @@
 		marker.draggable = NO;
 		marker.delegate = self;
 		[mapView addMarker:marker];
-		[marker show];
+		//[marker show];
 		
 		
 	}
@@ -151,8 +151,9 @@
 	marker.draggable = NO;
 	//marker.delegate = mapView;
 	[mapView addMarker:marker];
-	[marker show];
+	//[marker show];
 	
+	[mapView showMarkers];
 	
 	image_count = 0;	
 	
