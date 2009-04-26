@@ -42,6 +42,17 @@
 	self.imagePicker.allowsImageEditing = YES; //<label id="code.imagepicker.allowsEditing"/>
 	
 	[self presentModalViewController:self.imagePicker animated:YES]; 
+	
+	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo's Upload Name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+	myTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 38.0, 260.0, 28.0)];
+	[myTextField setBackgroundColor:[UIColor whiteColor]];
+	myTextField.clearsOnBeginEditing = YES;
+	myTextField.text = @"myPhoto";
+	[myAlertView addSubview:myTextField];
+	CGAffineTransform myTransform = CGAffineTransformMakeTranslation(0.0, 130.0);
+	[myAlertView setTransform:myTransform];
+	[myAlertView show];
+	
 }
 
 - (void)takePicture: (id) sender{
@@ -57,6 +68,17 @@
 		self.imagePicker.allowsImageEditing = YES; //<label id="code.imagepicker.allowsEditing"/>
 		
 	[self presentModalViewController:self.imagePicker animated:YES]; //<label id="code.imagepicker.present.modal"/>
+	
+	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo's Upload Name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+	myTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 38.0, 260.0, 28.0)];
+	[myTextField setBackgroundColor:[UIColor whiteColor]];
+		myTextField.clearsOnBeginEditing = YES;
+	myTextField.text = @"myPhoto";
+	[myAlertView addSubview:myTextField];
+	CGAffineTransform myTransform = CGAffineTransformMakeTranslation(0.0, 130.0);
+	[myAlertView setTransform:myTransform];
+	[myAlertView show];
+	
 //	}
 }
 
@@ -84,7 +106,7 @@
 	//[UIImagePNGRepresentation(image) writeToFile: uniquePath atomically:YES];
 	
 	[image retain];
-	[flickr uploadPhoto:image withLat:locmanager.location.coordinate.latitude andLon:locmanager.location.coordinate.longitude withName:@"temp"];
+	[flickr uploadPhoto:image withLat:locmanager.location.coordinate.latitude andLon:locmanager.location.coordinate.longitude withName:myTextField.text];
 	
 	UIImageWriteToSavedPhotosAlbum(image, self, nil, nil);
 	

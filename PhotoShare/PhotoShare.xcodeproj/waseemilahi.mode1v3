@@ -204,7 +204,7 @@
 				<key>PBXProjectModuleGUID</key>
 				<string>9E36682E0FA3DF0C0072928A</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>flickrapi.m</string>
+				<string>CameraViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
@@ -212,16 +212,16 @@
 						<key>PBXProjectModuleGUID</key>
 						<string>9E3668330FA3DF340072928A</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>flickrapi.m</string>
+						<string>CameraViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E3668430FA3E0D30072928A</string>
+						<string>9E36688B0FA3E66C0072928A</string>
 						<key>history</key>
 						<array>
-							<string>9E36683F0FA3E0D30072928A</string>
 							<string>9E3668400FA3E0D30072928A</string>
-							<string>9E36683A0FA3E08C0072928A</string>
+							<string>9E36684C0FA3E3210072928A</string>
+							<string>9E36683F0FA3E0D30072928A</string>
 						</array>
 						<key>prevStack</key>
 						<array>
@@ -229,6 +229,7 @@
 							<string>9E3668370FA3DF340072928A</string>
 							<string>9E3668410FA3E0D30072928A</string>
 							<string>9E3668420FA3E0D30072928A</string>
+							<string>9E36684D0FA3E3210072928A</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -367,7 +368,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>flickrapi.h</string>
+								<string>CameraViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -375,11 +376,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>flickrapi.h</string>
+										<string>CameraViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E36683E0FA3E0D30072928A</string>
+										<string>9E36688A0FA3E66C0072928A</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -434,9 +435,9 @@
 											<string>9E7A44E10FA3D27B0065D39B</string>
 											<string>9EC9CFEE0FA3DDAF00CE6A2D</string>
 											<string>9EC9CFF10FA3DDAF00CE6A2D</string>
-											<string>9E3668230FA3DF000072928A</string>
 											<string>9E36683C0FA3E0D30072928A</string>
-											<string>9E3668240FA3DF000072928A</string>
+											<string>9E3668490FA3E3210072928A</string>
+											<string>9E3668230FA3DF000072928A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -498,6 +499,7 @@
 											<string>9E3668250FA3DF000072928A</string>
 											<string>9E3668260FA3DF000072928A</string>
 											<string>9E36683D0FA3E0D30072928A</string>
+											<string>9E36684A0FA3E3210072928A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -695,8 +697,8 @@
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9E7B9AB80F64C97B0025D849</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>9E36682E0FA3DF0C0072928A</string>
 	</array>
 	<key>WindowString</key>
