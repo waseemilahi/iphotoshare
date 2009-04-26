@@ -63,6 +63,7 @@
 
 -(BOOL)uploadPhoto:(UIImage *)image withLat:(double)lat andLon:(double)lon withName:(NSString *)imageName;
 
+-(BOOL)setLocationOfPhoto:(NSString *)pid withLat:(double)lat andLon:(double)lon;
 
 -(void)webViewDidStartLoad:(UIWebView *)webView;
 -(void)webViewDidFinishLoad:(UIWebView *)webView;
