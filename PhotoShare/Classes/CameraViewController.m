@@ -43,11 +43,23 @@
 	
 	[self presentModalViewController:self.imagePicker animated:YES]; 
 	
+	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init]  autorelease];
+	
+	[dateFormatter setDateStyle:NSDateFormatterShortStyle];
+	
+	[dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+	
+	
+	
+	NSDate *todaysDate = [NSDate date];
+	
+	NSString *formattedDateString = [dateFormatter stringFromDate:todaysDate];
+	
 	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo's Upload Name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 	myTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 38.0, 260.0, 28.0)];
 	[myTextField setBackgroundColor:[UIColor whiteColor]];
 	myTextField.clearsOnBeginEditing = YES;
-	myTextField.text = @"myPhoto";
+	myTextField.text = [NSString stringWithFormat:@"PShare: %@", formattedDateString ];
 	[myAlertView addSubview:myTextField];
 	CGAffineTransform myTransform = CGAffineTransformMakeTranslation(0.0, 130.0);
 	[myAlertView setTransform:myTransform];
@@ -69,11 +81,23 @@
 		
 	[self presentModalViewController:self.imagePicker animated:YES]; //<label id="code.imagepicker.present.modal"/>
 	
+	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init]  autorelease];
+	
+	[dateFormatter setDateStyle:NSDateFormatterShortStyle];
+	
+	[dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+	
+	
+	
+	NSDate *todaysDate = [NSDate date];
+	
+	NSString *formattedDateString = [dateFormatter stringFromDate:todaysDate];
+	
 	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo's Upload Name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
 	myTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 38.0, 260.0, 28.0)];
 	[myTextField setBackgroundColor:[UIColor whiteColor]];
 	myTextField.clearsOnBeginEditing = YES;
-	myTextField.text = @"myPhoto";
+	myTextField.text = [NSString stringWithFormat:@"PShare: %@", formattedDateString ];
 	[myAlertView addSubview:myTextField];
 	CGAffineTransform myTransform = CGAffineTransformMakeTranslation(0.0, 130.0);
 	[myAlertView setTransform:myTransform];
