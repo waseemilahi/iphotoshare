@@ -204,7 +204,7 @@
 				<key>PBXProjectModuleGUID</key>
 				<string>9E36682E0FA3DF0C0072928A</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>CameraViewController.m</string>
+				<string>flickrapi.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
@@ -212,20 +212,23 @@
 						<key>PBXProjectModuleGUID</key>
 						<string>9E3668330FA3DF340072928A</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>CameraViewController.m</string>
+						<string>flickrapi.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E3668380FA3DF340072928A</string>
+						<string>9E3668430FA3E0D30072928A</string>
 						<key>history</key>
 						<array>
-							<string>9E3668340FA3DF340072928A</string>
-							<string>9E3668350FA3DF340072928A</string>
+							<string>9E36683F0FA3E0D30072928A</string>
+							<string>9E3668400FA3E0D30072928A</string>
+							<string>9E36683A0FA3E08C0072928A</string>
 						</array>
 						<key>prevStack</key>
 						<array>
 							<string>9E3668360FA3DF340072928A</string>
 							<string>9E3668370FA3DF340072928A</string>
+							<string>9E3668410FA3E0D30072928A</string>
+							<string>9E3668420FA3E0D30072928A</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -364,7 +367,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>flickrapi.m</string>
+								<string>flickrapi.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -372,11 +375,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>flickrapi.m</string>
+										<string>flickrapi.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E3668320FA3DF340072928A</string>
+										<string>9E36683E0FA3E0D30072928A</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -432,8 +435,8 @@
 											<string>9EC9CFEE0FA3DDAF00CE6A2D</string>
 											<string>9EC9CFF10FA3DDAF00CE6A2D</string>
 											<string>9E3668230FA3DF000072928A</string>
+											<string>9E36683C0FA3E0D30072928A</string>
 											<string>9E3668240FA3DF000072928A</string>
-											<string>9EC9CFF00FA3DDAF00CE6A2D</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -494,6 +497,7 @@
 											<string>9E1BE08D0FA2E98D001F067C</string>
 											<string>9E3668250FA3DF000072928A</string>
 											<string>9E3668260FA3DF000072928A</string>
+											<string>9E36683D0FA3E0D30072928A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
