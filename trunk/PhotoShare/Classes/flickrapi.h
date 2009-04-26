@@ -12,7 +12,7 @@
 //extern flickrapi *FLICKR;
 @protocol FlickrLoginDelegate <NSObject>
 
-- (void)didLoginFail:(NSString *)fail;
+- (void)didLoginFail:(NSString *)fail withUserName:(NSString *)userName andFullName:(NSString *)fullName ;
 
 
 @end
@@ -53,6 +53,7 @@
 
 -(NSMutableString *)getToken;
 -(BOOL)checkToken;
+-(NSArray *)checkUserToken;
 
 -(NSMutableString *)getParamList;
 -(NSMutableString *)getSig;

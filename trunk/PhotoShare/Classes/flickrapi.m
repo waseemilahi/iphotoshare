@@ -271,14 +271,42 @@
 	
 	//NSLog(@"%@", [NSString stringWithContentsOfURL:url]);
 	
+			
 	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:@"token" parseError:nil];
 	if ([[parser items] count] != 0) {
+		
+		
 		
 		return ([TOKEN isEqualToString:[(token *)[[parser items] objectAtIndex:0] value]]);
 	}
 	
 	return NO;
 }
+
+-(NSArray *)checkUserToken {
+	[self clearParams];
+	
+	[self addParam:(NSMutableString *)@"method" withValue:(NSMutableString *)@"flickr.auth.checkToken"];
+	[self addParam:(NSMutableString *)@"api_key" withValue:(NSMutableString *)APIKEY];
+	[self addParam:(NSMutableString *)@"auth_token" withValue:(NSMutableString *)TOKEN];
+	
+	NSMutableString *sig = [self getSig];
+	[self addParam:(NSMutableString *)@"api_sig" withValue:(NSMutableString *)sig];
+	
+	NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://api.flickr.com/services/rest/%@", [self getParamList]]];
+	NSLog(@"check token url: %@", [url absoluteURL]);
+	
+	//NSLog(@"%@", [NSString stringWithContentsOfURL:url]);
+	
+	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:@"user" parseError:nil];
+	if ([[parser items] count] != 0) {
+		NSLog(@"mera yaar %d",[[parser items] count]);
+		
+		return [parser items];
+	}
+	return nil;
+}
+
 
 -(NSMutableString *)getParamList {
 	NSMutableString *list;
@@ -343,18 +371,22 @@
 	NSLog(@"loaded: %@", url);
 	if ([url isEqualToString:@"http://www.flickr.com/services/auth/"]) {
 		NSLog(@"token: %@", [self getToken]);
-		if (loginDelegate != NULL) [loginDelegate didLoginFail:@"http://www.flickr.com/services/auth/"];
+		NSArray *userToken = [NSArray arrayWithArray:[self checkUserToken]];
+		user *thisUser = (user *)[userToken objectAtIndex:0];
+
+		if (loginDelegate != NULL) [loginDelegate didLoginFail:@"http://www.flickr.com/services/auth/" withUserName:[thisUser getUserName] andFullName:[thisUser getFullName] ];
+				NSLog(@"%d", [self checkToken]);
 		
-		NSLog(@"%d", [self checkToken]);
+		
 	} else if ([url isEqualToString:@"http://www.flickr.com/"]) {
 		NSLog(@"bad internet connection?");
 	
-		if (loginDelegate != NULL) [loginDelegate didLoginFail:@"bad internet connection"];
+		if (loginDelegate != NULL) [loginDelegate didLoginFail:@"bad internet connection" withUserName:nil andFullName:nil ];
 	
 	} else if ([url isEqualToString:@"https://login.yahoo.com/config/login?"]) {
 		NSLog(@"bad username/password?");
 		
-		if (loginDelegate != NULL) [loginDelegate didLoginFail:@"bad username/password"];
+		if (loginDelegate != NULL) [loginDelegate didLoginFail:@"bad username/password" withUserName:nil andFullName:nil ];
 		
 		
 	} else if ([url length] < 36) {
@@ -362,7 +394,7 @@
 	} else if ([[url substringToIndex:(NSUInteger)36] isEqualToString:@"http://www.flickr.com/services/auth/"]) {
 		NSLog(@"submit: %@", [webView stringByEvaluatingJavaScriptFromString:@"document.forms[1].submit();"]);
 	} else if (NO) {
-		if (loginDelegate != NULL) [loginDelegate didLoginFail:@"Unknown Error"];
+		if (loginDelegate != NULL) [loginDelegate didLoginFail:@"Unknown Error" withUserName:nil andFullName:nil ];
 	}
 	
 	NSLog(@"finished loading");

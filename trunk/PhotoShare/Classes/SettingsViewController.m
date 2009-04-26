@@ -179,7 +179,7 @@
 }
 
 
-- (void) didLoginFail:(NSString *)fail{
+- (void) didLoginFail:(NSString *)fail withUserName:(NSString *)userName andFullName:(NSString *)fullName{
 	
 	if([fail isEqualToString:@"bad username/password"]){
 	[username resignFirstResponder];
@@ -243,7 +243,7 @@
 	}
 	else if([fail isEqualToString:@"http://www.flickr.com/services/auth/"]){ 
 		if(username.text == @"Username" || password.text == @"Password")
-			[self didLoginFail:@"bad username/password"];
+			[self didLoginFail:@"bad username/password" withUserName:userName andFullName:fullName];
 		else{
 		CATransition *myTransition = [ CATransition animation];
 		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
@@ -252,6 +252,8 @@
 		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ;
 			[[self.view.subviews lastObject] removeFromSuperview];
+			screennameLabel.text = userName;
+			fullnameLabel.text = fullName;
 		if(signoutview != nil){[self.view addSubview:signoutview];count++;}
 			
 				

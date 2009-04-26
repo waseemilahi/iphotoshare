@@ -49,6 +49,29 @@
 
 @end
 
+@implementation user
+
+@synthesize keys;
+
+-(NSString *)getUserName{
+	if ([keys objectForKey:@"username"]) {
+		return [keys objectForKey:@"username"];
+	} else {
+		return nil;
+	}
+}
+
+-(NSString *)getFullName{
+	if ([keys objectForKey:@"fullname"]) {
+		return [keys objectForKey:@"fullname"];
+	} else {
+		return nil;
+	}
+}
+
+@end
+
+
 // photo object
 @implementation photo
 
@@ -281,7 +304,14 @@ didStartElement:(NSString *)elementName
 			[[(location *)item keys] retain];
 			
 			NSLog(@"key count = %d", [attributeDict count]);
-		} else if ([elementName isEqualToString: @"frob"]) {
+		}else if ([elementName isEqualToString:@"user"]) {
+			//retrieve location info
+			[[(user *)item keys] release];
+			[(user *)item setKeys:[NSDictionary dictionaryWithDictionary:attributeDict]];
+			[[(user *)item keys] retain];
+			
+			NSLog(@"key count = %d", [attributeDict count]);
+		}else if ([elementName isEqualToString: @"frob"]) {
 			//this code is moved to didEndElement, since currentNodeContent is not filled yet when didStartElement is called
 			//[(frob *)item setValue:currentNodeContent];
 		} else if ([elementName isEqualToString: @"token"]) {

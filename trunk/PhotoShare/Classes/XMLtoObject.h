@@ -45,6 +45,18 @@
 
 @end
 
+@interface user : NSObject {
+	NSDictionary *keys;
+}
+
+@property (nonatomic , retain) NSDictionary *keys;
+-(void)setKeys:(NSDictionary *)k;
+
+-(NSString *)getUserName;
+-(NSString *)getFullName;
+
+@end
+
 
 //photo object
 @interface photo : NSObject {
