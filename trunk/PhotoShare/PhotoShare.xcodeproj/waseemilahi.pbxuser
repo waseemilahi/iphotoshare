@@ -386,6 +386,9 @@
 			9E7B089B0FA4F174005C2299 /* PBXTextBookmark */ = 9E7B089B0FA4F174005C2299 /* PBXTextBookmark */;
 			9E7B089D0FA4F1D5005C2299 /* PBXTextBookmark */ = 9E7B089D0FA4F1D5005C2299 /* PBXTextBookmark */;
 			9E7B089E0FA4F1D5005C2299 /* PBXTextBookmark */ = 9E7B089E0FA4F1D5005C2299 /* PBXTextBookmark */;
+			9E7B08A30FA4F37B005C2299 /* PBXBookmark */ = 9E7B08A30FA4F37B005C2299 /* PBXBookmark */;
+			9E7B08A60FA4F395005C2299 /* PBXTextBookmark */ = 9E7B08A60FA4F395005C2299 /* PBXTextBookmark */;
+			9E7B08A80FA4F395005C2299 /* PBXTextBookmark */ = 9E7B08A80FA4F395005C2299 /* PBXTextBookmark */;
 			9E7B43B10F69561800BDB8FF = 9E7B43B10F69561800BDB8FF /* PBXTextBookmark */;
 			9E7B43B20F69561800BDB8FF = 9E7B43B20F69561800BDB8FF /* PBXTextBookmark */;
 			9E7B43E10F6958CD00BDB8FF = 9E7B43E10F6958CD00BDB8FF /* PBXTextBookmark */;
@@ -2251,7 +2254,7 @@
 		fRef = 9E7B9A790F64BFFA0025D849 /* BrowseViewController.m */;
 		name = "BrowseViewController.m: 294";
 		rLen = 0;
-		rLoc = 9697;
+		rLoc = 9698;
 		rType = 0;
 		vrLen = 1444;
 		vrLoc = 8312;
@@ -2271,7 +2274,7 @@
 		fRef = 9E7B9A790F64BFFA0025D849 /* BrowseViewController.m */;
 		name = "BrowseViewController.m: 276";
 		rLen = 0;
-		rLoc = 9163;
+		rLoc = 9164;
 		rType = 0;
 		vrLen = 1427;
 		vrLoc = 8312;
@@ -2866,6 +2869,30 @@
 		vrLen = 1426;
 		vrLoc = 5783;
 	};
+	9E7B08A30FA4F37B005C2299 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 9E7B9A790F64BFFA0025D849 /* BrowseViewController.m */;
+	};
+	9E7B08A60FA4F395005C2299 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
+		name = "MapViewController.m: 115";
+		rLen = 0;
+		rLoc = 3083;
+		rType = 0;
+		vrLen = 916;
+		vrLoc = 1567;
+	};
+	9E7B08A80FA4F395005C2299 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A790F64BFFA0025D849 /* BrowseViewController.m */;
+		name = "BrowseViewController.m: 272";
+		rLen = 0;
+		rLoc = 8973;
+		rType = 0;
+		vrLen = 1816;
+		vrLoc = 7402;
+	};
 	9E7B43B10F69561800BDB8FF /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 9E7B9A760F64BFEB0025D849 /* MapViewController.m */;
@@ -3028,9 +3055,9 @@
 	};
 	9E7B9A760F64BFEB0025D849 /* MapViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1035, 4144}}";
-			sepNavSelRange = "{5188, 0}";
-			sepNavVisRange = "{5783, 1426}";
+			sepNavIntBoundsRect = "{{0, 0}, {936, 4270}}";
+			sepNavSelRange = "{3083, 0}";
+			sepNavVisRange = "{1567, 916}";
 			sepNavWindowFrame = "{{280, 0}, {1094, 878}}";
 		};
 	};
@@ -3044,9 +3071,9 @@
 	};
 	9E7B9A790F64BFFA0025D849 /* BrowseViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1440, 4662}}";
-			sepNavSelRange = "{4471, 0}";
-			sepNavVisRange = "{1932, 926}";
+			sepNavIntBoundsRect = "{{0, 0}, {1440, 4466}}";
+			sepNavSelRange = "{8973, 0}";
+			sepNavVisRange = "{7402, 1816}";
 			sepNavWindowFrame = "{{333, -4}, {1094, 878}}";
 		};
 	};
