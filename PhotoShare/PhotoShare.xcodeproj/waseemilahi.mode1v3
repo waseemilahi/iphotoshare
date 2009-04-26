@@ -202,33 +202,31 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>9E3668A50FA3EA5C0072928A</string>
+				<string>9E3668E40FA3EE910072928A</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>flickrapi.h</string>
+				<string>CameraViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>9E3668AB0FA3EA730072928A</string>
+						<string>9E3668EB0FA3EEE30072928A</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>flickrapi.h</string>
+						<string>CameraViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E3668DA0FA3ED910072928A</string>
+						<string>9E36691A0FA3F1860072928A</string>
 						<key>history</key>
 						<array>
-							<string>9E3668D60FA3ED910072928A</string>
-							<string>9E3668D70FA3ED910072928A</string>
-							<string>9E3668B00FA3EB280072928A</string>
+							<string>9E3668EC0FA3EEE30072928A</string>
+							<string>9E3668ED0FA3EEE30072928A</string>
+							<string>9E3668E60FA3EEBE0072928A</string>
 						</array>
 						<key>prevStack</key>
 						<array>
-							<string>9E3668B10FA3EB280072928A</string>
-							<string>9E3668C50FA3EC2B0072928A</string>
-							<string>9E3668D80FA3ED910072928A</string>
-							<string>9E3668D90FA3ED910072928A</string>
+							<string>9E3668EE0FA3EEE30072928A</string>
+							<string>9E3668EF0FA3EEE30072928A</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -244,7 +242,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>342 51 1094 822 0 0 1600 878 </string>
+				<string>341 56 1094 822 0 0 1600 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -327,7 +325,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>9</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -368,7 +365,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CameraViewController.m</string>
+								<string>flickrapi.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -376,11 +373,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CameraViewController.m</string>
+										<string>flickrapi.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E3668D50FA3ED910072928A</string>
+										<string>9E3669190FA3F1860072928A</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -435,9 +432,9 @@
 											<string>9E7A44E10FA3D27B0065D39B</string>
 											<string>9EC9CFEE0FA3DDAF00CE6A2D</string>
 											<string>9EC9CFF10FA3DDAF00CE6A2D</string>
-											<string>9E3668A60FA3EA730072928A</string>
 											<string>9E3668C10FA3EC2B0072928A</string>
-											<string>9E3668BE0FA3EC1E0072928A</string>
+											<string>9E3668E80FA3EEE30072928A</string>
+											<string>9E3668A60FA3EA730072928A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -498,6 +495,7 @@
 											<string>9E1BE08D0FA2E98D001F067C</string>
 											<string>9E3668A70FA3EA730072928A</string>
 											<string>9E3668C20FA3EC2B0072928A</string>
+											<string>9E3668E90FA3EEE30072928A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -670,7 +668,7 @@
 	<key>PerspectivesBarVisible</key>
 	<false/>
 	<key>PinnedNavigatorIdentifier</key>
-	<string>9E3668A50FA3EA5C0072928A</string>
+	<string>9E3668E40FA3EE910072928A</string>
 	<key>ShelfIsVisible</key>
 	<false/>
 	<key>SourceDescription</key>
@@ -697,9 +695,9 @@
 		<string>9E3668DC0FA3ED910072928A</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9E7B9AB80F64C97B0025D849</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
-		<string>9E3668A50FA3EA5C0072928A</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>9E3668E40FA3EE910072928A</string>
 	</array>
 	<key>WindowString</key>
 	<string>110 66 1131 804 0 0 1600 878 </string>
@@ -1048,7 +1046,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {694, 734}}</string>
 								<key>RubberWindowFrame</key>
-								<string>157 82 694 775 0 0 1600 878 </string>
+								<string>189 99 694 775 0 0 1600 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -1077,7 +1075,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>157 82 694 775 0 0 1600 878 </string>
+			<string>189 99 694 775 0 0 1600 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

@@ -106,18 +106,18 @@
 	//[UIImagePNGRepresentation(image) writeToFile: uniquePath atomically:YES];
 	
 	[image retain];
-	if([flickr uploadPhoto:image withLat:locmanager.location.coordinate.latitude andLon:locmanager.location.coordinate.longitude withName:myTextField.text])
+	if(NO == [flickr uploadPhoto:image withLat:locmanager.location.coordinate.latitude andLon:locmanager.location.coordinate.longitude withName:myTextField.text])
 	{
-		UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Upload Successfull" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK"];		
-		[myAlertView show];
-		[myAlertView release];
+		UIAlertView *newAlertView = [[UIAlertView alloc] initWithTitle:@"Upload Failed" message:@"Try Again Later" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];		
+		[newAlertView show];
+		
 		
 	}
 	else 
 	{
-		UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Upload Failed" message:@"Try Again" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK"];		
-		[myAlertView show];
-		[myAlertView release];
+		UIAlertView *newAlertView = [[UIAlertView alloc] initWithTitle:@"Upload Successful" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];		
+		[newAlertView show];
+		
 	}
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 	
