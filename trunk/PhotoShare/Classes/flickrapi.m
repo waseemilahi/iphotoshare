@@ -436,8 +436,8 @@
 }
 
 
--(BOOL)setLocationOfPhoto:(NSString *)pid withLat:(NSInteger)lat andLon:(NSInteger)lon {
-	NSLog(@"set location for pid: %@ to (%d, %d)", pid, lat, lon);
+-(BOOL)setLocationOfPhoto:(NSString *)pid withLat:(double)lat andLon:(double)lon {
+	NSLog(@"set location for pid: %@ to (%f, %f)", pid, lat, lon);
 	
 	[self clearParams];
 	[self addParam:@"method" withValue:@"flickr.photos.geo.setLocation"];
@@ -445,8 +445,8 @@
 	[self addParam:@"auth_token" withValue:TOKEN];
 	
 	[self addParam:@"photo_id" withValue:[NSString stringWithFormat:@"%@", pid]];
-	[self addParam:@"lat" withValue:[NSString stringWithFormat:@"%d", lat]];
-	[self addParam:@"lon" withValue:[NSString stringWithFormat:@"%d", lon]];
+	[self addParam:@"lat" withValue:[NSString stringWithFormat:@"%f", lat]];
+	[self addParam:@"lon" withValue:[NSString stringWithFormat:@"%f", lon]];
 	
 	NSString *sig = [self getSig];
 	[self addParam:@"api_sig" withValue:[NSString stringWithString:sig]];
@@ -509,9 +509,6 @@
 		photoid *pid = (photoid *)[[parser items] objectAtIndex:0];
 		NSLog(@"photoid: %@", [pid value]);
 			  
-		NSInteger lat = 40.7;
-		NSInteger lon = -74;
-		
 		[self setLocationOfPhoto:[pid value] withLat:lat andLon:lon];
 	}
 }
