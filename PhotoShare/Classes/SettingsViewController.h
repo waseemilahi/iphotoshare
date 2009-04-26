@@ -44,7 +44,7 @@
 
 - (IBAction)BNetworksignIn:(id)sender;
 
-- (void) didLoginFail:(NSString *)fail;
+- (void) didLoginFail:(NSString *)fail withUserName:(NSString *)userName andFullName:(NSString *)fullName;
 @property (nonatomic, retain) NSMutableString *TOKEN;
 @property (nonatomic,retain) UIWebView *webview;
 @property (nonatomic,retain) UIView *signoutview;
