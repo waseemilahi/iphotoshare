@@ -409,7 +409,7 @@
 		[self addParam:@"method" withValue:@"flickr.photos.search"];
 		[self addParam:@"api_key" withValue:APIKEY];
 		[self addParam:@"min_upload_date" withValue:@"1238562001"];
-		[self addParam:@"radius" withValue:@"2"];
+		[self addParam:@"radius" withValue:@"1"];
 		[self addParam:@"radius_units" withValue:@"mi"];
 		[self addParam:@"lat" withValue:[NSString stringWithFormat:@"%f",latitude]];//     @"40.7"];
 		[self addParam:@"lon" withValue:[NSString stringWithFormat:@"%f",longitude]];//    @"-74"];

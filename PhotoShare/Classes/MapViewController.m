@@ -120,7 +120,7 @@
 	
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
-	for(i = 0; i < 50/*[photos count]*/; i++)
+	for(i = 0; i < 25/*[photos count]*/; i++)
 	{
 		ph = (photo *)[photos objectAtIndex:i];
 		
@@ -185,7 +185,7 @@
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 
 		
-	for(i = 0; i < 50/*[photos count]*/; i++)
+	for(i = 0; i < 25/*[photos count]*/; i++)
 	{
 		ph = (photo *)[photos objectAtIndex:i];
 		
