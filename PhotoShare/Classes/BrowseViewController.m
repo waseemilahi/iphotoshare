@@ -269,7 +269,7 @@
 		CATransition *myTransition = [ CATransition animation];
 		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
 		myTransition.type = kCATransitionPush;
-		myTransition.subtype = kCATransitionFromLeft;
+		myTransition.subtype = kCATransitionFromRight;
 		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1] ; 
 		

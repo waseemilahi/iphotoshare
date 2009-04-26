@@ -202,29 +202,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>9E7B08790FA4ED24005C2299</string>
+				<string>9E7B08A40FA4F37B005C2299</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>MapViewController.m</string>
+				<string>BrowseViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>9E7B087C0FA4ED7D005C2299</string>
+						<string>9E7B08A70FA4F395005C2299</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>MapViewController.m</string>
+						<string>BrowseViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E7B089E0FA4F1D5005C2299</string>
+						<string>9E7B08A80FA4F395005C2299</string>
 						<key>history</key>
 						<array>
-							<string>9E7B087D0FA4ED7D005C2299</string>
-							<string>9E7B087A0FA4ED69005C2299</string>
-						</array>
-						<key>prevStack</key>
-						<array>
-							<string>9E7B087E0FA4ED7D005C2299</string>
+							<string>9E7B08A30FA4F37B005C2299</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -240,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>280 56 1094 822 0 0 1600 878 </string>
+				<string>333 52 1094 822 0 0 1600 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -375,7 +370,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E7B089D0FA4F1D5005C2299</string>
+										<string>9E7B08A60FA4F395005C2299</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -677,7 +672,7 @@
 	<key>PerspectivesBarVisible</key>
 	<false/>
 	<key>PinnedNavigatorIdentifier</key>
-	<string>9E7B08790FA4ED24005C2299</string>
+	<string>9E7B08A40FA4F37B005C2299</string>
 	<key>ShelfIsVisible</key>
 	<false/>
 	<key>SourceDescription</key>
@@ -704,9 +699,9 @@
 		<string>9E7B07500FA4CBDA005C2299</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9E7B9AB80F64C97B0025D849</string>
-		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>9E7B08790FA4ED24005C2299</string>
+		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
+		<string>9E7B08A40FA4F37B005C2299</string>
 	</array>
 	<key>WindowString</key>
 	<string>175 55 1131 804 0 0 1600 878 </string>
