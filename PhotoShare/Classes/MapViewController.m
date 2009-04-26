@@ -18,6 +18,7 @@
 @synthesize locmanager;
 @synthesize imageView;
 @synthesize indicatorview;
+@synthesize mapBar;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -105,7 +106,7 @@
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 	
 	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
-	
+	[self.view addSubview:mapBar];
 	[self.view addSubview:indicatorview];
 		
 	[self performSelector:@selector(showM) withObject:nil afterDelay:3];
@@ -173,6 +174,7 @@
 	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
 	
 	[self.view addSubview:mapView];
+	[self.view addSubview:mapBar];
 }
 
 	 
@@ -186,6 +188,7 @@
 		[mapView clearMarkers];
 		[mapView release];
 	}
+	
 	
 			
 	[photos release];
@@ -250,7 +253,7 @@
 	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
 	
 	[self.view addSubview:mapView];
-	
+		[self.view addSubview:mapBar];
 	
 	
 }
