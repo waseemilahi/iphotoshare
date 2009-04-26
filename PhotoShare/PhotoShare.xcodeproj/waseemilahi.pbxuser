@@ -25,7 +25,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 9E7B9A630F64BF780025D849 /* PhotoShare */;
-		activeSDKPreference = iphonesimulator2.2.1;
+		activeSDKPreference = iphoneos2.2.1;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PhotoShare */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PhotoShare */,
@@ -490,17 +490,17 @@
 	};
 	490C87730F812E1F008EF66C /* flickrapi.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {811, 1022}}";
-			sepNavSelRange = "{972, 0}";
-			sepNavVisRange = "{349, 811}";
+			sepNavIntBoundsRect = "{{0, 0}, {1115, 1008}}";
+			sepNavSelRange = "{1730, 0}";
+			sepNavVisRange = "{546, 1290}";
 			sepNavWindowFrame = "{{342, -5}, {1094, 878}}";
 		};
 	};
 	490C87740F812E33008EF66C /* flickrapi.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {2214, 7874}}";
-			sepNavSelRange = "{12100, 1}";
-			sepNavVisRange = "{0, 1482}";
+			sepNavIntBoundsRect = "{{0, 0}, {2214, 7546}}";
+			sepNavSelRange = "{15723, 80}";
+			sepNavVisRange = "{15722, 1867}";
 			sepNavWindowFrame = "{{58, -6}, {1094, 878}}";
 		};
 	};
@@ -1514,7 +1514,7 @@
 		ignoreCount = 0;
 		lineNumber = 375;
 		location = PhotoShare;
-		modificationTime = 262410805.971748;
+		modificationTime = 262411364.478926;
 		state = 2;
 	};
 	9E129D5E0FA40D920055D304 /* PBXTextBookmark */ = {
@@ -2828,7 +2828,7 @@
 		ignoreCount = 0;
 		lineNumber = 75;
 		location = PhotoShare;
-		modificationTime = 262410805.971388;
+		modificationTime = 262411364.478695;
 		state = 2;
 	};
 	9E7A431F0FA391FF0065D39B /* PBXTextBookmark */ = {
@@ -2893,7 +2893,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 41;
-		modificationTime = 262410805.971717;
+		modificationTime = 262411364.478916;
 		state = 2;
 	};
 	9E7A44A70FA3CCED0065D39B /* PBXTextBookmark */ = {
