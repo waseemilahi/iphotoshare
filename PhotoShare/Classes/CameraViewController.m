@@ -72,7 +72,7 @@
 	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo's Upload Name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 	myTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 38.0, 260.0, 28.0)];
 	[myTextField setBackgroundColor:[UIColor whiteColor]];
-		myTextField.clearsOnBeginEditing = YES;
+	myTextField.clearsOnBeginEditing = YES;
 	myTextField.text = @"myPhoto";
 	[myAlertView addSubview:myTextField];
 	CGAffineTransform myTransform = CGAffineTransformMakeTranslation(0.0, 130.0);
