@@ -107,9 +107,9 @@
 	
 	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
 
-	[self.view addSubview:indicatorview];
+	
 		[self.view addSubview:mapBar];
-		
+	[self.view addSubview:indicatorview];	
 	[self performSelector:@selector(showM) withObject:nil afterDelay:3];
 	
 	
@@ -130,7 +130,10 @@
 	
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
-	for(i = 0; i < 25/*[photos count]*/; i++)
+	int loop_count = 25;
+	if([photos count] < loop_count)loop_count = [photos count];
+	
+	for(i = 0; i <loop_count/*[photos count]*/; i++)
 	{
 		ph = (photo *)[photos objectAtIndex:i];
 		
@@ -210,7 +213,10 @@
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 
 		
-	for(i = 0; i < 25/*[photos count]*/; i++)
+	int loop_count = 25;
+	if([photos count] < loop_count)loop_count = [photos count];
+	
+	for(i = 0; i <loop_count/*[photos count]*/; i++)
 	{
 		ph = (photo *)[photos objectAtIndex:i];
 		
