@@ -202,7 +202,7 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>9E3668E40FA3EE910072928A</string>
+				<string>9E36691D0FA3F1F80072928A</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>CameraViewController.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
@@ -210,23 +210,21 @@
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>9E3668EB0FA3EEE30072928A</string>
+						<string>9E3669220FA3F2D20072928A</string>
 						<key>PBXProjectModuleLabel</key>
 						<string>CameraViewController.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E36691A0FA3F1860072928A</string>
+						<string>9E3669280FA3F3050072928A</string>
 						<key>history</key>
 						<array>
-							<string>9E3668EC0FA3EEE30072928A</string>
-							<string>9E3668ED0FA3EEE30072928A</string>
-							<string>9E3668E60FA3EEBE0072928A</string>
+							<string>9E3669230FA3F2D20072928A</string>
+							<string>9E36691E0FA3F2690072928A</string>
 						</array>
 						<key>prevStack</key>
 						<array>
-							<string>9E3668EE0FA3EEE30072928A</string>
-							<string>9E3668EF0FA3EEE30072928A</string>
+							<string>9E3669240FA3F2D20072928A</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -377,7 +375,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E3669190FA3F1860072928A</string>
+										<string>9E3669270FA3F3050072928A</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -434,7 +432,7 @@
 											<string>9EC9CFF10FA3DDAF00CE6A2D</string>
 											<string>9E3668C10FA3EC2B0072928A</string>
 											<string>9E3668E80FA3EEE30072928A</string>
-											<string>9E3668A60FA3EA730072928A</string>
+											<string>9E3669200FA3F2D20072928A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -668,7 +666,7 @@
 	<key>PerspectivesBarVisible</key>
 	<false/>
 	<key>PinnedNavigatorIdentifier</key>
-	<string>9E3668E40FA3EE910072928A</string>
+	<string>9E36691D0FA3F1F80072928A</string>
 	<key>ShelfIsVisible</key>
 	<false/>
 	<key>SourceDescription</key>
@@ -693,11 +691,11 @@
 	<array>
 		<string>9E3668DB0FA3ED910072928A</string>
 		<string>9E3668DC0FA3ED910072928A</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9E7B9AB80F64C97B0025D849</string>
 		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>9E3668E40FA3EE910072928A</string>
+		<string>9E36691D0FA3F1F80072928A</string>
 	</array>
 	<key>WindowString</key>
 	<string>110 66 1131 804 0 0 1600 878 </string>
@@ -1079,7 +1077,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

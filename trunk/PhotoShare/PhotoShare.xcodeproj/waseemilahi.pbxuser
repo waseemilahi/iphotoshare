@@ -230,6 +230,15 @@
 			9E3669180FA3F13C0072928A /* PBXTextBookmark */ = 9E3669180FA3F13C0072928A /* PBXTextBookmark */;
 			9E3669190FA3F1860072928A /* PBXTextBookmark */ = 9E3669190FA3F1860072928A /* PBXTextBookmark */;
 			9E36691A0FA3F1860072928A /* PBXTextBookmark */ = 9E36691A0FA3F1860072928A /* PBXTextBookmark */;
+			9E36691B0FA3F1F30072928A /* PBXTextBookmark */ = 9E36691B0FA3F1F30072928A /* PBXTextBookmark */;
+			9E36691E0FA3F2690072928A /* PBXBookmark */ = 9E36691E0FA3F2690072928A /* PBXBookmark */;
+			9E3669200FA3F2D20072928A /* PBXTextBookmark */ = 9E3669200FA3F2D20072928A /* PBXTextBookmark */;
+			9E3669210FA3F2D20072928A /* PBXTextBookmark */ = 9E3669210FA3F2D20072928A /* PBXTextBookmark */;
+			9E3669230FA3F2D20072928A /* PBXTextBookmark */ = 9E3669230FA3F2D20072928A /* PBXTextBookmark */;
+			9E3669240FA3F2D20072928A /* PBXTextBookmark */ = 9E3669240FA3F2D20072928A /* PBXTextBookmark */;
+			9E3669250FA3F2D20072928A /* PBXTextBookmark */ = 9E3669250FA3F2D20072928A /* PBXTextBookmark */;
+			9E3669270FA3F3050072928A /* PBXTextBookmark */ = 9E3669270FA3F3050072928A /* PBXTextBookmark */;
+			9E3669280FA3F3050072928A /* PBXTextBookmark */ = 9E3669280FA3F3050072928A /* PBXTextBookmark */;
 			9E457CB30F68F3A9004A0967 = 9E457CB30F68F3A9004A0967 /* PBXBookmark */;
 			9E457CB40F68F3A9004A0967 = 9E457CB40F68F3A9004A0967 /* PBXBookmark */;
 			9E457CB50F68F3A9004A0967 = 9E457CB50F68F3A9004A0967 /* PBXBookmark */;
@@ -502,7 +511,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 174";
 		rLen = 0;
-		rLoc = 7140;
+		rLoc = 7395;
 		rType = 0;
 		vrLen = 1400;
 		vrLoc = 1680;
@@ -562,7 +571,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 196";
 		rLen = 0;
-		rLoc = 7140;
+		rLoc = 7395;
 		rType = 0;
 		vrLen = 1647;
 		vrLoc = 1064;
@@ -572,7 +581,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 196";
 		rLen = 0;
-		rLoc = 7140;
+		rLoc = 7395;
 		rType = 0;
 		vrLen = 1647;
 		vrLoc = 1064;
@@ -684,7 +693,7 @@
 		comments = "error: 'viewDidLoad' undeclared (first use in this function)";
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		rLen = 1;
-		rLoc = 133;
+		rLoc = 141;
 		rType = 1;
 	};
 	9E3668BF0FA3EC1E0072928A /* PBXTextBookmark */ = {
@@ -692,7 +701,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 132";
 		rLen = 22;
-		rLoc = 4924;
+		rLoc = 5179;
 		rType = 0;
 		vrLen = 834;
 		vrLoc = 4181;
@@ -722,7 +731,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 132";
 		rLen = 22;
-		rLoc = 4924;
+		rLoc = 5179;
 		rType = 0;
 		vrLen = 1163;
 		vrLoc = 4024;
@@ -752,7 +761,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 119";
 		rLen = 0;
-		rLoc = 4596;
+		rLoc = 4851;
 		rType = 0;
 		vrLen = 1916;
 		vrLoc = 2738;
@@ -762,7 +771,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 132";
 		rLen = 22;
-		rLoc = 4924;
+		rLoc = 5179;
 		rType = 0;
 		vrLen = 1585;
 		vrLoc = 2746;
@@ -782,7 +791,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 132";
 		rLen = 22;
-		rLoc = 4924;
+		rLoc = 5179;
 		rType = 0;
 		vrLen = 1648;
 		vrLoc = 2361;
@@ -792,7 +801,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 111";
 		rLen = 0;
-		rLoc = 4596;
+		rLoc = 4851;
 		rType = 0;
 		vrLen = 1989;
 		vrLoc = 2710;
@@ -802,7 +811,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 134";
 		rLen = 22;
-		rLoc = 4924;
+		rLoc = 5179;
 		rType = 0;
 		vrLen = 1648;
 		vrLoc = 2361;
@@ -812,7 +821,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 118";
 		rLen = 0;
-		rLoc = 4596;
+		rLoc = 4851;
 		rType = 0;
 		vrLen = 2142;
 		vrLoc = 2710;
@@ -822,7 +831,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 134";
 		rLen = 22;
-		rLoc = 4924;
+		rLoc = 5179;
 		rType = 0;
 		vrLen = 1648;
 		vrLoc = 2361;
@@ -832,7 +841,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 118";
 		rLen = 0;
-		rLoc = 4596;
+		rLoc = 4851;
 		rType = 0;
 		vrLen = 2142;
 		vrLoc = 2710;
@@ -852,7 +861,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 118";
 		rLen = 0;
-		rLoc = 4596;
+		rLoc = 4851;
 		rType = 0;
 		vrLen = 2142;
 		vrLoc = 2710;
@@ -886,7 +895,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 134";
 		rLen = 22;
-		rLoc = 4924;
+		rLoc = 5179;
 		rType = 0;
 		vrLen = 1648;
 		vrLoc = 2361;
@@ -896,7 +905,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 134";
 		rLen = 22;
-		rLoc = 4924;
+		rLoc = 5179;
 		rType = 0;
 		vrLen = 1648;
 		vrLoc = 2361;
@@ -956,7 +965,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 110";
 		rLen = 0;
-		rLoc = 4596;
+		rLoc = 4851;
 		rType = 0;
 		vrLen = 2101;
 		vrLoc = 2922;
@@ -1016,7 +1025,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 120";
 		rLen = 0;
-		rLoc = 4593;
+		rLoc = 4848;
 		rType = 0;
 		vrLen = 1994;
 		vrLoc = 2922;
@@ -1036,7 +1045,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 119";
 		rLen = 0;
-		rLoc = 4570;
+		rLoc = 4825;
 		rType = 0;
 		vrLen = 2002;
 		vrLoc = 2922;
@@ -1056,7 +1065,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 112";
 		rLen = 0;
-		rLoc = 4365;
+		rLoc = 4401;
 		rType = 0;
 		vrLen = 1998;
 		vrLoc = 2922;
@@ -1096,7 +1105,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 112";
 		rLen = 0;
-		rLoc = 4370;
+		rLoc = 4407;
 		rType = 0;
 		vrLen = 1999;
 		vrLoc = 2922;
@@ -1116,7 +1125,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 111";
 		rLen = 0;
-		rLoc = 4338;
+		rLoc = 4374;
 		rType = 0;
 		vrLen = 2001;
 		vrLoc = 2922;
@@ -1136,7 +1145,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 111";
 		rLen = 0;
-		rLoc = 4359;
+		rLoc = 4395;
 		rType = 0;
 		vrLen = 1999;
 		vrLoc = 2922;
@@ -1156,7 +1165,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 111";
 		rLen = 0;
-		rLoc = 4298;
+		rLoc = 4334;
 		rType = 0;
 		vrLen = 2009;
 		vrLoc = 2922;
@@ -1176,7 +1185,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 118";
 		rLen = 0;
-		rLoc = 4408;
+		rLoc = 4662;
 		rType = 0;
 		vrLen = 2003;
 		vrLoc = 2922;
@@ -1196,7 +1205,7 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 118";
 		rLen = 0;
-		rLoc = 4563;
+		rLoc = 4818;
 		rType = 0;
 		vrLen = 2003;
 		vrLoc = 2922;
@@ -1216,10 +1225,94 @@
 		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
 		name = "CameraViewController.m: 118";
 		rLen = 0;
-		rLoc = 4490;
+		rLoc = 4745;
 		rType = 0;
 		vrLen = 2002;
 		vrLoc = 2922;
+	};
+	9E36691B0FA3F1F30072928A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
+		name = "CameraViewController.m: 134";
+		rLen = 22;
+		rLoc = 5179;
+		rType = 0;
+		vrLen = 1227;
+		vrLoc = 2361;
+	};
+	9E36691E0FA3F2690072928A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
+	};
+	9E3669200FA3F2D20072928A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 490C87740F812E33008EF66C /* flickrapi.m */;
+		name = "flickrapi.m: 520";
+		rLen = 0;
+		rLoc = 17849;
+		rType = 0;
+		vrLen = 1412;
+		vrLoc = 14111;
+	};
+	9E3669210FA3F2D20072928A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 490C87740F812E33008EF66C /* flickrapi.m */;
+		name = "flickrapi.m: 520";
+		rLen = 0;
+		rLoc = 17849;
+		rType = 0;
+		vrLen = 1330;
+		vrLoc = 14111;
+	};
+	9E3669230FA3F2D20072928A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 490C87740F812E33008EF66C /* flickrapi.m */;
+		name = "flickrapi.m: 520";
+		rLen = 0;
+		rLoc = 17849;
+		rType = 0;
+		vrLen = 1571;
+		vrLoc = 1487;
+	};
+	9E3669240FA3F2D20072928A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 490C87740F812E33008EF66C /* flickrapi.m */;
+		name = "flickrapi.m: 520";
+		rLen = 0;
+		rLoc = 17849;
+		rType = 0;
+		vrLen = 1571;
+		vrLoc = 1487;
+	};
+	9E3669250FA3F2D20072928A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
+		name = "CameraViewController.m: 118";
+		rLen = 0;
+		rLoc = 4521;
+		rType = 0;
+		vrLen = 2042;
+		vrLoc = 2924;
+	};
+	9E3669270FA3F3050072928A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 490C87740F812E33008EF66C /* flickrapi.m */;
+		name = "flickrapi.m: 520";
+		rLen = 0;
+		rLoc = 17849;
+		rType = 0;
+		vrLen = 1330;
+		vrLoc = 14111;
+	};
+	9E3669280FA3F3050072928A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */;
+		name = "CameraViewController.m: 118";
+		rLen = 0;
+		rLoc = 4549;
+		rType = 0;
+		vrLen = 2047;
+		vrLoc = 2924;
 	};
 	9E457C9C0F68F229004A0967 /* camera.png */ = {
 		uiCtxt = {
@@ -1600,9 +1693,9 @@
 	};
 	9E7B9A700F64BFAB0025D849 /* CameraViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1116, 2730}}";
-			sepNavSelRange = "{4490, 0}";
-			sepNavVisRange = "{2922, 2002}";
+			sepNavIntBoundsRect = "{{0, 0}, {1164, 2870}}";
+			sepNavSelRange = "{4549, 0}";
+			sepNavVisRange = "{2924, 2047}";
 			sepNavWindowFrame = "{{341, 0}, {1094, 878}}";
 		};
 	};
