@@ -10,10 +10,6 @@
 @synthesize TOKEN;
 @synthesize cookies;
 @synthesize cookie;
-
-@synthesize response;
-
-
 @synthesize loginDelegate;
 
 -(void)addParam: (NSMutableString *)key withValue:(NSMutableString *)value {
@@ -77,14 +73,10 @@
 	
 	FROB = nil;
 	TOKEN = nil;
-	
-	NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"m.flickr.com"]];
-	
-	self.response = [[NSHTTPURLResponse alloc] init];
-	
-	
+				
 	self.cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-	self.cookie = [[NSArray alloc] initWithArray:[self.cookies cookiesForURL:url]];
+	self.cookie = [[NSArray alloc] initWithArray:[self.cookies cookies]];
+	NSLog(@"hello %d",[self.cookie count]);
 	//[NSHTTPCookie cookiesWithResponseHeaderFields:[(NSHTTPURLResponse*)response allHeaderFields]  forURL:url];
 	
     NSEnumerator *c = [cookie objectEnumerator];
@@ -97,12 +89,7 @@
 		
 		[self.cookies deleteCookie:cooki];
 	}
-	
-	
-	
-	
-	
-	
+		
 	NSLog([NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://login.yahoo.com/config/login?logout=1"]]);
 	return ([NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://login.yahoo.com/config/login?logout=1"]] != NULL);
 }

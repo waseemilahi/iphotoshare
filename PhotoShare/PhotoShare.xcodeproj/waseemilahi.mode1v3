@@ -202,29 +202,29 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>9E36691D0FA3F1F80072928A</string>
+				<string>9E129CED0FA3FF870055D304</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>CameraViewController.m</string>
+				<string>flickrapi.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>9E3669220FA3F2D20072928A</string>
+						<string>9E129CF30FA3FFA50055D304</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>CameraViewController.m</string>
+						<string>flickrapi.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>9E3669280FA3F3050072928A</string>
+						<string>9E129CF60FA3FFA50055D304</string>
 						<key>history</key>
 						<array>
-							<string>9E3669230FA3F2D20072928A</string>
-							<string>9E36691E0FA3F2690072928A</string>
+							<string>9E129CF40FA3FFA50055D304</string>
+							<string>9E129CEE0FA3FF930055D304</string>
 						</array>
 						<key>prevStack</key>
 						<array>
-							<string>9E3669240FA3F2D20072928A</string>
+							<string>9E129CF50FA3FFA50055D304</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -240,7 +240,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>341 56 1094 822 0 0 1600 878 </string>
+				<string>342 51 1094 822 0 0 1600 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -363,7 +363,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>flickrapi.m</string>
+								<string>flickrapi.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -371,11 +371,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>flickrapi.m</string>
+										<string>flickrapi.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E3669270FA3F3050072928A</string>
+										<string>9E129CF20FA3FFA50055D304</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -430,9 +430,9 @@
 											<string>9E7A44E10FA3D27B0065D39B</string>
 											<string>9EC9CFEE0FA3DDAF00CE6A2D</string>
 											<string>9EC9CFF10FA3DDAF00CE6A2D</string>
-											<string>9E3668C10FA3EC2B0072928A</string>
 											<string>9E3668E80FA3EEE30072928A</string>
-											<string>9E3669200FA3F2D20072928A</string>
+											<string>9E129CF00FA3FFA50055D304</string>
+											<string>9E3668C10FA3EC2B0072928A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -491,9 +491,7 @@
 											<string>9E8A8E9D0FA0B8CE00C186C0</string>
 											<string>9E8A8F290FA0C7D600C186C0</string>
 											<string>9E1BE08D0FA2E98D001F067C</string>
-											<string>9E3668A70FA3EA730072928A</string>
-											<string>9E3668C20FA3EC2B0072928A</string>
-											<string>9E3668E90FA3EEE30072928A</string>
+											<string>9E129CF10FA3FFA50055D304</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -551,9 +549,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>9E3668A90FA3EA730072928A</string>
+				<string>9E129CB40FA3F9C00055D304</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>9E3668AA0FA3EA730072928A</string>
+				<string>9E129CB50FA3F9C00055D304</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -666,7 +664,7 @@
 	<key>PerspectivesBarVisible</key>
 	<false/>
 	<key>PinnedNavigatorIdentifier</key>
-	<string>9E36691D0FA3F1F80072928A</string>
+	<string>9E129CED0FA3FF870055D304</string>
 	<key>ShelfIsVisible</key>
 	<false/>
 	<key>SourceDescription</key>
@@ -689,13 +687,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>9E3668DB0FA3ED910072928A</string>
-		<string>9E3668DC0FA3ED910072928A</string>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>9E129CCF0FA3FB9F0055D304</string>
+		<string>9E129CCA0FA3FA3F0055D304</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9E7B9AB80F64C97B0025D849</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
-		<string>9E36691D0FA3F1F80072928A</string>
+		<string>9E129CED0FA3FF870055D304</string>
 	</array>
 	<key>WindowString</key>
 	<string>110 66 1131 804 0 0 1600 878 </string>
@@ -714,14 +712,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CameraViewController.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -738,6 +734,8 @@
 							<string>438pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -777,7 +775,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>9E7B9AB80F64C97B0025D849</string>
-				<string>9E3668B30FA3EB280072928A</string>
+				<string>9E129CB60FA3F9C00055D304</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -788,7 +786,7 @@
 			<key>WindowToolGUID</key>
 			<string>9E7B9AB80F64C97B0025D849</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -897,13 +895,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>9E3668B40FA3EB280072928A</string>
+				<string>9E129CB70FA3F9C00055D304</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>9E3668B50FA3EB280072928A</string>
-				<string>9E3668B60FA3EB280072928A</string>
-				<string>9E3668B70FA3EB280072928A</string>
-				<string>9E3668B80FA3EB280072928A</string>
-				<string>9E3668B90FA3EB280072928A</string>
+				<string>9E129CB80FA3F9C00055D304</string>
+				<string>9E129CB90FA3F9C00055D304</string>
+				<string>9E129CBA0FA3F9C00055D304</string>
+				<string>9E129CBB0FA3F9C00055D304</string>
+				<string>9E129CBC0FA3F9C00055D304</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -1044,7 +1042,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {694, 734}}</string>
 								<key>RubberWindowFrame</key>
-								<string>189 99 694 775 0 0 1600 878 </string>
+								<string>431 103 694 775 0 0 1600 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -1067,17 +1065,17 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>9E3668BA0FA3EB280072928A</string>
+				<string>9E129CBD0FA3F9C00055D304</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>189 99 694 775 0 0 1600 878 </string>
+			<string>431 103 694 775 0 0 1600 878 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
