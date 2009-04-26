@@ -100,7 +100,7 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	
+	[super viewDidLoad];
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 	
 	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
@@ -120,7 +120,7 @@
 	
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
-	for(i = 0; i < [photos count]; i++)
+	for(i = 0; i < 50/*[photos count]*/; i++)
 	{
 		ph = (photo *)[photos objectAtIndex:i];
 		
@@ -185,7 +185,7 @@
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 
 		
-	for(i = 0; i < [photos count]; i++)
+	for(i = 0; i < 50/*[photos count]*/; i++)
 	{
 		ph = (photo *)[photos objectAtIndex:i];
 		
