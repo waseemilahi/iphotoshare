@@ -106,8 +106,9 @@
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 	
 	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
-	[self.view addSubview:mapBar];
+
 	[self.view addSubview:indicatorview];
+		[self.view addSubview:mapBar];
 		
 	[self performSelector:@selector(showM) withObject:nil afterDelay:3];
 	
@@ -166,6 +167,7 @@
 	
 	image_count = 0;	
 	[[self.view.subviews lastObject] removeFromSuperview];
+	[[self.view.subviews lastObject] removeFromSuperview];
 	CATransition *myTransition = [ CATransition animation];
 	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
 	myTransition.type = kCATransitionPush;
@@ -189,8 +191,7 @@
 		[mapView release];
 	}
 	
-	
-			
+				
 	[photos release];
 	
 	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
