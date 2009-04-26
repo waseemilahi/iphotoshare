@@ -60,7 +60,7 @@
 -(NSArray *)getPhotos:(double)latitude lng:(double)longitude;
 -(location *)getLocation:(NSString *)pid;
 
--(void)uploadPhoto:(UIImage *)image withLat:(double)lat andLon:(double)lon withName:(NSString *)imageName;
+-(BOOL)uploadPhoto:(UIImage *)image withLat:(NSInteger)lat andLon:(NSInteger)lon;
 
 
 -(void)webViewDidStartLoad:(UIWebView *)webView;

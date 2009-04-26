@@ -461,7 +461,7 @@
 }
 
 
--(void)uploadPhoto:(UIImage *)image withLat:(double)lat andLon:(double)lon withName:(NSString *)imageName{
+-(BOOL)uploadPhoto:(UIImage *)image withLat:(NSInteger)lat andLon:(NSInteger)lon {
 	[self clearParams];
 	[self addParam:@"api_key" withValue:APIKEY];
 	[self addParam:@"auth_token" withValue:TOKEN];
@@ -508,9 +508,13 @@
 	if ([[parser items] count] != 0) {
 		photoid *pid = (photoid *)[[parser items] objectAtIndex:0];
 		NSLog(@"photoid: %@", [pid value]);
-			  
+
 		[self setLocationOfPhoto:[pid value] withLat:lat andLon:lon];
+		
+		return YES;
 	}
+	
+	return NO;
 }
 
 @end
