@@ -288,6 +288,9 @@
 	[locLabel release];
 	[mapLabel release];
 	[messagesView release];
+	[indicatorview release];
+	[photos release];
+	[mapBar release];
 	[super dealloc];
 }
 
