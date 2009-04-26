@@ -197,86 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>9E129CED0FA3FF870055D304</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>SettingsViewController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>9E129CF30FA3FFA50055D304</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>SettingsViewController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>9E129D830FA4131F0055D304</string>
-						<key>history</key>
-						<array>
-							<string>9E129D0B0FA4040D0055D304</string>
-							<string>9E129D2B0FA409190055D304</string>
-							<string>9E129D560FA40CA90055D304</string>
-							<string>9E129D670FA40E040055D304</string>
-							<string>9E129D680FA40E040055D304</string>
-							<string>9E129D7A0FA40F390055D304</string>
-							<string>9E129D7B0FA40F390055D304</string>
-						</array>
-						<key>prevStack</key>
-						<array>
-							<string>9E129CF50FA3FFA50055D304</string>
-							<string>9E129D010FA403300055D304</string>
-							<string>9E129D020FA403300055D304</string>
-							<string>9E129D030FA403300055D304</string>
-							<string>9E129D040FA403300055D304</string>
-							<string>9E129D050FA403300055D304</string>
-							<string>9E129D0D0FA4040D0055D304</string>
-							<string>9E129D0E0FA4040D0055D304</string>
-							<string>9E129D1E0FA407940055D304</string>
-							<string>9E129D1F0FA407940055D304</string>
-							<string>9E129D200FA407940055D304</string>
-							<string>9E129D210FA407940055D304</string>
-							<string>9E129D2D0FA409190055D304</string>
-							<string>9E129D2E0FA409190055D304</string>
-							<string>9E129D380FA40B5D0055D304</string>
-							<string>9E129D390FA40B5D0055D304</string>
-							<string>9E129D4B0FA40C320055D304</string>
-							<string>9E129D4C0FA40C320055D304</string>
-							<string>9E129D4D0FA40C320055D304</string>
-							<string>9E129D4E0FA40C320055D304</string>
-							<string>9E129D4F0FA40C320055D304</string>
-							<string>9E129D500FA40C320055D304</string>
-							<string>9E129D580FA40CA90055D304</string>
-							<string>9E129D590FA40CA90055D304</string>
-							<string>9E129D6A0FA40E040055D304</string>
-							<string>9E129D6B0FA40E040055D304</string>
-							<string>9E129D6C0FA40E040055D304</string>
-							<string>9E129D7C0FA40F390055D304</string>
-							<string>9E129D7D0FA40F390055D304</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1174, 763}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>306 56 1174 804 0 0 1600 878 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -361,7 +282,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 2}, {237, 745}}</string>
+							<string>{{0, 4}, {237, 745}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -408,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E129D820FA4131F0055D304</string>
+										<string>9E129D8C0FA416260055D304</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -724,13 +645,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>9E129CED0FA3FF870055D304</string>
 		<string>9E129CCF0FA3FB9F0055D304</string>
 		<string>9E129CCA0FA3FA3F0055D304</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9E7B9AB80F64C97B0025D849</string>
 		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
-		<string>9E129CED0FA3FF870055D304</string>
 	</array>
 	<key>WindowString</key>
 	<string>110 66 1131 804 0 0 1600 878 </string>
@@ -1112,7 +1033,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
