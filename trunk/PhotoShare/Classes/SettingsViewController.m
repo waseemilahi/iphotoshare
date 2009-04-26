@@ -90,8 +90,9 @@
 	[password resignFirstResponder];
 	//code goes here.	
 	
-    signin_count++;
+   	if(signin_count == 0)[self.view addSubview:indicatorview];
 	
+	signin_count++;
 /*	
 	CATransition *myTransition = [ CATransition animation];
 	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
@@ -114,7 +115,7 @@
 	//	[webview loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:[flickr getLoginURL]]]];
 	*/
 	
-		[self.view addSubview:indicatorview];
+
 	 
 }
 

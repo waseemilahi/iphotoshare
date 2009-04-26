@@ -360,7 +360,7 @@
 		ignoreCount = 0;
 		lineNumber = 375;
 		location = PhotoShare;
-		modificationTime = 262476276.07238;
+		modificationTime = 262476828.434811;
 		state = 2;
 	};
 	9E1BDFF60FA2D8E4001F067C /* PBXTextBookmark */ = {
@@ -609,7 +609,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 247";
 		rLen = 0;
-		rLoc = 7585;
+		rLoc = 7606;
 		rType = 0;
 		vrLen = 1516;
 		vrLoc = 6690;
@@ -628,7 +628,7 @@
 		ignoreCount = 0;
 		lineNumber = 75;
 		location = PhotoShare;
-		modificationTime = 262476276.072231;
+		modificationTime = 262476828.434531;
 		state = 2;
 	};
 	9E7A44760FA3C5070065D39B /* PBXTextBookmark */ = {
@@ -653,7 +653,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 44;
-		modificationTime = 262476276.072366;
+		modificationTime = 262476828.4348;
 		state = 2;
 	};
 	9E7B00EF0FA50BAF00C338C9 /* PBXTextBookmark */ = {
@@ -721,7 +721,7 @@
 		fRef = 9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */;
 		name = "SettingsViewController.m: 246";
 		rLen = 0;
-		rLoc = 7585;
+		rLoc = 7606;
 		rType = 0;
 		vrLen = 1236;
 		vrLoc = 7035;
@@ -932,9 +932,9 @@
 	};
 	9E7B9A730F64BFBB0025D849 /* SettingsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1146, 4690}}";
-			sepNavSelRange = "{7585, 0}";
-			sepNavVisRange = "{6690, 1516}";
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 5040}}";
+			sepNavSelRange = "{2357, 0}";
+			sepNavVisRange = "{2113, 1369}";
 			sepNavWindowFrame = "{{141, -22}, {1094, 878}}";
 		};
 	};
