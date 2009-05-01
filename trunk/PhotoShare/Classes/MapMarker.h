@@ -66,6 +66,8 @@
 @property BOOL draggable;
 @property (nonatomic, assign) id delegate;
 
++(id) defaultCrosshairsWithLat:(double) latitude Lng:(double) longitude;
+
 +(id) defaultBlueMarkerWithLat:(double) latitude Lng:(double) longitude;
 
 +(id) defaultGreenMarkerWithLat:(double) latitude Lng:(double) longitude;
