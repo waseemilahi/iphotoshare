@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>9E80ADFE0FA5E07800FF5350</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>CameraViewController.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>9E80AE050FA5E0E300FF5350</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>CameraViewController.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>9E80AE060FA5E0E300FF5350</string>
+						<key>history</key>
+						<array>
+							<string>9E80ADFD0FA5E07800FF5350</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1094, 781}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>141 34 1094 822 0 0 1600 878 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -277,13 +318,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>51</integer>
-									<integer>33</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 329}, {237, 745}}</string>
+							<string>{{0, 0}, {237, 745}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -318,7 +358,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SettingsViewController.m</string>
+								<string>CameraViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,11 +366,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SettingsViewController.m</string>
+										<string>CameraViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9E78280A0FA511F70058CA47</string>
+										<string>9E80AE040FA5E0E300FF5350</string>
 										<key>history</key>
 										<array>
 											<string>9E7E36DE0F68A585005F51D6</string>
@@ -376,7 +416,6 @@
 											<string>9E7A44760FA3C5070065D39B</string>
 											<string>9EC9CFF10FA3DDAF00CE6A2D</string>
 											<string>9E129D440FA40C320055D304</string>
-											<string>9E7B07310FA4CBDA005C2299</string>
 											<string>9E7B07540FA4CC29005C2299</string>
 											<string>9E7B07880FA4D461005C2299</string>
 											<string>9E7B07890FA4D461005C2299</string>
@@ -386,8 +425,9 @@
 											<string>9E7B08300FA4E7BD005C2299</string>
 											<string>9E7B084D0FA4E931005C2299</string>
 											<string>9E7B084E0FA4E931005C2299</string>
-											<string>9E7828080FA511F70058CA47</string>
-											<string>9E7B078A0FA4D461005C2299</string>
+											<string>9E80AE000FA5E0E300FF5350</string>
+											<string>9E80AE010FA5E0E300FF5350</string>
+											<string>9E7B07310FA4CBDA005C2299</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -446,7 +486,8 @@
 											<string>9E8A8E9D0FA0B8CE00C186C0</string>
 											<string>9E8A8F290FA0C7D600C186C0</string>
 											<string>9E1BE08D0FA2E98D001F067C</string>
-											<string>9E7828090FA511F70058CA47</string>
+											<string>9E80AE020FA5E0E300FF5350</string>
+											<string>9E80AE030FA5E0E300FF5350</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -504,9 +545,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>9E78280B0FA511F70058CA47</string>
+				<string>9E80ADEE0FA5DF2400FF5350</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>9E78280C0FA511F70058CA47</string>
+				<string>9E80ADEF0FA5DF2400FF5350</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -619,7 +660,7 @@
 	<key>PerspectivesBarVisible</key>
 	<false/>
 	<key>PinnedNavigatorIdentifier</key>
-	<string>9E7828040FA5114B0058CA47</string>
+	<string>9E80ADFE0FA5E07800FF5350</string>
 	<key>ShelfIsVisible</key>
 	<false/>
 	<key>SourceDescription</key>
@@ -642,15 +683,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>9E7828150FA511F80058CA47</string>
-		<string>9E7828160FA511F80058CA47</string>
-		<string>9E7828170FA511F80058CA47</string>
-		<string>9E7828180FA511F80058CA47</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9E7B9AB80F64C97B0025D849</string>
-		<string>9E7828040FA5114B0058CA47</string>
 		<string>/Users/waseemilahi/Documents/iphotoshare/PhotoShare/PhotoShare.xcodeproj</string>
+		<string>9E80ADFE0FA5E07800FF5350</string>
 	</array>
 	<key>WindowString</key>
 	<string>111 65 1131 804 0 0 1600 878 </string>
@@ -730,7 +767,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>9E7B9AB80F64C97B0025D849</string>
-				<string>9E78280D0FA511F80058CA47</string>
+				<string>9E80ADF00FA5DF2400FF5350</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -850,13 +887,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>9E78280E0FA511F80058CA47</string>
+				<string>9E80ADF10FA5DF2400FF5350</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>9E78280F0FA511F80058CA47</string>
-				<string>9E7828100FA511F80058CA47</string>
-				<string>9E7828110FA511F80058CA47</string>
-				<string>9E7828120FA511F80058CA47</string>
-				<string>9E7828130FA511F80058CA47</string>
+				<string>9E80ADF20FA5DF2400FF5350</string>
+				<string>9E80ADF30FA5DF2400FF5350</string>
+				<string>9E80ADF40FA5DF2400FF5350</string>
+				<string>9E80ADF50FA5DF2400FF5350</string>
+				<string>9E80ADF60FA5DF2400FF5350</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -1018,7 +1055,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>9E7828140FA511F80058CA47</string>
+				<string>9E80ADF70FA5DF2400FF5350</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
