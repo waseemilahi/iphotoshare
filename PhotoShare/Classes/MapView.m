@@ -66,7 +66,7 @@
     [self resetTouches];
 
 	self.map.delegate = self;
-	markers = [[NSMutableArray alloc] initWithCapacity:25];
+	markers = [[NSMutableArray alloc] initWithCapacity:50];
 
     return self;
 }

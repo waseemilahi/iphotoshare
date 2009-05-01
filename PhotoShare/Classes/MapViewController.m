@@ -130,6 +130,13 @@
 	
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
+	marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
+	marker.data = @"blue";
+	marker.draggable = NO;
+	//marker.delegate = mapView;
+	[mapView addMarker:marker];
+	[marker show];
+	
 	int loop_count = 25;
 	if([photos count] < loop_count)loop_count = [photos count];
 	
@@ -151,7 +158,7 @@
 		marker.draggable = NO;
 		marker.delegate = self;
 		[mapView addMarker:marker];
-		//[marker show];
+		[marker show];
 		
 		
 	}
@@ -159,14 +166,9 @@
 	
 	[photos retain];
 	
-	marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
-	marker.data = @"blue";
-	marker.draggable = NO;
-	//marker.delegate = mapView;
-	[mapView addMarker:marker];
-	//[marker show];
 	
-	[mapView showMarkers];
+	
+	//[mapView showMarkers];
 	
 	image_count = 0;	
 	[[self.view.subviews lastObject] removeFromSuperview];
@@ -211,6 +213,13 @@
 	MapMarker *marker;
 	
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
+	
+	marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
+	marker.data = @"blue";
+	marker.draggable = NO;
+	//marker.delegate = self;
+	[mapView addMarker:marker];
+	[marker show];
 
 		
 	int loop_count = 25;
@@ -244,12 +253,7 @@
 	
 	[photos retain];
 	
-	marker =  [MapMarker defaultBlueMarkerWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
-	marker.data = @"blue";
-	marker.draggable = NO;
-	//marker.delegate = self;
-	[mapView addMarker:marker];
-	[marker show];
+	
 	
  
 	
