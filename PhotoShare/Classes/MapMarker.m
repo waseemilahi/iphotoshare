@@ -72,9 +72,13 @@
 
 -(id) initWithImage:(UIImage *) image Lat:(double) latitude Lng:(double) longitude Anchor:(CGPoint) anAnchor {
 	UIImageView *imageview = [[UIImageView alloc] initWithImage:image];
-	MapMarker *marker = [self initWithUIImageView:imageview Lat:latitude Lng:longitude Anchor:CGPointMake(16.0, 32.0)];
+	MapMarker *marker = [self initWithUIImageView:imageview Lat:latitude Lng:longitude Anchor:anAnchor];
 	[imageview release];
 	return marker;
+}
+
++(id) defaultCrosshairsWithLat:(double) latitude Lng:(double) longitude {
+	return [[MapMarker alloc] initWithImage:[UIImage imageNamed:@"crosshairs_blue.png"] Lat:latitude Lng:longitude Anchor:CGPointMake(48.0, 48.0)];
 }
 
 +(id) defaultBlueMarkerWithLat:(double) latitude Lng:(double) longitude {
