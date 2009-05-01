@@ -172,11 +172,13 @@
 		{
 			UIAlertView *newAlertView = [[UIAlertView alloc] initWithTitle:@"Upload Failed!" message:@"Login and Try Again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];		
 			[newAlertView show];
+					[newAlertView release];
 		}
 		else
 		{
 			UIAlertView *newAlertView = [[UIAlertView alloc] initWithTitle:@"Network ERROR!" message:@"Try Again Later." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];		
 			[newAlertView show];
+					[newAlertView release];
 
 		}
 		
@@ -185,7 +187,8 @@
 	{
 		UIAlertView *newAlertView = [[UIAlertView alloc] initWithTitle:@"Upload Successful!" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];		
 		[newAlertView show];
-		
+		[newAlertView release];
+ 		
 	}
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 	

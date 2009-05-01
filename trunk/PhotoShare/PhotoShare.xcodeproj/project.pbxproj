@@ -42,8 +42,9 @@
 		9E7D4C800F9EBAF200EB6452 /* MapMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D4C7A0F9EBAF200EB6452 /* MapMarker.m */; };
 		9E7D4C810F9EBAF200EB6452 /* Callback.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D4C7D0F9EBAF200EB6452 /* Callback.m */; };
 		9E7D4C820F9EBAF200EB6452 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D4C7E0F9EBAF200EB6452 /* MapView.m */; };
-		9E88F9630F9C1E8E0017AC21 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E88F9620F9C1E8E0017AC21 /* Default.png */; };
 		9E8A8F040FA0C63800C186C0 /* GoogleMapAPI.html in Resources */ = {isa = PBXBuildFile; fileRef = 9E8A8F030FA0C63800C186C0 /* GoogleMapAPI.html */; };
+		9E8E30C60FAB4FDD00C3CCCE /* flower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9E8E30C50FAB4FDD00C3CCCE /* flower.jpg */; };
+		9E8E30CE0FAB512E00C3CCCE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E8E30CD0FAB512E00C3CCCE /* Default.png */; };
 		9ECB92720F6ABF620074FF77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ECB92710F6ABF620074FF77 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,8 +101,9 @@
 		9E7D4C7D0F9EBAF200EB6452 /* Callback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Callback.m; sourceTree = "<group>"; };
 		9E7D4C7E0F9EBAF200EB6452 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 		9E7D4C7F0F9EBAF200EB6452 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
-		9E88F9620F9C1E8E0017AC21 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9E8A8F030FA0C63800C186C0 /* GoogleMapAPI.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = GoogleMapAPI.html; sourceTree = "<group>"; };
+		9E8E30C50FAB4FDD00C3CCCE /* flower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.jpg; sourceTree = "<group>"; };
+		9E8E30CD0FAB512E00C3CCCE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9ECB92710F6ABF620074FF77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				9E8E30C50FAB4FDD00C3CCCE /* flower.jpg */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -188,12 +191,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E8E30CD0FAB512E00C3CCCE /* Default.png */,
 				49B21FAA0FA3895300749346 /* BrowseView.xib */,
 				9E7D4C750F9EBAA800EB6452 /* blue.png */,
 				9E7D4C730F9EBAA100EB6452 /* green.png */,
 				9E7D4C710F9EBA9A00EB6452 /* yellow.png */,
 				9E7D4C6F0F9EBA9300EB6452 /* red.png */,
-				9E88F9620F9C1E8E0017AC21 /* Default.png */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				9E457C9E0F68F237004A0967 /* map.png */,
 				9E457CA20F68F25E004A0967 /* account.png */,
@@ -276,13 +279,14 @@
 				9E457CA50F68F2B8004A0967 /* icon.png in Resources */,
 				9E457CA70F68F2C3004A0967 /* flickr.png in Resources */,
 				9E457CA90F68F2CD004A0967 /* home.png in Resources */,
-				9E88F9630F9C1E8E0017AC21 /* Default.png in Resources */,
 				9E7D4C700F9EBA9300EB6452 /* red.png in Resources */,
 				9E7D4C720F9EBA9A00EB6452 /* yellow.png in Resources */,
 				9E7D4C740F9EBAA100EB6452 /* green.png in Resources */,
 				9E7D4C760F9EBAA800EB6452 /* blue.png in Resources */,
 				9E8A8F040FA0C63800C186C0 /* GoogleMapAPI.html in Resources */,
 				49B21FAB0FA3895400749346 /* BrowseView.xib in Resources */,
+				9E8E30C60FAB4FDD00C3CCCE /* flower.jpg in Resources */,
+				9E8E30CE0FAB512E00C3CCCE /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
