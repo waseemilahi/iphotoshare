@@ -18,6 +18,7 @@
 		498BDE610F7F5BE900A2CCBC /* XMLtoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BDE600F7F5BE900A2CCBC /* XMLtoObject.m */; };
 		49B21FAB0FA3895400749346 /* BrowseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B21FAA0FA3895300749346 /* BrowseView.xib */; };
 		49E763550F8054B4000FFD27 /* photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E763540F8054B4000FFD27 /* photo.m */; };
+		49ED320B0FABB02100A627D1 /* crosshairs_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 49ED320A0FABB02100A627D1 /* crosshairs_blue.png */; };
 		9E457C9D0F68F229004A0967 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E457C9C0F68F229004A0967 /* camera.png */; };
 		9E457C9F0F68F237004A0967 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E457C9E0F68F237004A0967 /* map.png */; };
 		9E457CA10F68F244004A0967 /* Browse.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E457CA00F68F244004A0967 /* Browse.png */; };
@@ -67,6 +68,7 @@
 		49B21FAA0FA3895300749346 /* BrowseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowseView.xib; sourceTree = "<group>"; };
 		49E763530F80549D000FFD27 /* photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photo.h; sourceTree = "<group>"; };
 		49E763540F8054B4000FFD27 /* photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photo.m; sourceTree = "<group>"; };
+		49ED320A0FABB02100A627D1 /* crosshairs_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosshairs_blue.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E457C9C0F68F229004A0967 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		9E457C9E0F68F237004A0967 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				9E8E30CD0FAB512E00C3CCCE /* Default.png */,
 				49B21FAA0FA3895300749346 /* BrowseView.xib */,
+				49ED320A0FABB02100A627D1 /* crosshairs_blue.png */,
 				9E7D4C750F9EBAA800EB6452 /* blue.png */,
 				9E7D4C730F9EBAA100EB6452 /* green.png */,
 				9E7D4C710F9EBA9A00EB6452 /* yellow.png */,
@@ -285,6 +288,7 @@
 				9E7D4C760F9EBAA800EB6452 /* blue.png in Resources */,
 				9E8A8F040FA0C63800C186C0 /* GoogleMapAPI.html in Resources */,
 				49B21FAB0FA3895400749346 /* BrowseView.xib in Resources */,
+				49ED320B0FABB02100A627D1 /* crosshairs_blue.png in Resources */,
 				9E8E30C60FAB4FDD00C3CCCE /* flower.jpg in Resources */,
 				9E8E30CE0FAB512E00C3CCCE /* Default.png in Resources */,
 			);
