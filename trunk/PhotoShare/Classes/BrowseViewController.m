@@ -3,7 +3,7 @@
 //  PhotoShare
 //
 //  Created by Waseem Ilahi on 3/8/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 PhotoShareGroup. All rights reserved.
 //
 
 
@@ -132,22 +132,9 @@
 }
 
 - (void)showPicture: (id) sender{
-	// create the request
-	/*
-	NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=a107e8a07a8f464250562ea2424ccf25&tags=fun&api_sig=c9cde0ff8ca668ab84f8a2908cc03f71"]
-											  cachePolicy:NSURLRequestUseProtocolCachePolicy
-										  timeoutInterval:60.0];
-	NSMutableData *receivedData;
-
-	XMLtoObject *xo;
-	*/
 	
-	//flickrapi *
-//	if (flickr == nil) flickr = [[flickrapi alloc] init];
 	[photos release];
-	
-	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
-		
+					
 	photos = [NSArray arrayWithArray:[flickr getPhotos:locmanager.location.coordinate.latitude lng:locmanager.location.coordinate.longitude ]];
 	p = 0;
 	
@@ -162,56 +149,6 @@
 	}
 	[self loadPhoto:p];
 	[photos retain];
-	
-//	[flickr uploadPhoto:nil	withLat:0 andLon:0];
-	/*
-	/*
-	NSURL *url = [NSURL URLWithString: @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f46e7a1681dd43b589b442ada0bd5163&lat=40.7&lon=-74&api_sig=2b6b7498d315496df10afea749ab39a8"];
-	NSString *class = @"photo";
-	
-	//NSError **err;
-	
-	//[xo parseXMLAtURL:url toObject:class parseError:err];
-	
-	// NSURL *url = [NSURL URLWithString: @"http://localhost/contacts.xml"];
-	// XMLToObjectParser *myParser = [[XMLToObjectParser alloc] parseXMLAtURL:url toObject:@"Contact" parseError:nil];
-	 
-	
-	//XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:class parseError:nil];
-	*/
-
-	
-		
-	/*
-	// create the connection with the request
-	// and start loading the data
-	NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-	if (theConnection) {
-		// Create the NSMutableData that will hold
-		// the received data
-		// receivedData is declared as a method instance elsewhere
-		receivedData=[[NSMutableData data] retain];
-
-		NSString* mapURL = @"http://www.google.com/intl/en_ALL/images/logo.gif";
-		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:mapURL]];
-		
-		UIImage* image = [[UIImage alloc] initWithData:imageData];
-		[imageView setImage:image];
-		[imageData release];
-		[image release];
-		
-	} else {
-		// inform the user that the download could not be made
-	}
-	*/
-	
-	
-	/*
-	self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-	
-	self.imagePicker.allowsImageEditing = YES; //<label id="code.imagepicker.allowsEditing"/>
-	[self presentModalViewController:self.imagePicker animated:YES]; //<label id="code.imagepicker.present.modal"/>
-	 */
 }
 
 //START:code.PhotoViewController.didCancel
