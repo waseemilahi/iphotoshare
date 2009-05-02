@@ -182,7 +182,7 @@
 
 - (void) didLoginFail:(NSString *)fail withUserName:(NSString *)userName andFullName:(NSString *)fullName{
 	
-	if([fail isEqualToString:@"bad username/password"]){
+	if([fail isEqualToString:@"bad username/password"] ){
 	[username resignFirstResponder];
 	[password resignFirstResponder];
 	username.text = @"Username";
@@ -257,7 +257,7 @@
 			screennameLabel.text = userName;
 			fullnameLabel.text = fullName;
 		if(signoutview != nil){[self.view addSubview:signoutview];count++;}
-			
+			signin_count--;
 				
 		}
 	}
