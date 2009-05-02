@@ -115,7 +115,26 @@
 	
 	
 }
-	 
+
+- (void)location:(location *)loc ForPhoto:(photo *)ph {
+	if (loc == nil || ph == nil) return;
+	
+	[ph setLoc:loc];
+	
+	NSString* imageURL = [ph getPhotoUrl:4];
+	NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];	
+	UIImage* img = [[UIImage alloc] initWithData:imageData];
+	
+	MapMarker *marker = [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] my_image:img ];
+	marker.data = @"red";
+	marker.draggable = NO;
+	marker.delegate = self;
+	
+	[mapView addMarker:marker];
+	[marker show];
+}
+
+
 -(void)showM{
 	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);	
 	[photos release];
@@ -137,38 +156,10 @@
 	[mapView addMarker:marker];
 	[marker show];
 	
-	int loop_count = 30;
+	//int loop_count = 30;
+	int loop_count = [photos count];
 	if([photos count] < loop_count)loop_count = [photos count];
 	
-	for(i = 0; i <loop_count/*[photos count]*/; i++)
-	{
-		ph = (photo *)[photos objectAtIndex:i];
-		
-		
-		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
-		
-		NSString* imageURL = [ph getPhotoUrl:4];
-		
-		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];	
-		
-		UIImage* image1 = [[UIImage alloc] initWithData:imageData];
-		
-		marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] my_image:image1 ];
-		marker.data = @"red";
-		marker.draggable = NO;
-		marker.delegate = self;
-		[mapView addMarker:marker];
-		[marker show];
-		
-		
-	}
-	
-	
-	[photos retain];
-	
-	//[mapView showMarkers];
-	
-	image_count = 0;	
 	[[self.view.subviews lastObject] removeFromSuperview];
 	[[self.view.subviews lastObject] removeFromSuperview];
 	CATransition *myTransition = [ CATransition animation];
@@ -180,10 +171,24 @@
 	
 	[self.view addSubview:mapView];
 	[self.view addSubview:mapBar];
+	
+	[flickr setLocationDelegate:self];
+	for(i = 0; i <loop_count/*[photos count]*/; i++)
+	{
+		ph = (photo *)[photos objectAtIndex:i];
+		
+		//[flickr getLocationOfPhoto:ph];		
+		[NSThread detachNewThreadSelector:@selector(getLocationOfPhoto:) toTarget:flickr withObject:ph];
+	}
+	
+	
+	[photos retain];
+	
+	//[mapView showMarkers];
+	
+	image_count = 0;	
 }
 
-	 
-	 
 	 
 - (IBAction)showMap: (id) sender{
 	
@@ -212,8 +217,9 @@
 	
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 		
-	int loop_count = 30;
-	if([photos count] < loop_count)loop_count = [photos count];
+	int loop_count = [photos count];
+	//if([photos count] < loop_count)loop_count = [photos count];
+	
 	
 	marker =  [MapMarker defaultCrosshairsWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
 	marker.data = @"crosshairs";
@@ -222,9 +228,25 @@
 	[mapView addMarker:marker];
 	[marker show];
 	
+	
+	CATransition *myTransition = [ CATransition animation];
+	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
+	myTransition.type = kCATransitionPush;
+	myTransition.subtype = kCATransitionFromLeft;
+	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
+	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
+	
+	[self.view addSubview:mapView];
+	[self.view addSubview:mapBar];
+	
+	[flickr setLocationDelegate:self];
 	for(i = 0; i <loop_count/*[photos count]*/; i++)
 	{
 		ph = (photo *)[photos objectAtIndex:i];		
+		
+		[flickr getLocationOfPhoto:ph];		
+
+		/*
 		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
 		
 		NSString* imageURL = [ph getPhotoUrl:4];		
@@ -237,27 +259,14 @@
 		marker.delegate = self;
 		[mapView addMarker:marker];
 		[marker show];
-		
-		
+		*/
 		
 	}
 	
 	
 	[photos retain];
 	
-	image_count = 0;
-	
-	CATransition *myTransition = [ CATransition animation];
-	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
-	myTransition.type = kCATransitionPush;
-	myTransition.subtype = kCATransitionFromLeft;
-	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
-	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
-	
-	[self.view addSubview:mapView];
-		[self.view addSubview:mapBar];
-	
-	
+	image_count = 0;	
 }
 
 

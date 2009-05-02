@@ -16,6 +16,18 @@
 
 @end
 
+@protocol FlickrLocationDelegate <NSObject>
+
+- (void)location:(location *)loc ForPhoto:(photo *)ph;
+
+@end
+/*
+@interface PhotoConnection : NSURLConnection {
+	photo *ph;
+}
+@property (nonatomic, retain) photo *ph;
+@end
+*/
 @interface flickrapi : NSObject <UIWebViewDelegate , CLLocationManagerDelegate> {
 	NSMutableString *FROB;
 	NSMutableString *TOKEN;
@@ -23,13 +35,13 @@
 	NSHTTPCookieStorage *cookies;
 	NSArray *cookie;
 	
-	
-	
+	NSMutableData *receivedData;
 	
 	int count ;
 	BOOL isLocating;
 	
 	id<FlickrLoginDelegate> loginDelegate;
+	id<FlickrLocationDelegate> locationDelegate;
 }
 
 @property (nonatomic, retain) NSMutableString *FROB;
@@ -40,6 +52,7 @@
 
 
 @property (assign) id<FlickrLoginDelegate> loginDelegate; 
+@property (assign) id<FlickrLocationDelegate> locationDelegate; 
 
 -(void)addParam:(NSMutableString *)key withValue:(NSMutableString *)value;
 -(void)clearParams;
@@ -59,6 +72,7 @@
 
 -(NSArray *)getPhotos:(double)latitude lng:(double)longitude;
 -(location *)getLocation:(NSString *)pid;
+-(void)getLocationOfPhoto:(photo *)p;
 
 -(BOOL)uploadPhoto:(UIImage *)image withLat:(double)lat andLon:(double)lon withName:(NSString *)imageName;
 

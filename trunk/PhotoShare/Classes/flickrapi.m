@@ -3,7 +3,11 @@
 #import "XMLtoObject.h"
 
 //flickrapi *FLICKR;// = [[flickrapi alloc] init];
-
+/*
+@implementation PhotoConnection : NSURLConnection
+@synthesize ph;
+@end
+*/
 @implementation flickrapi : NSObject
 
 @synthesize FROB;
@@ -11,6 +15,7 @@
 @synthesize cookies;
 @synthesize cookie;
 @synthesize loginDelegate;
+@synthesize locationDelegate;
 
 -(void)addParam: (NSMutableString *)key withValue:(NSMutableString *)value {
 	if (!params) params = [[NSMutableDictionary alloc] init];
@@ -454,7 +459,99 @@
 		return nil;
 }
 
-
+-(void)getLocationOfPhoto:(photo *)ph {
+	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+	
+	
+	if (ph == nil) return;
+	NSString *pid = [[ph keys] objectForKey:@"id"];
+	if (pid == nil) return;
+	
+	//replace with async code:
+	
+	NSLog(@"get location for pid: %@", pid);
+	[self clearParams];
+	[self addParam:@"method" withValue:@"flickr.photos.geo.getLocation"];
+	[self addParam:@"api_key" withValue:APIKEY];
+	[self addParam:@"photo_id" withValue:[NSString stringWithFormat:@"%@", pid]];
+	
+	//	NSString *sig = [self getSig];
+	//	[self addParam:@"api_sig" withValue:[NSString stringWithString:sig]];
+	
+	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.flickr.com/services/rest/%@",
+									   [self getParamList]]];
+	
+	/*
+	NSURLRequest *req = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+	PhotoConnection *conn = [[PhotoConnection alloc] initWithRequest:req delegate:self];
+	[conn setPh:ph];
+	[conn scheduleInRunLoop:[NSRunLoop alloc] forMode:nil];
+	[ph retain];
+	if (conn) {
+		// Create the NSMutableData that will hold
+		// the received data
+		// receivedData is declared as a method instance elsewhere
+		receivedData = [[NSMutableData data] retain];
+	}
+	*/
+	
+	NSLog(@"xml: %@", [NSString stringWithContentsOfURL:url]);
+	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLAtURL:url toObject:@"location" parseError:nil];
+	
+	if ([[parser items] count] > 0)
+		[locationDelegate location:[[parser items] objectAtIndex:0] ForPhoto:ph];
+	
+	[pool release];
+}
+/*
+- (void)connection:(PhotoConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    // this method is called when the server has determined that it
+    // has enough information to create the NSURLResponse
+	
+    // it can be called multiple times, for example in the case of a
+    // redirect, so each time we reset the data.
+    // receivedData is declared as a method instance elsewhere
+    [receivedData setLength:0];
+}
+- (void)connection:(PhotoConnection *)connection didReceiveData:(NSData *)data
+{
+    // append the new data to the receivedData
+    // receivedData is declared as a method instance elsewhere
+    [receivedData appendData:data];
+}
+- (void)connection:(PhotoConnection *)connection
+  didFailWithError:(NSError *)error
+{
+    // release the connection, and the data object
+    [connection release];
+    // receivedData is declared as a method instance elsewhere
+    [receivedData release];
+	
+    // inform the user
+    NSLog(@"Connection failed! Error - %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
+}
+- (void)connectionDidFinishLoading:(PhotoConnection *)connection
+{
+    // do something with the data
+    // receivedData is declared as a method instance elsewhere
+    NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
+	
+	photo *ph = [connection ph];
+	if (ph == nil) NSLog(@"ph is null");
+	
+	XMLtoObject *parser = [[XMLtoObject alloc] parseXMLinString:[[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding] toObject:@"location" parseError:nil];
+    
+	if ([[parser items] count] > 0) {
+		NSLog(@"sending loc and ph to delegate...");
+		location *loc = [[parser items] objectAtIndex:0];
+		[locationDelegate location:[loc retain] ForPhoto:[ph retain]];
+		NSLog(@"loginDelegate finished.");
+	}
+}
+*/
 -(BOOL)setLocationOfPhoto:(NSString *)pid withLat:(double)lat andLon:(double)lon {
 	NSLog(@"set location for pid: %@ to (%f, %f)", pid, lat, lon);
 	
