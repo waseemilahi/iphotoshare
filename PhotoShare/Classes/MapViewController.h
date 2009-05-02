@@ -10,7 +10,7 @@
 #import "MapView.h"
 #import "PhotoShareAppDelegate.h"
 
-@interface MapViewController : UIViewController <CLLocationManagerDelegate>{
+@interface MapViewController : UIViewController <CLLocationManagerDelegate, FlickrLocationDelegate>{
 IBOutlet UILabel *mapLabel;
 	IBOutlet UILabel *locLabel;
 	IBOutlet UITextField *longitude;
@@ -37,6 +37,9 @@ BOOL wasFound;
 @property (nonatomic, retain) CLLocationManager *locmanager;
 @property (nonatomic, retain) flickrapi *flickr;
 @property (nonatomic, retain) UIImageView *imageView;
+
+- (void)location:(location *)loc ForPhoto:(photo *)ph;
+
 - (IBAction) showMap: (id) sender;
 - (IBAction) saveImage: (id)sender;
 -(IBAction)goBack:(id)sender;
