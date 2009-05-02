@@ -14,7 +14,6 @@
 
 - (void)didLoginFail:(NSString *)fail withUserName:(NSString *)userName andFullName:(NSString *)fullName ;
 
-
 @end
 
 @interface flickrapi : NSObject <UIWebViewDelegate , CLLocationManagerDelegate> {
