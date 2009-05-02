@@ -66,7 +66,7 @@
 	self.lat = latitude;
 	self.lng = longitude;
 	self.anchor = anAnchor;
-	markerActions = [[NSMutableArray alloc] initWithCapacity:5];
+	markerActions = [[NSMutableArray alloc] initWithCapacity:25];
 	return self;
 }
 
@@ -78,6 +78,8 @@
 }
 
 +(id) defaultCrosshairsWithLat:(double) latitude Lng:(double) longitude {
+	NSLog(@"crosshairs: %d, %d", (int)latitude, (int)longitude);
+	
 	return [[MapMarker alloc] initWithImage:[UIImage imageNamed:@"crosshairs_blue.png"] Lat:latitude Lng:longitude Anchor:CGPointMake(48.0, 48.0)];
 }
 

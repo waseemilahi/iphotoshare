@@ -129,7 +129,7 @@
 	MapMarker *marker;
 	
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
-		
+	
 	marker =  [MapMarker defaultCrosshairsWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
 	marker.data = @"crosshairs_blue";
 	marker.draggable = NO;
@@ -137,7 +137,7 @@
 	[mapView addMarker:marker];
 	[marker show];
 	
-	int loop_count = 25;
+	int loop_count = 30;
 	if([photos count] < loop_count)loop_count = [photos count];
 	
 	for(i = 0; i <loop_count/*[photos count]*/; i++)
@@ -165,7 +165,6 @@
 	
 	
 	[photos retain];
-	
 	
 	//[mapView showMarkers];
 	
@@ -212,6 +211,9 @@
 	MapMarker *marker;
 	
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
+		
+	int loop_count = 30;
+	if([photos count] < loop_count)loop_count = [photos count];
 	
 	marker =  [MapMarker defaultCrosshairsWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
 	marker.data = @"crosshairs";
@@ -220,22 +222,13 @@
 	[mapView addMarker:marker];
 	[marker show];
 	
-		
-	int loop_count = 25;
-	if([photos count] < loop_count)loop_count = [photos count];
-	
 	for(i = 0; i <loop_count/*[photos count]*/; i++)
 	{
-		ph = (photo *)[photos objectAtIndex:i];
-		
-		
+		ph = (photo *)[photos objectAtIndex:i];		
 		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
 		
-		
-		NSString* imageURL = [ph getPhotoUrl:4];
-		
+		NSString* imageURL = [ph getPhotoUrl:4];		
 		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];	
-		
 		UIImage* image1 = [[UIImage alloc] initWithData:imageData];
 		
 		marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] my_image:image1 ];
