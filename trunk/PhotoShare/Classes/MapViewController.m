@@ -131,11 +131,11 @@
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 		
 	marker =  [MapMarker defaultCrosshairsWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
-	marker.data = @"crosshairs";
+	marker.data = @"crosshairs_blue";
 	marker.draggable = NO;
 	//marker.delegate = mapView;
 	[mapView addMarker:marker];
-	//[marker show];
+	[marker show];
 	
 	int loop_count = 25;
 	if([photos count] < loop_count)loop_count = [photos count];
@@ -218,7 +218,7 @@
 	marker.draggable = NO;
 	//marker.delegate = mapView;
 	[mapView addMarker:marker];
-	//[marker show];
+	[marker show];
 	
 		
 	int loop_count = 25;
