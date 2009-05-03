@@ -43,6 +43,7 @@
 		9E7D4C810F9EBAF200EB6452 /* Callback.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D4C7D0F9EBAF200EB6452 /* Callback.m */; };
 		9E7D4C820F9EBAF200EB6452 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7D4C7E0F9EBAF200EB6452 /* MapView.m */; };
 		9E8A8F040FA0C63800C186C0 /* GoogleMapAPI.html in Resources */ = {isa = PBXBuildFile; fileRef = 9E8A8F030FA0C63800C186C0 /* GoogleMapAPI.html */; };
+		9E8BCC810FAD1E1700C59E0C /* flower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9E8BCC800FAD1E1700C59E0C /* flower.jpg */; };
 		9E8E30CE0FAB512E00C3CCCE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E8E30CD0FAB512E00C3CCCE /* Default.png */; };
 		9ECB92720F6ABF620074FF77 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ECB92710F6ABF620074FF77 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
@@ -100,6 +101,7 @@
 		9E7D4C7E0F9EBAF200EB6452 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 		9E7D4C7F0F9EBAF200EB6452 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
 		9E8A8F030FA0C63800C186C0 /* GoogleMapAPI.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = GoogleMapAPI.html; sourceTree = "<group>"; };
+		9E8BCC800FAD1E1700C59E0C /* flower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.jpg; sourceTree = "<group>"; };
 		9E8E30CD0FAB512E00C3CCCE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9ECB92710F6ABF620074FF77 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -185,6 +187,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E8BCC800FAD1E1700C59E0C /* flower.jpg */,
 				9E8E30CD0FAB512E00C3CCCE /* Default.png */,
 				49B21FAA0FA3895300749346 /* BrowseView.xib */,
 				490791260FABFF0400A1B304 /* crosshairs_blue.png */,
@@ -282,6 +285,7 @@
 				49B21FAB0FA3895400749346 /* BrowseView.xib in Resources */,
 				9E8E30CE0FAB512E00C3CCCE /* Default.png in Resources */,
 				490791270FABFF0400A1B304 /* crosshairs_blue.png in Resources */,
+				9E8BCC810FAD1E1700C59E0C /* flower.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
