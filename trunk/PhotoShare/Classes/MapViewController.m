@@ -134,6 +134,16 @@
 	[marker show];
 }
 
+-(void)putCrossHairs{
+	MapMarker *marker =  [MapMarker defaultCrosshairsWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
+	marker.data = @"crosshairs_blue";
+	marker.draggable = NO;
+	//marker.delegate = mapView;
+	[mapView addMarker:marker];
+	[marker show];
+	
+}
+
 
 -(void)showM{
 	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);	
@@ -144,21 +154,14 @@
 	int i;
 	
 	photo* ph;
-	
-	MapMarker *marker;
-	
+		
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
-	marker =  [MapMarker defaultCrosshairsWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
-	marker.data = @"crosshairs_blue";
-	marker.draggable = NO;
-	//marker.delegate = mapView;
-	[mapView addMarker:marker];
-	[marker show];
+	[NSThread detachNewThreadSelector:@selector(putCrossHairs) toTarget:self withObject:nil];
 	
 	//int loop_count = 30;
 	int loop_count = [photos count];
-	if([photos count] < loop_count)loop_count = [photos count];
+	if(loop_count > 30)loop_count = 30;
 	
 	[[self.view.subviews lastObject] removeFromSuperview];
 	[[self.view.subviews lastObject] removeFromSuperview];
@@ -212,22 +215,13 @@
 	int i;
 	
 	photo* ph;
-	
-	MapMarker *marker;
-	
+		
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 		
 	int loop_count = [photos count];
-	//if([photos count] < loop_count)loop_count = [photos count];
+	if(loop_count > 30)loop_count = 30;
 	
-	
-	marker =  [MapMarker defaultCrosshairsWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
-	marker.data = @"crosshairs";
-	marker.draggable = NO;
-	//marker.delegate = mapView;
-	[mapView addMarker:marker];
-	[marker show];
-	
+	[NSThread detachNewThreadSelector:@selector(putCrossHairs) toTarget:self withObject:nil];	
 	
 	CATransition *myTransition = [ CATransition animation];
 	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
@@ -244,22 +238,7 @@
 	{
 		ph = (photo *)[photos objectAtIndex:i];		
 		
-		[flickr getLocationOfPhoto:ph];		
-
-		/*
-		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
-		
-		NSString* imageURL = [ph getPhotoUrl:4];		
-		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];	
-		UIImage* image1 = [[UIImage alloc] initWithData:imageData];
-		
-		marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] my_image:image1 ];
-		marker.data = @"red";
-		marker.draggable = NO;
-		marker.delegate = self;
-		[mapView addMarker:marker];
-		[marker show];
-		*/
+		[NSThread detachNewThreadSelector:@selector(getLocationOfPhoto:) toTarget:flickr withObject:ph];
 		
 	}
 	
