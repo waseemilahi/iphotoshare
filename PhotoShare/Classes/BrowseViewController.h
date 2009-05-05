@@ -3,10 +3,8 @@
 //  PhotoShare
 //
 //  Created by Waseem Ilahi on 3/8/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 __PhotoShare__. All rights reserved.
 //
-
-#import <UIKit/UIKit.h>
 
 #import "PhotoShareAppDelegate.h"
 
@@ -18,10 +16,7 @@
     IBOutlet UIBarButtonItem *update;
 	int count;
 	CLLocationManager *locmanager;
-	
-	//temporary, for testing:
-	//IBOutlet UIWebView *webView;
-	
+		
 	flickrapi *flickr;
 	NSArray *photos;
 	CGPoint startPoint;
@@ -36,11 +31,6 @@
 @property (nonatomic, retain) flickrapi *flickr;
 @property (nonatomic, retain) NSArray *photos;
 @property (nonatomic, retain) CLLocationManager *locmanager;
-//@property (nonatomic, retain) CGPoint startPoint;
-//@property (nonatomic, retain) NSTimeInterval startTime;
-
-//for testing:
-//@property (nonatomic, retain) UIWebView *webView;	
 
 - (IBAction) showPicture: (id) sender;
 - (IBAction) saveImage: (id)sender;

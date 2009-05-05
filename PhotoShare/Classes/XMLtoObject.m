@@ -1,7 +1,4 @@
-// XMLToObject.m
 #import "XMLtoObject.h"
-//#import "photo.h"
-
 
 //photoid object
 @implementation photoid : NSObject 
@@ -49,6 +46,7 @@
 
 @end
 
+//user object
 @implementation user
 
 @synthesize keys;
@@ -78,8 +76,6 @@
 @synthesize keys;
 @synthesize loc;
 
-//@synthesize url;
-//-(void)setPhotoUrl:(NSString *)pid farm:(NSString *)farm server:(NSString *)server secret:(NSString *)secret {
 -(NSString *)getPhotoUrl:(NSUInteger)size {
 	NSLog(@"lat, lon: %@, %@", [self getLatitude], [self getLongitude]);
 	
@@ -90,11 +86,6 @@
 			[keys objectForKey:@"id"],
 			[keys objectForKey:@"secret"]
 			];
-	/*
-	url = [NSMutableString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@.jpg", farm, server, pid, secret];
-	[url retain];
-	return;
-	 */
 }
 
 -(NSString *)getLatitude {
@@ -223,9 +214,6 @@
 		   toObject:(NSString *)aClassName 
 		 parseError:(NSError **)error
 {
-	//NSLog(@"xml string:");
-	//NSLog(xml);
-	
 	[items release];
 	items = [[NSMutableArray alloc] init];
 	
@@ -290,13 +278,7 @@ didStartElement:(NSString *)elementName
 			[[(photo *)item keys] retain];
 			
 			NSLog(@"key count = %d", [attributeDict count]);
-			/*
-			 [(photo *)item setPhotoUrl:	[attributeDict objectForKey:@"id"]
-			 farm:	[attributeDict objectForKey:@"farm"]
-			 server:	[attributeDict objectForKey:@"server"]
-			 secret:	[attributeDict objectForKey:@"secret"]
-			 ];
-			 */
+			
 		} else if ([elementName isEqualToString:@"location"]) {
 			//retrieve location info
 			[[(location *)item keys] release];
@@ -313,10 +295,10 @@ didStartElement:(NSString *)elementName
 			NSLog(@"key count = %d", [attributeDict count]);
 		}else if ([elementName isEqualToString: @"frob"]) {
 			//this code is moved to didEndElement, since currentNodeContent is not filled yet when didStartElement is called
-			//[(frob *)item setValue:currentNodeContent];
+			
 		} else if ([elementName isEqualToString: @"token"]) {
 			//this code is moved to didEndElement, since currentNodeContent is not filled yet when didStartElement is called
-			//[(frob *)item setValue:currentNodeContent];
+			
 		} else if ([elementName isEqualToString:@"form"]) {
 			//set the form action
 			[(form *)item setAction:[attributeDict objectForKey:@"action"]];
@@ -354,11 +336,8 @@ didStartElement:(NSString *)elementName
 		item = nil;
 	}
 	else if([elementName isEqualToString:currentNodeName]) {
-		// use key-value coding       
-		//NSLog(@"currentNodeContent: %@", currentNodeContent);
+		// use key-value coding    	
 		NSLog(@"elementName: %@", elementName);
-		//[item setValue:currentNodeContent forKey:elementName];
-		
 		[currentNodeContent release];
 		currentNodeContent = nil;
 		

@@ -3,16 +3,14 @@
 //  PhotoShare
 //
 //  Created by Waseem Ilahi on 3/8/09.
-//  Copyright 2009 PhotoShareGroup. All rights reserved.
+//  Copyright 2009 __PhotoShare__. All rights reserved.
 //
 
 
 #import "BrowseViewController.h"
-#import <QuartzCore/QuartzCore.h>
-//#import "XMLtoObject.h"
-
 
 #define DOCSFOLDER [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
+
 @implementation BrowseViewController
 
 @synthesize imageView;
@@ -31,6 +29,7 @@
 	
 	NSLog(@"(%f, %f)@%f", startPoint.x, startPoint.y, startTime);
 }
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	NSLog(@"...touched");
 	
@@ -89,18 +88,18 @@
 	}
 }
 
+//Save the image to the photo library.
 -(IBAction)saveImage:(id)sender{
 	
 	UIImageWriteToSavedPhotosAlbum(imageView.image, self, nil, nil);
 	
-	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo Saved" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-	
+	UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"Photo Saved" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];	
 	[myAlertView show];
 	[myAlertView release];
 	
 }
 
-
+//Load one Photo at a time.
 - (void)loadPhoto:(NSUInteger)index {
 	
 	NSLog(@"loadPhoto:%d of %d", index + 1, [photos count]);
@@ -124,7 +123,6 @@
 		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];
 		
 		UIImage* image = [[UIImage alloc] initWithData:imageData];
-		//imageView.frame = CGRectMake(0.0, 43.0,self.view.bounds.size.width ,375);
 		[imageView setImage:image];
 		[imageData release];
 		[image release];
@@ -151,49 +149,29 @@
 	[photos retain];
 }
 
-//START:code.PhotoViewController.didCancel
+//ImagePickerDelegate methods.
+//----------------------------
+
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
 	[self.imagePicker dismissModalViewControllerAnimated:YES];
-	//[self loadView ];
+	
 }
-//END:code.PhotoViewController.didCancel
-//START:code.PhotoViewController.didFinish
+
 - (void)imagePickerController:(UIImagePickerController *)picker 
         didFinishPickingImage:(UIImage *)image 
                   editingInfo:(NSDictionary *)editingInfo {
-	//imageView.image = image; //<label id="code.imagepicker.setimage"/>
-	//[self dismissModalViewControllerAnimated:YES]; //<label id="code.imagepicker.dismiss"/>
-	//[picker release];
 	int i=0;
 	NSString *uniquePath = [DOCSFOLDER stringByAppendingPathComponent:@"selectedImage.png"];
 	
 	while([[NSFileManager defaultManager] fileExistsAtPath:uniquePath])
 		uniquePath = [NSString stringWithFormat:@"%@/%@-%d.%@",DOCSFOLDER,@"selectedImage", ++i,@"png"];
 	[UIImagePNGRepresentation(image) writeToFile : uniquePath atomically:YES];
-	//[UIImagePNGRepresentation(image) writeToFile: uniquePath atomically:YES];
 	
 	[[self parentViewController] dismissModalViewControllerAnimated:YES];
 	
 }
 
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-	[self loadURL];
-}
-
-*/
-
+//The Method called by viewDidLoad to Get the array of photos in the browse view.
 -(void)showP{
 	[photos release];
 	
@@ -217,7 +195,6 @@
 	[photos retain];
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
@@ -229,23 +206,11 @@
 	[pictureLabel setText:@"Searching For Photos."];
 	
 	[self performSelector:@selector(showP) withObject:nil afterDelay:3];
-	
-	
-	//[self showPicture:update];
 		
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-    // Release anything that's not essential, such as cached data
+    [super didReceiveMemoryWarning]; 
 }
 
 - (void)dealloc {
@@ -253,9 +218,7 @@
 	self.imageView = nil;
 	self.imagePicker = nil;
 
-	//self.webView = nil;
 	[photos release];
-
 	[pictureLabel release];
 	[imageView release];
 	[imagePicker release];

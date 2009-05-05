@@ -74,7 +74,7 @@ typedef struct {
 @end
 
 @interface MapWebView : UIWebView {
-	CLLocationManager *locmanager;
+	CLLocationManager *locmanager;//Location Manager for getting current locaiton.
 @private
     id <MapWebViewDelegate> mDelegate;
 }

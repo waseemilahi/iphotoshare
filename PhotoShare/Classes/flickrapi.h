@@ -1,15 +1,14 @@
-#import <UIKit/UIKit.h>
+#import "XMLtoObject.h"
 #import <Foundation/NSHTTPCookieStorage.h>
 #import <CoreLocation/CoreLocation.h>
 #import <CoreLocation/CLLocationManagerDelegate.h>
 
-#import "XMLtoObject.h"
-
-// flickr
+//PhotoShare APIKEY.
 #define APIKEY @"7aa8298476e07cb421f8cc396e655978"
 #define SECRET @"8db5a9f831e6a766"
 
-//extern flickrapi *FLICKR;
+//This method gets called after the webview finishes loading.
+//It gets the string input to match against a set of cases.
 @protocol FlickrLoginDelegate <NSObject>
 
 - (void)didLoginFail:(NSString *)fail withUserName:(NSString *)userName andFullName:(NSString *)fullName ;
@@ -21,22 +20,15 @@
 - (void)location:(location *)loc ForPhoto:(photo *)ph;
 
 @end
-/*
-@interface PhotoConnection : NSURLConnection {
-	photo *ph;
-}
-@property (nonatomic, retain) photo *ph;
-@end
-*/
+
+//The Flickr API.
 @interface flickrapi : NSObject <UIWebViewDelegate , CLLocationManagerDelegate> {
 	NSMutableString *FROB;
 	NSMutableString *TOKEN;
 	NSMutableDictionary *params;
 	NSHTTPCookieStorage *cookies;
-	NSArray *cookie;
-	
-	NSMutableData *receivedData;
-	
+	NSArray *cookie;	
+	NSMutableData *receivedData;	
 	int count ;
 	BOOL isLocating;
 	

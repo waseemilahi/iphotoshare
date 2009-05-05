@@ -3,18 +3,15 @@
 //  PhotoShare
 //
 //  Created by Waseem Ilahi on 3/8/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 __PhotoShare__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "flickrapi.h"
 #import "PhotoShareAppDelegate.h"
 
 @interface CameraViewController : UIViewController <UIImagePickerControllerDelegate, CLLocationManagerDelegate>{
 	
 	
 	IBOutlet UIImageView *imageView;
-	IBOutlet UILabel *pictureLabel;
 	IBOutlet UIImagePickerController *imagePicker;
 	UITextField *myTextField;
 	CLLocationManager *locmanager;
