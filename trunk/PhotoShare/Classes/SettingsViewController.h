@@ -3,32 +3,23 @@
 //  PhotoShare
 //
 //  Created by Waseem Ilahi on 3/8/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 __PhotoShare__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "flickrapi.h"
-
+#import "PhotoShareAppDelegate.h"
 
 @interface SettingsViewController : UIViewController <UIImagePickerControllerDelegate, UITextFieldDelegate , UIWebViewDelegate, FlickrLoginDelegate >{
 
 	IBOutlet UITextField *username;
 	IBOutlet UITextField *password;
 	UIWebView *webview;
-	int count ;
-	
+	int count ;	
 	NSMutableString *TOKEN;
-	int signin_count;
-	
-	IBOutlet UIView *signoutview;
-	IBOutlet UIView *invalidupview;
-	IBOutlet UIView *badnetworkview;
-	IBOutlet UIActivityIndicatorView *indicatorview;
-	IBOutlet UIImageView *imageView;
+	int signin_count;	
+	IBOutlet UIView *signoutview;	
+	IBOutlet UIActivityIndicatorView *indicatorview;	
 	IBOutlet UILabel *fullnameLabel;
-	IBOutlet UILabel *screennameLabel;
-	IBOutlet UIImagePickerController *imagePicker;
-	
+	IBOutlet UILabel *screennameLabel;	
 	flickrapi *flickr;
 }
 
@@ -40,20 +31,12 @@
 
 - (IBAction) AgainSignIn:(id)sender;
 
-- (IBAction)InvalidsignIn:(id)sender;
-
-- (IBAction)BNetworksignIn:(id)sender;
-
 - (void) didLoginFail:(NSString *)fail withUserName:(NSString *)userName andFullName:(NSString *)fullName;
+
 @property (nonatomic, retain) NSMutableString *TOKEN;
 @property (nonatomic,retain) UIWebView *webview;
 @property (nonatomic,retain) UIView *signoutview;
-@property (nonatomic,retain) UIView *invalidupview;
-@property (nonatomic,retain) UIView *badnetworkview;
 @property (nonatomic,retain) UIActivityIndicatorView *indicatorview;
-@property (nonatomic, retain) UIImagePickerController *imagePicker;
-@property (nonatomic, retain) UIImageView *imageView;
-
 @property (nonatomic, retain) flickrapi *flickr;
 
 @end

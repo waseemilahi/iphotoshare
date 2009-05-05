@@ -3,13 +3,10 @@
 //  PhotoShare
 //
 //  Created by Waseem Ilahi on 3/8/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 __PhotoShare__. All rights reserved.
 //
 
 #import "MapViewController.h"
-#import <QuartzCore/QuartzCore.h>
-
-
 
 @implementation MapViewController
 
@@ -20,34 +17,6 @@
 @synthesize indicatorview;
 @synthesize mapBar;
 
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-
-/*
-
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
- 
- }
-
-*/
-
-
-
-
 -(void) clickedMarker:(MapMarker *) marker {
 		
 	CATransition *myTransition = [ CATransition animation];
@@ -57,14 +26,9 @@
 	[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
 		
-	[imageView setImage:marker.markerImage];
-	
-	[self.view addSubview:imageView];
-	
-	
-	
-	[self.view addSubview:save];
-		
+	[imageView setImage:marker.markerImage];	
+	[self.view addSubview:imageView];	
+	[self.view addSubview:save];	
 
 	image_count++;	
 	
@@ -114,13 +78,11 @@
 	[marker show];
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 	
 	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
-	
 	
 	[self.view addSubview:mapBar];
 	[self.view addSubview:indicatorview];	
@@ -147,24 +109,20 @@
 	marker =  [MapMarker defaultCrosshairsWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
 	marker.data = @"crosshairs_blue";
 	marker.draggable = NO;
-	//marker.delegate = mapView;
 	[mapView addMarker:marker];
 	[marker show];
 	
 	int loop_count = 30;
 	if([photos count] < loop_count)loop_count = [photos count];
 	
-	for(i = 0; i <loop_count/*[photos count]*/; i++)
+	for(i = 0; i <loop_count; i++)
 	{
-		ph = (photo *)[photos objectAtIndex:i];
-		
+		ph = (photo *)[photos objectAtIndex:i];		
 		
 		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
 		
-		NSString* imageURL = [ph getPhotoUrl:4];
-		
-		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];	
-		
+		NSString* imageURL = [ph getPhotoUrl:4];		
+		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];			
 		UIImage* image1 = [[UIImage alloc] initWithData:imageData];
 		
 		marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] my_image:image1 ];
@@ -179,9 +137,7 @@
 	
 	
 	[photos retain];
-	
-	//[mapView showMarkers];
-	
+		
 	image_count = 0;	
 	[[self.view.subviews lastObject] removeFromSuperview];
 	[[self.view.subviews lastObject] removeFromSuperview];
@@ -207,8 +163,7 @@
 	if(mapView){
 		[mapView clearMarkers];
 		[mapView release];
-	}
-	
+	}	
 	
 	[photos release];
 	
@@ -230,11 +185,10 @@
 	marker =  [MapMarker defaultCrosshairsWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
 	marker.data = @"crosshairs";
 	marker.draggable = NO;
-	//marker.delegate = mapView;
 	[mapView addMarker:marker];
 	[marker show];
 	
-	for(i = 0; i <loop_count/*[photos count]*/; i++)
+	for(i = 0; i <loop_count; i++)
 	{
 		ph = (photo *)[photos objectAtIndex:i];		
 		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
@@ -248,10 +202,7 @@
 		marker.draggable = NO;
 		marker.delegate = self;
 		[mapView addMarker:marker];
-		[marker show];
-		
-		
-		
+		[marker show];		
 	}
 	
 	
@@ -267,24 +218,12 @@
 	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2] ; 
 	
 	[self.view addSubview:mapView];
-	[self.view addSubview:mapBar];
-	
+	[self.view addSubview:mapBar];	
 	
 }
-
-
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-    // Release anything that's not essential, such as cached data
+    [super didReceiveMemoryWarning]; 
 }
 
 
@@ -292,12 +231,7 @@
 	[locmanager release];
 	[mapView release];
 	[locations release];
-	[longitude release];
-	[latitude release];
-	[lastupdate release];
-	[locLabel release];
-	[mapLabel release];
-	[messagesView release];
+	
 	[indicatorview release];
 	[photos release];
 	[mapBar release];

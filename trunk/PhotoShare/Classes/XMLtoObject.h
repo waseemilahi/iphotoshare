@@ -1,4 +1,3 @@
-// XMLtoObject.h
 #import <UIKit/UIKit.h>
 
 @interface XMLtoObject : NSObject {
@@ -60,7 +59,7 @@
 
 //photo object
 @interface photo : NSObject {
-	//	NSString *url;
+	
 	NSDictionary *keys;
 	location *loc;
 }
@@ -68,7 +67,7 @@
 @property (nonatomic, retain) NSDictionary *keys;
 @property (nonatomic, retain) location *loc;
 
-//-(void)setPhotoUrl:(NSString *)pid farm:(NSString *)farm server:(NSString *)server secret:(NSString *)secret;
+
 -(NSString *)getPhotoUrl:(NSUInteger)size;
 -(NSString *)getLatitude;
 -(NSString *)getLongitude;

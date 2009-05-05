@@ -77,6 +77,7 @@
 	return marker;
 }
 
+//We define this ourselves to place the crosshairs to represent user's current location.
 +(id) defaultCrosshairsWithLat:(double) latitude Lng:(double) longitude {
 	NSLog(@"crosshairs: %d, %d", (int)latitude, (int)longitude);
 	
@@ -91,6 +92,7 @@
 	return [[MapMarker alloc] initWithImage:[UIImage imageNamed:@"green.png"] Lat:latitude Lng:longitude Anchor:CGPointMake(16.0, 32.0)];	
 }
 
+//This method is used to place the markers on the map for each photo.
 +(id) defaultRedMarkerWithLat:(double) latitude Lng:(double) longitude  my_image:(UIImage *)myImage{
 	MapMarker * tmp_marker =  [[MapMarker alloc] initWithImage:[UIImage imageNamed:@"red.png"] Lat:latitude Lng:longitude Anchor:CGPointMake(16.0, 32.0)];
 

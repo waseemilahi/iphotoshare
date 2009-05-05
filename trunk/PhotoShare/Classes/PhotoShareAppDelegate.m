@@ -3,12 +3,10 @@
 //  PhotoShare
 //
 //  Created by Waseem Ilahi on 3/8/09.
-//  Copyright __MyCompanyName__ 2009. All rights reserved.
+//  Copyright __PhotoShare__ 2009. All rights reserved.
 //
 
 #import "PhotoShareAppDelegate.h"
-#import <QuartzCore/QuartzCore.h>
-
 
 @implementation PhotoShareAppDelegate
 
@@ -49,14 +47,10 @@
 	}
 }
 	
-	
-
 - (IBAction)homeAgainSignIn:(id)sender
 {
 	if(count >0)
 	{
-		//code goes here.
-		
 		
 		CATransition *myTransition = [ CATransition animation];
 		myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
@@ -64,9 +58,6 @@
 		myTransition.subtype = kCATransitionFromLeft;
 		[ self.tabBarController.view.layer addAnimation: myTransition forKey: nil];
 		self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:0] ; 
-		//[tabBarController.view addSubview: [tabBarController.viewControllers objectAtIndex:4]];
-		//[tabBarController.view removeFromSuperview ];
-		
 		[[self.tabBarController.selectedViewController.view.subviews lastObject] removeFromSuperview];
 		
 		count--;
@@ -76,8 +67,7 @@
 
 
 - (IBAction)homeRegister:(id)sender
-{
-	
+{	
 	
 	count ++;
 	
@@ -90,47 +80,24 @@
 	
 	NSURL *url = [ [ NSURL alloc ] initWithString: @"http://m.flickr.com" ];
 	
-	webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 43,self.tabBarController.selectedViewController.view.bounds.size.width ,375)];
-	
+	webview = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 43,self.tabBarController.selectedViewController.view.bounds.size.width ,375)];	
 	webview.delegate = self;
-	webview.scalesPageToFit = YES;
-	
-	[webview loadRequest: [NSURLRequest requestWithURL:url]];
-	
-	
+	webview.scalesPageToFit = YES;	
+	[webview loadRequest: [NSURLRequest requestWithURL:url]];	
 	[self.tabBarController.selectedViewController.view addSubview:webview];
-	
-	
-	
-	
-	
-	//[ [ UIApplication sharedApplication ] openURL: url];
-	
+
 }
 
 - (IBAction)homeSignIn:(id)sender
 {
-	//code goes here.
+	
 	CATransition *myTransition = [ CATransition animation];
 	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
 	myTransition.type = kCATransitionPush;
 	myTransition.subtype = kCATransitionFromLeft;
 	[ tabBarController.view.layer addAnimation: myTransition forKey: nil];
 	self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:4] ; 
-	//[tabBarController.view addSubview: [tabBarController.viewControllers objectAtIndex:4]];
-	//[tabBarController.view removeFromSuperview ];
 }
-/*
-// Optional UITabBarControllerDelegate method
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-}
-*/
-
-/*
-// Optional UITabBarControllerDelegate method
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
-}
-*/
 
 
 - (void)dealloc {

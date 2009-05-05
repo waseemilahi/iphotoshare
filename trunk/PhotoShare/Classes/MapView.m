@@ -66,6 +66,7 @@
     [self resetTouches];
 
 	self.map.delegate = self;
+	//This gives us the max possible markers on the map at a time
 	markers = [[NSMutableArray alloc] initWithCapacity:50];
 
     return self;

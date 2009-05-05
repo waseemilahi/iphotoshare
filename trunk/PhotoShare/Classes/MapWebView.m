@@ -219,6 +219,9 @@
 	[self loadData:data MIMEType:@"text/html" textEncodingName:@"utf-8" baseURL:[NSURL URLWithString:@"http://www.wenear.com"]];	
 }
 
+//This method is responsible for loading the mapview. It uses the current location and makes a call to
+//google api (see file: GoogleMapAPi.html), and gets the map with the current location centered.
+
 - (void) loadMap {
 	
 	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
