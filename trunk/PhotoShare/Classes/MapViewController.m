@@ -96,26 +96,6 @@
 	}
 }
 
-
-
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
-	
-	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
-
-	
-		[self.view addSubview:mapBar];
-	[self.view addSubview:indicatorview];	
-	[self performSelector:@selector(showM) withObject:nil afterDelay:3];
-	
-	
-	
-}
-
 - (void)location:(location *)loc ForPhoto:(photo *)ph {
 	if (loc == nil || ph == nil) return;
 	
@@ -134,16 +114,21 @@
 	[marker show];
 }
 
--(void)putCrossHairs{
-	MapMarker *marker =  [MapMarker defaultCrosshairsWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
-	marker.data = @"crosshairs_blue";
-	marker.draggable = NO;
-	//marker.delegate = mapView;
-	[mapView addMarker:marker];
-	[marker show];
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
+	
+	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
+	
+	
+	[self.view addSubview:mapBar];
+	[self.view addSubview:indicatorview];	
+	[self performSelector:@selector(showM) withObject:nil afterDelay:3];
+	
+	
 	
 }
-
 
 -(void)showM{
 	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);	
@@ -154,15 +139,50 @@
 	int i;
 	
 	photo* ph;
-		
+	
+	MapMarker *marker;
+	
 	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
 	
-	[NSThread detachNewThreadSelector:@selector(putCrossHairs) toTarget:self withObject:nil];
+	marker =  [MapMarker defaultCrosshairsWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
+	marker.data = @"crosshairs_blue";
+	marker.draggable = NO;
+	//marker.delegate = mapView;
+	[mapView addMarker:marker];
+	[marker show];
 	
-	//int loop_count = 30;
-	int loop_count = [photos count];
-	if(loop_count > 30)loop_count = 30;
+	int loop_count = 30;
+	if([photos count] < loop_count)loop_count = [photos count];
 	
+	for(i = 0; i <loop_count/*[photos count]*/; i++)
+	{
+		ph = (photo *)[photos objectAtIndex:i];
+		
+		
+		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
+		
+		NSString* imageURL = [ph getPhotoUrl:4];
+		
+		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];	
+		
+		UIImage* image1 = [[UIImage alloc] initWithData:imageData];
+		
+		marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] my_image:image1 ];
+		marker.data = @"red";
+		marker.draggable = NO;
+		marker.delegate = self;
+		[mapView addMarker:marker];
+		[marker show];
+		
+		
+	}
+	
+	
+	[photos retain];
+	
+	//[mapView showMarkers];
+	
+	image_count = 0;	
 	[[self.view.subviews lastObject] removeFromSuperview];
 	[[self.view.subviews lastObject] removeFromSuperview];
 	CATransition *myTransition = [ CATransition animation];
@@ -174,29 +194,13 @@
 	
 	[self.view addSubview:mapView];
 	[self.view addSubview:mapBar];
-	
-	[flickr setLocationDelegate:self];
-	for(i = 0; i <loop_count/*[photos count]*/; i++)
-	{
-		ph = (photo *)[photos objectAtIndex:i];
-		
-		//[flickr getLocationOfPhoto:ph];		
-		[NSThread detachNewThreadSelector:@selector(getLocationOfPhoto:) toTarget:flickr withObject:ph];
-	}
-	
-	
-	[photos retain];
-	
-	//[mapView showMarkers];
-	
-	image_count = 0;	
 }
 
 	 
 - (IBAction)showMap: (id) sender{
 	
 	if(image_count > 0)[[self.view.subviews lastObject] removeFromSuperview];
-		
+	
 	[[self.view.subviews lastObject] removeFromSuperview];
 	[[self.view.subviews lastObject] removeFromSuperview];
 	
@@ -205,7 +209,7 @@
 		[mapView release];
 	}
 	
-				
+	
 	[photos release];
 	
 	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);
@@ -215,13 +219,45 @@
 	int i;
 	
 	photo* ph;
-		
-	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
-		
-	int loop_count = [photos count];
-	if(loop_count > 30)loop_count = 30;
 	
-	[NSThread detachNewThreadSelector:@selector(putCrossHairs) toTarget:self withObject:nil];	
+	MapMarker *marker;
+	
+	mapView = [[MapView alloc] initWithFrame:CGRectMake(0.0, 43,self.view.bounds.size.width ,375)];
+	
+	int loop_count = 30;
+	if([photos count] < loop_count)loop_count = [photos count];
+	
+	marker =  [MapMarker defaultCrosshairsWithLat:locmanager.location.coordinate.latitude Lng:locmanager.location.coordinate.longitude ];
+	marker.data = @"crosshairs";
+	marker.draggable = NO;
+	//marker.delegate = mapView;
+	[mapView addMarker:marker];
+	[marker show];
+	
+	for(i = 0; i <loop_count/*[photos count]*/; i++)
+	{
+		ph = (photo *)[photos objectAtIndex:i];		
+		[ph setLoc:(location *)[flickr getLocation:[[ph keys] objectForKey:@"id"]]];
+		
+		NSString* imageURL = [ph getPhotoUrl:4];		
+		NSData* imageData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:imageURL]];	
+		UIImage* image1 = [[UIImage alloc] initWithData:imageData];
+		
+		marker =  [MapMarker defaultRedMarkerWithLat:[[ph getLatitude] doubleValue] Lng:[[ph getLongitude] doubleValue] my_image:image1 ];
+		marker.data = @"red";
+		marker.draggable = NO;
+		marker.delegate = self;
+		[mapView addMarker:marker];
+		[marker show];
+		
+		
+		
+	}
+	
+	
+	[photos retain];
+	
+	image_count = 0;
 	
 	CATransition *myTransition = [ CATransition animation];
 	myTransition.timingFunction = UIViewAnimationCurveEaseInOut;
@@ -233,19 +269,7 @@
 	[self.view addSubview:mapView];
 	[self.view addSubview:mapBar];
 	
-	[flickr setLocationDelegate:self];
-	for(i = 0; i <loop_count/*[photos count]*/; i++)
-	{
-		ph = (photo *)[photos objectAtIndex:i];		
-		
-		[NSThread detachNewThreadSelector:@selector(getLocationOfPhoto:) toTarget:flickr withObject:ph];
-		
-	}
 	
-	
-	[photos retain];
-	
-	image_count = 0;	
 }
 
 
