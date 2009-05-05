@@ -23,7 +23,6 @@
 		9E457CA10F68F244004A0967 /* Browse.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E457CA00F68F244004A0967 /* Browse.png */; };
 		9E457CA30F68F25E004A0967 /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E457CA20F68F25E004A0967 /* account.png */; };
 		9E457CA50F68F2B8004A0967 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E457CA40F68F2B8004A0967 /* icon.png */; };
-		9E457CA70F68F2C3004A0967 /* flickr.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E457CA60F68F2C3004A0967 /* flickr.png */; };
 		9E457CA90F68F2CD004A0967 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E457CA80F68F2CD004A0967 /* home.png */; };
 		9E7B44380F69630D00BDB8FF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7B44370F69630D00BDB8FF /* QuartzCore.framework */; };
 		9E7B9A710F64BFAB0025D849 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7B9A700F64BFAB0025D849 /* CameraViewController.m */; };
@@ -72,7 +71,6 @@
 		9E457CA00F68F244004A0967 /* Browse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Browse.png; sourceTree = "<group>"; };
 		9E457CA20F68F25E004A0967 /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account.png; sourceTree = "<group>"; };
 		9E457CA40F68F2B8004A0967 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		9E457CA60F68F2C3004A0967 /* flickr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flickr.png; sourceTree = "<group>"; };
 		9E457CA80F68F2CD004A0967 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		9E7B44370F69630D00BDB8FF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		9E7B9A6F0F64BFAB0025D849 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
@@ -200,7 +198,6 @@
 				9E457CA20F68F25E004A0967 /* account.png */,
 				9E457C9C0F68F229004A0967 /* camera.png */,
 				9E457CA80F68F2CD004A0967 /* home.png */,
-				9E457CA60F68F2C3004A0967 /* flickr.png */,
 				9E457CA40F68F2B8004A0967 /* icon.png */,
 				9E457CA00F68F244004A0967 /* Browse.png */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -275,7 +272,6 @@
 				9E457CA10F68F244004A0967 /* Browse.png in Resources */,
 				9E457CA30F68F25E004A0967 /* account.png in Resources */,
 				9E457CA50F68F2B8004A0967 /* icon.png in Resources */,
-				9E457CA70F68F2C3004A0967 /* flickr.png in Resources */,
 				9E457CA90F68F2CD004A0967 /* home.png in Resources */,
 				9E7D4C700F9EBA9300EB6452 /* red.png in Resources */,
 				9E7D4C720F9EBA9A00EB6452 /* yellow.png in Resources */,
