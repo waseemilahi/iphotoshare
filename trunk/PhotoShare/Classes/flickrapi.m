@@ -1,6 +1,8 @@
 #import "flickrapi.h"
 #import "md5.h"
 
+//The method names tell us what they are used for.
+
 @implementation flickrapi : NSObject
 
 @synthesize FROB;
@@ -66,7 +68,7 @@
 	return [NSString stringWithFormat:@"http://www.flickr.com/services/auth/%@", [self getParamList]];
 }
 
-
+//Clears out the cookies and logs you out of the site.
 -(BOOL)logout {
 	
 	FROB = nil;
@@ -180,6 +182,7 @@
 	return NO;
 }
 
+//Specially check the token "user"
 -(NSArray *)checkUserToken {
 	[self clearParams];
 	
@@ -258,6 +261,8 @@
 	NSLog(@"loading started");
 }
 
+//Here we find out whether the login was successful or not.
+//And call the didLoginFail method declared in the settings view controller.
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
 	NSString *url = [NSString stringWithString:webView.request.URL.absoluteString];
 	
@@ -293,12 +298,12 @@
 	NSLog(@"finished loading");
 }
 
+//well.. Gets the photos based on the location in a radius of 1 mile.
 -(NSArray *)getPhotos:(double)latitude lng:(double)longitude {	
 	
 		[self clearParams];
 		[self addParam:@"method" withValue:@"flickr.photos.search"];
 		[self addParam:@"api_key" withValue:APIKEY];
-		[self addParam:@"min_upload_date" withValue:@"1238562001"];
 		[self addParam:@"radius" withValue:@"1"];
 		[self addParam:@"radius_units" withValue:@"mi"];
 		[self addParam:@"lat" withValue:[NSString stringWithFormat:@"%f",latitude]];

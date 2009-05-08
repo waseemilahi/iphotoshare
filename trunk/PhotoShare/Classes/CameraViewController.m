@@ -96,11 +96,12 @@
 	   else myTextField.text = [[alertView textField] text];
 }
 
-
+//function called when the user cancels the picker.
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
 	[self.imagePicker dismissModalViewControllerAnimated:YES];
 }
 
+//Called when the user chooses to upload a picture.
 - (void)imagePickerController:(UIImagePickerController *)picker 
         didFinishPickingImage:(UIImage *)image 
                   editingInfo:(NSDictionary *)editingInfo {
@@ -134,6 +135,7 @@
 	
 }
 
+//Set the global objects. (flickr and locmanager)
 - (void)viewDidLoad {
 	
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];

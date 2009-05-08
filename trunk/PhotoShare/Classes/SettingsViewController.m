@@ -16,7 +16,8 @@
 @synthesize flickr;
 @synthesize TOKEN;
 
-
+//Same as the Register  unction in the app delegate class.
+//It takes the user to the flickr.com site from within the application.
 - (IBAction)Register:(id)sender
 {
 	[username resignFirstResponder];
@@ -42,6 +43,9 @@
 		
 }
 		
+//Called when user wants to sign out of the flickr account.
+//Simply takes the user back to the sign in screen and calls the
+//flickr method to logout.
 - (IBAction)signOut:(id)sender
 {
 
@@ -62,6 +66,8 @@
 	
 }
 
+//Calls the flickr method loginAS giving it the username and password
+//gotton from the text fields(user input).
 
 - (IBAction)signIn:(id)sender
 {
@@ -81,6 +87,7 @@
 	 
 }
 
+//When the GO button on the keyboard is tapped.
 - (void)signkeyin
 {
 	
@@ -93,6 +100,9 @@
 }
 
 
+//Called by the flickr API, when the web get loaded.
+//The String given as the parameter describes, whether the 
+//login was successful or not and what caused the login to fail.
 - (void) didLoginFail:(NSString *)fail withUserName:(NSString *)userName andFullName:(NSString *)fullName{
 	
 	if([fail isEqualToString:@"bad username/password"] ){
@@ -155,6 +165,7 @@
 	
 }
 
+//Remove the keyboard from the screen.
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[textField resignFirstResponder];
 	if(textField == password)[self signkeyin];
@@ -162,6 +173,7 @@
 	return YES;
 }
 
+//Return from the registering process from the flickr.com
 - (IBAction)AgainSignIn:(id)sender
 {
 	if(count >0)
@@ -186,6 +198,7 @@
 	
 }
 
+//Set the flickr object.
 - (void)viewDidLoad {
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 	signin_count = 0;
