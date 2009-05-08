@@ -16,7 +16,8 @@
 @synthesize flickr;
 @synthesize locmanager;
 
-
+//The function that's called right after the app finishes loading.
+//It initializes the flickr and the location manager objects.
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
 	[tabBarController setDelegate:self ];
@@ -35,6 +36,7 @@
 			
 }
 
+//Shows the alertview on the application startup, letting the user know that the app uses the location services.
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
 	
@@ -47,6 +49,7 @@
 	}
 }
 	
+//Called when user wants to return to the home screen after registering on the flickr.com
 - (IBAction)homeAgainSignIn:(id)sender
 {
 	if(count >0)
@@ -65,7 +68,7 @@
 	
 }
 
-
+//Called when the register button is pressed on the main screen.
 - (IBAction)homeRegister:(id)sender
 {	
 	
@@ -88,6 +91,7 @@
 
 }
 
+//Takes you to the Account Tab when called.
 - (IBAction)homeSignIn:(id)sender
 {
 	

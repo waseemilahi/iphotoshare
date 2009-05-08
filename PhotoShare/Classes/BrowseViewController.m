@@ -21,6 +21,8 @@
 @synthesize photos;
 @synthesize update;
 
+//Functions to define the touch behavior on the browse view.
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	NSLog(@"touching...");
 	UITouch *touch = [[touches allObjects] objectAtIndex:0];
@@ -129,6 +131,7 @@
 	}
 }
 
+//Update the list of photos to get new set according to the current loction of the device.
 - (void)showPicture: (id) sender{
 	
 	[photos release];
@@ -195,6 +198,7 @@
 	[photos retain];
 }
 
+//Called right after the view gets loaded.
 - (void)viewDidLoad {
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
 	locmanager = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate locmanager];
@@ -205,7 +209,8 @@
 	
 	[pictureLabel setText:@"Searching For Photos."];
 	
-	[self performSelector:@selector(showP) withObject:nil afterDelay:3];
+	//Let the location services get the correct current location.
+	[self performSelector:@selector(showP) withObject:nil afterDelay:3];//wait three seconds before calling the method.
 		
 }
 

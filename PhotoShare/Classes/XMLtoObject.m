@@ -1,3 +1,5 @@
+//Multi-Function File. :)
+
 #import "XMLtoObject.h"
 
 //photoid object

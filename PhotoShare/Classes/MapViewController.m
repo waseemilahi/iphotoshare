@@ -17,6 +17,8 @@
 @synthesize indicatorview;
 @synthesize mapBar;
 
+//When a marker is tapped, this gets called.
+//It shows the photo attached to the marker tapped in a separate view.
 -(void) clickedMarker:(MapMarker *) marker {
 		
 	CATransition *myTransition = [ CATransition animation];
@@ -34,6 +36,7 @@
 	
 }
 
+//Save the image to the photo library.
 -(IBAction)saveImage:(id)sender{
 	
 	UIImageWriteToSavedPhotosAlbum(imageView.image, self, nil, nil);
@@ -45,6 +48,7 @@
 	
 }
 
+//Go back from viewing a single picture to the map view.
 -(IBAction)goBack:(id)sender{
 	if(image_count > 0){
 		image_count--;
@@ -60,6 +64,7 @@
 	}
 }
 
+//Used in the asynchronous population of the map.
 - (void)location:(location *)loc ForPhoto:(photo *)ph {
 	if (loc == nil || ph == nil) return;
 	
@@ -78,6 +83,7 @@
 	[marker show];
 }
 
+//Called after the tab is loaded.
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	flickr = [(PhotoShareAppDelegate *)[UIApplication sharedApplication].delegate flickr];
@@ -86,12 +92,15 @@
 	
 	[self.view addSubview:mapBar];
 	[self.view addSubview:indicatorview];	
+	
+	//Let the location services get the correct current location.
 	[self performSelector:@selector(showM) withObject:nil afterDelay:3];
 	
 	
 	
 }
 
+//Show the map and populate it with markers.
 -(void)showM{
 	NSLog(@"%f %f",locmanager.location.coordinate.latitude,locmanager.location.coordinate.longitude);	
 	[photos release];
@@ -153,6 +162,7 @@
 }
 
 	 
+//Update the map to center it to the device's current location and repopulate the map.
 - (IBAction)showMap: (id) sender{
 	
 	if(image_count > 0)[[self.view.subviews lastObject] removeFromSuperview];
