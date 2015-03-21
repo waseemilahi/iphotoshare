@@ -1,0 +1,1 @@
+You can Upload Pictures to flickr.com, browse them on the map near you and download the ones you like. Everything you do is from inside the application (even registration to the flickr.com), you don't need to leave the application for authorizing the application to work with flickr.com. We do all of it for you.
